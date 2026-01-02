@@ -29,7 +29,9 @@ export function AddressInput({ onAddressSelect, isLoading = false }: AddressInpu
   const [predictions, setPredictions] = useState<Prediction[]>([]);
   const [showDropdown, setShowDropdown] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
+  const [isGeocodingAddress, setIsGeocodingAddress] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [selectedPlaceDetails, setSelectedPlaceDetails] = useState<PlaceDetails | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const debounceRef = useRef<NodeJS.Timeout | null>(null);
@@ -60,6 +62,8 @@ export function AddressInput({ onAddressSelect, isLoading = false }: AddressInpu
     const value = e.target.value;
     setAddress(value);
     setSelectedIndex(-1);
+    // Clear selected details when user modifies the address
+    setSelectedPlaceDetails(null);
 
     // Debounce the API call
     if (debounceRef.current) {
@@ -81,10 +85,57 @@ export function AddressInput({ onAddressSelect, isLoading = false }: AddressInpu
       const details: PlaceDetails = await res.json();
 
       if (details.lat && details.lng) {
+        // Store the selected details for button click
+        setSelectedPlaceDetails(details);
+        // Immediately trigger the address selection (navigate)
         onAddressSelect(details.formatted_address, details.lat, details.lng, details);
       }
     } catch (error) {
       console.error('Place details error:', error);
+    }
+  };
+
+  // Handle Get Estimate button click - uses geocoding if no address selected from dropdown
+  const handleButtonClick = async () => {
+    if (!address.trim()) return;
+
+    // If we already have selected place details, use them
+    if (selectedPlaceDetails) {
+      onAddressSelect(
+        selectedPlaceDetails.formatted_address,
+        selectedPlaceDetails.lat,
+        selectedPlaceDetails.lng,
+        selectedPlaceDetails
+      );
+      return;
+    }
+
+    // Otherwise, try to geocode the typed address
+    setIsGeocodingAddress(true);
+    try {
+      const res = await fetch(`/api/geocode?address=${encodeURIComponent(address)}`);
+      const data = await res.json();
+
+      if (data.lat && data.lng) {
+        const details: PlaceDetails = {
+          formatted_address: data.formatted_address || address,
+          lat: data.lat,
+          lng: data.lng,
+          city: data.city || '',
+          state: data.state || '',
+          postalCode: data.postalCode || '',
+        };
+        setSelectedPlaceDetails(details);
+        onAddressSelect(details.formatted_address, details.lat, details.lng, details);
+      } else {
+        // If geocoding fails, show an alert
+        alert('Could not find that address. Please select an address from the dropdown suggestions.');
+      }
+    } catch (error) {
+      console.error('Geocoding error:', error);
+      alert('Could not find that address. Please select an address from the dropdown suggestions.');
+    } finally {
+      setIsGeocodingAddress(false);
     }
   };
 
@@ -154,12 +205,13 @@ export function AddressInput({ onAddressSelect, isLoading = false }: AddressInpu
         <div className="absolute inset-y-0 right-0 pr-2 flex items-center">
           <button
             type="button"
-            disabled={!address || isLoading}
+            onClick={handleButtonClick}
+            disabled={!address || isLoading || isGeocodingAddress}
             className="px-6 py-2.5 bg-blue-600 text-white font-semibold rounded-lg
                        hover:bg-blue-700 disabled:bg-slate-300 disabled:cursor-not-allowed
                        transition-colors duration-200 flex items-center gap-2"
           >
-            {isLoading ? (
+            {isLoading || isGeocodingAddress ? (
               <>
                 <Loader2 className="h-4 w-4 animate-spin" />
                 <span>Loading...</span>

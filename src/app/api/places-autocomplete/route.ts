@@ -17,34 +17,47 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const url = new URL('https://maps.googleapis.com/maps/api/place/autocomplete/json');
-    url.searchParams.set('input', input);
-    url.searchParams.set('types', 'address');
-    url.searchParams.set('components', 'country:us');
-    url.searchParams.set('key', apiKey);
+    // Use the new Places API (New) endpoint
+    const response = await fetch('https://places.googleapis.com/v1/places:autocomplete', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Goog-Api-Key': apiKey,
+      },
+      body: JSON.stringify({
+        input: input,
+        includedPrimaryTypes: ['street_address', 'subpremise', 'premise'],
+        includedRegionCodes: ['us'],
+      }),
+    });
 
-    const response = await fetch(url.toString());
     const data = await response.json();
 
-    if (data.status !== 'OK' && data.status !== 'ZERO_RESULTS') {
-      console.error('Places Autocomplete error:', data.status, data.error_message);
+    if (data.error) {
+      console.error('Places Autocomplete error:', data.error.message);
       return NextResponse.json({ predictions: [] });
     }
 
-    // Return only what the frontend needs (no API key exposure)
-    const predictions = (data.predictions || []).map((p: {
-      place_id: string;
-      description: string;
-      structured_formatting: {
-        main_text: string;
-        secondary_text: string;
+    // Map the new API response format to our expected format
+    const predictions = (data.suggestions || []).map((s: {
+      placePrediction?: {
+        placeId: string;
+        text: { text: string };
+        structuredFormat?: {
+          mainText: { text: string };
+          secondaryText: { text: string };
+        };
       };
-    }) => ({
-      place_id: p.place_id,
-      description: p.description,
-      main_text: p.structured_formatting?.main_text,
-      secondary_text: p.structured_formatting?.secondary_text,
-    }));
+    }) => {
+      const p = s.placePrediction;
+      if (!p) return null;
+      return {
+        place_id: p.placeId,
+        description: p.text?.text || '',
+        main_text: p.structuredFormat?.mainText?.text || p.text?.text || '',
+        secondary_text: p.structuredFormat?.secondaryText?.text || '',
+      };
+    }).filter(Boolean);
 
     return NextResponse.json({ predictions });
   } catch (error) {

@@ -20,45 +20,51 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const url = new URL('https://maps.googleapis.com/maps/api/place/details/json');
-    url.searchParams.set('place_id', placeId);
-    url.searchParams.set('fields', 'formatted_address,geometry,address_components');
-    url.searchParams.set('key', apiKey);
+    // Use the new Places API (New) endpoint
+    const response = await fetch(`https://places.googleapis.com/v1/places/${placeId}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Goog-Api-Key': apiKey,
+        'X-Goog-FieldMask': 'formattedAddress,location,addressComponents',
+      },
+    });
 
-    const response = await fetch(url.toString());
     const data = await response.json();
 
-    if (data.status !== 'OK') {
-      console.error('Places Details error:', data.status, data.error_message);
+    if (data.error) {
+      console.error('Places Details error:', data.error.message);
       return NextResponse.json(
         { error: 'Failed to get place details' },
         { status: 400 }
       );
     }
 
-    const result = data.result;
-
-    // Extract address components
+    // Extract address components from the new API format
     let city = '';
     let state = '';
     let postalCode = '';
 
-    result.address_components?.forEach((component: { types: string[]; long_name: string; short_name: string }) => {
+    data.addressComponents?.forEach((component: {
+      types: string[];
+      longText: string;
+      shortText: string;
+    }) => {
       if (component.types.includes('locality')) {
-        city = component.long_name;
+        city = component.longText;
       }
       if (component.types.includes('administrative_area_level_1')) {
-        state = component.short_name;
+        state = component.shortText;
       }
       if (component.types.includes('postal_code')) {
-        postalCode = component.long_name;
+        postalCode = component.longText;
       }
     });
 
     return NextResponse.json({
-      formatted_address: result.formatted_address,
-      lat: result.geometry?.location?.lat,
-      lng: result.geometry?.location?.lng,
+      formatted_address: data.formattedAddress,
+      lat: data.location?.latitude,
+      lng: data.location?.longitude,
       city,
       state,
       postalCode,
