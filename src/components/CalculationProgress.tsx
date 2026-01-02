@@ -22,6 +22,7 @@ export function CalculationProgress({ isComplete }: CalculationProgressProps) {
 
   useEffect(() => {
     if (isComplete) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCurrentStep(steps.length); // Show all complete
       return;
     }

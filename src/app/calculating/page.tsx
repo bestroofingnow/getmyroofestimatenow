@@ -72,7 +72,7 @@ function CalculatingContent() {
     if (formData && apiComplete && roofData && !isSubmitting) {
       submitAndRedirect(formData, roofData);
     }
-  }, [apiComplete, formData, roofData, isSubmitting]);
+  }, [apiComplete, formData, roofData, isSubmitting]); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function submitAndRedirect(data: LeadFormData, estimate: RoofEstimate) {
     setIsSubmitting(true);

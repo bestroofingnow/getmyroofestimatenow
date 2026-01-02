@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { RoofEstimateCard } from '@/components/RoofEstimateCard';
 import { RoofEstimate } from '@/types';
-import { Phone, Mail, CheckCircle, Clock, ArrowLeft, Home } from 'lucide-react';
+import { Phone, Mail, CheckCircle, ArrowLeft, Home } from 'lucide-react';
 
 export default function ResultsPage() {
   const router = useRouter();
@@ -17,12 +17,14 @@ export default function ResultsPage() {
 
     if (storedEstimate) {
       try {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setEstimate(JSON.parse(storedEstimate));
       } catch (error) {
         console.error('Failed to parse estimate:', error);
       }
     }
 
+     
     setIsLoading(false);
   }, []);
 
