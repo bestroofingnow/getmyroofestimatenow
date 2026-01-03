@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { AddressInput } from '@/components/AddressInput';
 import { Shield, Clock, DollarSign, CheckCircle, Star } from 'lucide-react';
 
@@ -51,7 +52,33 @@ export default function HomePage() {
           }} />
         </div>
 
-        <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
+        {/* Header/Nav */}
+        <header className="relative z-20 container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <Image
+                src="/logo.png"
+                alt="Instant Roof Estimate"
+                width={50}
+                height={50}
+                className="w-12 h-12"
+              />
+              <span className="text-xl font-bold text-white hidden sm:inline">InstantRoofEstimate.ai</span>
+            </div>
+            <a
+              href="#get-estimate"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('address-input')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors"
+            >
+              Get Free Estimate
+            </a>
+          </div>
+        </header>
+
+        <div className="container mx-auto px-4 py-12 md:py-20 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 rounded-full px-4 py-2 mb-6">
@@ -72,7 +99,7 @@ export default function HomePage() {
             </p>
 
             {/* Address Input */}
-            <div className="mb-8">
+            <div id="address-input" className="mb-8">
               <AddressInput
                 onAddressSelect={handleAddressSelect}
                 isLoading={isLoading}
@@ -215,9 +242,18 @@ export default function HomePage() {
       <footer className="bg-slate-900 text-slate-400 py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-center md:text-left">
-              <div className="text-xl font-bold text-white mb-2">InstantRoofEstimate.ai</div>
-              <p className="text-sm">Get accurate roof estimates in seconds.</p>
+            <div className="flex items-center gap-4 text-center md:text-left">
+              <Image
+                src="/logo.png"
+                alt="Instant Roof Estimate"
+                width={50}
+                height={50}
+                className="w-12 h-12"
+              />
+              <div>
+                <div className="text-xl font-bold text-white mb-1">InstantRoofEstimate.ai</div>
+                <p className="text-sm">Get accurate roof estimates in seconds.</p>
+              </div>
             </div>
             <div className="flex gap-6 text-sm">
               <a href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a>
