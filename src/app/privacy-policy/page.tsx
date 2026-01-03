@@ -1,14 +1,31 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import { Metadata } from 'next';
+import { BreadcrumbSchema } from '@/components/StructuredData';
 
-export const metadata = {
-  title: 'Privacy Policy | InstantRoofEstimate.ai',
-  description: 'Privacy Policy for InstantRoofEstimate.ai',
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  description: 'Learn how Instant Roof Estimate collects, uses, and protects your personal information. Read our privacy policy for details on data handling and your rights.',
+  alternates: {
+    canonical: 'https://instantroofestimate.ai/privacy-policy',
+  },
+  openGraph: {
+    title: 'Privacy Policy | Instant Roof Estimate',
+    description: 'Learn how we protect your personal information and handle your data.',
+    url: 'https://instantroofestimate.ai/privacy-policy',
+  },
 };
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: 'https://instantroofestimate.ai' },
+          { name: 'Privacy Policy', url: 'https://instantroofestimate.ai/privacy-policy' },
+        ]}
+      />
+      <main className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <Link
           href="/"
@@ -107,5 +124,6 @@ export default function PrivacyPolicyPage() {
         </div>
       </div>
     </main>
+    </>
   );
 }

@@ -5,6 +5,7 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import { FactCarousel } from '@/components/FactCarousel';
 import { CalculationProgress } from '@/components/CalculationProgress';
 import { LeadCaptureForm, LeadFormData } from '@/components/LeadCaptureForm';
+import { SatellitePreview } from '@/components/SatellitePreview';
 import { RoofEstimate } from '@/types';
 import { MapPin, ArrowLeft } from 'lucide-react';
 
@@ -16,17 +17,17 @@ function CalculatingContent() {
   const lat = searchParams.get('lat');
   const lng = searchParams.get('lng');
 
+  const [addressConfirmed, setAddressConfirmed] = useState(false);
   const [roofData, setRoofData] = useState<RoofEstimate | null>(null);
   const [apiComplete, setApiComplete] = useState(false);
   const [apiError, setApiError] = useState<string | null>(null);
   const [formData, setFormData] = useState<LeadFormData | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Fetch roof data on mount
+  // Fetch roof data after address is confirmed
   useEffect(() => {
     async function fetchData() {
-      if (!lat || !lng) {
-        setApiError('Missing location data. Please try again.');
+      if (!lat || !lng || !addressConfirmed) {
         return;
       }
 
@@ -54,7 +55,17 @@ function CalculatingContent() {
     }
 
     fetchData();
-  }, [lat, lng]);
+  }, [lat, lng, addressConfirmed]);
+
+  // Handle address confirmation
+  const handleAddressConfirm = () => {
+    setAddressConfirmed(true);
+  };
+
+  // Handle address rejection - go back to home
+  const handleAddressReject = () => {
+    router.push('/');
+  };
 
   // Handle form submission + redirect
   async function handleFormSubmit(data: LeadFormData) {
@@ -123,6 +134,26 @@ function CalculatingContent() {
     return 'Get My Estimate';
   };
 
+  // Handle missing location data
+  if (!lat || !lng) {
+    return (
+      <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white flex items-center justify-center">
+        <div className="text-center p-8 max-w-md">
+          <div className="text-6xl mb-4">😕</div>
+          <h1 className="text-2xl font-bold text-slate-900 mb-4">Missing Location Data</h1>
+          <p className="text-slate-600 mb-6">Please try entering your address again.</p>
+          <button
+            onClick={() => router.push('/')}
+            className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Go Back
+          </button>
+        </div>
+      </main>
+    );
+  }
+
   // Handle error state
   if (apiError) {
     return (
@@ -143,6 +174,35 @@ function CalculatingContent() {
     );
   }
 
+  // Step 1: Show satellite preview for address confirmation
+  if (!addressConfirmed) {
+    return (
+      <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+        <div className="container mx-auto px-4 py-8 md:py-12">
+          <div className="text-center mb-8">
+            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+              Confirm Your Property
+            </h1>
+            <p className="text-slate-600 max-w-xl mx-auto">
+              Before we calculate your estimate, please verify this is the correct property.
+            </p>
+          </div>
+
+          <div className="max-w-lg mx-auto">
+            <SatellitePreview
+              lat={parseFloat(lat)}
+              lng={parseFloat(lng)}
+              address={address}
+              onConfirm={handleAddressConfirm}
+              onReject={handleAddressReject}
+            />
+          </div>
+        </div>
+      </main>
+    );
+  }
+
+  // Step 2: Show calculation progress and lead form
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <div className="container mx-auto px-4 py-8 md:py-12">

@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { AddressInput } from '@/components/AddressInput';
+import { FAQSection, faqData } from '@/components/FAQSection';
+import { FAQSchema } from '@/components/StructuredData';
 import { Shield, Clock, DollarSign, CheckCircle, Star } from 'lucide-react';
 
 interface PlaceDetails {
@@ -215,6 +217,10 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQSection />
+      <FAQSchema faqs={faqData} />
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-700">

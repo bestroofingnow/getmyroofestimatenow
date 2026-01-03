@@ -1,14 +1,31 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import { Metadata } from 'next';
+import { BreadcrumbSchema } from '@/components/StructuredData';
 
-export const metadata = {
-  title: 'Terms of Service | InstantRoofEstimate.ai',
-  description: 'Terms of Service for InstantRoofEstimate.ai',
+export const metadata: Metadata = {
+  title: 'Terms of Service',
+  description: 'Read the Terms of Service for Instant Roof Estimate. Understand your rights and responsibilities when using our free roof estimation service.',
+  alternates: {
+    canonical: 'https://instantroofestimate.ai/terms',
+  },
+  openGraph: {
+    title: 'Terms of Service | Instant Roof Estimate',
+    description: 'Terms and conditions for using our roof estimation service.',
+    url: 'https://instantroofestimate.ai/terms',
+  },
 };
 
 export default function TermsPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: 'https://instantroofestimate.ai' },
+          { name: 'Terms of Service', url: 'https://instantroofestimate.ai/terms' },
+        ]}
+      />
+      <main className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <Link
           href="/"
@@ -119,5 +136,6 @@ export default function TermsPage() {
         </div>
       </div>
     </main>
+    </>
   );
 }
