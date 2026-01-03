@@ -2,7 +2,7 @@
 
 import { RoofEstimate } from '@/types';
 import { formatCurrency, formatNumber } from '@/lib/calculations';
-import { Home, Ruler, TrendingUp, Calendar } from 'lucide-react';
+import { Home, Ruler, TrendingUp } from 'lucide-react';
 
 interface RoofEstimateCardProps {
   estimate: RoofEstimate;
@@ -44,7 +44,7 @@ export function RoofEstimateCard({ estimate, address }: RoofEstimateCardProps) {
         </div>
 
         {/* Roof Details Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-3 gap-4">
           <div className="bg-slate-50 rounded-xl p-4 text-center">
             <Ruler className="w-6 h-6 text-blue-500 mx-auto mb-2" />
             <p className="text-sm text-slate-500">Roof Area</p>
@@ -59,11 +59,6 @@ export function RoofEstimateCard({ estimate, address }: RoofEstimateCardProps) {
             <Home className="w-6 h-6 text-orange-500 mx-auto mb-2" />
             <p className="text-sm text-slate-500">Squares</p>
             <p className="text-lg font-bold text-slate-800">{estimate.squares}</p>
-          </div>
-          <div className="bg-slate-50 rounded-xl p-4 text-center">
-            <Calendar className="w-6 h-6 text-purple-500 mx-auto mb-2" />
-            <p className="text-sm text-slate-500">Imagery Date</p>
-            <p className="text-lg font-bold text-slate-800">{estimate.imageryDate || 'Recent'}</p>
           </div>
         </div>
       </div>
