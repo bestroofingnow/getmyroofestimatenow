@@ -9,6 +9,13 @@ interface RoofEstimateCardProps {
   address?: string;
 }
 
+const MATERIAL_COLORS = [
+  { bg: 'bg-blue-50', border: 'border-blue-200', text: 'text-blue-700', badge: 'bg-blue-600' },
+  { bg: 'bg-slate-50', border: 'border-slate-200', text: 'text-slate-700', badge: 'bg-slate-600' },
+  { bg: 'bg-emerald-50', border: 'border-emerald-200', text: 'text-emerald-700', badge: 'bg-emerald-600' },
+  { bg: 'bg-amber-50', border: 'border-amber-200', text: 'text-amber-700', badge: 'bg-amber-600' },
+];
+
 export function RoofEstimateCard({ estimate, address }: RoofEstimateCardProps) {
   return (
     <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
@@ -23,43 +30,69 @@ export function RoofEstimateCard({ estimate, address }: RoofEstimateCardProps) {
         )}
       </div>
 
-      {/* Estimate Range */}
-      <div className="p-6 bg-gradient-to-b from-slate-50 to-white">
-        <div className="text-center mb-6">
-          <p className="text-slate-600 mb-2">Estimated Replacement Cost</p>
-          <div className="flex items-center justify-center gap-4">
-            <div className="text-center">
-              <p className="text-sm text-slate-500">Low</p>
-              <p className="text-2xl font-bold text-slate-700">{formatCurrency(estimate.estimate.low)}</p>
-            </div>
-            <div className="text-center px-6 py-2 bg-blue-50 rounded-xl border-2 border-blue-200">
-              <p className="text-sm text-blue-600 font-medium">Average</p>
-              <p className="text-3xl font-bold text-blue-700">{formatCurrency(estimate.estimate.mid)}</p>
-            </div>
-            <div className="text-center">
-              <p className="text-sm text-slate-500">High</p>
-              <p className="text-2xl font-bold text-slate-700">{formatCurrency(estimate.estimate.high)}</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Roof Details Grid */}
+      {/* Roof Details */}
+      <div className="p-6 bg-gradient-to-b from-slate-50 to-white border-b">
         <div className="grid grid-cols-3 gap-4">
-          <div className="bg-slate-50 rounded-xl p-4 text-center">
+          <div className="bg-white rounded-xl p-4 text-center shadow-sm">
             <Ruler className="w-6 h-6 text-blue-500 mx-auto mb-2" />
             <p className="text-sm text-slate-500">Roof Area</p>
             <p className="text-lg font-bold text-slate-800">{formatNumber(estimate.roofSqFt)} sq ft</p>
           </div>
-          <div className="bg-slate-50 rounded-xl p-4 text-center">
+          <div className="bg-white rounded-xl p-4 text-center shadow-sm">
             <TrendingUp className="w-6 h-6 text-green-500 mx-auto mb-2" />
             <p className="text-sm text-slate-500">Roof Pitch</p>
             <p className="text-lg font-bold text-slate-800">{estimate.pitchRatio}</p>
           </div>
-          <div className="bg-slate-50 rounded-xl p-4 text-center">
+          <div className="bg-white rounded-xl p-4 text-center shadow-sm">
             <Home className="w-6 h-6 text-orange-500 mx-auto mb-2" />
             <p className="text-sm text-slate-500">Squares</p>
             <p className="text-lg font-bold text-slate-800">{estimate.squares}</p>
           </div>
+        </div>
+      </div>
+
+      {/* Material Packages */}
+      <div className="p-6">
+        <h3 className="text-lg font-semibold text-slate-800 mb-4 text-center">
+          Choose Your Roofing Material
+        </h3>
+        <div className="grid md:grid-cols-2 gap-4">
+          {estimate.materialEstimates.map((material, index) => {
+            const colors = MATERIAL_COLORS[index % MATERIAL_COLORS.length];
+            return (
+              <div
+                key={material.name}
+                className={`${colors.bg} ${colors.border} border-2 rounded-xl p-4`}
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <h4 className={`font-semibold ${colors.text}`}>{material.name}</h4>
+                  <span className={`${colors.badge} text-white text-xs px-2 py-1 rounded-full`}>
+                    ${material.pricePerSqFt.low}-${material.pricePerSqFt.high}/sf
+                  </span>
+                </div>
+                <div className="grid grid-cols-3 gap-2 text-center">
+                  <div className="bg-white/70 rounded-lg p-2">
+                    <p className="text-xs text-slate-500 uppercase">Low</p>
+                    <p className={`text-sm font-bold ${colors.text}`}>
+                      {formatCurrency(material.estimate.low)}
+                    </p>
+                  </div>
+                  <div className="bg-white rounded-lg p-2 shadow-sm ring-2 ring-offset-1 ring-slate-200">
+                    <p className="text-xs text-slate-600 uppercase font-medium">Mid</p>
+                    <p className={`text-base font-bold ${colors.text}`}>
+                      {formatCurrency(material.estimate.mid)}
+                    </p>
+                  </div>
+                  <div className="bg-white/70 rounded-lg p-2">
+                    <p className="text-xs text-slate-500 uppercase">High</p>
+                    <p className={`text-sm font-bold ${colors.text}`}>
+                      {formatCurrency(material.estimate.high)}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
 

@@ -4,6 +4,12 @@ export function buildGHLPayload(
   lead: LeadData,
   estimate: RoofEstimate
 ): GHLWebhookPayload {
+  // Get material estimates by name
+  const shingles = estimate.materialEstimates.find(m => m.name === 'Architectural Shingles')?.estimate || estimate.estimate;
+  const metal = estimate.materialEstimates.find(m => m.name === 'Metal Roofing')?.estimate || { low: 0, mid: 0, high: 0 };
+  const synthetic = estimate.materialEstimates.find(m => m.name === 'Synthetic Roofing')?.estimate || { low: 0, mid: 0, high: 0 };
+  const coatings = estimate.materialEstimates.find(m => m.name === 'Roof Coatings')?.estimate || { low: 0, mid: 0, high: 0 };
+
   return {
     firstName: lead.firstName,
     lastName: lead.lastName,
@@ -18,10 +24,24 @@ export function buildGHLPayload(
     customField: {
       roof_square_feet: estimate.roofSqFt,
       roof_squares: estimate.squares,
-      estimate_low: estimate.estimate.low,
-      estimate_mid: estimate.estimate.mid,
-      estimate_high: estimate.estimate.high,
       roof_pitch: estimate.pitchRatio,
+      // Architectural Shingles
+      shingles_low: shingles.low,
+      shingles_mid: shingles.mid,
+      shingles_high: shingles.high,
+      // Metal Roofing
+      metal_low: metal.low,
+      metal_mid: metal.mid,
+      metal_high: metal.high,
+      // Synthetic Roofing
+      synthetic_low: synthetic.low,
+      synthetic_mid: synthetic.mid,
+      synthetic_high: synthetic.high,
+      // Roof Coatings
+      coatings_low: coatings.low,
+      coatings_mid: coatings.mid,
+      coatings_high: coatings.high,
+      // TCPA
       tcpa_consent: lead.tcpaConsent ? 'Yes' : 'No',
       consent_timestamp: lead.consentTimestamp,
     },

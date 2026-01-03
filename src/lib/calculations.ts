@@ -1,4 +1,4 @@
-import { SolarData, RoofEstimate } from '@/types';
+import { SolarData, RoofEstimate, MaterialEstimate } from '@/types';
 
 const PITCH_MULTIPLIERS: Record<number, number> = {
   10: 1.00,  // 0-10 degrees
@@ -11,6 +11,26 @@ const PITCH_MULTIPLIERS: Record<number, number> = {
 
 const SQ_METERS_TO_SQ_FEET = 10.7639;
 const WASTE_FACTOR = 1.15; // 15% waste
+
+// Material pricing per square foot
+const MATERIAL_PRICING = [
+  {
+    name: 'Architectural Shingles',
+    pricePerSqFt: { low: 4.00, mid: 6.38, high: 8.75 },
+  },
+  {
+    name: 'Metal Roofing',
+    pricePerSqFt: { low: 10.00, mid: 12.00, high: 14.00 },
+  },
+  {
+    name: 'Synthetic Roofing',
+    pricePerSqFt: { low: 8.00, mid: 10.00, high: 12.00 },
+  },
+  {
+    name: 'Roof Coatings',
+    pricePerSqFt: { low: 3.00, mid: 3.88, high: 4.75 },
+  },
+];
 
 export function getPitchMultiplier(pitchDegrees: number): number {
   const thresholds = Object.keys(PITCH_MULTIPLIERS)
@@ -57,6 +77,20 @@ export function calculateEstimate(solarData: SolarData): RoofEstimate {
   const { year, month, day } = solarData.imageryDate || { year: 2024, month: 1, day: 1 };
   const imageryDate = `${month}/${day}/${year}`;
 
+  // Calculate estimates for each material type
+  const materialEstimates: MaterialEstimate[] = MATERIAL_PRICING.map((material) => ({
+    name: material.name,
+    pricePerSqFt: material.pricePerSqFt,
+    estimate: {
+      low: Math.round(roofSqFt * material.pricePerSqFt.low),
+      mid: Math.round(roofSqFt * material.pricePerSqFt.mid),
+      high: Math.round(roofSqFt * material.pricePerSqFt.high),
+    },
+  }));
+
+  // Primary estimate is Architectural Shingles (first material)
+  const primaryEstimate = materialEstimates[0].estimate;
+
   return {
     groundSqFt: Math.round(groundSqFt),
     roofSqFt: Math.round(roofSqFt),
@@ -64,11 +98,8 @@ export function calculateEstimate(solarData: SolarData): RoofEstimate {
     pitchDegrees: Math.round(avgPitch),
     pitchRatio: degreesToPitchRatio(avgPitch),
     imageryDate,
-    estimate: {
-      low: Math.round(squares * 350),
-      mid: Math.round(squares * 475),
-      high: Math.round(squares * 600),
-    }
+    estimate: primaryEstimate,
+    materialEstimates,
   };
 }
 
