@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { MapPin, Home, ArrowRight, CheckCircle, Phone, Clock, Shield, ChevronRight, DollarSign, HelpCircle, Wrench, Star } from 'lucide-react';
 import { neighborhoods, getNeighborhood, getNeighborhoodsByCity, NeighborhoodData } from '@/lib/neighborhoods';
 import { locations } from '@/lib/locations';
+import { getStateSlugByAbbr } from '@/lib/stateData';
 import { LocationAddressForm } from '@/components/LocationAddressForm';
 import { BreadcrumbSchema } from '@/components/StructuredData';
 
@@ -87,6 +88,7 @@ export default async function NeighborhoodPage({ params }: PageProps) {
 
   // Get parent city data
   const cityData = locations.find(loc => loc.slug === city);
+  const stateSlug = cityData ? getStateSlugByAbbr(cityData.stateAbbr) : undefined;
 
   // Get nearby neighborhoods for internal linking
   const nearbyNeighborhoods = neighborhoods.filter(n =>
@@ -675,6 +677,13 @@ export default async function NeighborhoodPage({ params }: PageProps) {
                         Roofing Blog
                       </Link>
                     </li>
+                    {stateSlug && cityData && (
+                      <li>
+                        <Link href={`/roof-estimate/state/${stateSlug}`} className="hover:text-white transition-colors">
+                          {cityData.state} Roofing
+                        </Link>
+                      </li>
+                    )}
                     <li>
                       <Link href="/roof-estimate" className="hover:text-white transition-colors">
                         All Locations

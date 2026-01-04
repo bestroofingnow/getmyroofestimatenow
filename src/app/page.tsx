@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { AddressInput } from '@/components/AddressInput';
 import { FAQSection, faqData } from '@/components/FAQSection';
 import { FAQSchema } from '@/components/StructuredData';
-import { Shield, Clock, DollarSign, CheckCircle, Star } from 'lucide-react';
+import { Shield, Clock, DollarSign, CheckCircle, Star, ArrowRight } from 'lucide-react';
 
 interface PlaceDetails {
   formatted_address: string;
@@ -261,17 +261,48 @@ export default function HomePage() {
                 <p className="text-sm">Get accurate roof estimates in seconds.</p>
               </div>
             </div>
-            <div className="flex gap-6 text-sm">
+            <div className="flex flex-wrap gap-4 text-sm">
+              <a href="/roof-estimate" className="hover:text-white transition-colors">All Locations</a>
+              <a href="/roof-cost-calculator" className="hover:text-white transition-colors">Cost Calculator</a>
+              <a href="/blog" className="hover:text-white transition-colors">Blog</a>
               <a href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a>
               <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
             </div>
           </div>
-          {/* Location Links */}
+
+          {/* State Links */}
           <div className="border-t border-slate-800 mt-8 pt-8">
-            <h3 className="text-white font-semibold text-center mb-4">Get Roof Estimates in Top Cities</h3>
+            <h3 className="text-white font-semibold text-center mb-4">Roof Estimates by State</h3>
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2 text-sm text-center mb-4">
+              <a href="/roof-estimate/state/texas" className="hover:text-white transition-colors">Texas</a>
+              <a href="/roof-estimate/state/florida" className="hover:text-white transition-colors">Florida</a>
+              <a href="/roof-estimate/state/california" className="hover:text-white transition-colors">California</a>
+              <a href="/roof-estimate/state/north-carolina" className="hover:text-white transition-colors">North Carolina</a>
+              <a href="/roof-estimate/state/georgia" className="hover:text-white transition-colors">Georgia</a>
+              <a href="/roof-estimate/state/arizona" className="hover:text-white transition-colors">Arizona</a>
+              <a href="/roof-estimate/state/colorado" className="hover:text-white transition-colors">Colorado</a>
+              <a href="/roof-estimate/state/tennessee" className="hover:text-white transition-colors">Tennessee</a>
+              <a href="/roof-estimate/state/ohio" className="hover:text-white transition-colors">Ohio</a>
+              <a href="/roof-estimate/state/illinois" className="hover:text-white transition-colors">Illinois</a>
+              <a href="/roof-estimate/state/pennsylvania" className="hover:text-white transition-colors">Pennsylvania</a>
+              <a href="/roof-estimate/state/virginia" className="hover:text-white transition-colors">Virginia</a>
+              <a href="/roof-estimate/state/washington" className="hover:text-white transition-colors">Washington</a>
+              <a href="/roof-estimate/state/new-york" className="hover:text-white transition-colors">New York</a>
+              <a href="/roof-estimate/state/massachusetts" className="hover:text-white transition-colors">Massachusetts</a>
+              <a href="/roof-estimate/state/nevada" className="hover:text-white transition-colors">Nevada</a>
+            </div>
+            <div className="text-center">
+              <a href="/roof-estimate" className="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 text-sm font-medium">
+                View all locations <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* City Links */}
+          <div className="border-t border-slate-800 mt-8 pt-8">
+            <h3 className="text-white font-semibold text-center mb-4">Top Cities</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 text-sm text-center">
               <a href="/roof-estimate/charlotte-nc" className="hover:text-white transition-colors">Charlotte, NC</a>
-              <a href="/roof-estimate/lake-norman-nc" className="hover:text-white transition-colors">Lake Norman, NC</a>
               <a href="/roof-estimate/houston-tx" className="hover:text-white transition-colors">Houston, TX</a>
               <a href="/roof-estimate/dallas-tx" className="hover:text-white transition-colors">Dallas, TX</a>
               <a href="/roof-estimate/phoenix-az" className="hover:text-white transition-colors">Phoenix, AZ</a>
@@ -281,21 +312,15 @@ export default function HomePage() {
               <a href="/roof-estimate/miami-fl" className="hover:text-white transition-colors">Miami, FL</a>
               <a href="/roof-estimate/tampa-fl" className="hover:text-white transition-colors">Tampa, FL</a>
               <a href="/roof-estimate/orlando-fl" className="hover:text-white transition-colors">Orlando, FL</a>
-              <a href="/roof-estimate/jacksonville-fl" className="hover:text-white transition-colors">Jacksonville, FL</a>
               <a href="/roof-estimate/atlanta-ga" className="hover:text-white transition-colors">Atlanta, GA</a>
               <a href="/roof-estimate/chicago-il" className="hover:text-white transition-colors">Chicago, IL</a>
-              <a href="/roof-estimate/indianapolis-in" className="hover:text-white transition-colors">Indianapolis, IN</a>
-              <a href="/roof-estimate/kansas-city-mo" className="hover:text-white transition-colors">Kansas City, MO</a>
               <a href="/roof-estimate/las-vegas-nv" className="hover:text-white transition-colors">Las Vegas, NV</a>
-              <a href="/roof-estimate/columbus-oh" className="hover:text-white transition-colors">Columbus, OH</a>
-              <a href="/roof-estimate/oklahoma-city-ok" className="hover:text-white transition-colors">Oklahoma City, OK</a>
-              <a href="/roof-estimate/portland-or" className="hover:text-white transition-colors">Portland, OR</a>
-              <a href="/roof-estimate/philadelphia-pa" className="hover:text-white transition-colors">Philadelphia, PA</a>
               <a href="/roof-estimate/seattle-wa" className="hover:text-white transition-colors">Seattle, WA</a>
               <a href="/roof-estimate/nashville-tn" className="hover:text-white transition-colors">Nashville, TN</a>
-              <a href="/roof-estimate/memphis-tn" className="hover:text-white transition-colors">Memphis, TN</a>
+              <a href="/roof-estimate/philadelphia-pa" className="hover:text-white transition-colors">Philadelphia, PA</a>
             </div>
           </div>
+
           <div className="border-t border-slate-800 mt-8 pt-8 text-center text-sm">
             <p>&copy; {new Date().getFullYear()} InstantRoofEstimate.ai. All rights reserved.</p>
           </div>

@@ -951,3 +951,9 @@ export function getCitiesInStateBySlug(stateSlug: string): LocationData[] {
 export function stateNameToSlug(stateName: string): string {
   return stateName.toLowerCase().replace(/\s+/g, '-');
 }
+
+// Get state slug from state abbreviation
+export function getStateSlugByAbbr(stateAbbr: string): string | undefined {
+  const entry = Object.entries(stateData).find(([, state]) => state.abbr === stateAbbr);
+  return entry ? entry[0] : undefined;
+}

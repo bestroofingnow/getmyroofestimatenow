@@ -10,7 +10,8 @@
       "Bash(npx tsc:*)",
       "Bash(curl:*)",
       "Bash(git restore:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(wc:*)"
     ]
   }
 }

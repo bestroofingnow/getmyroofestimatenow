@@ -372,20 +372,31 @@ export default async function StatePage({ params }: PageProps) {
 
         {/* Footer */}
         <footer className="bg-slate-900 text-slate-400 py-8">
-          <div className="container mx-auto px-4 text-center">
-            <p>&copy; {new Date().getFullYear()} Instant Roof Estimate. All rights reserved.</p>
-            <p className="mt-2 text-sm">
-              Serving {stateInfo.name} and all 50 states
-            </p>
-            <div className="flex justify-center gap-6 mt-4">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-6">
+              <p>&copy; {new Date().getFullYear()} Instant Roof Estimate. All rights reserved.</p>
+              <p className="mt-2 text-sm">
+                Serving {stateInfo.name} and all 50 states
+              </p>
+            </div>
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+              <Link href="/" className="hover:text-white transition-colors">
+                Get Free Estimate
+              </Link>
+              <Link href="/roof-estimate" className="hover:text-white transition-colors">
+                All Locations
+              </Link>
+              <Link href="/roof-cost-calculator" className="hover:text-white transition-colors">
+                Cost Calculator
+              </Link>
+              <Link href="/blog" className="hover:text-white transition-colors">
+                Blog
+              </Link>
               <Link href="/privacy-policy" className="hover:text-white transition-colors">
                 Privacy Policy
               </Link>
               <Link href="/terms" className="hover:text-white transition-colors">
                 Terms of Service
-              </Link>
-              <Link href="/roof-estimate" className="hover:text-white transition-colors">
-                All Locations
               </Link>
             </div>
           </div>

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { MapPin, ArrowRight, Search } from 'lucide-react';
 import { locations, formatCurrency } from '@/lib/locations';
+import { stateData, stateNameToSlug } from '@/lib/stateData';
 import { BreadcrumbSchema } from '@/components/StructuredData';
 
 export const metadata: Metadata = {
@@ -148,15 +149,29 @@ export default function RoofEstimateHubPage() {
               </h2>
 
               <div className="space-y-12">
-                {Object.entries(locationsByState).map(([state, cities]) => (
+                {Object.entries(locationsByState).map(([state, cities]) => {
+                  const stateSlug = stateNameToSlug(state);
+                  const hasStatePage = stateSlug in stateData;
+                  return (
                   <div key={state} className="bg-white rounded-2xl p-6 shadow-sm">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                      <MapPin className="w-6 h-6 text-blue-600" />
-                      {state}
-                      <span className="text-sm font-normal text-slate-500 ml-2">
-                        ({cities.length} {cities.length === 1 ? 'city' : 'cities'})
-                      </span>
-                    </h3>
+                    <div className="flex items-center justify-between mb-6">
+                      <h3 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
+                        <MapPin className="w-6 h-6 text-blue-600" />
+                        {state}
+                        <span className="text-sm font-normal text-slate-500 ml-2">
+                          ({cities.length} {cities.length === 1 ? 'city' : 'cities'})
+                        </span>
+                      </h3>
+                      {hasStatePage && (
+                        <Link
+                          href={`/roof-estimate/state/${stateSlug}`}
+                          className="text-sm text-blue-600 hover:text-blue-800 font-medium flex items-center gap-1"
+                        >
+                          View all {state}
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      )}
+                    </div>
 
                     <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                       {cities.map((location) => (
@@ -178,7 +193,8 @@ export default function RoofEstimateHubPage() {
                       ))}
                     </div>
                   </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -202,6 +218,28 @@ export default function RoofEstimateHubPage() {
                 Get Your Free Estimate
                 <ArrowRight className="w-5 h-5" />
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Browse by State Section */}
+        <section className="py-16 bg-slate-100">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">
+                Browse Roof Estimates by State
+              </h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                {Object.entries(stateData).map(([slug, state]) => (
+                  <Link
+                    key={slug}
+                    href={`/roof-estimate/state/${slug}`}
+                    className="bg-white p-3 rounded-lg text-center hover:bg-blue-50 hover:text-blue-600 transition-colors border border-slate-200 hover:border-blue-300"
+                  >
+                    <span className="font-medium text-sm">{state.name}</span>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -251,17 +289,25 @@ export default function RoofEstimateHubPage() {
 
         {/* Footer */}
         <footer className="bg-slate-900 text-slate-400 py-8">
-          <div className="container mx-auto px-4 text-center">
-            <p>&copy; {new Date().getFullYear()} Instant Roof Estimate. All rights reserved.</p>
-            <div className="flex justify-center gap-6 mt-4">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-6">
+              <p>&copy; {new Date().getFullYear()} Instant Roof Estimate. All rights reserved.</p>
+            </div>
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+              <Link href="/" className="hover:text-white transition-colors">
+                Get Free Estimate
+              </Link>
+              <Link href="/roof-cost-calculator" className="hover:text-white transition-colors">
+                Cost Calculator
+              </Link>
+              <Link href="/blog" className="hover:text-white transition-colors">
+                Blog
+              </Link>
               <Link href="/privacy-policy" className="hover:text-white transition-colors">
                 Privacy Policy
               </Link>
               <Link href="/terms" className="hover:text-white transition-colors">
                 Terms of Service
-              </Link>
-              <Link href="/blog" className="hover:text-white transition-colors">
-                Blog
               </Link>
             </div>
           </div>

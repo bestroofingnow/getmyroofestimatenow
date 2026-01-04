@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { ArrowRight, MapPin, DollarSign, Sun, Shield, Clock, CheckCircle } from 'lucide-react';
 import { getLocationBySlug, getAllLocationSlugs, formatCurrency, LocationData, getNearbyCities, getCitiesInState } from '@/lib/locations';
 import { getNeighborhoodsByCity } from '@/lib/neighborhoods';
+import { getStateSlugByAbbr } from '@/lib/stateData';
 import { generateLocationFaqs } from '@/lib/locationFaqs';
 import { generateLocationContent } from '@/lib/locationContent';
 import { getCityExtendedData } from '@/lib/cityData';
@@ -102,9 +103,13 @@ export default async function LocationPage({ params }: PageProps) {
     notFound();
   }
 
+  // Get state slug for internal linking
+  const stateSlug = getStateSlugByAbbr(location.stateAbbr);
+
   const breadcrumbs = [
     { name: 'Home', url: 'https://instantroofestimate.ai' },
     { name: 'Roof Estimates', url: 'https://instantroofestimate.ai/roof-estimate' },
+    ...(stateSlug ? [{ name: location.state, url: `https://instantroofestimate.ai/roof-estimate/state/${stateSlug}` }] : []),
     { name: `${location.city}, ${location.stateAbbr}`, url: `https://instantroofestimate.ai/roof-estimate/${location.slug}` },
   ];
 
@@ -382,20 +387,36 @@ export default async function LocationPage({ params }: PageProps) {
 
         {/* Footer */}
         <footer className="bg-slate-900 text-slate-400 py-8">
-          <div className="container mx-auto px-4 text-center">
-            <p>&copy; {new Date().getFullYear()} Instant Roof Estimate. All rights reserved.</p>
-            <p className="mt-2 text-sm">
-              Serving {location.city}, {location.stateAbbr} and the {location.region} region
-            </p>
-            <div className="flex justify-center gap-6 mt-4">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-6">
+              <p>&copy; {new Date().getFullYear()} Instant Roof Estimate. All rights reserved.</p>
+              <p className="mt-2 text-sm">
+                Serving {location.city}, {location.stateAbbr} and the {location.region} region
+              </p>
+            </div>
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+              <Link href="/" className="hover:text-white transition-colors">
+                Get Free Estimate
+              </Link>
+              <Link href="/roof-estimate" className="hover:text-white transition-colors">
+                All Locations
+              </Link>
+              {stateSlug && (
+                <Link href={`/roof-estimate/state/${stateSlug}`} className="hover:text-white transition-colors">
+                  {location.state} Roofing
+                </Link>
+              )}
+              <Link href="/roof-cost-calculator" className="hover:text-white transition-colors">
+                Cost Calculator
+              </Link>
+              <Link href="/blog" className="hover:text-white transition-colors">
+                Blog
+              </Link>
               <Link href="/privacy-policy" className="hover:text-white transition-colors">
                 Privacy Policy
               </Link>
               <Link href="/terms" className="hover:text-white transition-colors">
                 Terms of Service
-              </Link>
-              <Link href="/blog" className="hover:text-white transition-colors">
-                Blog
               </Link>
             </div>
           </div>
