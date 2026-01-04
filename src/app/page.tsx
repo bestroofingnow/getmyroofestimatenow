@@ -61,9 +61,9 @@ export default function HomePage() {
               <Image
                 src="/logo.png"
                 alt="Instant Roof Estimate"
-                width={50}
-                height={50}
-                className="w-12 h-12"
+                width={56}
+                height={56}
+                className="w-14 h-14"
               />
               <span className="text-xl font-bold text-white hidden sm:inline">InstantRoofEstimate.ai</span>
             </div>
@@ -252,9 +252,9 @@ export default function HomePage() {
               <Image
                 src="/logo.png"
                 alt="Instant Roof Estimate"
-                width={50}
-                height={50}
-                className="w-12 h-12"
+                width={56}
+                height={56}
+                className="w-14 h-14"
               />
               <div>
                 <div className="text-xl font-bold text-white mb-1">InstantRoofEstimate.ai</div>

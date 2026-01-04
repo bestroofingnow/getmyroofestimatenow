@@ -54,8 +54,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/logo-small.png",
-    apple: "/logo-small.png",
+    icon: "/logo.png",
+    apple: "/logo.png",
   },
   openGraph: {
     title: "Get Your Free Instant Roof Estimate in 60 Seconds",

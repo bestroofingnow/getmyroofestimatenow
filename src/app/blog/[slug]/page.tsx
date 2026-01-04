@@ -123,9 +123,9 @@ export default async function BlogPostPage({ params }: PageProps) {
                 <Image
                   src="/logo.png"
                   alt="Instant Roof Estimate"
-                  width={40}
-                  height={40}
-                  className="rounded-lg"
+                  width={48}
+                  height={48}
+                  className="w-12 h-12"
                 />
                 <span className="font-bold text-xl text-slate-900">Instant Roof Estimate</span>
               </Link>
