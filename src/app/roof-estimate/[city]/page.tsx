@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { ArrowRight, MapPin, DollarSign, Sun, Shield, Clock, CheckCircle } from 'lucide-react';
-import { getLocationBySlug, getAllLocationSlugs, formatCurrency, LocationData } from '@/lib/locations';
+import { getLocationBySlug, getAllLocationSlugs, formatCurrency, LocationData, getNearbyCities, getCitiesInState } from '@/lib/locations';
 import { generateLocationFaqs } from '@/lib/locationFaqs';
 import { generateLocationContent } from '@/lib/locationContent';
 import { getCityExtendedData } from '@/lib/cityData';
@@ -11,6 +11,7 @@ import { BreadcrumbSchema, LocalBusinessSchema } from '@/components/StructuredDa
 import { LocationAddressForm } from '@/components/LocationAddressForm';
 import { LocationFAQSection, LocationFAQSchema } from '@/components/LocationFAQSection';
 import { LocationContentDisplay } from '@/components/LocationContentSection';
+import { NearbyCities } from '@/components/NearbyCities';
 
 interface PageProps {
   params: Promise<{ city: string }>;
@@ -112,6 +113,9 @@ export default async function LocationPage({ params }: PageProps) {
   // Get extended city data and generate content sections
   const extendedData = getCityExtendedData(location.slug);
   const contentSections = generateLocationContent(location, extendedData);
+
+  // Get nearby cities for internal linking
+  const nearbyCities = getNearbyCities(location.slug, 6);
 
   return (
     <>
@@ -312,6 +316,15 @@ export default async function LocationPage({ params }: PageProps) {
           cityName={location.city}
           stateAbbr={location.stateAbbr}
         />
+
+        {/* Nearby Cities Section */}
+        {nearbyCities.length > 0 && (
+          <NearbyCities
+            cities={nearbyCities}
+            currentCity={location.city}
+            currentState={location.state}
+          />
+        )}
 
         {/* CTA Section */}
         <section className="py-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white">

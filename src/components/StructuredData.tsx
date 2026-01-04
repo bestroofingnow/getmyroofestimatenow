@@ -3,15 +3,52 @@ export function OrganizationSchema() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Instant Roof Estimate',
+    alternateName: 'InstantRoofEstimate.ai',
     url: 'https://instantroofestimate.ai',
-    logo: 'https://instantroofestimate.ai/logo.png',
-    description: 'Get instant, accurate roof replacement estimates using satellite imagery. Free, fast, and no obligation.',
-    contactPoint: {
-      '@type': 'ContactPoint',
-      contactType: 'customer service',
-      availableLanguage: 'English',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://instantroofestimate.ai/logo.png',
+      width: 512,
+      height: 512,
     },
-    sameAs: [],
+    image: 'https://instantroofestimate.ai/logo.png',
+    description: 'Get instant, accurate roof replacement estimates using satellite imagery. Free, fast, and no obligation. Serving homeowners nationwide.',
+    slogan: 'Get Your Free Instant Roof Estimate in 60 Seconds',
+    foundingDate: '2024',
+    areaServed: {
+      '@type': 'Country',
+      name: 'United States',
+    },
+    serviceArea: {
+      '@type': 'Country',
+      name: 'United States',
+    },
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        contactType: 'customer service',
+        availableLanguage: 'English',
+        areaServed: 'US',
+      },
+    ],
+    // Add social media profiles when created:
+    // - Facebook: https://facebook.com/instantroofestimate
+    // - Instagram: https://instagram.com/instantroofestimate
+    // - LinkedIn: https://linkedin.com/company/instantroofestimate
+    // - YouTube: https://youtube.com/@instantroofestimate
+    sameAs: [
+      // Add your social media profile URLs here
+    ],
+    knowsAbout: [
+      'Roof replacement',
+      'Roofing estimates',
+      'Roofing contractors',
+      'Satellite roof measurement',
+      'Roof repair',
+      'Asphalt shingles',
+      'Metal roofing',
+      'Tile roofing',
+    ],
   };
 
   return (

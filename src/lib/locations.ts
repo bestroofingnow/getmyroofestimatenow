@@ -495,3 +495,70 @@ export function formatCurrency(amount: number): string {
     maximumFractionDigits: 0,
   }).format(amount);
 }
+
+// Get nearby cities based on region and state
+export function getNearbyCities(currentSlug: string, limit: number = 6): LocationData[] {
+  const currentLocation = getLocationBySlug(currentSlug);
+  if (!currentLocation) return [];
+
+  // Priority 1: Same region (excluding current city)
+  const sameRegion = locations.filter(
+    (loc) => loc.region === currentLocation.region && loc.slug !== currentSlug
+  );
+
+  // Priority 2: Same state but different region
+  const sameState = locations.filter(
+    (loc) =>
+      loc.state === currentLocation.state &&
+      loc.region !== currentLocation.region &&
+      loc.slug !== currentSlug
+  );
+
+  // Priority 3: Neighboring states (based on common regions)
+  const neighboringRegions = getNeighboringRegions(currentLocation.region);
+  const nearbyRegions = locations.filter(
+    (loc) =>
+      neighboringRegions.includes(loc.region) &&
+      loc.slug !== currentSlug &&
+      !sameRegion.includes(loc) &&
+      !sameState.includes(loc)
+  );
+
+  // Combine and limit results
+  const combined = [...sameRegion, ...sameState, ...nearbyRegions];
+  return combined.slice(0, limit);
+}
+
+// Get cities in the same state
+export function getCitiesInState(stateAbbr: string, excludeSlug?: string): LocationData[] {
+  return locations.filter(
+    (loc) => loc.stateAbbr === stateAbbr && loc.slug !== excludeSlug
+  );
+}
+
+// Helper function to determine neighboring regions
+function getNeighboringRegions(region: string): string[] {
+  const regionNeighbors: Record<string, string[]> = {
+    'Charlotte Metro': ['Western Piedmont', 'Southeast'],
+    'Western Piedmont': ['Charlotte Metro', 'Southeast'],
+    'Southeast': ['Charlotte Metro', 'Mid-South', 'Tampa Bay', 'South Florida', 'Central Florida', 'Northeast Florida'],
+    'Gulf Coast': ['South Central Texas', 'South Florida'],
+    'North Texas': ['Central Texas', 'South Central Texas', 'Great Plains'],
+    'Central Texas': ['North Texas', 'South Central Texas', 'Gulf Coast'],
+    'South Central Texas': ['Central Texas', 'North Texas', 'Gulf Coast'],
+    'Southwest': ['Southern California'],
+    'Southern California': ['Southwest'],
+    'Front Range': ['Great Plains', 'Southwest'],
+    'South Florida': ['Tampa Bay', 'Central Florida', 'Gulf Coast'],
+    'Tampa Bay': ['South Florida', 'Central Florida', 'Southeast'],
+    'Central Florida': ['Tampa Bay', 'South Florida', 'Northeast Florida'],
+    'Northeast Florida': ['Central Florida', 'Southeast'],
+    'Midwest': ['Great Plains', 'Northeast'],
+    'Great Plains': ['Midwest', 'North Texas'],
+    'Northeast': ['Midwest'],
+    'Mid-South': ['Southeast', 'Midwest'],
+    'Pacific Northwest': [],
+  };
+
+  return regionNeighbors[region] || [];
+}
