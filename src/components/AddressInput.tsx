@@ -183,52 +183,82 @@ export function AddressInput({ onAddressSelect, isLoading = false }: AddressInpu
 
   return (
     <div className="relative w-full max-w-2xl mx-auto">
-      <div className="relative">
-        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-          <MapPin className="h-5 w-5 text-slate-400" />
+      {/* Mobile: Stacked layout, Desktop: Inline layout */}
+      <div className="flex flex-col md:flex-row md:relative gap-3 md:gap-0">
+        <div className="relative flex-1">
+          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+            <MapPin className="h-5 w-5 text-slate-400" />
+          </div>
+          <input
+            ref={inputRef}
+            type="text"
+            value={address}
+            onChange={handleInputChange}
+            onKeyDown={handleKeyDown}
+            onFocus={() => predictions.length > 0 && setShowDropdown(true)}
+            placeholder="Enter your home address..."
+            disabled={isLoading}
+            autoComplete="off"
+            className="w-full pl-12 pr-4 md:pr-36 py-4 text-lg border-2 border-slate-200 rounded-xl
+                       focus:border-blue-500 focus:ring-4 focus:ring-blue-100
+                       disabled:bg-slate-50 disabled:cursor-not-allowed
+                       transition-all duration-200 outline-none"
+          />
+          {/* Desktop: Button inside input */}
+          <div className="hidden md:flex absolute inset-y-0 right-0 pr-2 items-center">
+            <button
+              type="button"
+              onClick={handleButtonClick}
+              disabled={!address || isLoading || isGeocodingAddress}
+              className="px-6 py-2.5 bg-blue-600 text-white font-semibold rounded-lg
+                         hover:bg-blue-700 disabled:bg-slate-300 disabled:cursor-not-allowed
+                         transition-colors duration-200 flex items-center gap-2"
+            >
+              {isLoading || isGeocodingAddress ? (
+                <>
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  <span>Loading...</span>
+                </>
+              ) : isSearching ? (
+                <>
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  <span>Searching...</span>
+                </>
+              ) : (
+                <>
+                  <Search className="h-4 w-4" />
+                  <span>Get Estimate</span>
+                </>
+              )}
+            </button>
+          </div>
         </div>
-        <input
-          ref={inputRef}
-          type="text"
-          value={address}
-          onChange={handleInputChange}
-          onKeyDown={handleKeyDown}
-          onFocus={() => predictions.length > 0 && setShowDropdown(true)}
-          placeholder="Enter your home address..."
-          disabled={isLoading}
-          autoComplete="off"
-          className="w-full pl-12 pr-32 py-4 text-lg border-2 border-slate-200 rounded-xl
-                     focus:border-blue-500 focus:ring-4 focus:ring-blue-100
-                     disabled:bg-slate-50 disabled:cursor-not-allowed
-                     transition-all duration-200 outline-none"
-        />
-        <div className="absolute inset-y-0 right-0 pr-2 flex items-center">
-          <button
-            type="button"
-            onClick={handleButtonClick}
-            disabled={!address || isLoading || isGeocodingAddress}
-            className="px-6 py-2.5 bg-blue-600 text-white font-semibold rounded-lg
-                       hover:bg-blue-700 disabled:bg-slate-300 disabled:cursor-not-allowed
-                       transition-colors duration-200 flex items-center gap-2"
-          >
-            {isLoading || isGeocodingAddress ? (
-              <>
-                <Loader2 className="h-4 w-4 animate-spin" />
-                <span>Loading...</span>
-              </>
-            ) : isSearching ? (
-              <>
-                <Loader2 className="h-4 w-4 animate-spin" />
-                <span>Searching...</span>
-              </>
-            ) : (
-              <>
-                <Search className="h-4 w-4" />
-                <span>Get Estimate</span>
-              </>
-            )}
-          </button>
-        </div>
+        {/* Mobile: Button below input */}
+        <button
+          type="button"
+          onClick={handleButtonClick}
+          disabled={!address || isLoading || isGeocodingAddress}
+          className="md:hidden w-full px-6 py-4 bg-blue-600 text-white font-semibold rounded-xl
+                     hover:bg-blue-700 disabled:bg-slate-300 disabled:cursor-not-allowed
+                     transition-colors duration-200 flex items-center justify-center gap-2 text-lg"
+        >
+          {isLoading || isGeocodingAddress ? (
+            <>
+              <Loader2 className="h-5 w-5 animate-spin" />
+              <span>Loading...</span>
+            </>
+          ) : isSearching ? (
+            <>
+              <Loader2 className="h-5 w-5 animate-spin" />
+              <span>Searching...</span>
+            </>
+          ) : (
+            <>
+              <Search className="h-5 w-5" />
+              <span>Get My Free Estimate</span>
+            </>
+          )}
+        </button>
       </div>
 
       {/* Autocomplete Dropdown */}

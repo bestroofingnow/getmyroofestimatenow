@@ -85,7 +85,7 @@ export default function HomePage() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 rounded-full px-4 py-2 mb-6">
               <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-              <span className="text-sm font-medium text-blue-100">Trusted by 10,000+ Homeowners</span>
+              <span className="text-sm font-medium text-blue-100">Trusted Measurements Used by Millions through Google Services</span>
             </div>
 
             {/* Headline */}

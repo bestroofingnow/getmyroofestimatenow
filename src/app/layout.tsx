@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Get Your Free Instant Roof Estimate in 60 Seconds",
-    description: "Accurate roof replacement estimates in 60 seconds using satellite imagery. No hassle, no obligation. Trusted by 10,000+ homeowners.",
+    description: "Accurate roof replacement estimates in 60 seconds using satellite imagery. No hassle, no obligation. Trusted measurements used by millions through Google Services.",
     type: "website",
     url: siteUrl,
     siteName: "Instant Roof Estimate",
