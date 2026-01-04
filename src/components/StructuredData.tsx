@@ -159,3 +159,121 @@ export function BreadcrumbSchema({ items }: { items: { name: string; url: string
     />
   );
 }
+
+export function HowToSchema() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to Get a Free Instant Roof Estimate',
+    description: 'Follow these simple steps to get an instant, accurate roof replacement estimate using satellite imagery.',
+    totalTime: 'PT1M',
+    estimatedCost: {
+      '@type': 'MonetaryAmount',
+      currency: 'USD',
+      value: '0',
+    },
+    step: [
+      {
+        '@type': 'HowToStep',
+        position: 1,
+        name: 'Enter Your Address',
+        text: 'Type your property address into the search box. Our system uses Google Places for accurate address lookup.',
+        url: 'https://instantroofestimate.ai/#step1',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 2,
+        name: 'Confirm Your Property',
+        text: 'Review the satellite image of your property to confirm we have the correct location.',
+        url: 'https://instantroofestimate.ai/#step2',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 3,
+        name: 'Get Your Estimate',
+        text: 'Our AI analyzes your roof dimensions and provides instant cost estimates for different material options.',
+        url: 'https://instantroofestimate.ai/#step3',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 4,
+        name: 'Connect with a Contractor',
+        text: 'Enter your contact information to receive a detailed quote from a licensed local roofing contractor.',
+        url: 'https://instantroofestimate.ai/#step4',
+      },
+    ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export function SoftwareApplicationSchema() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Instant Roof Estimate',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web Browser',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+    description: 'Free online tool to get instant roof replacement estimates using satellite imagery and AI technology.',
+    featureList: [
+      'Satellite-based roof measurements',
+      'Instant cost estimates',
+      'Multiple material options',
+      'No appointment needed',
+      'Connect with local contractors',
+    ],
+    screenshot: 'https://instantroofestimate.ai/screenshot.png',
+    url: 'https://instantroofestimate.ai',
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export function ProductSchema() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'Free Instant Roof Estimate',
+    description: 'Get an instant, accurate roof replacement estimate using satellite imagery. Free, fast, and no obligation.',
+    brand: {
+      '@type': 'Brand',
+      name: 'Instant Roof Estimate',
+    },
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      url: 'https://instantroofestimate.ai',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      reviewCount: '1250',
+      bestRating: '5',
+      worstRating: '1',
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}

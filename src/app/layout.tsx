@@ -6,6 +6,9 @@ import {
   WebsiteSchema,
   ServiceSchema,
   LocalBusinessSchema,
+  HowToSchema,
+  SoftwareApplicationSchema,
+  ProductSchema,
 } from "@/components/StructuredData";
 
 const inter = Inter({
@@ -99,6 +102,9 @@ export default function RootLayout({
         <WebsiteSchema />
         <ServiceSchema />
         <LocalBusinessSchema />
+        <HowToSchema />
+        <SoftwareApplicationSchema />
+        <ProductSchema />
       </head>
       <body className={`${inter.className} antialiased bg-white`}>
         {children}
