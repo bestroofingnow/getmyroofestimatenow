@@ -5,9 +5,12 @@ import { notFound } from 'next/navigation';
 import { ArrowRight, MapPin, DollarSign, Sun, Shield, Clock, CheckCircle } from 'lucide-react';
 import { getLocationBySlug, getAllLocationSlugs, formatCurrency, LocationData } from '@/lib/locations';
 import { generateLocationFaqs } from '@/lib/locationFaqs';
+import { generateLocationContent } from '@/lib/locationContent';
+import { getCityExtendedData } from '@/lib/cityData';
 import { BreadcrumbSchema, LocalBusinessSchema } from '@/components/StructuredData';
 import { LocationAddressForm } from '@/components/LocationAddressForm';
 import { LocationFAQSection, LocationFAQSchema } from '@/components/LocationFAQSection';
+import { LocationContentDisplay } from '@/components/LocationContentSection';
 
 interface PageProps {
   params: Promise<{ city: string }>;
@@ -105,6 +108,10 @@ export default async function LocationPage({ params }: PageProps) {
 
   // Generate location-specific FAQs
   const locationFaqs = generateLocationFaqs(location);
+
+  // Get extended city data and generate content sections
+  const extendedData = getCityExtendedData(location.slug);
+  const contentSections = generateLocationContent(location, extendedData);
 
   return (
     <>
@@ -292,6 +299,12 @@ export default async function LocationPage({ params }: PageProps) {
             </div>
           </div>
         </section>
+
+        {/* In-Depth Content Sections */}
+        <LocationContentDisplay
+          sections={contentSections}
+          cityName={location.city}
+        />
 
         {/* FAQ Section */}
         <LocationFAQSection
