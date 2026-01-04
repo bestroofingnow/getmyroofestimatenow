@@ -1,122 +1,89 @@
 import { MetadataRoute } from 'next';
+import { locations } from '@/lib/locations';
+import { stateData } from '@/lib/stateData';
 import { fetchBlogPosts } from '@/lib/blog';
 
-// Top cities for roofing services - for location-based SEO pages
-const topCities = [
-  // Texas
-  'houston-tx',
-  'dallas-tx',
-  'san-antonio-tx',
-  'austin-tx',
-  'fort-worth-tx',
-  // Arizona
-  'phoenix-az',
-  // California
-  'los-angeles-ca',
-  'san-diego-ca',
-  // Colorado
-  'denver-co',
-  // Florida
-  'miami-fl',
-  'tampa-fl',
-  'orlando-fl',
-  'jacksonville-fl',
-  // Georgia
-  'atlanta-ga',
-  // Illinois
-  'chicago-il',
-  // Indiana
-  'indianapolis-in',
-  // Missouri
-  'kansas-city-mo',
-  // Nevada
-  'las-vegas-nv',
-  // North Carolina - Charlotte Metro
-  'charlotte-nc',
-  'concord-nc',
-  'gastonia-nc',
-  'huntersville-nc',
-  'mooresville-nc',
-  'lake-norman-nc',
-  'cornelius-nc',
-  'davidson-nc',
-  'kannapolis-nc',
-  'indian-trail-nc',
-  'matthews-nc',
-  'hickory-nc',
-  'statesville-nc',
-  'monroe-nc',
-  'raleigh-nc',
-  // South Carolina - Charlotte Metro
-  'rock-hill-sc',
-  'fort-mill-sc',
-  // Ohio
-  'columbus-oh',
-  // Oklahoma
-  'oklahoma-city-ok',
-  // Oregon
-  'portland-or',
-  // Pennsylvania
-  'philadelphia-pa',
-  // Tennessee
-  'nashville-tn',
-  'memphis-tn',
-  // Washington
-  'seattle-wa',
-];
+const BASE_URL = 'https://instantroofestimate.ai';
+
+// Last modified date for static content (update when content changes)
+const STATIC_LAST_MOD = new Date('2025-01-04');
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://instantroofestimate.ai';
-
-  // Static pages
+  // 1. Static pages - highest priority
   const staticPages: MetadataRoute.Sitemap = [
     {
-      url: baseUrl,
-      lastModified: new Date(),
+      url: BASE_URL,
+      lastModified: STATIC_LAST_MOD,
       changeFrequency: 'weekly',
-      priority: 1,
+      priority: 1.0,
     },
     {
-      url: `${baseUrl}/blog`,
+      url: `${BASE_URL}/roof-estimate`,
+      lastModified: STATIC_LAST_MOD,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/roof-cost-calculator`,
+      lastModified: STATIC_LAST_MOD,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/blog`,
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/privacy-policy`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.3,
+      url: `${BASE_URL}/privacy-policy`,
+      lastModified: STATIC_LAST_MOD,
+      changeFrequency: 'yearly',
+      priority: 0.2,
     },
     {
-      url: `${baseUrl}/terms`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.3,
+      url: `${BASE_URL}/terms`,
+      lastModified: STATIC_LAST_MOD,
+      changeFrequency: 'yearly',
+      priority: 0.2,
     },
   ];
 
-  // Blog posts
+  // 2. State pages - high priority for geo-targeting
+  const statePages: MetadataRoute.Sitemap = Object.keys(stateData).map((stateSlug) => ({
+    url: `${BASE_URL}/roof-estimate/state/${stateSlug}`,
+    lastModified: STATIC_LAST_MOD,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
+  // 3. City/Location pages - core local SEO pages
+  const locationPages: MetadataRoute.Sitemap = locations.map((location) => ({
+    url: `${BASE_URL}/roof-estimate/${location.slug}`,
+    lastModified: STATIC_LAST_MOD,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  // 4. Blog posts (from CMS when available)
   let blogPages: MetadataRoute.Sitemap = [];
   try {
     const posts = await fetchBlogPosts();
     blogPages = posts.map((post) => ({
-      url: `${baseUrl}/blog/${post.slug}`,
+      url: `${BASE_URL}/blog/${post.slug}`,
       lastModified: new Date(post.updatedAt || post.publishedAt),
       changeFrequency: 'weekly' as const,
-      priority: 0.7,
+      priority: 0.6,
     }));
   } catch (error) {
     console.error('Error fetching blog posts for sitemap:', error);
   }
 
-  // Location pages
-  const locationPages: MetadataRoute.Sitemap = topCities.map((city) => ({
-    url: `${baseUrl}/roof-estimate/${city}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }));
-
-  return [...staticPages, ...blogPages, ...locationPages];
+  // Combine all pages
+  return [
+    ...staticPages,
+    ...statePages,
+    ...locationPages,
+    ...blogPages,
+  ];
 }
