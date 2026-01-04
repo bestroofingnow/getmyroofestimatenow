@@ -22,9 +22,8 @@ export function SatellitePreview({
   const [imageError, setImageError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Google Maps Static API URL for satellite imagery
-  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
-  const imageUrl = `https://maps.googleapis.com/maps/api/staticmap?center=${lat},${lng}&zoom=20&size=600x400&maptype=satellite&markers=color:red%7C${lat},${lng}&key=${apiKey}`;
+  // Use server-side proxy to hide API key from client
+  const imageUrl = `/api/static-map?lat=${lat}&lng=${lng}`;
 
   if (imageError) {
     return (

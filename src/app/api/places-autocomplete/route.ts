@@ -1,10 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limit';
 
 export async function GET(request: NextRequest) {
+  // Rate limiting
+  const clientIP = getClientIP(request);
+  const rateLimit = checkRateLimit(`autocomplete:${clientIP}`, RATE_LIMITS.autocomplete);
+
+  if (!rateLimit.success) {
+    return NextResponse.json(
+      { error: 'Too many requests' },
+      { status: 429 }
+    );
+  }
+
   const searchParams = request.nextUrl.searchParams;
   const input = searchParams.get('input');
 
-  if (!input) {
+  if (!input || input.length < 3 || input.length > 200) {
     return NextResponse.json({ predictions: [] });
   }
 

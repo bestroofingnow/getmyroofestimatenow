@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limit';
 
 async function geocodeAddress(address: string) {
   const apiKey = process.env.GOOGLE_API_KEY;
@@ -46,12 +47,23 @@ async function geocodeAddress(address: string) {
 }
 
 export async function GET(request: NextRequest) {
+  // Rate limiting
+  const clientIP = getClientIP(request);
+  const rateLimit = checkRateLimit(`geocode:${clientIP}`, RATE_LIMITS.geocode);
+
+  if (!rateLimit.success) {
+    return NextResponse.json(
+      { error: 'Too many requests' },
+      { status: 429 }
+    );
+  }
+
   const searchParams = request.nextUrl.searchParams;
   const address = searchParams.get('address');
 
-  if (!address) {
+  if (!address || address.length < 5 || address.length > 300) {
     return NextResponse.json(
-      { error: 'Address is required' },
+      { error: 'Invalid address' },
       { status: 400 }
     );
   }
@@ -75,12 +87,23 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
+  // Rate limiting
+  const clientIP = getClientIP(request);
+  const rateLimit = checkRateLimit(`geocode:${clientIP}`, RATE_LIMITS.geocode);
+
+  if (!rateLimit.success) {
+    return NextResponse.json(
+      { error: 'Too many requests' },
+      { status: 429 }
+    );
+  }
+
   try {
     const { address } = await request.json();
 
-    if (!address) {
+    if (!address || typeof address !== 'string' || address.length < 5 || address.length > 300) {
       return NextResponse.json(
-        { error: 'Address is required' },
+        { error: 'Invalid address' },
         { status: 400 }
       );
     }

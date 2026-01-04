@@ -1,14 +1,37 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { calculateEstimate } from '@/lib/calculations';
 import { SolarData } from '@/types';
+import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limit';
 
 export async function POST(request: NextRequest) {
+  // Rate limiting
+  const clientIP = getClientIP(request);
+  const rateLimit = checkRateLimit(`roof-data:${clientIP}`, RATE_LIMITS.roofData);
+
+  if (!rateLimit.success) {
+    return NextResponse.json(
+      { error: 'Too many requests. Please try again later.' },
+      { status: 429 }
+    );
+  }
+
   try {
     const { lat, lng } = await request.json();
 
+    // Validate coordinates
     if (!lat || !lng) {
       return NextResponse.json(
         { error: 'Latitude and longitude are required' },
+        { status: 400 }
+      );
+    }
+
+    const latNum = parseFloat(lat);
+    const lngNum = parseFloat(lng);
+
+    if (isNaN(latNum) || isNaN(lngNum) || latNum < -90 || latNum > 90 || lngNum < -180 || lngNum > 180) {
+      return NextResponse.json(
+        { error: 'Invalid coordinates' },
         { status: 400 }
       );
     }
