@@ -1,4 +1,5 @@
 import { BlogPost } from '@/types/blog';
+import { getStaticBlogPosts } from './staticBlogPosts';
 
 // Parse RSS feed from GoHighLevel or any RSS source
 export async function fetchBlogPostsFromRSS(rssUrl: string): Promise<BlogPost[]> {
@@ -108,20 +109,35 @@ export async function fetchBlogPostsFromGHL(): Promise<BlogPost[]> {
   }
 }
 
-// Main function to fetch blog posts - tries API first, then RSS
+// Main function to fetch blog posts - combines static posts with API/RSS posts
 export async function fetchBlogPosts(): Promise<BlogPost[]> {
-  // Try GHL API first
-  let posts = await fetchBlogPostsFromGHL();
+  // Start with static pillar posts
+  const staticPosts = getStaticBlogPosts();
+
+  // Try GHL API
+  let externalPosts = await fetchBlogPostsFromGHL();
 
   // Fall back to RSS if API returns nothing
-  if (posts.length === 0 && process.env.GHL_BLOG_RSS_URL) {
-    posts = await fetchBlogPostsFromRSS(process.env.GHL_BLOG_RSS_URL);
+  if (externalPosts.length === 0 && process.env.GHL_BLOG_RSS_URL) {
+    externalPosts = await fetchBlogPostsFromRSS(process.env.GHL_BLOG_RSS_URL);
   }
 
+  // Combine static and external posts, avoiding duplicates by slug
+  const staticSlugs = new Set(staticPosts.map(p => p.slug));
+  const uniqueExternalPosts = externalPosts.filter(p => !staticSlugs.has(p.slug));
+
+  const allPosts = [...staticPosts, ...uniqueExternalPosts];
+
   // Sort by date, newest first
-  return posts.sort((a, b) =>
+  return allPosts.sort((a, b) =>
     new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
   );
+}
+
+// Get a single blog post by slug
+export async function getBlogPost(slug: string): Promise<BlogPost | null> {
+  const allPosts = await fetchBlogPosts();
+  return allPosts.find(post => post.slug === slug) || null;
 }
 
 // Helper to strip HTML tags
