@@ -11,7 +11,8 @@
       "Bash(curl:*)",
       "Bash(git restore:*)",
       "Bash(cat:*)",
-      "Bash(wc:*)"
+      "Bash(wc:*)",
+      "Bash(sort:*)"
     ]
   }
 }
