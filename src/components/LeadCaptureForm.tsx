@@ -157,8 +157,10 @@ export function LeadCaptureForm({
                      focus:ring-blue-500 focus:ring-2 cursor-pointer"
         />
         <span className="text-sm text-slate-600 leading-relaxed">
-          I agree to receive calls, texts, and emails regarding my roofing estimate.
-          I understand I can opt-out at any time. By submitting, I agree to the{' '}
+          I consent to receive calls, SMS/text messages, and emails regarding my roofing estimate,
+          including communications made using AI, automated dialing systems, and prerecorded messages.
+          Message frequency varies. Message and data rates may apply. Reply STOP to opt out.
+          Consent is not required to make a purchase. By submitting, I agree to the{' '}
           <a href="/terms" className="text-blue-600 hover:underline">Terms of Service</a>
           {' '}and{' '}
           <a href="/privacy-policy" className="text-blue-600 hover:underline">Privacy Policy</a>.
