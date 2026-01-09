@@ -111,6 +111,22 @@ const faqs = [
     question: 'Do metal roofs attract lightning?',
     answer: 'No, metal roofs do not attract lightning. While metal conducts electricity, lightning strikes the highest point in an area regardless of material. If lightning does strike, a metal roof actually disperses the energy more safely than other materials and won\'t catch fire.',
   },
+  {
+    question: 'What types of metal roofing are available?',
+    answer: 'Common metal roofing types include: standing seam (premium, concealed fasteners), corrugated metal (economical), metal shingles/tiles (traditional look), stone-coated steel (tile appearance with metal durability). Materials include steel, aluminum (best for coastal areas), copper, and zinc.',
+  },
+  {
+    question: 'How energy efficient are metal roofs?',
+    answer: 'Metal roofs reduce cooling costs by 10-25% by reflecting solar heat. Cool metal roofing with reflective coatings can reflect up to 70% of solar energy. In hot climates, homeowners often see significant energy savings. Some utility companies offer rebates for cool roof installations.',
+  },
+  {
+    question: 'Can metal roofs be damaged by hail?',
+    answer: 'Metal roofs are highly resistant to hail but not immune. Steel and aluminum roofs can dent from large hailstones. Stone-coated steel offers the best hail protection. Many metal roofs carry Class 4 impact ratings. Cosmetic denting rarely affects performance or causes leaks.',
+  },
+  {
+    question: 'What colors are available for metal roofs?',
+    answer: 'Metal roofs come in virtually any color. Popular options include charcoal, gray, bronze, copper, green, blue, and red. PVDF/Kynar coatings resist fading for 30+ years. Cool colors reflect more heat. Stone-coated steel offers natural tile and shake appearances.',
+  },
 ];
 
 function FAQSchema() {

@@ -3,6 +3,50 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Wrench, CloudRain, Search, Shield, Home, AlertTriangle } from 'lucide-react';
 import { BreadcrumbSchema } from '@/components/StructuredData';
+import { FAQSection, FAQSchema, FAQ } from '@/components/FAQSection';
+
+const servicesFaqs: FAQ[] = [
+  {
+    question: 'What roofing services do you offer?',
+    answer: 'We connect homeowners with licensed contractors for all roofing needs including: complete roof replacement, roof repair, storm and hail damage repair, roof inspections, emergency tarping, gutter installation, and skylight services. Our network covers residential roofing in all materials.',
+  },
+  {
+    question: 'How do I know if I need roof repair or replacement?',
+    answer: 'Consider repair if damage is localized, your roof is under 15 years old, and less than 30% of the surface is affected. Choose replacement if damage is widespread, your roof is over 20 years old, you have recurring leaks, or repairs would cost more than 50% of replacement. Our free estimate helps you decide.',
+  },
+  {
+    question: 'What should I do after storm damage to my roof?',
+    answer: 'After a storm: 1) Document damage with photos and videos, 2) Make temporary repairs to prevent further damage (tarping), 3) Contact your insurance company within 24-48 hours, 4) Get a professional inspection, 5) Get written estimates before repairs. Avoid permanent repairs until after the insurance adjuster visits.',
+  },
+  {
+    question: 'How much does a roof inspection cost?',
+    answer: 'Many roofing contractors offer free roof inspections, especially when evaluating storm damage or providing repair estimates. Professional inspections that include detailed reports and drone footage may cost $150-$400. Our instant estimate provides a free preliminary assessment using satellite imagery.',
+  },
+  {
+    question: 'Do I need a permit for roof repairs?',
+    answer: 'Minor repairs typically don\'t require permits, but major repairs and full replacements usually do. Permit requirements vary by location. Reputable contractors handle permit acquisition as part of their service, ensuring work meets local building codes and passes inspection.',
+  },
+  {
+    question: 'How long does roof repair take?',
+    answer: 'Simple repairs like patching leaks or replacing a few shingles take a few hours to one day. More extensive repairs may take 2-3 days. Full roof replacement typically takes 1-3 days for average homes. Complex roofs or weather delays can extend timelines.',
+  },
+  {
+    question: 'Will insurance cover my roof repair or replacement?',
+    answer: 'Homeowners insurance typically covers roof damage from covered perils like storms, hail, wind, fire, and fallen trees. Normal wear and tear, age-related deterioration, and maintenance issues are usually not covered. Document damage promptly and file claims as soon as possible.',
+  },
+  {
+    question: 'What is emergency roof repair?',
+    answer: 'Emergency roof repair includes immediate services to prevent further damage, such as emergency tarping after storm damage, temporary leak repairs, securing loose materials, and board-up services. Many contractors offer 24/7 emergency response for urgent situations.',
+  },
+  {
+    question: 'How do I choose the right roofing contractor?',
+    answer: 'Look for: valid state licensing and insurance, positive local reviews and references, manufacturer certifications (GAF, Owens Corning), written warranties on labor and materials, detailed written estimates, and clear communication. Get at least 3 quotes and verify credentials before signing.',
+  },
+  {
+    question: 'What does a roofing warranty cover?',
+    answer: 'Roofing warranties typically include two components: manufacturer warranty covering material defects (25-50 years) and contractor workmanship warranty covering installation issues (2-25 years). Premium warranties may cover both. Always get warranty details in writing and understand exclusions.',
+  },
+];
 
 export const metadata: Metadata = {
   title: 'Roofing Services | Repair, Replacement & Storm Damage | Instant Roof Estimate',
@@ -66,6 +110,7 @@ export default function ServicesPage() {
   return (
     <>
       <BreadcrumbSchema items={breadcrumbs} />
+      <FAQSchema faqs={servicesFaqs} />
 
       <div className="min-h-screen bg-slate-50">
         {/* Header */}
@@ -131,6 +176,13 @@ export default function ServicesPage() {
             </div>
           </div>
         </section>
+
+        {/* FAQ Section */}
+        <FAQSection
+          faqs={servicesFaqs}
+          title="Roofing Services FAQs"
+          description="Common questions about professional roofing services and repairs."
+        />
 
         {/* CTA */}
         <section className="py-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white">

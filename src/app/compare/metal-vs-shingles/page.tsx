@@ -157,6 +157,22 @@ const faqs = [
     question: 'Which lasts longer in extreme weather?',
     answer: 'Metal outperforms in most extreme conditions. It\'s rated for 140+ mph winds vs ~70-130 for shingles. Metal is also fire-resistant (Class A) while shingles are not. In hail, impact-resistant options of both materials perform similarly.',
   },
+  {
+    question: 'Which is better for energy efficiency: metal or shingles?',
+    answer: 'Metal roofing is significantly more energy efficient. Metal reflects solar heat, reducing cooling costs by 10-25%. Asphalt shingles absorb heat, making your attic hotter. Cool metal roofing and reflective coatings maximize savings in hot climates.',
+  },
+  {
+    question: 'How do maintenance requirements compare?',
+    answer: 'Metal roofing requires minimal maintenance - occasional inspections and gutter cleaning. Asphalt shingles need more attention: checking for damaged/missing shingles, moss/algae treatment, and replacing weathered sections. Over time, shingle maintenance costs add up.',
+  },
+  {
+    question: 'Which is more environmentally friendly?',
+    answer: 'Metal roofing is more eco-friendly. It\'s 25-95% recycled content and 100% recyclable at end of life. Metal\'s long lifespan means fewer replacements. Asphalt shingles are petroleum-based, rarely recycled, and 20 billion pounds end up in landfills annually in the US.',
+  },
+  {
+    question: 'Do insurance companies prefer metal or shingles?',
+    answer: 'Many insurers offer discounts for metal roofing (up to 35%) due to fire resistance and wind ratings. Impact-resistant shingles (Class 4) also qualify for discounts in hail-prone areas. Metal\'s durability typically results in lower premiums. Check with your insurer for specific discounts.',
+  },
 ];
 
 function FAQSchema() {

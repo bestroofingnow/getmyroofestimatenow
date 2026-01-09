@@ -140,6 +140,22 @@ const faqs = [
     question: 'Can you put new shingles over old ones?',
     answer: 'Yes, in many cases. Installing over existing shingles (called a "re-roof") saves tear-off costs. However, most areas only allow one layer over the original, the existing roof must be in decent condition, and it may void some warranties. Full tear-off is recommended for best results.',
   },
+  {
+    question: 'What color asphalt shingles should I choose?',
+    answer: 'Choose colors that complement your home\'s exterior. Darker shingles (charcoal, black) hide stains and suit cooler climates. Lighter colors (tan, gray) reflect heat and are better for hot regions. Blend colors work well with most homes. Consider your neighborhood and HOA requirements.',
+  },
+  {
+    question: 'How do I prevent algae and moss on shingles?',
+    answer: 'Install algae-resistant shingles containing copper granules. Keep trees trimmed to reduce shade and debris. Clean gutters regularly. Zinc or copper strips at the ridge line release metal ions during rain that inhibit growth. For existing growth, use specialized roof cleaners.',
+  },
+  {
+    question: 'What warranty should I expect with asphalt shingles?',
+    answer: 'Premium architectural shingles offer lifetime limited warranties covering manufacturing defects. Look for workmanship coverage (typically 10-25 years) from your contractor. Enhanced warranties like GAF Golden Pledge or Owens Corning Platinum Protection offer additional coverage when installed by certified contractors.',
+  },
+  {
+    question: 'When is the best time to install asphalt shingles?',
+    answer: 'Ideal installation temperatures are between 45-85°F. Shingles installed in extreme cold may crack, while extreme heat makes them too pliable. Late spring and early fall are typically best. However, experienced contractors can work year-round with proper techniques.',
+  },
 ];
 
 function FAQSchema() {

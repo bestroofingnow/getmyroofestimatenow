@@ -120,6 +120,22 @@ const faqs = [
     question: 'Can I repair storm damage myself?',
     answer: 'For safety and insurance reasons, professional repair is recommended. DIY repairs can void warranties, lead to improper fixes that worsen damage, and may not be covered if problems persist. Insurance companies also prefer documented professional repairs.',
   },
+  {
+    question: 'What size hail causes roof damage?',
+    answer: 'Hail as small as 1 inch (quarter-sized) can damage asphalt shingles. Golf ball-sized hail (1.75 inches) typically causes significant damage. Larger hail can crack tiles, dent metal, and even penetrate roofing materials. Impact-resistant (Class 4) shingles withstand larger hailstones.',
+  },
+  {
+    question: 'How long does storm damage repair take?',
+    answer: 'Emergency tarping is typically same-day or next-day. Minor repairs take 1-2 days. Major repairs or partial replacement may take 3-5 days. Full roof replacement after storm damage typically takes 1-3 days once materials arrive. Insurance approval can add time to the process.',
+  },
+  {
+    question: 'What should I do while waiting for insurance adjuster?',
+    answer: 'Document all damage with photos and videos before any repairs. Make temporary repairs only to prevent further damage (tarping, boarding). Save damaged materials for the adjuster to examine. Keep all receipts for emergency repairs. Do not sign contracts until after the adjuster\'s assessment.',
+  },
+  {
+    question: 'Can I choose my own contractor for insurance repairs?',
+    answer: 'Yes, you have the right to choose your own licensed contractor regardless of what the insurance company suggests. Many insurance companies have preferred contractor programs, but participation is voluntary. Choose a contractor with storm damage experience and insurance claim expertise.',
+  },
 ];
 
 function FAQSchema() {

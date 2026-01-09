@@ -1,9 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, HelpCircle } from 'lucide-react';
 
-const faqs = [
+export interface FAQ {
+  question: string;
+  answer: string;
+}
+
+// Default FAQs for homepage
+const defaultFaqs: FAQ[] = [
   {
     question: 'How accurate is the instant roof estimate?',
     answer: 'Our estimates are based on satellite imagery and advanced AI analysis, typically achieving 90-95% accuracy for roof measurements. However, final pricing may vary based on factors only visible during an in-person inspection, such as roof condition, accessibility, and local material costs.',
@@ -44,92 +50,73 @@ const faqs = [
     question: 'Should I repair or replace my roof?',
     answer: 'Consider repair if damage is localized, your roof is under 15 years old, and less than 30% needs work. Choose replacement if damage is widespread, your roof is over 20 years old, you are experiencing frequent leaks, or repairs would cost more than 50% of replacement. Our free estimate helps you make an informed decision.',
   },
-  {
-    question: 'How long does roof replacement take?',
-    answer: 'Most residential roof replacements take 1-3 days, depending on roof size, complexity, weather conditions, and material type. A standard asphalt shingle roof on a single-family home typically takes 1-2 days. Larger homes or complex roof designs may take 3-5 days. Metal and tile roofs often require additional time.',
-  },
-  {
-    question: 'What is a roofing square?',
-    answer: 'A roofing square is a unit of measurement equal to 100 square feet of roof area. Contractors use squares to estimate materials and labor. For example, a 2,000 square foot roof equals 20 squares. This standardized measurement helps ensure accurate pricing across the roofing industry.',
-  },
-  {
-    question: 'What is the best roofing material for my home?',
-    answer: 'The best roofing material depends on your budget, climate, and aesthetic preferences. Asphalt shingles offer the best value and work well in most climates. Metal roofing excels in areas with extreme weather. Clay and concrete tiles suit hot, dry climates. Slate provides unmatched durability and elegance but at premium cost.',
-  },
-  {
-    question: 'Does homeowners insurance cover roof replacement?',
-    answer: 'Homeowners insurance typically covers roof replacement if damage is caused by covered perils like storms, hail, fire, or falling trees. Normal wear and tear, age-related deterioration, and lack of maintenance are usually not covered. Document any storm damage immediately and file claims promptly.',
-  },
-  {
-    question: 'When is the best time to replace a roof?',
-    answer: 'The best time to replace a roof is late spring through early fall when temperatures are between 45-85°F and rain is less likely. However, roofing can be done year-round in most climates. Scheduling during off-peak seasons (late winter or early spring) may result in better pricing and faster scheduling.',
-  },
-  {
-    question: 'How do I choose a reliable roofing contractor?',
-    answer: 'Choose a roofing contractor by verifying they are licensed, bonded, and insured in your state. Check online reviews and ask for references. Get multiple written estimates. Ensure they offer warranties on both materials and labor. Avoid contractors who demand large upfront payments or only accept cash.',
-  },
-  {
-    question: 'What is the difference between a roof estimate and a quote?',
-    answer: 'A roof estimate is an approximate cost based on available information, like our satellite-based instant estimate. A quote is a detailed, binding price after an in-person inspection. Estimates help you budget and compare options, while quotes lock in final pricing before work begins.',
-  },
-  {
-    question: 'What factors affect roof replacement cost?',
-    answer: 'Roof replacement cost is affected by: roof size and pitch (steeper roofs cost more), material choice, number of layers to remove, structural repairs needed, local labor rates, permit requirements, accessibility, and roof complexity (dormers, skylights, valleys). Our estimate considers these factors.',
-  },
-  {
-    question: 'Do I need a permit for roof replacement?',
-    answer: 'Most jurisdictions require a building permit for roof replacement. Permits ensure the work meets local building codes and safety standards. Your roofing contractor typically handles permit acquisition. Working without a permit can result in fines and complications when selling your home.',
-  },
-  {
-    question: 'How can I finance a new roof?',
-    answer: 'Roof financing options include: home equity loans or HELOCs (often lowest rates), personal loans, roofing company financing plans, credit cards (for smaller amounts), and FHA Title 1 loans. Some contractors offer 0% interest promotions. Compare rates and terms before deciding.',
-  },
-  {
-    question: 'What is included in a roof replacement?',
-    answer: 'A complete roof replacement typically includes: removal of old roofing materials, inspection and repair of decking, installation of underlayment and ice/water shield, new shingles or roofing material, flashing around penetrations, ridge vents or other ventilation, and cleanup with debris removal.',
-  },
 ];
 
-export function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+interface FAQSectionProps {
+  faqs?: FAQ[];
+  title?: string;
+  description?: string;
+  showIcon?: boolean;
+  bgColor?: string;
+}
+
+export function FAQSection({
+  faqs = defaultFaqs,
+  title = 'Frequently Asked Questions',
+  description = 'Everything you need to know about getting your free roof estimate',
+  showIcon = true,
+  bgColor = 'bg-white',
+}: FAQSectionProps) {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-20 bg-white">
+    <section className={`py-16 ${bgColor}`}>
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
+            {showIcon && (
+              <div className="inline-flex items-center gap-2 bg-blue-100 rounded-full px-4 py-2 mb-4">
+                <HelpCircle className="w-5 h-5 text-blue-600" />
+                <span className="text-sm font-medium text-blue-800">FAQ</span>
+              </div>
+            )}
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Frequently Asked Questions
+              {title}
             </h2>
-            <p className="text-xl text-slate-600">
-              Everything you need to know about getting your free roof estimate
-            </p>
+            {description && (
+              <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+                {description}
+              </p>
+            )}
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-3">
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="border border-slate-200 rounded-xl overflow-hidden"
+                className="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow"
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors"
+                  className="w-full flex items-center justify-between p-5 text-left hover:bg-slate-50 transition-colors"
+                  aria-expanded={openIndex === index}
                 >
-                  <span className="font-semibold text-slate-900 pr-4">
-                    {faq.question}
-                  </span>
+                  <span className="font-semibold text-slate-900 pr-4">{faq.question}</span>
                   <ChevronDown
-                    className={`w-5 h-5 text-slate-500 flex-shrink-0 transition-transform ${
+                    className={`w-5 h-5 text-slate-500 flex-shrink-0 transition-transform duration-200 ${
                       openIndex === index ? 'rotate-180' : ''
                     }`}
                   />
                 </button>
-                {openIndex === index && (
-                  <div className="px-6 pb-6">
-                    <p className="text-slate-600">{faq.answer}</p>
+                <div
+                  className={`overflow-hidden transition-all duration-200 ${
+                    openIndex === index ? 'max-h-[500px]' : 'max-h-0'
+                  }`}
+                >
+                  <div className="p-5 pt-0 text-slate-600 leading-relaxed border-t border-slate-100">
+                    {faq.answer}
                   </div>
-                )}
+                </div>
               </div>
             ))}
           </div>
@@ -139,4 +126,28 @@ export function FAQSection() {
   );
 }
 
-export const faqData = faqs;
+// FAQ Schema component for structured data (AEO optimization)
+export function FAQSchema({ faqs }: { faqs: FAQ[] }) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+// Export default FAQs for backward compatibility
+export const faqData = defaultFaqs;

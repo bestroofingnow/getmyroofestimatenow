@@ -5,7 +5,9 @@ import { notFound } from 'next/navigation';
 import { ArrowRight, MapPin, DollarSign, Shield, CheckCircle, FileText, AlertTriangle } from 'lucide-react';
 import { getStateBySlug, getAllStateSlugs, getCitiesInStateBySlug, StateData } from '@/lib/stateData';
 import { formatCurrency } from '@/lib/locations';
+import { generateStateFaqs } from '@/lib/stateFaqs';
 import { BreadcrumbSchema } from '@/components/StructuredData';
+import { FAQSection, FAQSchema } from '@/components/FAQSection';
 
 interface PageProps {
   params: Promise<{ state: string }>;
@@ -95,6 +97,7 @@ export default async function StatePage({ params }: PageProps) {
   }
 
   const cities = getCitiesInStateBySlug(state);
+  const stateFaqs = generateStateFaqs(stateInfo);
 
   const breadcrumbs = [
     { name: 'Home', url: 'https://instantroofestimate.ai' },
@@ -106,6 +109,7 @@ export default async function StatePage({ params }: PageProps) {
     <>
       <BreadcrumbSchema items={breadcrumbs} />
       <StateServiceSchema state={stateInfo} />
+      <FAQSchema faqs={stateFaqs} />
 
       <div className="min-h-screen bg-slate-50">
         {/* Header */}
@@ -350,6 +354,14 @@ export default async function StatePage({ params }: PageProps) {
             </div>
           </div>
         </section>
+
+        {/* FAQ Section */}
+        <FAQSection
+          faqs={stateFaqs}
+          title={`${stateInfo.name} Roofing FAQs`}
+          description={`Common questions about roof replacement and roofing contractors in ${stateInfo.name}.`}
+          bgColor="bg-slate-50"
+        />
 
         {/* CTA */}
         <section className="py-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
