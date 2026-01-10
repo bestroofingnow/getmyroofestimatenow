@@ -54,18 +54,30 @@ Allow: /
 User-agent: Baiduspider
 Allow: /
 
-# Block AI training crawlers (optional - remove if you want AI indexing)
+# Allow AI search crawlers for discoverability
 User-agent: GPTBot
-Disallow: /
+Allow: /
+Disallow: /api/
+Disallow: /calculating
+Disallow: /estimate/results
 
 User-agent: ChatGPT-User
-Disallow: /
+Allow: /
 
 User-agent: CCBot
-Disallow: /
+Allow: /
 
 User-agent: anthropic-ai
-Disallow: /
+Allow: /
 
 User-agent: Claude-Web
-Disallow: /
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /

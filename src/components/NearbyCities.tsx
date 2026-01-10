@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { MapPin, ArrowRight } from 'lucide-react';
 import { LocationData, formatCurrency } from '@/lib/locations';
+import { getStateSlugByAbbr } from '@/lib/stateData';
 
 interface NearbyCitiesProps {
   cities: LocationData[];
@@ -25,32 +26,35 @@ export function NearbyCities({ cities, currentCity, currentState }: NearbyCities
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {cities.map((city) => (
-              <Link
-                key={city.slug}
-                href={`/roof-estimate/${city.slug}`}
-                className="group bg-white rounded-xl p-5 shadow-sm hover:shadow-md border border-slate-200 hover:border-blue-300 transition-all"
-              >
-                <div className="flex items-start justify-between mb-3">
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-blue-600" />
-                    <span className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">
-                      {city.city}, {city.stateAbbr}
-                    </span>
+            {cities.map((city) => {
+              const stateSlug = getStateSlugByAbbr(city.stateAbbr);
+              return (
+                <Link
+                  key={city.slug}
+                  href={`/roof-estimate/state/${stateSlug}/${city.slug}`}
+                  className="group bg-white rounded-xl p-5 shadow-sm hover:shadow-md border border-slate-200 hover:border-blue-300 transition-all"
+                >
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4 text-blue-600" />
+                      <span className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">
+                        {city.city}, {city.stateAbbr}
+                      </span>
+                    </div>
+                    <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition-colors" />
                   </div>
-                  <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition-colors" />
-                </div>
-                <div className="text-sm text-slate-600 mb-2">
-                  Average roof cost:
-                </div>
-                <div className="text-lg font-bold text-slate-900">
-                  {formatCurrency(city.avgRoofCost.low)} - {formatCurrency(city.avgRoofCost.high)}
-                </div>
-                <div className="text-xs text-slate-500 mt-2">
-                  {city.region}
-                </div>
-              </Link>
-            ))}
+                  <div className="text-sm text-slate-600 mb-2">
+                    Average roof cost:
+                  </div>
+                  <div className="text-lg font-bold text-slate-900">
+                    {formatCurrency(city.avgRoofCost.low)} - {formatCurrency(city.avgRoofCost.high)}
+                  </div>
+                  <div className="text-xs text-slate-500 mt-2">
+                    {city.region}
+                  </div>
+                </Link>
+              );
+            })}
           </div>
 
           <div className="text-center mt-8">
@@ -79,17 +83,20 @@ export function NearbyCitiesCompact({ cities, currentCity }: { cities: LocationD
         Nearby Cities
       </h3>
       <ul className="space-y-2">
-        {cities.slice(0, 5).map((city) => (
-          <li key={city.slug}>
-            <Link
-              href={`/roof-estimate/${city.slug}`}
-              className="flex items-center justify-between text-sm text-slate-600 hover:text-blue-600 transition-colors py-1"
-            >
-              <span>{city.city}, {city.stateAbbr}</span>
-              <ArrowRight className="w-3 h-3" />
-            </Link>
-          </li>
-        ))}
+        {cities.slice(0, 5).map((city) => {
+          const stateSlug = getStateSlugByAbbr(city.stateAbbr);
+          return (
+            <li key={city.slug}>
+              <Link
+                href={`/roof-estimate/state/${stateSlug}/${city.slug}`}
+                className="flex items-center justify-between text-sm text-slate-600 hover:text-blue-600 transition-colors py-1"
+              >
+                <span>{city.city}, {city.stateAbbr}</span>
+                <ArrowRight className="w-3 h-3" />
+              </Link>
+            </li>
+          );
+        })}
       </ul>
       <Link
         href="/roof-estimate"

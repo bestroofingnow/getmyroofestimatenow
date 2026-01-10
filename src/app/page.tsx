@@ -45,7 +45,7 @@ export default function HomePage() {
   };
 
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 text-white overflow-hidden">
         {/* Background pattern */}
@@ -56,12 +56,12 @@ export default function HomePage() {
         </div>
 
         {/* Header/Nav */}
-        <header className="relative z-20 container mx-auto px-4 py-4">
+        <header role="banner" className="relative z-20 container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <Image
                 src="/logo.png"
-                alt="Instant Roof Estimate"
+                alt=""
                 width={56}
                 height={56}
                 className="w-14 h-14"
@@ -85,20 +85,20 @@ export default function HomePage() {
           <div className="max-w-4xl mx-auto text-center">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 rounded-full px-4 py-2 mb-6">
-              <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-              <span className="text-sm font-medium text-blue-100">Trusted Measurements Used by Millions through Google Services</span>
+              <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" aria-hidden="true" />
+              <span className="text-sm font-medium text-blue-100">Millions of people trust our roof measurements</span>
             </div>
 
             {/* Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Get Your Free Instant
+              Get Your Free
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400"> Roof Estimate </span>
               in 60 Seconds
             </h1>
 
             {/* Subheadline */}
             <p className="text-xl md:text-2xl text-slate-300 mb-10 max-w-2xl mx-auto">
-              Using satellite imagery, we calculate your roof size and provide an accurate estimate — no climbing ladders required.
+              We measure your roof from space photos. Get your price fast. No one needs to climb on your roof.
             </p>
 
             {/* Address Input */}
@@ -112,16 +112,16 @@ export default function HomePage() {
             {/* Trust Indicators */}
             <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-400">
               <div className="flex items-center gap-2">
-                <Shield className="w-5 h-5 text-green-400" />
-                <span>No Credit Card Required</span>
+                <Shield className="w-5 h-5 text-green-400" aria-hidden="true" />
+                <span>No Credit Card Needed</span>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="w-5 h-5 text-blue-400" />
+                <Clock className="w-5 h-5 text-blue-400" aria-hidden="true" />
                 <span>Results in 60 Seconds</span>
               </div>
               <div className="flex items-center gap-2">
-                <DollarSign className="w-5 h-5 text-yellow-400" />
-                <span>100% Free Estimate</span>
+                <DollarSign className="w-5 h-5 text-yellow-400" aria-hidden="true" />
+                <span>100% Free</span>
               </div>
             </div>
           </div>
@@ -129,21 +129,21 @@ export default function HomePage() {
 
         {/* Wave Divider */}
         <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
           </svg>
         </div>
       </section>
 
       {/* How It Works Section */}
-      <section className="py-20 bg-white">
+      <section aria-labelledby="how-it-works-heading" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            <h2 id="how-it-works-heading" className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               How It Works
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Get your accurate roof estimate in three simple steps
+              Get your roof price in three easy steps
             </p>
           </div>
 
@@ -151,36 +151,36 @@ export default function HomePage() {
             {/* Step 1 */}
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">📍</span>
+                <span className="text-3xl" aria-hidden="true">📍</span>
               </div>
               <div className="text-blue-600 font-semibold text-sm mb-2">STEP 1</div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Enter Your Address</h3>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Type Your Address</h3>
               <p className="text-slate-600">
-                Simply type in your home address and our system will locate your property using satellite imagery.
+                Enter your home address. We find your house using satellite photos from space.
               </p>
             </div>
 
             {/* Step 2 */}
             <div className="text-center">
               <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">🛰️</span>
+                <span className="text-3xl" aria-hidden="true">🛰️</span>
               </div>
               <div className="text-green-600 font-semibold text-sm mb-2">STEP 2</div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">We Analyze Your Roof</h3>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">We Measure Your Roof</h3>
               <p className="text-slate-600">
-                Our AI technology measures your roof dimensions, pitch, and complexity from satellite data.
+                Smart tools look at your roof from above. They figure out the size and shape.
               </p>
             </div>
 
             {/* Step 3 */}
             <div className="text-center">
               <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">💰</span>
+                <span className="text-3xl" aria-hidden="true">💰</span>
               </div>
               <div className="text-orange-600 font-semibold text-sm mb-2">STEP 3</div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Get Your Estimate</h3>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Get Your Price</h3>
               <p className="text-slate-600">
-                Receive an instant, accurate estimate for your roof replacement. A specialist will follow up with details.
+                See your roof cost right away. A roofer near you can tell you more.
               </p>
             </div>
           </div>
@@ -188,25 +188,25 @@ export default function HomePage() {
       </section>
 
       {/* Trust Section */}
-      <section className="py-20 bg-slate-50">
+      <section aria-labelledby="trust-heading" className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Why Homeowners Trust Us
+              <h2 id="trust-heading" className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Why People Trust Us
               </h2>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
               {[
-                { icon: CheckCircle, title: "Accurate Measurements", desc: "Using advanced satellite imagery for precise roof dimensions" },
-                { icon: Shield, title: "Licensed Contractors", desc: "We connect you with verified, insured roofing professionals" },
-                { icon: Clock, title: "Fast Results", desc: "Get your estimate in 60 seconds, not days of waiting" },
-                { icon: DollarSign, title: "No Hidden Costs", desc: "Free estimates with transparent, competitive pricing" },
+                { icon: CheckCircle, title: "Right Measurements", desc: "We use satellite photos to measure your roof the right way" },
+                { icon: Shield, title: "Good Roofers", desc: "We connect you with roofers who have licenses and insurance" },
+                { icon: Clock, title: "Fast Results", desc: "Get your price in 60 seconds. No waiting for days" },
+                { icon: DollarSign, title: "No Hidden Costs", desc: "Free estimates. We show you clear, fair prices" },
               ].map((item, i) => (
                 <div key={i} className="flex gap-4 bg-white rounded-xl p-6 shadow-sm">
                   <div className="flex-shrink-0">
-                    <item.icon className="w-8 h-8 text-blue-600" />
+                    <item.icon className="w-8 h-8 text-blue-600" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-900 mb-1">{item.title}</h3>
@@ -227,13 +227,13 @@ export default function HomePage() {
       <FAQSchema faqs={faqData} />
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-700">
+      <section aria-labelledby="cta-heading" className="py-20 bg-gradient-to-r from-blue-600 to-blue-700">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 id="cta-heading" className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to Get Your Estimate?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of homeowners who have already received their free instant roof estimate.
+            Thousands of homeowners already got their free roof estimate. Get yours now.
           </p>
           <a
             href="#top"
@@ -249,29 +249,29 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-900 text-slate-400 py-12">
+      <footer role="contentinfo" className="bg-slate-900 text-slate-400 py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-4 text-center md:text-left">
               <Image
                 src="/logo.png"
-                alt="Instant Roof Estimate"
+                alt=""
                 width={56}
                 height={56}
                 className="w-14 h-14"
               />
               <div>
                 <div className="text-xl font-bold text-white mb-1">InstantRoofEstimate.ai</div>
-                <p className="text-sm">Get accurate roof estimates in seconds.</p>
+                <p className="text-sm">Get roof prices in seconds.</p>
               </div>
             </div>
-            <div className="flex flex-wrap gap-4 text-sm">
+            <nav aria-label="Footer navigation" className="flex flex-wrap gap-4 text-sm">
               <a href="/roof-estimate" className="hover:text-white transition-colors">All Locations</a>
               <a href="/roof-cost-calculator" className="hover:text-white transition-colors">Cost Calculator</a>
               <a href="/blog" className="hover:text-white transition-colors">Blog</a>
               <a href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a>
               <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
-            </div>
+            </nav>
           </div>
 
           {/* State Links */}
@@ -297,7 +297,7 @@ export default function HomePage() {
             </div>
             <div className="text-center">
               <a href="/roof-estimate" className="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 text-sm font-medium">
-                View all locations <ArrowRight className="w-4 h-4" />
+                View all locations <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </a>
             </div>
           </div>
@@ -306,22 +306,22 @@ export default function HomePage() {
           <div className="border-t border-slate-800 mt-8 pt-8">
             <h3 className="text-white font-semibold text-center mb-4">Top Cities</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 text-sm text-center">
-              <a href="/roof-estimate/charlotte-nc" className="hover:text-white transition-colors">Charlotte, NC</a>
-              <a href="/roof-estimate/houston-tx" className="hover:text-white transition-colors">Houston, TX</a>
-              <a href="/roof-estimate/dallas-tx" className="hover:text-white transition-colors">Dallas, TX</a>
-              <a href="/roof-estimate/phoenix-az" className="hover:text-white transition-colors">Phoenix, AZ</a>
-              <a href="/roof-estimate/los-angeles-ca" className="hover:text-white transition-colors">Los Angeles, CA</a>
-              <a href="/roof-estimate/san-diego-ca" className="hover:text-white transition-colors">San Diego, CA</a>
-              <a href="/roof-estimate/denver-co" className="hover:text-white transition-colors">Denver, CO</a>
-              <a href="/roof-estimate/miami-fl" className="hover:text-white transition-colors">Miami, FL</a>
-              <a href="/roof-estimate/tampa-fl" className="hover:text-white transition-colors">Tampa, FL</a>
-              <a href="/roof-estimate/orlando-fl" className="hover:text-white transition-colors">Orlando, FL</a>
-              <a href="/roof-estimate/atlanta-ga" className="hover:text-white transition-colors">Atlanta, GA</a>
-              <a href="/roof-estimate/chicago-il" className="hover:text-white transition-colors">Chicago, IL</a>
-              <a href="/roof-estimate/las-vegas-nv" className="hover:text-white transition-colors">Las Vegas, NV</a>
-              <a href="/roof-estimate/seattle-wa" className="hover:text-white transition-colors">Seattle, WA</a>
-              <a href="/roof-estimate/nashville-tn" className="hover:text-white transition-colors">Nashville, TN</a>
-              <a href="/roof-estimate/philadelphia-pa" className="hover:text-white transition-colors">Philadelphia, PA</a>
+              <a href="/roof-estimate/state/north-carolina/charlotte-nc" className="hover:text-white transition-colors">Charlotte, NC</a>
+              <a href="/roof-estimate/state/texas/houston-tx" className="hover:text-white transition-colors">Houston, TX</a>
+              <a href="/roof-estimate/state/texas/dallas-tx" className="hover:text-white transition-colors">Dallas, TX</a>
+              <a href="/roof-estimate/state/arizona/phoenix-az" className="hover:text-white transition-colors">Phoenix, AZ</a>
+              <a href="/roof-estimate/state/california/los-angeles-ca" className="hover:text-white transition-colors">Los Angeles, CA</a>
+              <a href="/roof-estimate/state/california/san-diego-ca" className="hover:text-white transition-colors">San Diego, CA</a>
+              <a href="/roof-estimate/state/colorado/denver-co" className="hover:text-white transition-colors">Denver, CO</a>
+              <a href="/roof-estimate/state/florida/miami-fl" className="hover:text-white transition-colors">Miami, FL</a>
+              <a href="/roof-estimate/state/florida/tampa-fl" className="hover:text-white transition-colors">Tampa, FL</a>
+              <a href="/roof-estimate/state/florida/orlando-fl" className="hover:text-white transition-colors">Orlando, FL</a>
+              <a href="/roof-estimate/state/georgia/atlanta-ga" className="hover:text-white transition-colors">Atlanta, GA</a>
+              <a href="/roof-estimate/state/illinois/chicago-il" className="hover:text-white transition-colors">Chicago, IL</a>
+              <a href="/roof-estimate/state/nevada/las-vegas-nv" className="hover:text-white transition-colors">Las Vegas, NV</a>
+              <a href="/roof-estimate/state/washington/seattle-wa" className="hover:text-white transition-colors">Seattle, WA</a>
+              <a href="/roof-estimate/state/tennessee/nashville-tn" className="hover:text-white transition-colors">Nashville, TN</a>
+              <a href="/roof-estimate/state/pennsylvania/philadelphia-pa" className="hover:text-white transition-colors">Philadelphia, PA</a>
             </div>
           </div>
 

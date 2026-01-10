@@ -199,7 +199,7 @@ export default async function StatePage({ params }: PageProps) {
                 {cities.map((city) => (
                   <Link
                     key={city.slug}
-                    href={`/roof-estimate/${city.slug}`}
+                    href={`/roof-estimate/state/${state}/${city.slug}`}
                     className="group bg-white rounded-xl p-5 shadow-sm hover:shadow-md border border-slate-200 hover:border-blue-300 transition-all"
                   >
                     <div className="flex items-center justify-between mb-2">

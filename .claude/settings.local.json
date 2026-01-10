@@ -12,7 +12,9 @@
       "Bash(git restore:*)",
       "Bash(cat:*)",
       "Bash(wc:*)",
-      "Bash(sort:*)"
+      "Bash(sort:*)",
+      "Bash(ls:*)",
+      "Bash(tree:*)"
     ]
   }
 }

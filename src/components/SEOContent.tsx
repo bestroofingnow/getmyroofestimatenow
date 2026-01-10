@@ -45,499 +45,497 @@ export function SEOContent() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Complete Guide to Getting a Roof Estimate
+              Your Guide to Roof Estimates
             </h2>
             <p className="text-xl text-slate-600">
-              Everything you need to know about roof replacement costs, estimates, and finding the right contractor
+              Learn about roof costs, how to get estimates, and how to find a good roofer
             </p>
           </div>
 
           <div className="bg-slate-50 rounded-2xl p-6 md:p-8">
             <ExpandableSection title="How Much Does a New Roof Cost in 2025?" defaultOpen={true}>
               <p>
-                The cost of a new roof in 2025 varies significantly based on several factors, but most homeowners can expect to pay between <strong>$8,000 and $25,000</strong> for a complete roof replacement. The national average cost sits around $12,000 to $15,000 for a typical single-family home with an asphalt shingle roof.
+                <strong>A new roof costs $8,000 to $25,000 for most homes.</strong> The average price is $12,000 to $15,000. This is for a regular house with shingle roofing.
               </p>
               <p>
-                Understanding what goes into roof replacement cost helps you budget appropriately and recognize fair pricing when getting quotes. The primary factors affecting your final price include:
+                Knowing what affects the price helps you plan. Here is what changes your cost:
               </p>
-              <h4>Roof Size and Square Footage</h4>
+              <h4>Roof Size</h4>
               <p>
-                Roofing contractors measure roofs in "squares" – one roofing square equals 100 square feet. A typical home has between 15 to 30 squares of roofing area. The larger your roof, the more materials and labor required, directly increasing your total cost. Our free instant roof estimate uses satellite imagery to accurately calculate your roof's square footage without anyone needing to climb on your roof.
+                Roofers measure roofs in "squares." One square equals 100 square feet. Most homes have 15 to 30 squares. Bigger roofs cost more because they need more materials and work.
               </p>
-              <h4>Roofing Materials</h4>
               <p>
-                Material choice is the second-largest factor in roof replacement cost. Here's what you can expect to pay per square foot installed:
+                Our free tool measures your roof from satellite photos. No one needs to climb on your roof.
+              </p>
+              <h4>Roof Materials</h4>
+              <p>
+                What your roof is made of changes the price a lot. Here is what each type costs:
               </p>
               <ul>
-                <li><strong>3-Tab Asphalt Shingles:</strong> $3 - $5 per sq ft (most affordable, 15-20 year lifespan)</li>
-                <li><strong>Architectural Shingles:</strong> $4 - $7 per sq ft (most popular choice, 25-30 year lifespan)</li>
-                <li><strong>Metal Roofing:</strong> $8 - $16 per sq ft (premium durability, 40-70 year lifespan)</li>
-                <li><strong>Tile Roofing:</strong> $10 - $20 per sq ft (luxury option, 50-100 year lifespan)</li>
-                <li><strong>Slate Roofing:</strong> $15 - $30 per sq ft (ultimate luxury, 75-150+ year lifespan)</li>
+                <li><strong>Basic Shingles:</strong> $3-$5 per sq ft (cheapest, lasts 15-20 years)</li>
+                <li><strong>Nice Shingles:</strong> $4-$7 per sq ft (most popular, lasts 25-30 years)</li>
+                <li><strong>Metal Roofing:</strong> $8-$16 per sq ft (very strong, lasts 40-70 years)</li>
+                <li><strong>Tile Roofing:</strong> $10-$20 per sq ft (fancy, lasts 50-100 years)</li>
+                <li><strong>Slate Roofing:</strong> $15-$30 per sq ft (top quality, lasts 75-150+ years)</li>
               </ul>
-              <h4>Roof Complexity and Pitch</h4>
+              <h4>Roof Shape</h4>
               <p>
-                A steep roof pitch requires more safety equipment, takes longer to install, and uses more materials due to the increased surface area. Complex roofs with multiple valleys, dormers, skylights, and chimneys also add significant labor costs. A simple gable roof with a moderate pitch costs less to replace than a multi-faceted roof with steep angles.
+                Steep roofs cost more. They need special safety gear and take longer to do. Simple flat roofs cost less than roofs with many angles and peaks.
               </p>
-              <h4>Geographic Location</h4>
+              <h4>Where You Live</h4>
               <p>
-                Labor rates and material costs vary by region. Metropolitan areas typically have higher labor costs than rural areas. States prone to severe weather may have higher prices due to increased demand. Our instant roof estimate takes your location into account when calculating your personalized quote.
+                Prices change by area. Big cities usually cost more than small towns. Places with lots of storms may have higher prices. Our tool uses your location to give you the right price.
               </p>
-              <h4>Removal of Existing Roof</h4>
+              <h4>Taking Off the Old Roof</h4>
               <p>
-                Most roof replacements require tearing off the old roofing material before installation. Tear-off costs add $1 to $3 per square foot to your total. Some contractors may offer to install over existing shingles, which saves money but isn't always recommended or code-compliant.
+                Most jobs need to remove the old roof first. This adds $1 to $3 per square foot. Some roofers will put new shingles over old ones to save money. But this does not always follow the rules.
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="What Is a Roof Estimate and Why Do You Need One?">
+            <ExpandableSection title="What Is a Roof Estimate?">
               <p>
-                A <strong>roof estimate</strong> is a professional assessment of how much it will cost to repair or replace your roof. Getting an accurate roof estimate is the critical first step in any roofing project. Without knowing what to expect, you could end up overpaying or being caught off guard by unexpected costs.
+                <strong>A roof estimate tells you how much it will cost</strong> to fix or replace your roof. Getting a good estimate is the first step. Without one, you might pay too much or get surprised by costs.
               </p>
-              <h4>Types of Roof Estimates</h4>
+              <h4>Ways to Get a Roof Estimate</h4>
               <p>
-                There are several ways to get a roof estimate, each with its own advantages:
-              </p>
-              <p>
-                <strong>Instant Online Roof Estimates:</strong> Using satellite imagery and AI technology, services like ours provide an instant roof estimate in about 60 seconds. This gives you a reliable ballpark figure without waiting for contractor appointments. It's perfect for initial budgeting and comparing options.
+                <strong>Online Estimates (Like Ours):</strong> Type your address. We use satellite photos and smart tools to measure your roof. You get a price in about 60 seconds. This is great for planning your budget.
               </p>
               <p>
-                <strong>In-Person Contractor Estimates:</strong> A roofing contractor visits your home, inspects the roof, and provides a detailed written quote. This is more accurate than online estimates because the contractor can see roof conditions not visible from satellite images, but it requires scheduling and typically takes several days.
+                <strong>In-Person Estimates:</strong> A roofer comes to your home. They look at your roof and give you a price. This takes longer but can be more exact. The roofer can see things that satellites cannot.
               </p>
               <p>
-                <strong>Insurance Adjuster Estimates:</strong> If you're filing an insurance claim for storm damage, your insurance company will send an adjuster to assess damage and provide a repair or replacement estimate. This determines your coverage amount.
+                <strong>Insurance Estimates:</strong> If a storm damaged your roof, your insurance company sends someone to look. They decide how much the insurance will pay.
               </p>
-              <h4>Why Get Multiple Roof Estimates?</h4>
+              <h4>Why Get More Than One Estimate?</h4>
               <p>
-                Experts recommend getting at least three roof estimates before choosing a contractor. This helps you:
+                Experts say to get at least three estimates. This helps you:
               </p>
               <ul>
-                <li>Understand fair market pricing for your area</li>
-                <li>Compare materials, warranties, and workmanship guarantees</li>
-                <li>Identify contractors who might be overcharging</li>
-                <li>Find the best value for your budget</li>
-                <li>Spot red flags (extremely low prices often indicate corners will be cut)</li>
+                <li>Know what is a fair price in your area</li>
+                <li>Compare materials and promises from different roofers</li>
+                <li>Spot roofers who charge too much</li>
+                <li>Find the best deal for your money</li>
+                <li>Watch out for prices that are way too low (they might cut corners)</li>
               </ul>
               <p>
-                Our free instant roof estimate gives you a head start by providing an accurate baseline price. You can then use this information when meeting with contractors to ensure their quotes are in the right range.
+                Our free estimate gives you a starting point. Use it when you talk to roofers to make sure their prices are fair.
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="Signs You Need a New Roof: When to Get a Roof Quote">
+            <ExpandableSection title="Signs You Need a New Roof">
               <p>
-                Knowing when to get a roof quote can save you thousands of dollars by addressing problems before they cause interior damage. Here are the key signs that indicate it's time to consider roof replacement:
+                Knowing when you need a new roof saves money. Fix problems before they damage the inside of your home. Here is what to watch for:
               </p>
-              <h4>Age of Your Current Roof</h4>
+              <h4>How Old Is Your Roof?</h4>
               <p>
-                Most asphalt shingle roofs last 20-30 years, depending on quality and maintenance. If your roof is approaching or past its expected lifespan, it's wise to get a roof estimate even if you don't see obvious damage. Proactive replacement before leaks occur protects your home's interior and can qualify you for better insurance rates.
+                Most shingle roofs last 20-30 years. If yours is getting close to that age, get an estimate. Even if it looks okay, it might be time. A new roof before leaks start protects your home better.
               </p>
-              <h4>Visible Shingle Damage</h4>
+              <h4>What to Look For Outside</h4>
               <p>
-                Walk around your home and look for these warning signs:
-              </p>
-              <ul>
-                <li><strong>Curling shingles:</strong> Edges curling up or cupping indicate age and weathering</li>
-                <li><strong>Missing shingles:</strong> Gaps in coverage leave your roof deck exposed to water damage</li>
-                <li><strong>Cracked or broken shingles:</strong> Brittle shingles can no longer protect effectively</li>
-                <li><strong>Granule loss:</strong> Check your gutters for granules – excessive granules indicate aging shingles</li>
-                <li><strong>Moss or algae growth:</strong> While not always serious, heavy growth can trap moisture</li>
-              </ul>
-              <h4>Interior Warning Signs</h4>
-              <p>
-                Sometimes roof problems show up inside your home first:
+                Walk around your home and check for:
               </p>
               <ul>
-                <li><strong>Water stains on ceilings:</strong> Brown spots indicate water intrusion</li>
-                <li><strong>Light visible through roof boards:</strong> Check your attic during the day</li>
-                <li><strong>Sagging roof deck:</strong> Visible dips or sags from inside the attic</li>
-                <li><strong>Increased energy bills:</strong> Poor roof insulation or ventilation affects efficiency</li>
-                <li><strong>Mold or mildew smell:</strong> Especially in the attic, indicates moisture problems</li>
+                <li><strong>Curling shingles:</strong> Edges curling up means they are old</li>
+                <li><strong>Missing shingles:</strong> Gaps let water get in</li>
+                <li><strong>Cracked shingles:</strong> Brittle shingles cannot protect your home</li>
+                <li><strong>Gritty bits in gutters:</strong> Shingles losing their coating are wearing out</li>
+                <li><strong>Moss or green stuff:</strong> Heavy growth can trap water</li>
               </ul>
-              <h4>Storm Damage</h4>
+              <h4>What to Look For Inside</h4>
               <p>
-                After severe weather, always inspect your roof for damage. Hail can bruise shingles, high winds can lift or tear them, and falling branches cause obvious damage. File insurance claims promptly – most policies have time limits for reporting damage. Our instant roof estimate can help you understand replacement costs before meeting with your insurance adjuster.
+                Sometimes you see problems inside first:
+              </p>
+              <ul>
+                <li><strong>Brown spots on ceilings:</strong> Water is getting in</li>
+                <li><strong>Light in your attic:</strong> If you see daylight through the roof, that is bad</li>
+                <li><strong>Sagging areas:</strong> Dips in your roof are a warning sign</li>
+                <li><strong>High energy bills:</strong> A bad roof lets heat escape</li>
+                <li><strong>Mold smell:</strong> Especially in the attic, this means water problems</li>
+              </ul>
+              <h4>After Storms</h4>
+              <p>
+                Always check your roof after big storms. Hail can hurt shingles. Wind can pull them off. Branches can cause damage you can see. Tell your insurance company fast. Most have a time limit for claims.
               </p>
             </ExpandableSection>
 
             <ExpandableSection title="How to Get a Free Roof Estimate Online">
               <p>
-                Getting a free roof estimate online has never been easier. Modern technology allows you to receive accurate roof replacement quotes without scheduling contractor visits or climbing on your roof. Here's how our instant roof estimate process works:
+                Getting a free estimate online is easy. You can get a price without anyone coming to your house. Here is how our tool works:
               </p>
-              <h4>Step 1: Enter Your Address</h4>
+              <h4>Step 1: Type Your Address</h4>
               <p>
-                Simply type your home address into our search bar. Our system uses Google's address autocomplete to ensure we locate the correct property. No account creation, credit card, or personal information is required to get started.
+                Put your home address in our search box. We use Google to find your property. You do not need an account. You do not need a credit card.
               </p>
-              <h4>Step 2: Satellite Roof Measurement</h4>
+              <h4>Step 2: We Measure Your Roof</h4>
               <p>
-                Our advanced AI technology analyzes high-resolution satellite imagery of your home to calculate:
-              </p>
-              <ul>
-                <li>Total roof square footage</li>
-                <li>Estimated roof pitch (slope)</li>
-                <li>Roof complexity factors</li>
-                <li>Number of roof facets and features</li>
-              </ul>
-              <p>
-                This same satellite measurement technology is used by millions through Google Services and insurance companies, ensuring 90-95% accuracy for most residential properties.
-              </p>
-              <h4>Step 3: Receive Your Estimate</h4>
-              <p>
-                Within 60 seconds, you'll receive a detailed roof estimate including:
+                Our smart tools look at satellite photos of your home. We figure out:
               </p>
               <ul>
-                <li>Low, mid, and high price ranges based on material quality</li>
-                <li>Estimated roof size in square feet</li>
-                <li>Cost breakdown by material type</li>
-                <li>Local market pricing considerations</li>
+                <li>How big your roof is</li>
+                <li>How steep it is</li>
+                <li>How complex the shape is</li>
+                <li>How many sections it has</li>
               </ul>
-              <h4>Step 4: Connect with Contractors (Optional)</h4>
               <p>
-                After receiving your estimate, you can optionally connect with licensed, insured roofing contractors in your area. A roofing specialist will reach out to answer questions and provide a more detailed, binding quote based on an in-person inspection. There's no obligation to proceed.
+                Insurance companies use the same kind of satellite tools. Our measurements are 90-95% accurate for most homes.
+              </p>
+              <h4>Step 3: Get Your Price</h4>
+              <p>
+                In about 60 seconds, you see:
+              </p>
+              <ul>
+                <li>Low, middle, and high prices</li>
+                <li>Your roof size in square feet</li>
+                <li>What different materials cost</li>
+                <li>Prices for your area</li>
+              </ul>
+              <h4>Step 4: Talk to a Roofer (If You Want)</h4>
+              <p>
+                After you get your estimate, you can talk to a roofer near you. They can answer questions and come look at your roof in person. You do not have to say yes to anything.
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="Roof Replacement vs. Roof Repair: Which Do You Need?">
+            <ExpandableSection title="Should You Repair or Replace Your Roof?">
               <p>
-                Not every roof problem requires complete replacement. Understanding when repair makes sense versus when replacement is the better investment can save you significant money. Here's how to decide:
+                Not every roof problem needs a whole new roof. Sometimes a repair is enough. Here is how to decide:
               </p>
-              <h4>When Roof Repair Makes Sense</h4>
+              <h4>When to Repair</h4>
               <p>
-                Roof repair is typically the right choice when:
-              </p>
-              <ul>
-                <li><strong>Damage is localized:</strong> A few missing or damaged shingles in one area</li>
-                <li><strong>Your roof is under 15 years old:</strong> Younger roofs have more life left</li>
-                <li><strong>Less than 30% of the roof is affected:</strong> Small problem areas don't warrant full replacement</li>
-                <li><strong>No structural issues:</strong> The roof deck and supports are sound</li>
-                <li><strong>Repair costs are under 50% of replacement:</strong> Beyond this point, replacement often makes more financial sense</li>
-              </ul>
-              <h4>When Roof Replacement Is Better</h4>
-              <p>
-                Consider full roof replacement when:
+                A repair is a good choice when:
               </p>
               <ul>
-                <li><strong>Your roof is 20+ years old:</strong> Near or past expected lifespan</li>
-                <li><strong>Damage is widespread:</strong> Multiple areas showing wear or damage</li>
-                <li><strong>Recurring leaks:</strong> Patching isn't solving the problem</li>
-                <li><strong>Structural issues:</strong> Sagging, rotted decking, or compromised supports</li>
-                <li><strong>You're selling your home:</strong> A new roof adds value and attracts buyers</li>
-                <li><strong>Insurance requirements:</strong> Some insurers require roof replacement after a certain age</li>
+                <li><strong>Small damage area:</strong> Just a few shingles are missing or hurt</li>
+                <li><strong>Roof is under 15 years old:</strong> It still has many good years left</li>
+                <li><strong>Less than 30% needs work:</strong> Most of the roof is fine</li>
+                <li><strong>No big problems:</strong> The wood under the shingles is solid</li>
+                <li><strong>Repair costs less than half a new roof:</strong> If it costs more, a new roof makes sense</li>
               </ul>
-              <h4>The Math on Repair vs. Replace</h4>
+              <h4>When to Replace</h4>
               <p>
-                Consider this example: If your 18-year-old asphalt shingle roof needs $4,000 in repairs, but a full replacement costs $12,000, the repair might seem like the obvious choice. However, if the roof has only 5-7 years of life left anyway, you'll likely spend that $4,000 and still need to replace within a decade. The $12,000 replacement gives you 25-30 years of protection – often the better long-term value.
+                A new roof is better when:
+              </p>
+              <ul>
+                <li><strong>Roof is over 20 years old:</strong> It is near the end of its life</li>
+                <li><strong>Damage is everywhere:</strong> Many spots are worn or hurt</li>
+                <li><strong>Leaks keep coming back:</strong> Patches are not fixing the problem</li>
+                <li><strong>Wood is rotting:</strong> The structure has problems</li>
+                <li><strong>You are selling your home:</strong> A new roof helps sell faster</li>
+                <li><strong>Insurance says so:</strong> Some companies need new roofs after a certain age</li>
+              </ul>
+              <h4>Think About the Long Run</h4>
+              <p>
+                Here is an example. Your 18-year-old roof needs $4,000 in repairs. A new roof costs $12,000. The repair seems cheaper. But your roof only has 5-7 years left anyway.
               </p>
               <p>
-                Our free roof estimate helps you understand full replacement costs so you can make an informed decision when comparing to repair quotes.
+                If you repair now, you still need a new roof soon. The $12,000 roof gives you 25-30 years of protection. Often, the new roof is the better deal over time.
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="How to Choose a Roofing Contractor">
+            <ExpandableSection title="How to Pick a Good Roofer">
               <p>
-                Selecting the right roofing contractor is just as important as choosing quality materials. A poorly installed roof will fail regardless of how premium the shingles are. Here's how to find a trustworthy professional:
+                Picking the right roofer matters a lot. Even great shingles fail if put on wrong. Here is how to find someone good:
               </p>
-              <h4>Verify Licensing and Insurance</h4>
+              <h4>Check License and Insurance</h4>
               <p>
-                Every legitimate roofing contractor should have:
+                Every good roofer should have:
               </p>
               <ul>
-                <li><strong>State contractor's license:</strong> Requirements vary by state, but licensing ensures minimum competency standards</li>
-                <li><strong>General liability insurance:</strong> Protects you if the contractor damages your property</li>
-                <li><strong>Workers' compensation insurance:</strong> Covers injuries to workers on your property – without this, you could be liable</li>
-                <li><strong>Bond (where required):</strong> Financial protection if the contractor fails to complete the work</li>
+                <li><strong>State license:</strong> This proves they meet basic standards</li>
+                <li><strong>Liability insurance:</strong> Pays if they damage your property</li>
+                <li><strong>Workers compensation:</strong> Covers hurt workers. Without it, you could get in trouble</li>
+                <li><strong>Bond (if your state needs it):</strong> Protects you if they do not finish</li>
               </ul>
               <p>
-                Ask for copies of insurance certificates and verify them directly with the insurance company. Don't just take the contractor's word for it.
+                Ask for insurance papers. Call the insurance company to make sure they are real.
               </p>
-              <h4>Check Reviews and References</h4>
+              <h4>Read Reviews</h4>
               <p>
-                Research the contractor's reputation:
+                Look up the roofer online:
               </p>
               <ul>
                 <li>Read Google, Yelp, and BBB reviews</li>
-                <li>Ask for references from recent projects in your area</li>
-                <li>Check for complaints with your state's contractor licensing board</li>
-                <li>Look for manufacturer certifications (GAF Master Elite, Owens Corning Preferred, CertainTeed SELECT ShingleMaster)</li>
+                <li>Ask for names of past customers you can call</li>
+                <li>Check for complaints at your state's license board</li>
+                <li>Look for special training from companies like GAF, Owens Corning, or CertainTeed</li>
               </ul>
-              <h4>Get Written Estimates and Contracts</h4>
+              <h4>Get Everything in Writing</h4>
               <p>
-                A professional estimate should include:
+                A good estimate should list:
               </p>
               <ul>
-                <li>Detailed scope of work</li>
-                <li>Material specifications (brand, product line, color)</li>
-                <li>Timeline for completion</li>
-                <li>Total cost with no hidden fees</li>
-                <li>Payment schedule (never pay 100% upfront)</li>
-                <li>Warranty information for both materials and workmanship</li>
-                <li>Permit responsibilities</li>
+                <li>Exactly what work they will do</li>
+                <li>What materials they will use (brand, type, color)</li>
+                <li>When they will finish</li>
+                <li>The total price with no hidden fees</li>
+                <li>When to pay (never pay all upfront)</li>
+                <li>What promises they make about the work</li>
+                <li>Who gets the permits</li>
               </ul>
-              <h4>Red Flags to Avoid</h4>
+              <h4>Warning Signs</h4>
               <p>
-                Be wary of contractors who:
+                Stay away from roofers who:
               </p>
               <ul>
-                <li>Demand full payment upfront</li>
-                <li>Only accept cash</li>
-                <li>Pressure you into immediate decisions</li>
-                <li>Don't have a physical business address</li>
-                <li>Offer prices dramatically lower than competitors</li>
-                <li>Can't provide license or insurance documentation</li>
-                <li>Want to use leftover materials from another job</li>
+                <li>Want all the money upfront</li>
+                <li>Only take cash</li>
+                <li>Push you to decide right now</li>
+                <li>Have no real office address</li>
+                <li>Quote prices way lower than everyone else</li>
+                <li>Will not show license or insurance papers</li>
+                <li>Want to use leftover materials from other jobs</li>
               </ul>
             </ExpandableSection>
 
-            <ExpandableSection title="Understanding Roof Warranties">
+            <ExpandableSection title="Roof Warranties Explained">
               <p>
-                Roof warranties provide important protection for your investment, but they can be confusing. Here's what you need to know:
+                Warranties protect your money. But they can be confusing. Here is what you need to know:
               </p>
-              <h4>Manufacturer's Material Warranty</h4>
+              <h4>Material Warranty</h4>
               <p>
-                This warranty covers defects in the roofing materials themselves. Most asphalt shingle manufacturers offer:
+                This covers problems with the shingles themselves. Most companies offer:
               </p>
               <ul>
-                <li><strong>Standard warranties:</strong> 20-30 years, covering manufacturing defects only</li>
-                <li><strong>Enhanced warranties:</strong> 40-50 years or "lifetime," covering defects plus some wind and algae resistance</li>
-                <li><strong>Premium warranties:</strong> Lifetime coverage with higher wind speed ratings and transferability to new owners</li>
+                <li><strong>Basic warranty:</strong> 20-30 years. Covers factory defects only.</li>
+                <li><strong>Better warranty:</strong> 40-50 years. Covers defects plus wind and algae.</li>
+                <li><strong>Best warranty:</strong> Lifetime. Higher wind protection. Can transfer to new owners.</li>
               </ul>
               <p>
-                Note that "lifetime" warranties typically mean the expected lifetime of the product, not your lifetime. They also often prorate, meaning coverage decreases over time.
+                Note: "Lifetime" means the life of the shingles, not your life. Coverage often goes down over time.
               </p>
-              <h4>Contractor Workmanship Warranty</h4>
+              <h4>Work Warranty</h4>
               <p>
-                This warranty covers installation errors. A roof can fail even with perfect materials if installed incorrectly. Workmanship warranties typically range from:
+                This covers mistakes the roofer makes. A roof can fail even with good shingles if put on wrong. Look for:
               </p>
               <ul>
-                <li><strong>1-2 years:</strong> Minimum standard, often not enough</li>
-                <li><strong>5-10 years:</strong> Better protection, look for this minimum</li>
-                <li><strong>15-25 years:</strong> Premium contractors offer extended workmanship coverage</li>
+                <li><strong>1-2 years:</strong> Too short. Try to find better.</li>
+                <li><strong>5-10 years:</strong> Good. Look for at least this much.</li>
+                <li><strong>15-25 years:</strong> Great. Top roofers offer this.</li>
               </ul>
-              <h4>Extended/Enhanced Warranties</h4>
+              <h4>Special Warranties</h4>
               <p>
-                Some manufacturers offer enhanced warranty programs when certified contractors install their products. These often include:
+                When certified roofers use certain brands, you can get extra protection:
               </p>
               <ul>
-                <li>Extended workmanship coverage backed by the manufacturer</li>
-                <li>Coverage for the full system, not just shingles</li>
-                <li>Non-prorated coverage periods</li>
-                <li>Transferability to new homeowners</li>
+                <li>Longer coverage backed by the company</li>
+                <li>Covers the whole roof system, not just shingles</li>
+                <li>Full coverage that does not go down over time</li>
+                <li>Can transfer to new owners if you sell</li>
               </ul>
               <p>
-                Examples include GAF's Golden Pledge warranty, Owens Corning's Platinum Protection, and CertainTeed's SureStart PLUS.
+                Examples: GAF Golden Pledge, Owens Corning Platinum Protection, CertainTeed SureStart PLUS.
               </p>
-              <h4>What Voids a Roof Warranty</h4>
+              <h4>What Breaks a Warranty</h4>
               <p>
-                Common warranty violations include:
+                These things can void your warranty:
               </p>
               <ul>
-                <li>Improper installation (why contractor choice matters)</li>
-                <li>Inadequate attic ventilation</li>
-                <li>Pressure washing the roof</li>
-                <li>Walking on the roof excessively</li>
-                <li>Installing satellite dishes or solar panels improperly</li>
-                <li>Failing to maintain the roof (cleaning gutters, removing debris)</li>
+                <li>Roof put on wrong</li>
+                <li>Not enough air flow in your attic</li>
+                <li>Pressure washing your roof</li>
+                <li>Walking on the roof too much</li>
+                <li>Putting up satellite dishes or solar panels the wrong way</li>
+                <li>Not cleaning gutters and removing leaves</li>
               </ul>
             </ExpandableSection>
 
-            <ExpandableSection title="Financing Your Roof Replacement">
+            <ExpandableSection title="Ways to Pay for a New Roof">
               <p>
-                A new roof is a significant investment, but several financing options can make it more manageable. Here's how homeowners typically pay for roof replacement:
+                A new roof costs a lot. But there are many ways to pay. Here are your options:
               </p>
               <h4>Insurance Claims</h4>
               <p>
-                If your roof was damaged by a covered peril (storm, hail, wind, fire, fallen trees), your homeowner's insurance may cover replacement. You'll typically pay your deductible ($500-$2,500 for most policies), and insurance covers the rest up to your policy limits. Document damage thoroughly and file claims promptly.
+                If a storm damaged your roof, insurance may pay. You pay your deductible ($500-$2,500 for most people). Insurance pays the rest. Take photos of damage. File your claim fast.
               </p>
-              <h4>Home Equity Loans and HELOCs</h4>
+              <h4>Home Equity Loans</h4>
               <p>
-                Home equity loans and home equity lines of credit (HELOCs) use your home as collateral, typically offering lower interest rates than unsecured loans. Advantages include:
+                These loans use your home as backup. They often have lower rates (usually 5-10%). The interest might be tax deductible. Ask a tax advisor. You can pay back over many years.
               </p>
-              <ul>
-                <li>Lower interest rates (typically 5-10%)</li>
-                <li>Interest may be tax-deductible (consult a tax advisor)</li>
-                <li>Longer repayment terms available</li>
-              </ul>
               <h4>Personal Loans</h4>
               <p>
-                Unsecured personal loans don't require home equity and have faster approval processes. Rates typically range from 6-20% depending on credit score. Online lenders often offer competitive rates and quick funding.
+                These loans do not need home equity. You get approved faster. Rates are usually 6-20% based on your credit score. Online lenders often have good rates.
               </p>
-              <h4>Roofing Company Financing</h4>
+              <h4>Roofer Payment Plans</h4>
               <p>
-                Many roofing contractors offer financing through partnerships with lending companies. Some offer promotional rates like 0% APR for 12-18 months for qualified buyers. Always read the fine print and understand what happens if you don't pay off the balance during the promotional period.
+                Many roofers work with loan companies. Some have 0% interest for 12-18 months. Read all the fine print. Know what happens if you do not pay it off in time.
               </p>
               <h4>Credit Cards</h4>
               <p>
-                Credit cards work for smaller roofing projects or deposits. If you can qualify for a card with a 0% introductory APR, this can be essentially free financing if paid off before the promotional period ends. However, high ongoing interest rates make this risky for larger amounts.
+                Cards work for smaller jobs or deposits. Some cards have 0% interest for a while. This is like free borrowing if you pay before the deal ends. But regular card rates are high. Be careful with big amounts.
               </p>
               <h4>FHA Title 1 Loans</h4>
               <p>
-                The Federal Housing Administration offers Title 1 loans for home improvements, including roofing. These government-backed loans don't require home equity and have competitive rates, making them a good option for homeowners without significant equity.
+                The government backs these loans for home fixes. You do not need much home equity. Rates are fair. This is good if you do not have a lot of equity built up.
               </p>
             </ExpandableSection>
 
             <ExpandableSection title="Best Time to Replace Your Roof">
               <p>
-                Timing your roof replacement strategically can affect both cost and quality. Here's what to consider:
+                When you replace your roof can change the cost and quality. Here is what to know:
               </p>
-              <h4>Seasonal Considerations</h4>
+              <h4>Spring (March-May)</h4>
               <p>
-                <strong>Spring (March-May):</strong> Moderate temperatures are ideal for shingle installation. Contractors are ramping up for busy season, and you'll beat the summer rush. However, spring storms can cause scheduling delays.
+                Good temperatures for roofing. Roofers are getting ready for busy season. You beat the summer rush. But spring storms can cause delays.
               </p>
+              <h4>Summer (June-August)</h4>
               <p>
-                <strong>Summer (June-August):</strong> Peak roofing season means highest demand and potentially higher prices. Extreme heat can make shingles too pliable and uncomfortable for workers. Schedule early in summer for best results.
+                Busiest time for roofers. Prices may be higher. Very hot days make shingles too soft. Workers struggle in heat. Try to book early in summer.
               </p>
+              <h4>Fall (September-November)</h4>
               <p>
-                <strong>Fall (September-November):</strong> Many consider fall the ideal roofing season. Temperatures are moderate, humidity is lower, and you'll have a new roof before winter weather. Book early – this is a popular time.
+                Many people think fall is the best time. Nice temperatures. Less humidity. You get a new roof before winter. Book early because everyone wants fall.
               </p>
+              <h4>Winter (December-February)</h4>
               <p>
-                <strong>Winter (December-February):</strong> Off-season pricing may offer savings. However, cold temperatures can affect shingle sealing, and weather delays are more common. Only recommended in mild climates or for emergency situations.
+                You might get lower prices. But cold weather causes problems. Shingles do not seal well in cold. Weather delays are more common. Best only for mild climates or emergencies.
               </p>
-              <h4>Temperature Requirements</h4>
+              <h4>Temperature Matters</h4>
               <p>
-                Asphalt shingles install best between 45°F and 85°F. Temperatures below 40°F can cause shingles to crack during installation, and they won't properly seal until temperatures warm up. Extreme heat makes shingles too soft and increases worker safety risks.
+                Shingles work best between 45°F and 85°F. Below 40°F, shingles can crack. They will not seal until it warms up. Very hot days make shingles too soft. Workers also face safety risks in heat.
               </p>
-              <h4>Planning Ahead</h4>
+              <h4>Plan Ahead</h4>
               <p>
-                Don't wait until your roof fails to start planning. The best time to get a roof estimate is before you need emergency repairs. Getting your free instant estimate now helps you budget and plan for replacement before problems occur.
+                Do not wait until your roof is leaking. The best time to get an estimate is before you have problems. Get your free estimate now. Plan and budget before trouble starts.
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="Roofing Materials Comparison: Which Is Right for You?">
+            <ExpandableSection title="Comparing Roof Materials">
               <p>
-                Choosing the right roofing material involves balancing cost, durability, aesthetics, and climate suitability. Here's a comprehensive comparison:
+                Picking the right material means thinking about cost, how long it lasts, how it looks, and your weather. Here is a guide:
               </p>
               <h4>Asphalt Shingles</h4>
               <p>
-                <strong>Cost:</strong> $3-$7 per sq ft installed<br />
-                <strong>Lifespan:</strong> 15-30 years<br />
-                <strong>Best for:</strong> Budget-conscious homeowners, most climates
+                <strong>Cost:</strong> $3-$7 per sq ft<br />
+                <strong>Lasts:</strong> 15-30 years<br />
+                <strong>Best for:</strong> Most homeowners, most weather
               </p>
               <p>
-                Asphalt shingles dominate the U.S. roofing market for good reason. They offer excellent value, come in hundreds of colors and styles, and work well in most climates. Choose architectural (dimensional) shingles over 3-tab for better durability and appearance.
+                Most popular choice in America. Good value for the price. Comes in many colors. Works in most places. Pick nicer shingles over basic ones. They last longer and look better.
               </p>
               <h4>Metal Roofing</h4>
               <p>
-                <strong>Cost:</strong> $8-$16 per sq ft installed<br />
-                <strong>Lifespan:</strong> 40-70 years<br />
-                <strong>Best for:</strong> Long-term homeowners, extreme weather areas, energy efficiency
+                <strong>Cost:</strong> $8-$16 per sq ft<br />
+                <strong>Lasts:</strong> 40-70 years<br />
+                <strong>Best for:</strong> People staying long-term, tough weather, saving energy
               </p>
               <p>
-                Metal roofing has become increasingly popular due to its exceptional longevity and energy efficiency. Standing seam metal offers the best protection, while metal shingles provide a traditional look. Metal roofs can reduce cooling costs by 10-25% through solar reflection.
+                Getting more popular. Lasts a very long time. Reflects sun heat so you save on cooling. Costs more upfront but can save money over many years.
               </p>
               <h4>Tile Roofing</h4>
               <p>
-                <strong>Cost:</strong> $10-$20 per sq ft installed<br />
-                <strong>Lifespan:</strong> 50-100 years<br />
-                <strong>Best for:</strong> Hot, dry climates, Spanish/Mediterranean style homes
+                <strong>Cost:</strong> $10-$20 per sq ft<br />
+                <strong>Lasts:</strong> 50-100 years<br />
+                <strong>Best for:</strong> Hot, dry places, Spanish-style homes
               </p>
               <p>
-                Clay and concrete tiles offer exceptional durability and a distinctive appearance. They're heavy, requiring strong roof structure, but provide excellent fire resistance and stand up well to UV exposure. Most popular in the Southwest, Florida, and California.
+                Clay and concrete tiles last forever. They are heavy. Your roof needs to be strong enough. Great at stopping fire. Does well in hot sun. Popular in Southwest, Florida, and California.
               </p>
               <h4>Slate Roofing</h4>
               <p>
-                <strong>Cost:</strong> $15-$30 per sq ft installed<br />
-                <strong>Lifespan:</strong> 75-150+ years<br />
-                <strong>Best for:</strong> Historic homes, luxury properties, multi-generational ownership
+                <strong>Cost:</strong> $15-$30 per sq ft<br />
+                <strong>Lasts:</strong> 75-150+ years<br />
+                <strong>Best for:</strong> Old homes, fancy houses, families passing homes down
               </p>
               <p>
-                Natural slate is the ultimate premium roofing material. A properly installed slate roof can last over a century. The weight requires reinforced roof structure, and repairs require specialized contractors. The initial investment is highest, but cost-per-year can actually be lower than other materials over the long term.
+                Real stone. Can last over 100 years. Very heavy. Needs a strong roof. Hard to fix. Needs special workers. Costs the most upfront. But the cost per year can be lower than other roofs over time.
               </p>
-              <h4>Wood Shakes and Shingles</h4>
+              <h4>Wood Shakes</h4>
               <p>
-                <strong>Cost:</strong> $8-$14 per sq ft installed<br />
-                <strong>Lifespan:</strong> 20-40 years<br />
-                <strong>Best for:</strong> Rustic aesthetics, mild climates
+                <strong>Cost:</strong> $8-$14 per sq ft<br />
+                <strong>Lasts:</strong> 20-40 years<br />
+                <strong>Best for:</strong> Rustic look, mild weather
               </p>
               <p>
-                Cedar shakes and shingles offer natural beauty and good insulation. However, they require more maintenance than other options, aren't fire-resistant without treatment, and aren't suitable for humid climates or fire-prone areas. Some municipalities prohibit wood roofing.
+                Cedar shakes look beautiful. They insulate well. But they need more care. They are not fireproof unless treated. Do not work well in wet places. Some towns do not allow them.
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="Understanding Your Roof Estimate: What's Included?">
+            <ExpandableSection title="What Is in a Roof Estimate?">
               <p>
-                A comprehensive roof estimate should detail all costs involved in your project. Here's what to look for:
+                A good estimate tells you everything. Here is what to look for:
               </p>
               <h4>Material Costs</h4>
               <p>
-                Your estimate should specify:
+                The estimate should list:
               </p>
               <ul>
-                <li><strong>Shingles or primary roofing material:</strong> Brand, product line, color, quantity</li>
-                <li><strong>Underlayment:</strong> Synthetic or felt, quality grade</li>
-                <li><strong>Ice and water shield:</strong> For valleys, eaves, and penetrations</li>
-                <li><strong>Flashing:</strong> Metal pieces around chimneys, vents, and edges</li>
-                <li><strong>Ridge cap and starter shingles:</strong> Specialty pieces for edges and peaks</li>
-                <li><strong>Ventilation:</strong> Ridge vents, soffit vents, or other ventilation components</li>
-                <li><strong>Nails and fasteners:</strong> Quality and quantity</li>
+                <li><strong>Shingles:</strong> Brand, type, color, how many</li>
+                <li><strong>Under layer:</strong> The protective sheet under shingles</li>
+                <li><strong>Water shield:</strong> Extra protection in valleys and edges</li>
+                <li><strong>Metal pieces:</strong> Around chimney, vents, and edges</li>
+                <li><strong>Special shingles:</strong> For edges and peaks</li>
+                <li><strong>Vents:</strong> To let air flow through your attic</li>
+                <li><strong>Nails:</strong> What kind and how many</li>
               </ul>
               <h4>Labor Costs</h4>
               <p>
-                Labor typically accounts for 40-60% of total roof replacement cost. Factors affecting labor include:
+                Workers usually cost 40-60% of your total. What changes labor costs:
               </p>
               <ul>
-                <li>Roof pitch and complexity</li>
-                <li>Number of stories</li>
-                <li>Accessibility</li>
-                <li>Local labor rates</li>
-                <li>Tear-off requirements</li>
+                <li>How steep your roof is</li>
+                <li>How many stories your house has</li>
+                <li>How easy it is to reach</li>
+                <li>What workers charge in your area</li>
+                <li>If they need to tear off old roofing</li>
               </ul>
-              <h4>Removal and Disposal</h4>
+              <h4>Removal and Trash</h4>
               <p>
-                Tearing off old roofing material and disposing of it properly adds $1-$3 per square foot. This includes:
+                Taking off old shingles adds $1-$3 per square foot. This includes:
               </p>
               <ul>
-                <li>Removing old shingles and underlayment</li>
-                <li>Inspecting and repairing roof decking</li>
-                <li>Dumpster rental or hauling</li>
-                <li>Proper disposal fees</li>
+                <li>Removing old shingles and under layer</li>
+                <li>Checking and fixing wood underneath</li>
+                <li>Renting a big trash bin</li>
+                <li>Paying to dump the old stuff</li>
               </ul>
-              <h4>Permits and Inspections</h4>
+              <h4>Permits</h4>
               <p>
-                Most jurisdictions require building permits for roof replacement. Permit costs vary by location but typically run $100-$500. Your contractor should handle permit acquisition as part of the project.
+                Most places need a permit for roof work. Permits cost $100-$500. Your roofer should get the permit as part of the job.
               </p>
-              <h4>Warranty Coverage</h4>
+              <h4>Warranties</h4>
               <p>
-                The estimate should clearly state what warranties are included and their terms. Better warranties may cost slightly more but provide valuable protection.
+                The estimate should say what promises you get. Better warranties might cost a bit more but protect you.
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="Preparing for Your Roof Replacement">
+            <ExpandableSection title="Getting Ready for Roof Work">
               <p>
-                Once you've chosen a contractor and scheduled your roof replacement, proper preparation ensures the project goes smoothly:
+                Once you pick a roofer and set a date, prepare your home. This helps the job go smoothly:
               </p>
-              <h4>Before the Crew Arrives</h4>
+              <h4>Before Workers Arrive</h4>
               <ul>
-                <li><strong>Move vehicles:</strong> Park cars away from the house to avoid damage from falling debris</li>
-                <li><strong>Clear the perimeter:</strong> Move patio furniture, grills, potted plants, and decorations</li>
-                <li><strong>Protect landscaping:</strong> Cover plants and bushes near the house with tarps</li>
-                <li><strong>Remove wall decorations:</strong> Vibrations from roofing can knock items off walls</li>
-                <li><strong>Secure loose items in the attic:</strong> Dust and debris will fall through gaps</li>
-                <li><strong>Inform neighbors:</strong> Let them know about the upcoming noise and activity</li>
-                <li><strong>Plan for pets:</strong> Keep pets inside or away from the work area</li>
-                <li><strong>Arrange child care if needed:</strong> Roofing is loud and disruptive</li>
+                <li><strong>Move cars:</strong> Park away from the house. Stuff might fall.</li>
+                <li><strong>Clear around your house:</strong> Move patio furniture, grills, plants, decorations</li>
+                <li><strong>Cover plants:</strong> Put tarps over bushes near the house</li>
+                <li><strong>Take things off walls:</strong> Pounding can knock pictures down</li>
+                <li><strong>Check your attic:</strong> Secure loose items. Dust will fall through</li>
+                <li><strong>Tell neighbors:</strong> Let them know it will be noisy</li>
+                <li><strong>Plan for pets:</strong> Keep them inside or away from work</li>
+                <li><strong>Plan for kids:</strong> Roofing is loud all day</li>
               </ul>
-              <h4>During the Project</h4>
+              <h4>During the Work</h4>
               <ul>
-                <li>Expect significant noise throughout the day</li>
-                <li>Workers will need access to electricity and possibly water</li>
-                <li>Don't be surprised by vibrations throughout the house</li>
-                <li>The crew may work from early morning until evening</li>
-                <li>A dumpster will be placed on your property temporarily</li>
+                <li>Expect loud noise all day</li>
+                <li>Workers need power and maybe water</li>
+                <li>You will feel vibrations in the house</li>
+                <li>Work may start early and end late</li>
+                <li>A big trash bin will be in your yard</li>
               </ul>
-              <h4>After Completion</h4>
+              <h4>After the Work</h4>
               <ul>
-                <li><strong>Final inspection:</strong> Walk around the property with your contractor</li>
-                <li><strong>Check for debris:</strong> Run a magnet over the lawn to find stray nails</li>
-                <li><strong>Document everything:</strong> Take photos of the completed work</li>
-                <li><strong>Secure warranty documents:</strong> Keep copies of all warranties</li>
-                <li><strong>Final payment:</strong> Only pay the final balance after satisfactory completion</li>
+                <li><strong>Look around with the roofer:</strong> Check the finished work</li>
+                <li><strong>Find stray nails:</strong> Run a magnet over your lawn</li>
+                <li><strong>Take photos:</strong> Document the completed roof</li>
+                <li><strong>Keep papers safe:</strong> Save all warranty documents</li>
+                <li><strong>Pay last part:</strong> Only pay the rest after you are happy with the work</li>
               </ul>
             </ExpandableSection>
           </div>
 
           {/* Final CTA */}
           <div className="mt-12 text-center bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">Ready to Get Your Free Roof Estimate?</h3>
+            <h3 className="text-2xl font-bold mb-4">Ready for Your Free Roof Estimate?</h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Now that you understand roof replacement costs and what to expect, get your personalized instant estimate. It's free, takes just 60 seconds, and helps you plan your roofing project with confidence.
+              Now you know about roof costs and what to expect. Get your free estimate. It takes 60 seconds. It helps you plan your roof project.
             </p>
             <a
               href="#top"

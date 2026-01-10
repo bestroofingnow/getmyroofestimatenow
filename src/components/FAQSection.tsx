@@ -12,43 +12,43 @@ export interface FAQ {
 const defaultFaqs: FAQ[] = [
   {
     question: 'How accurate is the instant roof estimate?',
-    answer: 'Our estimates are based on satellite imagery and advanced AI analysis, typically achieving 90-95% accuracy for roof measurements. However, final pricing may vary based on factors only visible during an in-person inspection, such as roof condition, accessibility, and local material costs.',
+    answer: 'Our estimates are 90-95% accurate. We use satellite photos and smart technology to measure your roof.\n\nThe final price may change a little based on things we can only see in person, like how your roof looks up close.',
   },
   {
     question: 'Is the roof estimate really free?',
-    answer: 'Yes, our instant roof estimate is 100% free with no obligation. We use satellite technology to measure your roof remotely, so there are no hidden fees or surprise charges. You only pay if you decide to move forward with a roofing contractor.',
+    answer: 'Yes! Our instant roof estimate is 100% free.\n\nThere are no hidden fees. We measure your roof using satellite photos. You only pay if you decide to hire a roofer.',
   },
   {
     question: 'How long does it take to get my roof estimate?',
-    answer: 'You can receive your instant roof estimate in about 60 seconds. Simply enter your address, and our AI technology will analyze satellite imagery of your roof to calculate the size, pitch, and provide a cost estimate.',
+    answer: 'About 60 seconds!\n\nJust type in your address. Our smart tools look at satellite photos of your roof. They figure out the size and give you a price.',
   },
   {
-    question: 'What information do I need to get an estimate?',
-    answer: 'All you need is your property address. Our satellite technology handles the rest by automatically measuring your roof dimensions and calculating the estimate. We will ask for your contact information so a roofing specialist can follow up with a detailed quote.',
+    question: 'What do I need to get an estimate?',
+    answer: 'Just your address! That is all.\n\nOur satellite tools measure your roof for you. We will ask for your phone or email so a roofer can send you more details.',
   },
   {
-    question: 'How is the roof cost calculated?',
-    answer: 'We calculate your roof cost based on several factors: roof square footage (measured via satellite), estimated roof pitch and complexity, current material costs in your area, and typical labor rates. We provide low, mid, and high estimates for different material quality levels.',
+    question: 'How do you figure out the roof cost?',
+    answer: 'We look at:\n• How big your roof is (from satellite photos)\n• How steep your roof is\n• Material prices in your area\n• What roofers charge near you\n\nWe show you low, middle, and high prices for different quality levels.',
   },
   {
-    question: 'Will a contractor contact me after I get my estimate?',
-    answer: 'Yes, after receiving your estimate, a licensed roofing contractor in your area will reach out to discuss your project, answer questions, and schedule an in-person inspection if you are interested in moving forward. You are under no obligation to proceed.',
+    question: 'Will a roofer call me after I get my estimate?',
+    answer: 'Yes, a licensed roofer near you will call or text. They can:\n• Answer your questions\n• Come look at your roof in person\n• Give you a detailed quote\n\nYou do not have to say yes. There is no pressure.',
   },
   {
-    question: 'How much does a new roof cost in 2025?',
-    answer: 'The average cost of a new roof in 2025 ranges from $8,000 to $25,000 for a typical single-family home, depending on size, materials, and location. Asphalt shingle roofs typically cost $4-8 per square foot, while premium materials like metal or tile can range from $10-25 per square foot. Get your free instant estimate to see exact pricing for your home.',
+    question: 'How much does a new roof cost?',
+    answer: 'A new roof costs $8,000 to $25,000 for most homes.\n\nBasic shingles cost $4 to $8 per square foot. Fancy materials like metal or tile cost $10 to $25 per square foot.\n\nGet your free estimate to see your exact price.',
   },
   {
     question: 'How long does a roof last?',
-    answer: 'Roof lifespan varies by material: asphalt shingles last 20-30 years, architectural shingles 25-35 years, metal roofs 40-70 years, tile roofs 50-100 years, and slate roofs can last over 100 years. Factors like climate, maintenance, and installation quality also affect longevity.',
+    answer: 'It depends on what your roof is made of:\n• Basic shingles: 20 to 30 years\n• Fancy shingles: 25 to 35 years\n• Metal roofs: 40 to 70 years\n• Tile roofs: 50 to 100 years\n• Slate roofs: 100+ years\n\nGood care helps your roof last longer.',
   },
   {
-    question: 'What are the signs I need a new roof?',
-    answer: 'Key signs you need a new roof include: shingles that are curling, cracking, or missing; granules collecting in gutters; visible daylight through roof boards; sagging roof deck; water stains on ceilings; your roof is over 20 years old; or increasing energy bills. If you notice any of these, get a free estimate to assess your options.',
+    question: 'How do I know if I need a new roof?',
+    answer: 'Watch for these warning signs:\n• Shingles that are curling, cracking, or missing\n• Shingle bits in your gutters\n• Light coming through roof boards\n• Saggy spots on your roof\n• Water stains on your ceiling\n• Your roof is over 20 years old\n• High energy bills\n\nIf you see any of these, get a free estimate.',
   },
   {
-    question: 'Should I repair or replace my roof?',
-    answer: 'Consider repair if damage is localized, your roof is under 15 years old, and less than 30% needs work. Choose replacement if damage is widespread, your roof is over 20 years old, you are experiencing frequent leaks, or repairs would cost more than 50% of replacement. Our free estimate helps you make an informed decision.',
+    question: 'Should I fix my roof or get a new one?',
+    answer: 'Fix your roof if:\n• The damage is in one small area\n• Your roof is less than 15 years old\n• Less than 30% needs work\n\nGet a new roof if:\n• Damage is all over\n• Your roof is over 20 years old\n• You keep getting leaks\n• Repairs would cost more than half a new roof\n\nOur free estimate helps you decide.',
   },
 ];
 

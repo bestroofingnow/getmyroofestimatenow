@@ -177,7 +177,7 @@ export default function RoofEstimateHubPage() {
                       {cities.map((location) => (
                         <Link
                           key={location.slug}
-                          href={`/roof-estimate/${location.slug}`}
+                          href={`/roof-estimate/state/${stateSlug}/${location.slug}`}
                           className="group flex flex-col p-4 rounded-xl border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all"
                         >
                           <div className="flex items-center justify-between mb-2">

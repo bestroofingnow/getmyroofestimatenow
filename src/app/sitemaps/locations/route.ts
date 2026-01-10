@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { locations } from '@/lib/locations';
-import { stateData } from '@/lib/stateData';
+import { stateData, getStateSlugByAbbr } from '@/lib/stateData';
 import { neighborhoods } from '@/lib/neighborhoods';
 
 const BASE_URL = 'https://instantroofestimate.ai';
@@ -47,22 +47,28 @@ export async function GET() {
 
   // City/Location pages - core local SEO pages
   locations.forEach((location) => {
-    locationEntries.push({
-      url: `${BASE_URL}/roof-estimate/${location.slug}`,
-      lastmod: STATIC_LAST_MOD,
-      changefreq: 'monthly',
-      priority: '0.7',
-    });
+    const stateSlug = getStateSlugByAbbr(location.stateAbbr);
+    if (stateSlug) {
+      locationEntries.push({
+        url: `${BASE_URL}/roof-estimate/state/${stateSlug}/${location.slug}`,
+        lastmod: STATIC_LAST_MOD,
+        changefreq: 'monthly',
+        priority: '0.7',
+      });
+    }
   });
 
   // Neighborhood pages - hyper-local SEO pages
   neighborhoods.forEach((neighborhood) => {
-    locationEntries.push({
-      url: `${BASE_URL}/roof-estimate/${neighborhood.citySlug}/${neighborhood.slug}`,
-      lastmod: STATIC_LAST_MOD,
-      changefreq: 'monthly',
-      priority: '0.65',
-    });
+    const stateSlug = getStateSlugByAbbr(neighborhood.stateAbbr);
+    if (stateSlug) {
+      locationEntries.push({
+        url: `${BASE_URL}/roof-estimate/state/${stateSlug}/${neighborhood.citySlug}/${neighborhood.slug}`,
+        lastmod: STATIC_LAST_MOD,
+        changefreq: 'monthly',
+        priority: '0.65',
+      });
+    }
   });
 
   const xml = generateSitemapXml(locationEntries);

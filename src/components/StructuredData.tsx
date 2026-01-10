@@ -315,3 +315,336 @@ export function ProductSchema() {
     />
   );
 }
+
+// ============================================================
+// AEO (Answer Engine Optimization) Schemas
+// ============================================================
+
+interface BlogArticleSchemaProps {
+  title: string;
+  description: string;
+  content: string;
+  url: string;
+  image?: string;
+  publishedAt: string;
+  updatedAt?: string;
+  author?: string;
+  keywords?: string[];
+}
+
+/**
+ * Enhanced Article Schema for Blog Posts
+ * Optimized for AI search engines and featured snippets
+ */
+export function ArticleSchema({
+  title,
+  description,
+  content,
+  url,
+  image,
+  publishedAt,
+  updatedAt,
+  author = 'Instant Roof Estimate Team',
+  keywords = [],
+}: BlogArticleSchemaProps) {
+  // Extract first 2-3 sentences for speakable content
+  const speakableContent = description.split(/[.!?]/).slice(0, 3).join('. ').trim() + '.';
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    '@id': url,
+    headline: title,
+    description: description,
+    image: image || 'https://instantroofestimate.ai/og-image.png',
+    datePublished: publishedAt,
+    dateModified: updatedAt || publishedAt,
+    author: {
+      '@type': 'Person',
+      name: author,
+      url: 'https://instantroofestimate.ai/about',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Instant Roof Estimate',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://instantroofestimate.ai/logo.png',
+        width: 512,
+        height: 512,
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': url,
+    },
+    keywords: keywords.length > 0 ? keywords.join(', ') : undefined,
+    articleSection: 'Roofing',
+    inLanguage: 'en-US',
+    // AEO: Speakable for voice search
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['article h1', 'article p:first-of-type', '.article-summary'],
+      xpath: ['/html/head/title', "/html/head/meta[@name='description']/@content"],
+    },
+    // AEO: About/mentions for entity connections
+    about: {
+      '@type': 'Thing',
+      name: 'Roof Replacement',
+      description: 'The process of removing an existing roof and installing a new roofing system',
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+interface QASchemaProps {
+  questions: {
+    question: string;
+    answer: string;
+    votes?: number;
+  }[];
+  pageUrl: string;
+}
+
+/**
+ * QAPage Schema for Question-Answer Content
+ * Optimized for AI assistants and voice search
+ */
+export function QAPageSchema({ questions, pageUrl }: QASchemaProps) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'QAPage',
+    mainEntity: questions.map((q, index) => ({
+      '@type': 'Question',
+      '@id': `${pageUrl}#question-${index + 1}`,
+      name: q.question,
+      text: q.question,
+      answerCount: 1,
+      upvoteCount: q.votes || 0,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: q.answer,
+        upvoteCount: q.votes || 0,
+        dateCreated: new Date().toISOString(),
+        author: {
+          '@type': 'Organization',
+          name: 'Instant Roof Estimate',
+        },
+      },
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+/**
+ * Speakable Schema for Voice Search Optimization
+ * Marks content that is suitable for text-to-speech
+ */
+export function SpeakableSchema({
+  headline,
+  summary,
+  url,
+}: {
+  headline: string;
+  summary: string;
+  url: string;
+}) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': url,
+    name: headline,
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['.speakable-headline', '.speakable-summary', 'article > p:first-of-type'],
+    },
+    mainEntity: {
+      '@type': 'Article',
+      headline: headline,
+      description: summary,
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+interface HowToStepData {
+  name: string;
+  text: string;
+  image?: string;
+}
+
+/**
+ * Enhanced HowTo Schema with AEO optimization
+ */
+export function HowToArticleSchema({
+  title,
+  description,
+  steps,
+  totalTime,
+  url,
+}: {
+  title: string;
+  description: string;
+  steps: HowToStepData[];
+  totalTime: string; // ISO 8601 duration format
+  url: string;
+}) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: title,
+    description: description,
+    totalTime: totalTime,
+    estimatedCost: {
+      '@type': 'MonetaryAmount',
+      currency: 'USD',
+      value: '0',
+    },
+    step: steps.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+      image: step.image,
+      url: `${url}#step-${index + 1}`,
+    })),
+    // AEO: Speakable for voice assistants
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', '.how-to-summary', '.step-instruction'],
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+/**
+ * Local Service Schema with AEO optimization
+ * For location-specific pages
+ */
+export function LocalServiceSchema({
+  city,
+  state,
+  stateAbbr,
+  url,
+  avgCost,
+}: {
+  city: string;
+  state: string;
+  stateAbbr: string;
+  url: string;
+  avgCost: { low: number; mid: number; high: number };
+}) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: `Roof Estimates in ${city}, ${stateAbbr}`,
+    description: `Get free instant roof estimates in ${city}, ${state}. Average roof replacement costs $${avgCost.low.toLocaleString()} to $${avgCost.high.toLocaleString()}.`,
+    provider: {
+      '@type': 'Organization',
+      name: 'Instant Roof Estimate',
+      url: 'https://instantroofestimate.ai',
+    },
+    areaServed: {
+      '@type': 'City',
+      name: city,
+      containedInPlace: {
+        '@type': 'State',
+        name: state,
+      },
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Roofing Services',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Free Roof Estimate',
+          },
+          price: '0',
+          priceCurrency: 'USD',
+        },
+      ],
+    },
+    // AEO: Price range for AI assistants
+    priceSpecification: {
+      '@type': 'PriceSpecification',
+      minPrice: avgCost.low,
+      maxPrice: avgCost.high,
+      priceCurrency: 'USD',
+      description: `Typical roof replacement cost in ${city}`,
+    },
+    url: url,
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+/**
+ * ItemList Schema for Blog Index and Category Pages
+ */
+export function BlogListSchema({
+  posts,
+  pageUrl,
+  pageTitle,
+}: {
+  posts: { title: string; url: string; description: string; image?: string }[];
+  pageUrl: string;
+  pageTitle: string;
+}) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: pageTitle,
+    url: pageUrl,
+    numberOfItems: posts.length,
+    itemListElement: posts.map((post, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Article',
+        headline: post.title,
+        description: post.description,
+        url: post.url,
+        image: post.image,
+      },
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}

@@ -16,6 +16,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
+      url: `${BASE_URL}/sitemaps/counties`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${BASE_URL}/sitemaps/zipcodes`,
+      lastModified: new Date(),
+    },
+    {
       url: `${BASE_URL}/sitemaps/services`,
       lastModified: new Date(),
     },

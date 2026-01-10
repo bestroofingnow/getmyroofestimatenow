@@ -12,6 +12,7 @@ import {
   ProductSchema,
 } from "@/components/StructuredData";
 import { ExitIntentPopup } from "@/components/ExitIntentPopup";
+import { SkipToContent } from "@/components/shared";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -109,6 +110,7 @@ export default function RootLayout({
         <ProductSchema />
       </head>
       <body className={`${inter.className} antialiased bg-white`}>
+        <SkipToContent />
         {/* Google Analytics 4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-Y5ZVZYVLRE"

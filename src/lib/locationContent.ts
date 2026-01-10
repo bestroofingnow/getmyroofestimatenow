@@ -37,32 +37,32 @@ export function generateLocationContent(
   const sections: LocationContentSection[] = [
     {
       id: 'roofing-guide',
-      title: `Complete Guide to Roofing in ${city}, ${stateAbbr}`,
+      title: `Roofing Guide for ${city}, ${stateAbbr}`,
       content: generateRoofingGuide(city, stateAbbr, state, population, nickname, localFacts, countyName, climate, avgRoofCost, region)
     },
     {
       id: 'climate-impact',
-      title: `How ${city}'s Climate Affects Your Roof`,
+      title: `How ${city} Weather Affects Your Roof`,
       content: generateClimateSection(city, stateAbbr, climate, weatherStats, roofingChallenges, seasonalNotes)
     },
     {
       id: 'neighborhoods',
-      title: `Roofing Services Across ${city} Neighborhoods`,
+      title: `Roofing Help in ${city} Neighborhoods`,
       content: generateNeighborhoodSection(city, stateAbbr, neighborhoods, landmarks, region)
     },
     {
       id: 'materials-guide',
-      title: `Best Roofing Materials for ${city} Homes`,
+      title: `Best Roof Materials for ${city} Homes`,
       content: generateMaterialsSection(city, stateAbbr, climate, popularMaterials, weatherStats, avgRoofCost)
     },
     {
       id: 'cost-factors',
-      title: `Understanding Roof Replacement Costs in ${city}`,
+      title: `Roof Costs in ${city}`,
       content: generateCostSection(city, stateAbbr, avgRoofCost, countyName, nearbyAreas)
     },
     {
       id: 'choosing-contractor',
-      title: `How to Choose a Roofing Contractor in ${city}`,
+      title: `How to Pick a Roofer in ${city}`,
       content: generateContractorSection(city, stateAbbr, state, countyName)
     }
   ];
@@ -82,20 +82,28 @@ function generateRoofingGuide(
   avgRoofCost: { low: number; mid: number; high: number },
   region: string
 ): string {
-  const nicknameText = nickname ? `, known as "${nickname},"` : '';
+  const nicknameText = nickname ? ` People call it "${nickname}."` : '';
   const factsText = localFacts.length > 0
-    ? `${city} is notable for being ${localFacts.slice(0, 2).join(' and ').toLowerCase()}.`
+    ? ` ${city} is known for being ${localFacts.slice(0, 2).join(' and ').toLowerCase()}.`
     : '';
 
-  return `${city}${nicknameText} is a vibrant community of ${population} residents in ${countyName}, ${state}. ${factsText} As part of the ${region} region, ${city} homeowners face unique roofing challenges that require local expertise and knowledge.
+  return `${city} is home to ${population} people in ${countyName}, ${state}.${nicknameText}${factsText}
 
-The roofing industry in ${city}, ${stateAbbr} has evolved significantly over the years, adapting to both changing construction standards and the specific demands of our ${climate} climate. Whether you own a historic home in one of ${city}'s established neighborhoods or a newly constructed property in a growing subdivision, understanding your roofing options is essential for protecting your investment.
+**What makes ${city} roofing special?**
 
-Roof replacement in ${city} typically costs between ${formatCurrency(avgRoofCost.low)} and ${formatCurrency(avgRoofCost.high)}, with most homeowners paying around ${formatCurrency(avgRoofCost.mid)} for quality architectural shingles. These costs reflect the local market conditions, including labor rates, material availability, and the specific requirements of ${stateAbbr} building codes.
+${city} is in the ${region} region. This means your roof faces weather that is different from other places. Local roofers know what works best here.
 
-${city} homeowners have access to numerous qualified roofing contractors who understand the specific needs of properties in our area. From emergency storm damage repairs to complete roof replacements, local roofers provide comprehensive services designed to protect your home against the elements.
+**How much does a new roof cost in ${city}?**
 
-When considering a roof replacement or repair in ${city}, it's important to work with contractors who are familiar with local regulations, weather patterns, and architectural styles. This ensures your new roof not only looks great but also performs well for decades to come.`;
+Most people pay ${formatCurrency(avgRoofCost.low)} to ${formatCurrency(avgRoofCost.high)}. The average price is about ${formatCurrency(avgRoofCost.mid)} for nice shingles. These prices match what ${stateAbbr} roofers charge.
+
+**Who can help with my roof?**
+
+${city} has many good roofers. They can fix storm damage fast. They can also put on a brand new roof. These roofers know local building rules. They know what materials work best in ${climate} weather.
+
+**Why pick a local roofer?**
+
+Local roofers understand ${city} homes. They know the weather here. They know what styles look good. A good local roofer makes sure your roof lasts for many years.`;
 }
 
 function generateClimateSection(
@@ -113,22 +121,37 @@ function generateClimateSection(
   seasonalNotes: string
 ): string {
   const snowText = weatherStats.snowfall
-    ? `Winter brings occasional snow, averaging ${weatherStats.snowfall}, which can contribute to ice dam formation on improperly ventilated roofs.`
+    ? `\n\n**Winter snow**: ${city} gets about ${weatherStats.snowfall} of snow each year. Snow can cause ice dams if your attic does not have good air flow.`
     : '';
 
-  const challengesList = roofingChallenges.map(c => c.toLowerCase()).join(', ');
+  const challengesList = roofingChallenges.map(c => `• ${c}`).join('\n');
 
-  return `${city}'s ${climate} climate presents specific challenges for residential roofing. With summer temperatures averaging ${weatherStats.avgSummerHigh} and winter lows around ${weatherStats.avgWinterLow}, your roof must withstand significant temperature fluctuations throughout the year.
+  return `${city} has ${climate} weather. This affects how long your roof lasts.
 
-The area receives approximately ${weatherStats.annualRainfall} of rainfall annually, making water resistance a top priority for ${city} roofing systems. ${seasonalNotes} ${snowText}
+**${city} weather facts:**
+• Summer highs: ${weatherStats.avgSummerHigh}
+• Winter lows: ${weatherStats.avgWinterLow}
+• Yearly rain: ${weatherStats.annualRainfall}
 
-Local roofing challenges in ${city} include ${challengesList}. Each of these factors influences material selection, installation techniques, and maintenance requirements for roofs in the area.
+Your roof goes through big temperature changes all year. It must handle both hot summers and cold winters.
 
-${weatherStats.stormSeason ? `Storm season in ${city} typically runs from ${weatherStats.stormSeason}, bringing the potential for high winds, hail, and heavy rainfall. During this period, ${city} roofing contractors see increased demand for emergency repairs and storm damage assessments.` : ''}
+**Why rain matters:**
 
-Understanding these climate factors helps ${city} homeowners make informed decisions about roofing materials and maintenance schedules. Choosing materials specifically designed for our local conditions can significantly extend your roof's lifespan and reduce long-term maintenance costs.
+${city} gets ${weatherStats.annualRainfall} of rain each year. Your roof needs to keep all that water out. ${seasonalNotes}${snowText}
 
-Proper attic ventilation is particularly important in ${city}'s climate. Without adequate airflow, heat and moisture can accumulate, leading to premature shingle deterioration, ice dams in winter, and increased cooling costs in summer. Local building codes in ${stateAbbr} specify minimum ventilation requirements, but many ${city} homes benefit from exceeding these standards.`;
+**Roof problems in ${city}:**
+
+${challengesList}
+
+These things affect what materials you should pick. They also affect how you take care of your roof.
+
+${weatherStats.stormSeason ? `**Storm season**: Storms usually happen from ${weatherStats.stormSeason}. During this time, you might see high winds and hail. Heavy rain is common too. Many ${city} roofers get busy fixing storm damage during this time.` : ''}
+
+**Why air flow matters:**
+
+Your attic needs good air flow. Without it, heat and moisture build up. This makes shingles wear out faster. Good air flow keeps your roof healthy longer. It also helps lower your energy bills.
+
+Local ${stateAbbr} building codes tell you how much air flow you need. Many ${city} homes do better with even more air flow than the rules require.`;
 }
 
 function generateNeighborhoodSection(
@@ -140,22 +163,36 @@ function generateNeighborhoodSection(
 ): string {
   const neighborhoodList = neighborhoods.slice(0, 6);
   const landmarkText = landmarks.length > 0
-    ? `From iconic locations like ${landmarks.slice(0, 2).join(' and ')} to residential areas throughout the city, `
+    ? `${city} has famous places like ${landmarks.slice(0, 2).join(' and ')}. `
     : '';
 
-  return `${landmarkText}our roofing services extend to every corner of ${city} and the surrounding ${region} area. Each neighborhood in ${city} has its own character and roofing needs.
+  return `${landmarkText}We help people in every part of ${city} and nearby ${region} areas.
 
-**${neighborhoodList[0] || 'Downtown Area'}**: The heart of ${city} features a mix of commercial buildings and residential properties, many with unique architectural requirements. Historic structures may need specialized roofing approaches to maintain their character while meeting modern performance standards.
+Each neighborhood has its own look and needs. Here is what we see in different areas:
 
-**${neighborhoodList[1] || 'Suburban Communities'}**: ${city}'s growing suburbs feature newer construction with contemporary roofing systems. These neighborhoods often have HOA requirements that influence material and color choices.
+**${neighborhoodList[0] || 'Downtown Area'}**
 
-${neighborhoodList[2] ? `**${neighborhoodList[2]}**: This popular area of ${city} showcases the community's residential diversity, from starter homes to established family residences. Roofing needs here range from basic repairs to complete system replacements.` : ''}
+Downtown ${city} has both shops and homes. Many buildings are older. Some have special designs that need expert care. Roofers here know how to keep old buildings safe while making them look good.
 
-${neighborhoodList[3] ? `**${neighborhoodList[3]}**: Known for quality housing and family-friendly amenities, this ${city} neighborhood demands reliable roofing contractors who understand local expectations for craftsmanship and materials.` : ''}
+**${neighborhoodList[1] || 'Suburban Communities'}**
 
-No matter which ${city} neighborhood you call home, local roofing professionals can provide tailored solutions that respect your property's unique characteristics. Whether your home was built decades ago or just completed, ${city} contractors have the expertise to maintain, repair, or replace your roof.
+The suburbs have newer homes. These houses have modern roof systems. Many have HOA rules about what colors and materials you can use.
 
-Our instant estimate tool works for any address in ${city}, ${stateAbbr}, providing accurate pricing based on satellite measurements of your specific property. Simply enter your address to receive a customized estimate for your roof replacement project.`;
+${neighborhoodList[2] ? `**${neighborhoodList[2]}**
+
+This area has many different kinds of homes. Some are starter homes for young families. Others are bigger houses for growing families. Roof needs range from small fixes to full replacements.` : ''}
+
+${neighborhoodList[3] ? `**${neighborhoodList[3]}**
+
+This neighborhood has nice homes and is great for families. People here want quality work. Roofers need to use good materials and do careful work.` : ''}
+
+**We cover all of ${city}:**
+
+It does not matter where in ${city} you live. Local roofers can help you. They know how to work with all kinds of homes, old and new.
+
+**Get your price now:**
+
+Our tool works for any address in ${city}, ${stateAbbr}. Just type in your address. We use satellite photos to measure your roof. You get a price made just for your home.`;
 }
 
 function generateMaterialsSection(
@@ -167,37 +204,41 @@ function generateMaterialsSection(
   avgRoofCost: { low: number; mid: number; high: number }
 ): string {
   const materialDescriptions: Record<string, string> = {
-    'Architectural Shingles': 'Offering excellent durability and aesthetic appeal, architectural shingles are the most popular choice in the area. They typically last 25-30 years and come in numerous colors and styles to complement any home.',
-    'Metal Roofing': 'Growing in popularity due to its exceptional longevity (40-70 years) and energy efficiency. Metal roofs reflect solar heat, reducing cooling costs during hot summers.',
-    'Asphalt Shingles': 'An economical choice providing reliable protection at a lower price point. Modern 3-tab shingles offer improved wind resistance and 15-25 year lifespans.',
-    'Slate': 'Premium natural stone roofing that can last 75-100+ years. While expensive, slate provides unmatched beauty and durability for upscale homes.',
-    'Cedar Shakes': 'Natural wood roofing offering a distinctive rustic appearance. Cedar provides good insulation but requires more maintenance in humid climates.',
-    'Designer Shingles': 'Premium shingles that mimic the appearance of slate or cedar at a fraction of the cost. These offer enhanced warranties and superior performance.',
-    'Clay Tiles': 'Traditional roofing excellent for Mediterranean-style homes. Clay tiles are extremely durable and help keep homes cool in hot climates.',
-    'Concrete Tiles': 'A versatile option offering the appearance of clay, slate, or wood at a more accessible price point. Concrete tiles are fire-resistant and long-lasting.',
-    'Impact-Resistant Shingles': 'Specially engineered to withstand hail damage, these shingles often qualify for insurance discounts in storm-prone areas.',
-    'TPO Flat Roofing': 'Energy-efficient membrane roofing ideal for flat or low-slope commercial and residential applications.',
-    'Cool Roofing': 'Reflective roofing materials designed to minimize heat absorption, reducing energy costs in hot climates.'
+    'Architectural Shingles': 'These are the most popular choice here. They look great and last 25-30 years. You can pick from many colors to match your home.',
+    'Metal Roofing': 'Metal roofs are getting more popular. They last 40-70 years. They also reflect sun heat, which lowers your cooling bills.',
+    'Asphalt Shingles': 'These cost less than other options. They still protect your home well. Basic shingles last 15-25 years.',
+    'Slate': 'Slate is natural stone. It can last 75-100 years or more. It costs more but looks beautiful on nice homes.',
+    'Cedar Shakes': 'Cedar is real wood. It gives your home a rustic look. It needs more care in wet weather.',
+    'Designer Shingles': 'These fancy shingles look like slate or cedar. They cost less than the real thing. They come with better warranties.',
+    'Clay Tiles': 'Clay tiles work great on Spanish-style homes. They last a very long time. They help keep your home cool.',
+    'Concrete Tiles': 'Concrete tiles can look like clay, slate, or wood. They cost less than those materials. They resist fire and last many years.',
+    'Impact-Resistant Shingles': 'These shingles can take hail hits better. In storm areas, you might get a discount on your home insurance.',
+    'TPO Flat Roofing': 'This works well on flat roofs. It saves energy. Many businesses and some homes use it.',
+    'Cool Roofing': 'Cool roofs reflect sunlight. This keeps your home cooler. It works great in hot places.'
   };
 
   const materialsContent = popularMaterials.map(material => {
-    const description = materialDescriptions[material] || `A popular choice in ${city} known for its durability and performance in local conditions.`;
+    const description = materialDescriptions[material] || `This works well in ${city} weather.`;
     return `**${material}**: ${description}`;
   }).join('\n\n');
 
-  return `Selecting the right roofing materials for your ${city} home requires understanding how different options perform in our ${climate} climate. With summer highs of ${weatherStats.avgSummerHigh} and annual rainfall of ${weatherStats.annualRainfall}, ${city} roofs must balance durability, weather resistance, and energy efficiency.
+  return `Picking the right roof material matters in ${city}. Your roof needs to handle ${climate} weather. Summers get up to ${weatherStats.avgSummerHigh}. The area gets ${weatherStats.annualRainfall} of rain each year.
+
+**Popular materials in ${city}:**
 
 ${materialsContent}
 
-When choosing materials for your ${city} roof, consider these factors:
+**How to pick the right material:**
 
-• **Climate compatibility**: Materials should withstand local temperature extremes and moisture levels
-• **Energy efficiency**: Reflective or light-colored roofing can reduce cooling costs significantly
-• **Longevity expectations**: Higher upfront costs often translate to longer lifespans and better warranties
-• **Aesthetic preferences**: Your roof should complement your home's architectural style and neighborhood character
-• **Budget considerations**: ${city} roof replacements range from ${formatCurrency(avgRoofCost.low)} to ${formatCurrency(avgRoofCost.high)}
+• **Weather**: Pick materials that can handle ${city} heat, cold, and rain
+• **Energy bills**: Light colors and reflective materials lower cooling costs
+• **How long it lasts**: Spending more now often means fewer problems later
+• **How it looks**: Your roof should match your home and neighborhood
+• **Your budget**: ${city} roofs cost ${formatCurrency(avgRoofCost.low)} to ${formatCurrency(avgRoofCost.high)}
 
-Local ${city} roofing contractors can help you evaluate these factors based on your specific home and priorities. Many offer free consultations to discuss material options and provide detailed estimates for your project.`;
+**Get expert help:**
+
+${city} roofers can help you pick the best material. Most give free advice. They will look at your home and tell you what works best. Then they give you a price.`;
 }
 
 function generateCostSection(
@@ -208,30 +249,36 @@ function generateCostSection(
   nearbyAreas: string[]
 ): string {
   const nearbyText = nearbyAreas.length > 0
-    ? `Compared to nearby areas like ${nearbyAreas.slice(0, 3).join(', ')}, ${city} pricing reflects local market conditions including labor availability, material delivery costs, and demand patterns.`
+    ? `${city} prices may differ from ${nearbyAreas.slice(0, 3).join(', ')}. Local costs depend on workers, materials, and how busy roofers are.`
     : '';
 
-  return `Understanding the factors that influence roof replacement costs in ${city}, ${stateAbbr} helps homeowners budget effectively and avoid surprises. The average ${city} homeowner pays between ${formatCurrency(avgRoofCost.low)} and ${formatCurrency(avgRoofCost.high)} for a complete roof replacement.
+  return `Most ${city} homeowners pay ${formatCurrency(avgRoofCost.low)} to ${formatCurrency(avgRoofCost.high)} for a new roof. Here is what changes your price.
 
-**Factors affecting your ${city} roof replacement cost:**
+**What makes the price go up or down:**
 
-**Roof Size and Complexity**: Larger roofs require more materials and labor. Complex designs with multiple valleys, dormers, or penetrations increase installation time and cost. The average ${city} home has 1,500-2,500 square feet of roofing.
+**Roof size**: Bigger roofs need more materials and work. Most ${city} homes have 1,500-2,500 square feet of roofing.
 
-**Material Selection**: Basic 3-tab shingles cost less than premium architectural shingles, metal roofing, or slate. Your material choice represents the largest variable in your total project cost.
+**Roof shape**: Simple roofs cost less. Roofs with many angles and peaks take longer to do.
 
-**Roof Pitch**: Steeper roofs require additional safety equipment and slower installation, increasing labor costs. Most ${city} homes have moderate pitches that don't significantly impact pricing.
+**Materials you pick**: Basic shingles cost less than fancy shingles, metal, or slate. What you pick affects your total cost the most.
 
-**Removal Requirements**: If your existing roof has multiple layers, removal costs increase. ${stateAbbr} building codes limit the number of shingle layers allowed on a roof.
+**How steep your roof is**: Steep roofs need special safety gear. Workers go slower on steep roofs. This adds to the cost.
 
-**Permits and Inspections**: ${countyName} requires permits for roof replacements. Reputable ${city} contractors include permit fees in their estimates and handle the application process.
+**Old roof removal**: If your roof has many layers, it costs more to remove. ${stateAbbr} rules limit how many layers you can have.
 
-**Current Condition**: Underlying damage to decking or structure, discovered during tear-off, can add to project costs. Quality contractors provide allowances for potential repairs.
+**Permits**: ${countyName} needs permits for roof work. Good roofers include this in their price. They handle the paperwork too.
+
+**Hidden damage**: Sometimes workers find rotted wood under old shingles. Fixing this adds to the cost. Good roofers tell you about possible extra costs upfront.
 
 ${nearbyText}
 
-**Getting accurate estimates**: Our satellite-based instant estimate tool provides ${city} homeowners with reliable pricing based on actual roof measurements. For detailed quotes, local contractors offer free on-site assessments that account for all cost factors specific to your property.
+**How to get a good price:**
 
-**Financing options**: Many ${city} roofing companies offer financing plans, allowing homeowners to spread payments over time. Some options include 0% interest promotional periods for qualified buyers.`;
+Our online tool gives ${city} homeowners a quick price. We measure your roof from satellite photos. For an exact quote, local roofers come look at your home for free.
+
+**Ways to pay:**
+
+Many ${city} roofers let you make payments over time. Some have 0% interest deals. Ask about payment plans when you get quotes.`;
 }
 
 function generateContractorSection(
@@ -240,36 +287,38 @@ function generateContractorSection(
   state: string,
   countyName: string
 ): string {
-  return `Selecting the right roofing contractor is one of the most important decisions ${city} homeowners make. A quality installation protects your home for decades, while poor workmanship can lead to costly problems within years.
+  return `Picking the right roofer is a big choice. A good roofer protects your home for many years. A bad one can cause problems fast.
 
-**Essential qualifications for ${city} roofing contractors:**
+**What to look for in a ${city} roofer:**
 
-**Licensing**: Verify your contractor holds a valid ${state} contractor's license. The ${stateAbbr} Licensing Board maintains online records you can check before signing any contract.
+**License**: Make sure they have a ${state} license. You can check this online at the ${stateAbbr} Licensing Board website.
 
-**Insurance**: Require proof of both general liability and workers' compensation insurance. This protects you from liability if accidents occur on your property during the project.
+**Insurance**: Ask for proof of insurance. They need liability insurance and workers compensation. This protects you if someone gets hurt on your property.
 
-**Local reputation**: Look for contractors with established track records in ${city}. Check online reviews, ask for local references, and verify they have completed projects in your area.
+**Good reviews**: Look for roofers who have done lots of work in ${city}. Read online reviews. Ask for names of past customers you can call.
 
-**Manufacturer certifications**: Leading roofing manufacturers like GAF, Owens Corning, and CertainTeed certify contractors who meet their training and installation standards. These certifications often enable extended warranty options.
+**Training**: Top roofers get special training from companies like GAF, Owens Corning, and CertainTeed. This training means they know how to do the job right.
 
-**Written estimates**: Professional ${city} contractors provide detailed written estimates specifying materials, labor, timeline, and total cost. Avoid contractors who provide only verbal quotes.
+**Written quotes**: Good roofers give you a paper that lists everything. It should show materials, labor, timeline, and total cost. Do not trust someone who only tells you a price out loud.
 
-**Questions to ask potential contractors:**
+**Questions to ask:**
 
-• How long have you been operating in ${city}?
-• Can you provide references from recent local projects?
-• What warranties do you offer on materials and workmanship?
-• Will you obtain the necessary ${countyName} permits?
-• How do you handle unexpected repairs or issues discovered during the project?
-• What is your estimated timeline for completion?
+• How long have you worked in ${city}?
+• Can I talk to people you did work for recently?
+• What promises do you make about your work?
+• Will you get the ${countyName} permits?
+• What if you find hidden damage?
+• When will you finish the job?
 
-**Red flags to watch for:**
+**Warning signs to watch for:**
 
-• Pressure to sign immediately or accept "limited time" pricing
-• Requests for large upfront deposits (10-20% is standard)
-• No physical business address or only a P.O. Box
-• Reluctance to provide references or proof of insurance
-• Significantly lower bids than competitors (may indicate cut corners)
+• They push you to sign right away
+• They want a lot of money upfront (10-20% is normal)
+• They have no real office address
+• They will not show you insurance papers
+• Their price is way lower than others (they might cut corners)
 
-Our partner contractors in ${city} are pre-screened for licensing, insurance, and reputation. When you receive an estimate through our system and choose to move forward, we connect you with qualified local professionals who meet our standards for quality and customer service.`;
+**We check roofers for you:**
+
+Our partner roofers in ${city} are already checked. We make sure they have licenses and insurance. We make sure past customers were happy. When you use our service, we connect you with roofers who do quality work.`;
 }
