@@ -60,14 +60,12 @@ export {
   getSearchConsoleData,
   getRoofingKeywordOpportunities,
   isSearchConsoleConfigured,
-  getMockSearchConsoleData,
 } from './searchConsole';
 
 // Brightdata
 export {
   getSerpAnalysis,
   isBrightdataConfigured,
-  getMockCompetitorAnalysis,
 } from './brightdata';
 
 // Gemini
@@ -77,7 +75,6 @@ export {
   simplifyContent,
   generateImageAlt,
   getInternalLinkingKeywords,
-  getMockGeneratedContent,
 } from './gemini';
 
 // Images
@@ -86,5 +83,4 @@ export {
   getFeaturedImage,
   getConfiguredImageSources,
   downloadAndSaveImage,
-  getMockImages,
 } from './images';

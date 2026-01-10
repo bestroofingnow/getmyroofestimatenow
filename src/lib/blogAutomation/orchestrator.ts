@@ -18,26 +18,20 @@ import {
   SearchConsoleKeyword,
 } from './types';
 import {
-  getSearchConsoleData,
   getRoofingKeywordOpportunities,
-  getMockSearchConsoleData,
   isSearchConsoleConfigured,
 } from './searchConsole';
 import {
   getSerpAnalysis,
-  getMockCompetitorAnalysis,
   isBrightdataConfigured,
 } from './brightdata';
 import {
   generateBlogContent,
-  getMockGeneratedContent,
   getInternalLinkingKeywords,
   isGeminiConfigured,
 } from './gemini';
 import {
   getImagesForBlog,
-  getFeaturedImage,
-  getMockImages,
   getConfiguredImageSources,
 } from './images';
 import { processContentWithLinks } from '../internalLinking';
@@ -131,11 +125,29 @@ export async function startBlogJob(keyword: string): Promise<BlogAutomationJob> 
 }
 
 /**
+ * Validate required API configurations before starting a job
+ */
+function validateRequiredAPIs(): void {
+  const missing: string[] = [];
+
+  if (!isGeminiConfigured()) {
+    missing.push('GEMINI_API_KEY (required for content generation)');
+  }
+
+  if (missing.length > 0) {
+    throw new Error(`Missing required API configuration: ${missing.join(', ')}`);
+  }
+}
+
+/**
  * Process a blog automation job
  */
 async function processJob(jobId: string): Promise<void> {
   const job = blogJobs.get(jobId);
   if (!job) throw new Error('Job not found');
+
+  // Validate required APIs before processing
+  validateRequiredAPIs();
 
   try {
     // Step 1: Research phase
@@ -144,10 +156,11 @@ async function processJob(jobId: string): Promise<void> {
 
     console.log(`[${jobId}] Researching keyword: ${job.keyword}`);
 
-    // Get competitor analysis
-    const competitorAnalysis = isBrightdataConfigured()
-      ? await getSerpAnalysis(job.keyword)
-      : getMockCompetitorAnalysis(job.keyword);
+    // Get competitor analysis (requires Brightdata)
+    if (!isBrightdataConfigured()) {
+      throw new Error('BRIGHTDATA_API_KEY not configured. Required for competitor analysis.');
+    }
+    const competitorAnalysis = await getSerpAnalysis(job.keyword);
 
     job.competitorAnalysis = competitorAnalysis;
 
@@ -168,18 +181,17 @@ async function processJob(jobId: string): Promise<void> {
       includeImages: true,
     };
 
-    const generatedContent = isGeminiConfigured()
-      ? await generateBlogContent(contentRequest)
-      : getMockGeneratedContent(job.keyword);
+    const generatedContent = await generateBlogContent(contentRequest);
 
     job.generatedContent = generatedContent;
 
-    // Step 3: Get images
+    // Step 3: Get images (requires at least one image provider)
     console.log(`[${jobId}] Sourcing images...`);
 
-    const images = getConfiguredImageSources().length > 0
-      ? await getImagesForBlog(job.keyword, 3)
-      : getMockImages(job.keyword);
+    if (getConfiguredImageSources().length === 0) {
+      throw new Error('No image providers configured. Set UNSPLASH_ACCESS_KEY, PEXELS_API_KEY, or GEMINI_API_KEY.');
+    }
+    const images = await getImagesForBlog(job.keyword, 3);
 
     const featuredImage = images[0] || null;
 
@@ -306,13 +318,11 @@ export function updateBlogPost(jobId: string, updates: Partial<BlogPost>): BlogP
  * Get keyword opportunities from Search Console
  */
 export async function getKeywordOpportunities(): Promise<SearchConsoleKeyword[]> {
-  if (isSearchConsoleConfigured()) {
-    return getRoofingKeywordOpportunities();
+  if (!isSearchConsoleConfigured()) {
+    throw new Error('GOOGLE_ACCESS_TOKEN not configured. Required for keyword research from Google Search Console.');
   }
 
-  // Return mock data for development
-  const mockData = getMockSearchConsoleData();
-  return [...mockData.lowHangingFruit, ...mockData.risingKeywords];
+  return getRoofingKeywordOpportunities();
 }
 
 /**
