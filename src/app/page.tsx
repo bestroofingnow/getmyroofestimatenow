@@ -267,9 +267,13 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-4 text-center md:text-left">
-              <div className="w-12 h-12 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-xl flex items-center justify-center">
-                <Home className="w-6 h-6 text-white" />
-              </div>
+              <Image
+                src="/logo.png"
+                alt="Get My Roof Estimate Now"
+                width={48}
+                height={48}
+                className="w-12 h-12"
+              />
               <div>
                 <div className="text-xl font-bold text-white mb-1">GetMyRoofEstimateNow</div>
                 <p className="text-sm">Instant roof quotes, trusted contractors.</p>
