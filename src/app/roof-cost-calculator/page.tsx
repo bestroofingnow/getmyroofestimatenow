@@ -93,7 +93,7 @@ export default function RoofCostCalculator() {
             </Link>
             <Link
               href="/"
-              className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors"
+              className="bg-orange-600 hover:bg-orange-500 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors"
             >
               Get Accurate Estimate
             </Link>
@@ -102,17 +102,17 @@ export default function RoofCostCalculator() {
       </header>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-emerald-600 to-teal-800 text-white py-12">
+      <section className="bg-gradient-to-br from-orange-600 to-blue-800 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Calculator className="w-6 h-6" />
-              <span className="text-emerald-200 font-medium">Free Tool</span>
+              <span className="text-orange-200 font-medium">Free Tool</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               Roof Cost Calculator
             </h1>
-            <p className="text-xl text-emerald-100">
+            <p className="text-xl text-orange-100">
               Estimate your roof replacement cost based on size, materials, and location.
               For a more accurate estimate, use our <Link href="/" className="underline hover:text-white">satellite-based tool</Link>.
             </p>
@@ -129,7 +129,7 @@ export default function RoofCostCalculator() {
                 {/* Input Section */}
                 <div className="space-y-6">
                   <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-                    <Home className="w-5 h-5 text-emerald-600" />
+                    <Home className="w-5 h-5 text-orange-600" />
                     Your Roof Details
                   </h2>
 
@@ -145,7 +145,7 @@ export default function RoofCostCalculator() {
                         value={squareFeet}
                         onChange={(e) => setSquareFeet(e.target.value)}
                         placeholder="e.g., 2000"
-                        className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                        className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                       />
                     </div>
                     <p className="text-xs text-slate-500 mt-1">
@@ -161,7 +161,7 @@ export default function RoofCostCalculator() {
                     <select
                       value={material}
                       onChange={(e) => setMaterial(e.target.value)}
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                     >
                       <optgroup label="Asphalt Shingles">
                         <option value="asphalt-3tab">3-Tab Asphalt (Budget)</option>
@@ -190,7 +190,7 @@ export default function RoofCostCalculator() {
                     <select
                       value={pitch}
                       onChange={(e) => setPitch(e.target.value)}
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                     >
                       <option value="flat">Flat or Low Slope (0-2/12)</option>
                       <option value="low">Low Pitch (3-4/12)</option>
@@ -208,7 +208,7 @@ export default function RoofCostCalculator() {
                     <select
                       value={region}
                       onChange={(e) => setRegion(e.target.value)}
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                     >
                       {Object.entries(regionMultipliers).map(([key, { name }]) => (
                         <option key={key} value={key}>{name}</option>
@@ -223,7 +223,7 @@ export default function RoofCostCalculator() {
                         type="checkbox"
                         checked={tearOff}
                         onChange={(e) => setTearOff(e.target.checked)}
-                        className="w-5 h-5 text-emerald-600 border-slate-300 rounded focus:ring-emerald-500"
+                        className="w-5 h-5 text-orange-600 border-slate-300 rounded focus:ring-orange-500"
                       />
                       <span className="text-sm text-slate-700">
                         Include old roof tear-off (+$100/square)
@@ -233,7 +233,7 @@ export default function RoofCostCalculator() {
 
                   <button
                     onClick={calculateCost}
-                    className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-4 rounded-xl transition-colors flex items-center justify-center gap-2"
+                    className="w-full bg-orange-600 hover:bg-orange-500 text-white font-semibold py-4 rounded-xl transition-colors flex items-center justify-center gap-2"
                   >
                     <Calculator className="w-5 h-5" />
                     Calculate Estimate
@@ -260,8 +260,8 @@ export default function RoofCostCalculator() {
                           <div className="text-xs text-slate-500 mb-1">Budget</div>
                           <div className="text-xl font-bold text-slate-900">{formatCurrency(result.low)}</div>
                         </div>
-                        <div className="bg-emerald-600 rounded-xl p-4 text-center text-white">
-                          <div className="text-xs text-emerald-200 mb-1">Average</div>
+                        <div className="bg-orange-600 rounded-xl p-4 text-center text-white">
+                          <div className="text-xs text-orange-200 mb-1">Average</div>
                           <div className="text-xl font-bold">{formatCurrency(result.mid)}</div>
                         </div>
                         <div className="bg-slate-100 rounded-xl p-4 text-center">
@@ -355,32 +355,32 @@ export default function RoofCostCalculator() {
               We provide location-specific estimates for major cities across the US.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Link href="/roof-estimate/charlotte-nc" className="px-4 py-2 bg-white rounded-lg border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50 transition-colors text-sm">Charlotte, NC</Link>
-              <Link href="/roof-estimate/lake-norman-nc" className="px-4 py-2 bg-white rounded-lg border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50 transition-colors text-sm">Lake Norman, NC</Link>
-              <Link href="/roof-estimate/houston-tx" className="px-4 py-2 bg-white rounded-lg border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50 transition-colors text-sm">Houston, TX</Link>
-              <Link href="/roof-estimate/dallas-tx" className="px-4 py-2 bg-white rounded-lg border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50 transition-colors text-sm">Dallas, TX</Link>
-              <Link href="/roof-estimate/miami-fl" className="px-4 py-2 bg-white rounded-lg border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50 transition-colors text-sm">Miami, FL</Link>
-              <Link href="/roof-estimate/phoenix-az" className="px-4 py-2 bg-white rounded-lg border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50 transition-colors text-sm">Phoenix, AZ</Link>
-              <Link href="/roof-estimate/atlanta-ga" className="px-4 py-2 bg-white rounded-lg border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50 transition-colors text-sm">Atlanta, GA</Link>
-              <Link href="/roof-estimate" className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-500 transition-colors text-sm">View All Cities</Link>
+              <Link href="/roof-estimate/charlotte-nc" className="px-4 py-2 bg-white rounded-lg border border-slate-200 hover:border-orange-300 hover:bg-orange-50 transition-colors text-sm">Charlotte, NC</Link>
+              <Link href="/roof-estimate/lake-norman-nc" className="px-4 py-2 bg-white rounded-lg border border-slate-200 hover:border-orange-300 hover:bg-orange-50 transition-colors text-sm">Lake Norman, NC</Link>
+              <Link href="/roof-estimate/houston-tx" className="px-4 py-2 bg-white rounded-lg border border-slate-200 hover:border-orange-300 hover:bg-orange-50 transition-colors text-sm">Houston, TX</Link>
+              <Link href="/roof-estimate/dallas-tx" className="px-4 py-2 bg-white rounded-lg border border-slate-200 hover:border-orange-300 hover:bg-orange-50 transition-colors text-sm">Dallas, TX</Link>
+              <Link href="/roof-estimate/miami-fl" className="px-4 py-2 bg-white rounded-lg border border-slate-200 hover:border-orange-300 hover:bg-orange-50 transition-colors text-sm">Miami, FL</Link>
+              <Link href="/roof-estimate/phoenix-az" className="px-4 py-2 bg-white rounded-lg border border-slate-200 hover:border-orange-300 hover:bg-orange-50 transition-colors text-sm">Phoenix, AZ</Link>
+              <Link href="/roof-estimate/atlanta-ga" className="px-4 py-2 bg-white rounded-lg border border-slate-200 hover:border-orange-300 hover:bg-orange-50 transition-colors text-sm">Atlanta, GA</Link>
+              <Link href="/roof-estimate" className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-500 transition-colors text-sm">View All Cities</Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-12 bg-gradient-to-br from-emerald-600 to-teal-800 text-white">
+      <section className="py-12 bg-gradient-to-br from-orange-600 to-blue-800 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">
             Want a More Accurate Estimate?
           </h2>
-          <p className="text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
             Our satellite-based tool measures your actual roof and provides pricing
             based on your specific property - not just averages.
           </p>
           <Link
             href="/"
-            className="inline-flex items-center gap-2 bg-white text-emerald-600 font-semibold px-8 py-4 rounded-xl hover:bg-emerald-50 transition-colors text-lg"
+            className="inline-flex items-center gap-2 bg-white text-orange-600 font-semibold px-8 py-4 rounded-xl hover:bg-orange-50 transition-colors text-lg"
           >
             Get Your Free Satellite Estimate
             <ArrowRight className="w-5 h-5" />

@@ -83,7 +83,7 @@ export default function RoofEstimateHubPage() {
               </Link>
               <Link
                 href="/"
-                className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors"
+                className="bg-orange-600 hover:bg-orange-500 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors"
               >
                 Get Free Estimate
               </Link>
@@ -92,22 +92,22 @@ export default function RoofEstimateHubPage() {
         </header>
 
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-emerald-600 to-teal-800 text-white py-16">
+        <section className="bg-gradient-to-br from-orange-600 to-blue-800 text-white py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 bg-emerald-500/30 rounded-full px-4 py-2 mb-6">
+              <div className="inline-flex items-center gap-2 bg-orange-500/30 rounded-full px-4 py-2 mb-6">
                 <MapPin className="w-5 h-5" />
                 <span className="text-sm font-medium">Serving {totalCities} Cities Across {totalStates} States</span>
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 Free Roof Estimates Nationwide
               </h1>
-              <p className="text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
+              <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
                 Find your city below to get local roofing pricing, contractor information, and an instant estimate using satellite imagery.
               </p>
               <Link
                 href="/"
-                className="inline-flex items-center gap-2 bg-white text-emerald-600 font-semibold px-8 py-4 rounded-xl hover:bg-emerald-50 transition-colors"
+                className="inline-flex items-center gap-2 bg-white text-orange-600 font-semibold px-8 py-4 rounded-xl hover:bg-orange-50 transition-colors"
               >
                 <Search className="w-5 h-5" />
                 Enter Your Address for Instant Estimate
@@ -121,19 +121,19 @@ export default function RoofEstimateHubPage() {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div>
-                <div className="text-3xl font-bold text-emerald-600">{totalCities}+</div>
+                <div className="text-3xl font-bold text-orange-600">{totalCities}+</div>
                 <div className="text-sm text-slate-600">Cities Served</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-emerald-600">{totalStates}</div>
+                <div className="text-3xl font-bold text-orange-600">{totalStates}</div>
                 <div className="text-sm text-slate-600">States Covered</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-emerald-600">60s</div>
+                <div className="text-3xl font-bold text-orange-600">60s</div>
                 <div className="text-sm text-slate-600">Instant Estimates</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-emerald-600">100%</div>
+                <div className="text-3xl font-bold text-orange-600">100%</div>
                 <div className="text-sm text-slate-600">Free Service</div>
               </div>
             </div>
@@ -156,7 +156,7 @@ export default function RoofEstimateHubPage() {
                   <div key={state} className="bg-white rounded-2xl p-6 shadow-sm">
                     <div className="flex items-center justify-between mb-6">
                       <h3 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
-                        <MapPin className="w-6 h-6 text-emerald-600" />
+                        <MapPin className="w-6 h-6 text-orange-600" />
                         {state}
                         <span className="text-sm font-normal text-slate-500 ml-2">
                           ({cities.length} {cities.length === 1 ? 'city' : 'cities'})
@@ -165,7 +165,7 @@ export default function RoofEstimateHubPage() {
                       {hasStatePage && (
                         <Link
                           href={`/roof-estimate/state/${stateSlug}`}
-                          className="text-sm text-emerald-600 hover:text-emerald-800 font-medium flex items-center gap-1"
+                          className="text-sm text-orange-600 hover:text-orange-800 font-medium flex items-center gap-1"
                         >
                           View all {state}
                           <ArrowRight className="w-4 h-4" />
@@ -178,13 +178,13 @@ export default function RoofEstimateHubPage() {
                         <Link
                           key={location.slug}
                           href={`/roof-estimate/state/${stateSlug}/${location.slug}`}
-                          className="group flex flex-col p-4 rounded-xl border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50 transition-all"
+                          className="group flex flex-col p-4 rounded-xl border border-slate-200 hover:border-orange-300 hover:bg-orange-50 transition-all"
                         >
                           <div className="flex items-center justify-between mb-2">
-                            <span className="font-semibold text-slate-900 group-hover:text-emerald-600 transition-colors">
+                            <span className="font-semibold text-slate-900 group-hover:text-orange-600 transition-colors">
                               {location.city}
                             </span>
-                            <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-emerald-600 transition-colors" />
+                            <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-orange-600 transition-colors" />
                           </div>
                           <div className="text-sm text-slate-500">
                             From {formatCurrency(location.avgRoofCost.low)}
@@ -213,7 +213,7 @@ export default function RoofEstimateHubPage() {
               </p>
               <Link
                 href="/"
-                className="inline-flex items-center gap-2 bg-emerald-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-emerald-500 transition-colors"
+                className="inline-flex items-center gap-2 bg-orange-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-orange-500 transition-colors"
               >
                 Get Your Free Estimate
                 <ArrowRight className="w-5 h-5" />
@@ -234,7 +234,7 @@ export default function RoofEstimateHubPage() {
                   <Link
                     key={slug}
                     href={`/roof-estimate/state/${slug}`}
-                    className="bg-white p-3 rounded-lg text-center hover:bg-emerald-50 hover:text-emerald-600 transition-colors border border-slate-200 hover:border-emerald-300"
+                    className="bg-white p-3 rounded-lg text-center hover:bg-orange-50 hover:text-orange-600 transition-colors border border-slate-200 hover:border-orange-300"
                   >
                     <span className="font-medium text-sm">{state.name}</span>
                   </Link>

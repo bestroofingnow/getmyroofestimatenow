@@ -251,7 +251,7 @@ export function processContentWithLinks(
         const attrs = [
           `href="${keywordLink.url}"`,
           `title="${keywordLink.title}"`,
-          'class="internal-link text-emerald-600 hover:underline"',
+          'class="internal-link text-orange-600 hover:underline"',
         ];
 
         if (opts.addNofollow) attrs.push('rel="nofollow"');

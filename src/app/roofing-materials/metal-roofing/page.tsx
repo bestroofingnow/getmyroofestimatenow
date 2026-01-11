@@ -208,7 +208,7 @@ export default function MetalRoofingPage() {
               </Link>
               <Link
                 href="/"
-                className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors"
+                className="bg-orange-600 hover:bg-orange-500 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors"
               >
                 Get Free Estimate
               </Link>
@@ -236,7 +236,7 @@ export default function MetalRoofingPage() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/"
-                  className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
+                  className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-500 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
                 >
                   Get Metal Roof Estimate
                   <ArrowRight className="w-5 h-5" />
@@ -257,19 +257,19 @@ export default function MetalRoofingPage() {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div>
-                <div className="text-3xl font-bold text-emerald-600">$8-$16</div>
+                <div className="text-3xl font-bold text-orange-600">$8-$16</div>
                 <div className="text-sm text-slate-600">Per Sq Ft Installed</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-emerald-600">40-70</div>
+                <div className="text-3xl font-bold text-orange-600">40-70</div>
                 <div className="text-sm text-slate-600">Year Lifespan</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-emerald-600">10-25%</div>
+                <div className="text-3xl font-bold text-orange-600">10-25%</div>
                 <div className="text-sm text-slate-600">Energy Savings</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-emerald-600">140 mph</div>
+                <div className="text-3xl font-bold text-orange-600">140 mph</div>
                 <div className="text-sm text-slate-600">Wind Resistance</div>
               </div>
             </div>
@@ -292,7 +292,7 @@ export default function MetalRoofingPage() {
                   <div key={type.name} className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
                     <div className="flex items-center justify-between mb-4">
                       <h3 className="text-xl font-bold text-slate-900">{type.name}</h3>
-                      <span className="text-lg font-semibold text-emerald-600">{type.priceRange}/sq ft</span>
+                      <span className="text-lg font-semibold text-orange-600">{type.priceRange}/sq ft</span>
                     </div>
                     <p className="text-slate-600 mb-4">{type.description}</p>
                     <div className="flex items-center justify-between text-sm">
@@ -402,10 +402,10 @@ export default function MetalRoofingPage() {
                   </div>
                 </div>
 
-                <div className="mt-8 p-6 bg-emerald-50 rounded-xl">
+                <div className="mt-8 p-6 bg-orange-50 rounded-xl">
                   <h4 className="font-bold text-slate-900 mb-2">Average Total Cost (2,000 sq ft roof)</h4>
                   <div className="flex items-baseline gap-2">
-                    <span className="text-3xl font-bold text-emerald-600">$16,000 - $32,000</span>
+                    <span className="text-3xl font-bold text-orange-600">$16,000 - $32,000</span>
                     <span className="text-slate-500">depending on material and location</span>
                   </div>
                 </div>
@@ -435,17 +435,17 @@ export default function MetalRoofingPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-br from-emerald-600 to-teal-800 text-white">
+        <section className="py-16 bg-gradient-to-br from-orange-600 to-blue-800 text-white">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Get Your Free Metal Roof Estimate
             </h2>
-            <p className="text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
               See exactly what a metal roof would cost for your home. Instant results using satellite measurements.
             </p>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 bg-white text-emerald-600 font-semibold px-8 py-4 rounded-xl hover:bg-emerald-50 transition-colors text-lg"
+              className="inline-flex items-center gap-2 bg-white text-orange-600 font-semibold px-8 py-4 rounded-xl hover:bg-orange-50 transition-colors text-lg"
             >
               Get My Free Estimate
               <ArrowRight className="w-5 h-5" />
@@ -461,16 +461,16 @@ export default function MetalRoofingPage() {
                 Related Guides
               </h2>
               <div className="grid sm:grid-cols-3 gap-4">
-                <Link href="/compare/metal-vs-shingles" className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:border-emerald-300 transition-colors group">
-                  <h3 className="font-semibold text-slate-900 group-hover:text-emerald-600 mb-2">Metal vs. Shingles</h3>
+                <Link href="/compare/metal-vs-shingles" className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:border-orange-300 transition-colors group">
+                  <h3 className="font-semibold text-slate-900 group-hover:text-orange-600 mb-2">Metal vs. Shingles</h3>
                   <p className="text-sm text-slate-600">Compare costs, durability, and value</p>
                 </Link>
-                <Link href="/roofing-materials/asphalt-shingles" className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:border-emerald-300 transition-colors group">
-                  <h3 className="font-semibold text-slate-900 group-hover:text-emerald-600 mb-2">Asphalt Shingles Guide</h3>
+                <Link href="/roofing-materials/asphalt-shingles" className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:border-orange-300 transition-colors group">
+                  <h3 className="font-semibold text-slate-900 group-hover:text-orange-600 mb-2">Asphalt Shingles Guide</h3>
                   <p className="text-sm text-slate-600">The most popular roofing option</p>
                 </Link>
-                <Link href="/roof-cost-calculator" className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:border-emerald-300 transition-colors group">
-                  <h3 className="font-semibold text-slate-900 group-hover:text-emerald-600 mb-2">Cost Calculator</h3>
+                <Link href="/roof-cost-calculator" className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:border-orange-300 transition-colors group">
+                  <h3 className="font-semibold text-slate-900 group-hover:text-orange-600 mb-2">Cost Calculator</h3>
                   <p className="text-sm text-slate-600">Calculate costs for any material</p>
                 </Link>
               </div>

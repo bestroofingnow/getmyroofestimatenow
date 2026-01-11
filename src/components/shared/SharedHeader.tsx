@@ -17,7 +17,7 @@ export function SharedHeader({ variant = 'default', showCTA = true }: SharedHead
 
   const linkClass = variant === 'transparent'
     ? 'text-white/80 hover:text-white'
-    : 'text-slate-600 hover:text-emerald-600';
+    : 'text-slate-600 hover:text-orange-600';
 
   return (
     <header role="banner" className={`${bgClass} sticky top-0 z-40`}>
@@ -72,7 +72,7 @@ export function SharedHeader({ variant = 'default', showCTA = true }: SharedHead
           {showCTA && (
             <Link
               href="/"
-              className="bg-emerald-600 text-white px-4 py-2 rounded-full hover:bg-emerald-500 transition-colors text-sm font-medium shadow-lg shadow-emerald-600/20"
+              className="bg-orange-500 text-white px-4 py-2 rounded-full hover:bg-orange-400 transition-colors text-sm font-medium shadow-lg shadow-orange-500/20"
             >
               Get Free Quote
             </Link>

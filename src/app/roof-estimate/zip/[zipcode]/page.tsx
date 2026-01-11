@@ -121,13 +121,13 @@ export default async function ZipCodePage({ params }: PageProps) {
 
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-emerald-900 via-emerald-800 to-teal-900 text-white overflow-hidden">
+        <section className="relative bg-gradient-to-br from-orange-900 via-orange-800 to-blue-900 text-white overflow-hidden">
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-orange-900/50 to-transparent" />
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
             {/* Breadcrumb */}
-            <nav className="flex items-center gap-2 text-sm text-emerald-200 mb-8 flex-wrap">
+            <nav className="flex items-center gap-2 text-sm text-orange-200 mb-8 flex-wrap">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
               <ChevronRight className="w-4 h-4" />
               <Link href="/roof-estimate" className="hover:text-white transition-colors">Roof Estimates</Link>
@@ -139,31 +139,31 @@ export default async function ZipCodePage({ params }: PageProps) {
 
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <div className="inline-flex items-center gap-2 bg-emerald-500/20 backdrop-blur px-4 py-2 rounded-full text-sm mb-6">
+                <div className="inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur px-4 py-2 rounded-full text-sm mb-6">
                   <Tag className="w-4 h-4" />
                   <span>Zip Code {zipcode}</span>
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                   Roof Estimates for<br />
-                  <span className="text-emerald-300">{zipcode}</span>
+                  <span className="text-orange-300">{zipcode}</span>
                 </h1>
 
-                <p className="text-xl text-emerald-100 mb-8 leading-relaxed">
+                <p className="text-xl text-orange-100 mb-8 leading-relaxed">
                   Get an instant roof replacement estimate for any address in the {zipcode} zip code.
                   Serving {zipData.cityName}, {zipData.stateAbbr} in {zipData.countyName}.
                 </p>
 
                 <div className="flex flex-wrap gap-4 mb-8">
-                  <div className="flex items-center gap-2 text-emerald-100">
+                  <div className="flex items-center gap-2 text-orange-100">
                     <CheckCircle className="w-5 h-5 text-green-400" />
                     <span>100% Free</span>
                   </div>
-                  <div className="flex items-center gap-2 text-emerald-100">
+                  <div className="flex items-center gap-2 text-orange-100">
                     <Clock className="w-5 h-5 text-green-400" />
                     <span>60-Second Results</span>
                   </div>
-                  <div className="flex items-center gap-2 text-emerald-100">
+                  <div className="flex items-center gap-2 text-orange-100">
                     <Shield className="w-5 h-5 text-green-400" />
                     <span>No Obligation</span>
                   </div>
@@ -189,22 +189,22 @@ export default async function ZipCodePage({ params }: PageProps) {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center p-6 bg-slate-50 rounded-xl">
-                <DollarSign className="w-8 h-8 text-emerald-600 mx-auto mb-2" />
+                <DollarSign className="w-8 h-8 text-orange-600 mx-auto mb-2" />
                 <div className="text-2xl font-bold text-slate-900">${zipData.avgRoofCost.mid.toLocaleString()}</div>
                 <div className="text-sm text-slate-600">Average Roof Cost</div>
               </div>
               <div className="text-center p-6 bg-slate-50 rounded-xl">
-                <Home className="w-8 h-8 text-emerald-600 mx-auto mb-2" />
+                <Home className="w-8 h-8 text-orange-600 mx-auto mb-2" />
                 <div className="text-xl font-bold text-slate-900">{zipData.avgHomeValue}</div>
                 <div className="text-sm text-slate-600">Home Values</div>
               </div>
               <div className="text-center p-6 bg-slate-50 rounded-xl">
-                <Calendar className="w-8 h-8 text-emerald-600 mx-auto mb-2" />
+                <Calendar className="w-8 h-8 text-orange-600 mx-auto mb-2" />
                 <div className="text-2xl font-bold text-slate-900">{zipData.avgHomeAge}</div>
                 <div className="text-sm text-slate-600">Home Age</div>
               </div>
               <div className="text-center p-6 bg-slate-50 rounded-xl">
-                <Building2 className="w-8 h-8 text-emerald-600 mx-auto mb-2" />
+                <Building2 className="w-8 h-8 text-orange-600 mx-auto mb-2" />
                 <div className="text-lg font-bold text-slate-900">{zipData.housingTypes[0]}</div>
                 <div className="text-sm text-slate-600">Primary Housing</div>
               </div>
@@ -232,7 +232,7 @@ export default async function ZipCodePage({ params }: PageProps) {
                 <ul className="space-y-3 mb-8">
                   {zipData.housingTypes.map((type, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <Home className="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" />
+                      <Home className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
                       <span className="text-slate-600">{type}</span>
                     </li>
                   ))}
@@ -241,7 +241,7 @@ export default async function ZipCodePage({ params }: PageProps) {
                 {countyData && (
                   <Link
                     href={`/roof-estimate/county/${zipData.countySlug}`}
-                    className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium"
+                    className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-medium"
                   >
                     View all of {zipData.countyName}
                     <ArrowRight className="w-4 h-4" />
@@ -250,7 +250,7 @@ export default async function ZipCodePage({ params }: PageProps) {
               </div>
 
               <div>
-                <div className="bg-emerald-50 rounded-xl p-6 mb-6">
+                <div className="bg-orange-50 rounded-xl p-6 mb-6">
                   <h4 className="font-semibold text-slate-900 mb-4">Roof Cost Range in {zipcode}</h4>
                   <div className="grid grid-cols-3 gap-4 text-center">
                     <div>
@@ -258,7 +258,7 @@ export default async function ZipCodePage({ params }: PageProps) {
                       <div className="text-xs text-slate-500">Budget</div>
                     </div>
                     <div>
-                      <div className="text-xl font-bold text-emerald-600">${zipData.avgRoofCost.mid.toLocaleString()}</div>
+                      <div className="text-xl font-bold text-orange-600">${zipData.avgRoofCost.mid.toLocaleString()}</div>
                       <div className="text-xs text-slate-500">Average</div>
                     </div>
                     <div>
@@ -274,7 +274,7 @@ export default async function ZipCodePage({ params }: PageProps) {
                     <div className="flex justify-between">
                       <dt className="text-slate-500">City</dt>
                       <dd className="font-medium text-slate-900">
-                        <Link href={`/roof-estimate/state/${stateSlug}/${zipData.citySlug}`} className="text-emerald-600 hover:underline">
+                        <Link href={`/roof-estimate/state/${stateSlug}/${zipData.citySlug}`} className="text-orange-600 hover:underline">
                           {zipData.cityName}
                         </Link>
                       </dd>
@@ -282,7 +282,7 @@ export default async function ZipCodePage({ params }: PageProps) {
                     <div className="flex justify-between">
                       <dt className="text-slate-500">County</dt>
                       <dd className="font-medium text-slate-900">
-                        <Link href={`/roof-estimate/county/${zipData.countySlug}`} className="text-emerald-600 hover:underline">
+                        <Link href={`/roof-estimate/county/${zipData.countySlug}`} className="text-orange-600 hover:underline">
                           {zipData.countyName}
                         </Link>
                       </dd>
@@ -317,10 +317,10 @@ export default async function ZipCodePage({ params }: PageProps) {
                     className="group bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 flex items-center justify-between"
                   >
                     <div className="flex items-center gap-3">
-                      <MapPin className="w-5 h-5 text-emerald-600" />
+                      <MapPin className="w-5 h-5 text-orange-600" />
                       <span className="font-medium text-slate-900">{neighborhood.name}</span>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all" />
+                    <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-orange-600 group-hover:translate-x-1 transition-all" />
                   </Link>
                 ))}
               </div>
@@ -367,7 +367,7 @@ export default async function ZipCodePage({ params }: PageProps) {
                     href={`/roof-estimate/zip/${zip.zipCode}`}
                     className="group bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 text-center"
                   >
-                    <div className="text-lg font-bold text-emerald-600 group-hover:text-emerald-700">{zip.zipCode}</div>
+                    <div className="text-lg font-bold text-orange-600 group-hover:text-orange-700">{zip.zipCode}</div>
                     <div className="text-sm text-slate-500">${zip.avgRoofCost.mid.toLocaleString()} avg</div>
                   </Link>
                 ))}
@@ -377,17 +377,17 @@ export default async function ZipCodePage({ params }: PageProps) {
         )}
 
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-br from-emerald-600 to-teal-700 text-white">
+        <section className="py-16 bg-gradient-to-br from-orange-600 to-blue-700 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Ready for Your {zipcode} Roof Estimate?
             </h2>
-            <p className="text-xl text-emerald-100 mb-8">
+            <p className="text-xl text-orange-100 mb-8">
               Get instant pricing for your address in {zipData.cityName}. Free, fast, and no obligation.
             </p>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 bg-white text-emerald-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-emerald-50 transition-colors"
+              className="inline-flex items-center gap-2 bg-white text-orange-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-50 transition-colors"
             >
               Get Your Free Estimate
               <ArrowRight className="w-5 h-5" />

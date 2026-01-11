@@ -249,7 +249,7 @@ export default function MetalVsShinglesPage() {
               </Link>
               <Link
                 href="/"
-                className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors"
+                className="bg-orange-600 hover:bg-orange-500 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors"
               >
                 Get Free Estimate
               </Link>
@@ -258,10 +258,10 @@ export default function MetalVsShinglesPage() {
         </header>
 
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-emerald-600 to-teal-800 text-white py-16 md:py-24">
+        <section className="bg-gradient-to-br from-orange-600 to-blue-800 text-white py-16 md:py-24">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <nav className="flex items-center justify-center gap-2 text-emerald-200 text-sm mb-6">
+              <nav className="flex items-center justify-center gap-2 text-orange-200 text-sm mb-6">
                 <Link href="/" className="hover:text-white">Home</Link>
                 <span>/</span>
                 <span className="text-white">Metal vs Shingles</span>
@@ -269,12 +269,12 @@ export default function MetalVsShinglesPage() {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                 Metal Roofing vs Asphalt Shingles
               </h1>
-              <p className="text-xl md:text-2xl text-emerald-100 mb-8 max-w-2xl mx-auto">
+              <p className="text-xl md:text-2xl text-orange-100 mb-8 max-w-2xl mx-auto">
                 The definitive 2025 comparison guide. See costs, durability, ROI, and which roofing material is best for your home.
               </p>
               <Link
                 href="/"
-                className="inline-flex items-center gap-2 bg-white text-emerald-600 font-semibold px-8 py-4 rounded-xl hover:bg-emerald-50 transition-colors"
+                className="inline-flex items-center gap-2 bg-white text-orange-600 font-semibold px-8 py-4 rounded-xl hover:bg-orange-50 transition-colors"
               >
                 Compare Prices for Your Home
                 <ArrowRight className="w-5 h-5" />
@@ -431,9 +431,9 @@ export default function MetalVsShinglesPage() {
                 </div>
               </div>
 
-              <div className="mt-8 p-6 bg-emerald-50 rounded-xl border border-emerald-200 text-center">
+              <div className="mt-8 p-6 bg-orange-50 rounded-xl border border-orange-200 text-center">
                 <p className="text-lg font-semibold text-slate-900">
-                  Over 50 years, metal roofing can save <span className="text-emerald-600">$30,000</span> compared to asphalt shingles
+                  Over 50 years, metal roofing can save <span className="text-orange-600">$30,000</span> compared to asphalt shingles
                 </p>
                 <p className="text-sm text-slate-600 mt-2">
                   *Based on average costs for a 2,000 sq ft roof. Actual savings vary by location and usage.
@@ -464,17 +464,17 @@ export default function MetalVsShinglesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-br from-emerald-600 to-teal-800 text-white">
+        <section className="py-16 bg-gradient-to-br from-orange-600 to-blue-800 text-white">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               See What Both Options Cost for Your Home
             </h2>
-            <p className="text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
               Get instant estimates for metal and shingle roofing based on your actual roof size. Compare and decide.
             </p>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 bg-white text-emerald-600 font-semibold px-8 py-4 rounded-xl hover:bg-emerald-50 transition-colors text-lg"
+              className="inline-flex items-center gap-2 bg-white text-orange-600 font-semibold px-8 py-4 rounded-xl hover:bg-orange-50 transition-colors text-lg"
             >
               Get My Free Comparison
               <ArrowRight className="w-5 h-5" />
@@ -490,16 +490,16 @@ export default function MetalVsShinglesPage() {
                 Learn More About Each Option
               </h2>
               <div className="grid sm:grid-cols-3 gap-4">
-                <Link href="/roofing-materials/metal-roofing" className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:border-emerald-300 transition-colors group">
-                  <h3 className="font-semibold text-slate-900 group-hover:text-emerald-600 mb-2">Metal Roofing Guide</h3>
+                <Link href="/roofing-materials/metal-roofing" className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:border-orange-300 transition-colors group">
+                  <h3 className="font-semibold text-slate-900 group-hover:text-orange-600 mb-2">Metal Roofing Guide</h3>
                   <p className="text-sm text-slate-600">Complete guide to metal roof types, costs, and installation</p>
                 </Link>
-                <Link href="/roofing-materials/asphalt-shingles" className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:border-emerald-300 transition-colors group">
-                  <h3 className="font-semibold text-slate-900 group-hover:text-emerald-600 mb-2">Asphalt Shingles Guide</h3>
+                <Link href="/roofing-materials/asphalt-shingles" className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:border-orange-300 transition-colors group">
+                  <h3 className="font-semibold text-slate-900 group-hover:text-orange-600 mb-2">Asphalt Shingles Guide</h3>
                   <p className="text-sm text-slate-600">Everything about shingle types, brands, and costs</p>
                 </Link>
-                <Link href="/roof-cost-calculator" className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:border-emerald-300 transition-colors group">
-                  <h3 className="font-semibold text-slate-900 group-hover:text-emerald-600 mb-2">Cost Calculator</h3>
+                <Link href="/roof-cost-calculator" className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:border-orange-300 transition-colors group">
+                  <h3 className="font-semibold text-slate-900 group-hover:text-orange-600 mb-2">Cost Calculator</h3>
                   <p className="text-sm text-slate-600">Calculate costs for any roofing material</p>
                 </Link>
               </div>

@@ -217,7 +217,7 @@ export default function StormDamagePage() {
               </Link>
               <Link
                 href="/"
-                className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors"
+                className="bg-orange-600 hover:bg-orange-500 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors"
               >
                 Get Free Estimate
               </Link>
@@ -242,7 +242,7 @@ export default function StormDamagePage() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/"
-                  className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
+                  className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-500 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
                 >
                   Get Free Damage Assessment
                   <ArrowRight className="w-5 h-5" />
@@ -263,19 +263,19 @@ export default function StormDamagePage() {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div>
-                <div className="text-3xl font-bold text-emerald-600">Free</div>
+                <div className="text-3xl font-bold text-orange-600">Free</div>
                 <div className="text-sm text-slate-600">Damage Inspections</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-emerald-600">24-48hr</div>
+                <div className="text-3xl font-bold text-orange-600">24-48hr</div>
                 <div className="text-sm text-slate-600">Response Time</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-emerald-600">100%</div>
+                <div className="text-3xl font-bold text-orange-600">100%</div>
                 <div className="text-sm text-slate-600">Claim Assistance</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-emerald-600">Licensed</div>
+                <div className="text-3xl font-bold text-orange-600">Licensed</div>
                 <div className="text-sm text-slate-600">& Insured</div>
               </div>
             </div>
@@ -283,7 +283,7 @@ export default function StormDamagePage() {
         </section>
 
         {/* Charlotte Metro Storm Info */}
-        <section className="py-12 bg-gradient-to-r from-emerald-50 to-slate-50 border-b border-slate-200">
+        <section className="py-12 bg-gradient-to-r from-orange-50 to-slate-50 border-b border-slate-200">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-2xl font-bold text-slate-900 mb-4 text-center">
@@ -303,25 +303,25 @@ export default function StormDamagePage() {
                   <div className="text-sm text-slate-600">Peak Storm Season</div>
                 </div>
                 <div className="bg-white rounded-xl p-4 shadow-sm">
-                  <div className="text-2xl font-bold text-emerald-600">151+</div>
+                  <div className="text-2xl font-bold text-orange-600">151+</div>
                   <div className="text-sm text-slate-600">Hail Radar Detections</div>
                 </div>
               </div>
               <div className="mt-6 flex flex-wrap justify-center gap-2 text-sm">
                 <span className="text-slate-500">Serving:</span>
-                <Link href="/roof-estimate/state/north-carolina/charlotte" className="text-emerald-600 hover:underline">Charlotte</Link>
+                <Link href="/roof-estimate/state/north-carolina/charlotte" className="text-orange-600 hover:underline">Charlotte</Link>
                 <span className="text-slate-300">•</span>
-                <Link href="/roof-estimate/state/north-carolina/huntersville" className="text-emerald-600 hover:underline">Huntersville</Link>
+                <Link href="/roof-estimate/state/north-carolina/huntersville" className="text-orange-600 hover:underline">Huntersville</Link>
                 <span className="text-slate-300">•</span>
-                <Link href="/roof-estimate/state/north-carolina/matthews" className="text-emerald-600 hover:underline">Matthews</Link>
+                <Link href="/roof-estimate/state/north-carolina/matthews" className="text-orange-600 hover:underline">Matthews</Link>
                 <span className="text-slate-300">•</span>
-                <Link href="/roof-estimate/state/north-carolina/concord" className="text-emerald-600 hover:underline">Concord</Link>
+                <Link href="/roof-estimate/state/north-carolina/concord" className="text-orange-600 hover:underline">Concord</Link>
                 <span className="text-slate-300">•</span>
-                <Link href="/roof-estimate/state/south-carolina/fort-mill" className="text-emerald-600 hover:underline">Fort Mill</Link>
+                <Link href="/roof-estimate/state/south-carolina/fort-mill" className="text-orange-600 hover:underline">Fort Mill</Link>
                 <span className="text-slate-300">•</span>
-                <Link href="/roof-estimate/state/north-carolina/mooresville" className="text-emerald-600 hover:underline">Mooresville</Link>
+                <Link href="/roof-estimate/state/north-carolina/mooresville" className="text-orange-600 hover:underline">Mooresville</Link>
                 <span className="text-slate-300">•</span>
-                <Link href="/roof-estimate" className="text-emerald-600 hover:underline">All Areas →</Link>
+                <Link href="/roof-estimate" className="text-orange-600 hover:underline">All Areas →</Link>
               </div>
             </div>
           </div>
@@ -343,8 +343,8 @@ export default function StormDamagePage() {
                   <div key={type.name} className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
-                          <type.icon className="w-6 h-6 text-emerald-600" />
+                        <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
+                          <type.icon className="w-6 h-6 text-orange-600" />
                         </div>
                         <h3 className="text-xl font-bold text-slate-900">{type.name}</h3>
                       </div>
@@ -360,7 +360,7 @@ export default function StormDamagePage() {
                     <ul className="space-y-2">
                       {type.signs.map((sign, i) => (
                         <li key={i} className="flex items-center gap-2 text-slate-600 text-sm">
-                          <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-orange-500 flex-shrink-0" />
                           {sign}
                         </li>
                       ))}
@@ -386,7 +386,7 @@ export default function StormDamagePage() {
               <div className="space-y-6">
                 {insuranceSteps.map((item) => (
                   <div key={item.step} className="flex gap-6 items-start">
-                    <div className="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center flex-shrink-0">
                       <span className="text-white font-bold text-lg">{item.step}</span>
                     </div>
                     <div className="flex-1 bg-slate-50 rounded-xl p-6">
@@ -410,8 +410,8 @@ export default function StormDamagePage() {
 
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-white rounded-2xl p-6 text-center border border-slate-200">
-                  <div className="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <Clock className="w-7 h-7 text-emerald-600" />
+                  <div className="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Clock className="w-7 h-7 text-orange-600" />
                   </div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Fast Response</h3>
                   <p className="text-slate-600 text-sm">24-48 hour response for damage inspections. Emergency tarping available.</p>
@@ -456,17 +456,17 @@ export default function StormDamagePage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-br from-emerald-600 to-teal-800 text-white">
+        <section className="py-16 bg-gradient-to-br from-orange-600 to-blue-800 text-white">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Get Your Free Storm Damage Inspection
             </h2>
-            <p className="text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
               Don't wait - storm damage can worsen quickly. Get a free professional inspection and repair estimate today.
             </p>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 bg-white text-emerald-600 font-semibold px-8 py-4 rounded-xl hover:bg-emerald-50 transition-colors text-lg"
+              className="inline-flex items-center gap-2 bg-white text-orange-600 font-semibold px-8 py-4 rounded-xl hover:bg-orange-50 transition-colors text-lg"
             >
               Get My Free Estimate
               <ArrowRight className="w-5 h-5" />

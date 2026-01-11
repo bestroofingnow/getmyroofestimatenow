@@ -198,10 +198,10 @@ export default async function NeighborhoodPage({ params }: PageProps) {
                 <span className="font-bold text-lg text-slate-900 hidden sm:inline">Get My Roof Estimate Now</span>
               </Link>
               <nav className="flex items-center gap-4 text-sm">
-                <Link href={`/roof-estimate/state/${stateSlug}/${city}`} className="text-slate-600 hover:text-emerald-600">
+                <Link href={`/roof-estimate/state/${stateSlug}/${city}`} className="text-slate-600 hover:text-orange-600">
                   {neighborhoodData.city}
                 </Link>
-                <Link href="/roof-estimate" className="text-slate-600 hover:text-emerald-600">
+                <Link href="/roof-estimate" className="text-slate-600 hover:text-orange-600">
                   All Locations
                 </Link>
               </nav>
@@ -214,26 +214,26 @@ export default async function NeighborhoodPage({ params }: PageProps) {
           <div className="container mx-auto px-4 py-3">
             <ol className="flex items-center gap-2 text-sm text-slate-600 flex-wrap">
               <li>
-                <Link href="/" className="hover:text-emerald-600 flex items-center gap-1">
+                <Link href="/" className="hover:text-orange-600 flex items-center gap-1">
                   <Home className="w-4 h-4" />
                   <span className="hidden sm:inline">Home</span>
                 </Link>
               </li>
               <ChevronRight className="w-4 h-4 text-slate-400" />
               <li>
-                <Link href="/roof-estimate" className="hover:text-emerald-600">
+                <Link href="/roof-estimate" className="hover:text-orange-600">
                   Roof Estimates
                 </Link>
               </li>
               <ChevronRight className="w-4 h-4 text-slate-400" />
               <li>
-                <Link href={`/roof-estimate/state/${stateSlug}`} className="hover:text-emerald-600">
+                <Link href={`/roof-estimate/state/${stateSlug}`} className="hover:text-orange-600">
                   {neighborhoodData.state}
                 </Link>
               </li>
               <ChevronRight className="w-4 h-4 text-slate-400" />
               <li>
-                <Link href={`/roof-estimate/state/${stateSlug}/${city}`} className="hover:text-emerald-600">
+                <Link href={`/roof-estimate/state/${stateSlug}/${city}`} className="hover:text-orange-600">
                   {neighborhoodData.city}, {neighborhoodData.stateAbbr}
                 </Link>
               </li>
@@ -244,19 +244,19 @@ export default async function NeighborhoodPage({ params }: PageProps) {
         </nav>
 
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-emerald-600 via-emerald-700 to-teal-800 text-white py-12 md:py-16">
+        <section className="bg-gradient-to-br from-orange-600 via-orange-700 to-blue-800 text-white py-12 md:py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <div className="flex items-center justify-center gap-2 mb-4">
-                <MapPin className="w-5 h-5 text-emerald-200" />
-                <span className="text-emerald-200 font-medium">
+                <MapPin className="w-5 h-5 text-orange-200" />
+                <span className="text-orange-200 font-medium">
                   {neighborhoodData.name} • {neighborhoodData.city}, {neighborhoodData.stateAbbr}
                 </span>
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
                 Free Roof Estimate for {neighborhoodData.name}
               </h1>
-              <p className="text-lg md:text-xl text-emerald-100 mb-6 max-w-2xl mx-auto">
+              <p className="text-lg md:text-xl text-orange-100 mb-6 max-w-2xl mx-auto">
                 Get an instant, accurate roof replacement estimate for your {neighborhoodData.name} home using satellite imagery. Takes just 60 seconds.
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm">
@@ -320,7 +320,7 @@ export default async function NeighborhoodPage({ params }: PageProps) {
                         <ul className="space-y-1">
                           {neighborhoodData.housingTypes.map((type, i) => (
                             <li key={i} className="flex items-start gap-2 text-slate-600">
-                              <Home className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
+                              <Home className="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" />
                               {type}
                             </li>
                           ))}
@@ -340,8 +340,8 @@ export default async function NeighborhoodPage({ params }: PageProps) {
                     <div className="grid sm:grid-cols-2 gap-4">
                       {neighborhoodData.roofingConsiderations.map((consideration, i) => (
                         <div key={i} className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl">
-                          <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
-                            <span className="text-emerald-600 font-semibold text-sm">{i + 1}</span>
+                          <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span className="text-orange-600 font-semibold text-sm">{i + 1}</span>
                           </div>
                           <span className="text-slate-700">{consideration}</span>
                         </div>
@@ -369,10 +369,10 @@ export default async function NeighborhoodPage({ params }: PageProps) {
                           <div className="text-2xl font-bold text-slate-900">${cityData.avgRoofCost.low.toLocaleString()}</div>
                           <div className="text-xs text-slate-500 mt-1">3-tab shingles</div>
                         </div>
-                        <div className="bg-emerald-600 rounded-xl p-4 text-center text-white">
-                          <div className="text-sm font-medium text-emerald-200 mb-1">Most Popular</div>
+                        <div className="bg-orange-600 rounded-xl p-4 text-center text-white">
+                          <div className="text-sm font-medium text-orange-200 mb-1">Most Popular</div>
                           <div className="text-2xl font-bold">${cityData.avgRoofCost.mid.toLocaleString()}</div>
-                          <div className="text-xs text-emerald-200 mt-1">Architectural shingles</div>
+                          <div className="text-xs text-orange-200 mt-1">Architectural shingles</div>
                         </div>
                         <div className="bg-slate-50 rounded-xl p-4 text-center border border-slate-200">
                           <div className="text-sm font-medium text-slate-500 mb-1">Premium</div>
@@ -407,16 +407,16 @@ export default async function NeighborhoodPage({ params }: PageProps) {
                 {/* Sidebar */}
                 <div className="space-y-6">
                   {/* CTA Card */}
-                  <div className="bg-gradient-to-br from-emerald-600 to-teal-800 rounded-2xl p-6 text-white sticky top-24">
+                  <div className="bg-gradient-to-br from-orange-600 to-blue-800 rounded-2xl p-6 text-white sticky top-24">
                     <h3 className="text-xl font-bold mb-3">
                       Get Your Free Estimate
                     </h3>
-                    <p className="text-emerald-100 mb-4 text-sm">
+                    <p className="text-orange-100 mb-4 text-sm">
                       Join {neighborhoodData.name} homeowners who have gotten instant roof estimates.
                     </p>
                     <Link
                       href="/"
-                      className="block w-full bg-white text-emerald-600 text-center font-semibold py-3 rounded-xl hover:bg-emerald-50 transition-colors"
+                      className="block w-full bg-white text-orange-600 text-center font-semibold py-3 rounded-xl hover:bg-orange-50 transition-colors"
                     >
                       Start Now
                     </Link>
@@ -433,7 +433,7 @@ export default async function NeighborhoodPage({ params }: PageProps) {
                           <li key={n.slug}>
                             <Link
                               href={`/roof-estimate/state/${stateSlug}/${n.citySlug}/${n.slug}`}
-                              className="flex items-center gap-2 text-slate-600 hover:text-emerald-600 transition-colors py-2 border-b border-slate-100 last:border-0"
+                              className="flex items-center gap-2 text-slate-600 hover:text-orange-600 transition-colors py-2 border-b border-slate-100 last:border-0"
                             >
                               <MapPin className="w-4 h-4" />
                               {n.name}
@@ -444,7 +444,7 @@ export default async function NeighborhoodPage({ params }: PageProps) {
                       </ul>
                       <Link
                         href={`/roof-estimate/state/${stateSlug}/${city}`}
-                        className="mt-4 block text-center text-emerald-600 font-medium hover:text-emerald-700"
+                        className="mt-4 block text-center text-orange-600 font-medium hover:text-orange-700"
                       >
                         View All {neighborhoodData.city} Areas →
                       </Link>
@@ -488,8 +488,8 @@ export default async function NeighborhoodPage({ params }: PageProps) {
                           className="bg-white rounded-xl p-5 shadow-md hover:shadow-lg transition-shadow border border-slate-200 group"
                         >
                           <div className="flex items-center gap-2 mb-2">
-                            <MapPin className="w-4 h-4 text-emerald-600" />
-                            <span className="font-semibold text-slate-900 group-hover:text-emerald-600 transition-colors">
+                            <MapPin className="w-4 h-4 text-orange-600" />
+                            <span className="font-semibold text-slate-900 group-hover:text-orange-600 transition-colors">
                               {n.name}
                             </span>
                           </div>
@@ -502,16 +502,16 @@ export default async function NeighborhoodPage({ params }: PageProps) {
               )}
 
               {/* Bottom CTA */}
-              <section className="mt-12 bg-gradient-to-r from-emerald-600 to-teal-800 rounded-2xl p-8 md:p-12 text-center text-white">
+              <section className="mt-12 bg-gradient-to-r from-orange-600 to-blue-800 rounded-2xl p-8 md:p-12 text-center text-white">
                 <h2 className="text-2xl md:text-3xl font-bold mb-4">
                   Ready to Get Your {neighborhoodData.name} Roof Estimate?
                 </h2>
-                <p className="text-emerald-100 mb-6 max-w-2xl mx-auto">
+                <p className="text-orange-100 mb-6 max-w-2xl mx-auto">
                   Our satellite-based estimates are accurate, instant, and completely free. See what your roof replacement could cost in just 60 seconds.
                 </p>
                 <Link
                   href="/"
-                  className="inline-flex items-center gap-2 bg-white text-emerald-600 font-semibold px-8 py-4 rounded-xl hover:bg-emerald-50 transition-colors text-lg"
+                  className="inline-flex items-center gap-2 bg-white text-orange-600 font-semibold px-8 py-4 rounded-xl hover:bg-orange-50 transition-colors text-lg"
                 >
                   Get Your Free Estimate Now
                   <ArrowRight className="w-5 h-5" />

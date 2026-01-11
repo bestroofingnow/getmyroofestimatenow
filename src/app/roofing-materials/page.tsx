@@ -133,7 +133,7 @@ export default function RoofingMaterialsPage() {
                 <Image src="/logo.png" alt="Get My Roof Estimate Now" width={48} height={48} className="w-12 h-12" />
                 <span className="font-bold text-xl text-slate-900">Get My Roof Estimate Now</span>
               </Link>
-              <Link href="/" className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors">
+              <Link href="/" className="bg-orange-600 hover:bg-orange-500 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors">
                 Get Free Estimate
               </Link>
             </div>
@@ -141,14 +141,14 @@ export default function RoofingMaterialsPage() {
         </header>
 
         {/* Hero */}
-        <section className="bg-gradient-to-br from-emerald-600 to-teal-800 text-white py-16 md:py-24">
+        <section className="bg-gradient-to-br from-orange-600 to-blue-800 text-white py-16 md:py-24">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Roofing Materials Guide</h1>
-              <p className="text-xl md:text-2xl text-emerald-100 mb-8 max-w-2xl mx-auto">
+              <p className="text-xl md:text-2xl text-orange-100 mb-8 max-w-2xl mx-auto">
                 Compare costs, durability, and features of every roofing material to find the perfect option for your home.
               </p>
-              <Link href="/" className="inline-flex items-center gap-2 bg-white text-emerald-600 font-semibold px-8 py-4 rounded-xl hover:bg-emerald-50 transition-colors">
+              <Link href="/" className="inline-flex items-center gap-2 bg-white text-orange-600 font-semibold px-8 py-4 rounded-xl hover:bg-orange-50 transition-colors">
                 Get Estimate for Any Material <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -162,11 +162,11 @@ export default function RoofingMaterialsPage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-10 text-center">Choose Your Roofing Material</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 {materials.map((material) => (
-                  <Link key={material.slug} href={`/roofing-materials/${material.slug}`} className="group bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:border-emerald-300 hover:shadow-md transition-all">
+                  <Link key={material.slug} href={`/roofing-materials/${material.slug}`} className="group bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:border-orange-300 hover:shadow-md transition-all">
                     <div className="flex items-center gap-4 mb-4">
                       <div className={`w-12 h-12 ${material.color} rounded-xl`}></div>
                       <div>
-                        <h3 className="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">{material.name}</h3>
+                        <h3 className="text-xl font-bold text-slate-900 group-hover:text-orange-600 transition-colors">{material.name}</h3>
                         <div className="flex items-center gap-4 text-sm text-slate-500">
                           <span>{material.cost}</span>
                           <span>•</span>
@@ -180,7 +180,7 @@ export default function RoofingMaterialsPage() {
                         <span key={pro} className="text-xs bg-slate-100 text-slate-700 px-2 py-1 rounded-full">{pro}</span>
                       ))}
                     </div>
-                    <div className="mt-4 text-emerald-600 font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+                    <div className="mt-4 text-orange-600 font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
                       Learn More <ArrowRight className="w-4 h-4" />
                     </div>
                   </Link>
@@ -196,7 +196,7 @@ export default function RoofingMaterialsPage() {
             <div className="max-w-2xl mx-auto text-center">
               <h2 className="text-2xl font-bold text-slate-900 mb-4">Not Sure Which to Choose?</h2>
               <p className="text-slate-600 mb-6">Our detailed comparison guides help you decide between popular options.</p>
-              <Link href="/compare/metal-vs-shingles" className="inline-flex items-center gap-2 bg-emerald-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-emerald-500 transition-colors">
+              <Link href="/compare/metal-vs-shingles" className="inline-flex items-center gap-2 bg-orange-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-orange-500 transition-colors">
                 Compare Metal vs Shingles <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -212,13 +212,13 @@ export default function RoofingMaterialsPage() {
         />
 
         {/* CTA */}
-        <section className="py-16 bg-gradient-to-br from-emerald-600 to-teal-800 text-white">
+        <section className="py-16 bg-gradient-to-br from-orange-600 to-blue-800 text-white">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Compare Costs for Your Roof</h2>
-            <p className="text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
               Get instant pricing for any roofing material based on your actual roof size.
             </p>
-            <Link href="/" className="inline-flex items-center gap-2 bg-white text-emerald-600 font-semibold px-8 py-4 rounded-xl hover:bg-emerald-50 transition-colors text-lg">
+            <Link href="/" className="inline-flex items-center gap-2 bg-white text-orange-600 font-semibold px-8 py-4 rounded-xl hover:bg-orange-50 transition-colors text-lg">
               Get My Free Estimate <ArrowRight className="w-5 h-5" />
             </Link>
           </div>

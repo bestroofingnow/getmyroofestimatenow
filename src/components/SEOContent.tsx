@@ -16,7 +16,7 @@ function ExpandableSection({ title, children, defaultOpen = false }: ExpandableS
     <div className="border-b border-slate-200 last:border-b-0">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between py-4 text-left hover:text-emerald-600 transition-colors"
+        className="w-full flex items-center justify-between py-4 text-left hover:text-orange-600 transition-colors"
       >
         <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
         <ChevronDown
@@ -532,9 +532,9 @@ export function SEOContent() {
           </div>
 
           {/* Final CTA */}
-          <div className="mt-12 text-center bg-gradient-to-r from-emerald-600 to-teal-700 rounded-2xl p-8 text-white">
+          <div className="mt-12 text-center bg-gradient-to-r from-orange-600 to-blue-700 rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">Ready for Your Free Roof Estimate?</h3>
-            <p className="text-emerald-100 mb-6 max-w-2xl mx-auto">
+            <p className="text-orange-100 mb-6 max-w-2xl mx-auto">
               Now you know about roof costs and what to expect. Get your free estimate. It takes 60 seconds. It helps you plan your roof project.
             </p>
             <a
@@ -543,7 +543,7 @@ export function SEOContent() {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="inline-flex items-center gap-2 bg-white text-emerald-600 font-semibold px-8 py-4 rounded-xl hover:bg-emerald-50 transition-colors"
+              className="inline-flex items-center gap-2 bg-white text-orange-600 font-semibold px-8 py-4 rounded-xl hover:bg-orange-50 transition-colors"
             >
               Get My Free Estimate Now
             </a>

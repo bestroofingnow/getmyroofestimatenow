@@ -200,7 +200,7 @@ export function AddressInput({ onAddressSelect, isLoading = false }: AddressInpu
             disabled={isLoading}
             autoComplete="off"
             className="w-full pl-12 pr-4 md:pr-36 py-4 text-lg border-2 border-slate-200 rounded-xl
-                       focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100
+                       focus:border-orange-500 focus:ring-4 focus:ring-orange-100
                        disabled:bg-slate-50 disabled:cursor-not-allowed
                        transition-all duration-200 outline-none"
           />
@@ -210,8 +210,8 @@ export function AddressInput({ onAddressSelect, isLoading = false }: AddressInpu
               type="button"
               onClick={handleButtonClick}
               disabled={!address || isLoading || isGeocodingAddress}
-              className="px-6 py-2.5 bg-emerald-600 text-white font-semibold rounded-lg
-                         hover:bg-emerald-500 disabled:bg-slate-300 disabled:cursor-not-allowed
+              className="px-6 py-2.5 bg-orange-600 text-white font-semibold rounded-lg
+                         hover:bg-orange-500 disabled:bg-slate-300 disabled:cursor-not-allowed
                          transition-colors duration-200 flex items-center gap-2"
             >
               {isLoading || isGeocodingAddress ? (
@@ -238,8 +238,8 @@ export function AddressInput({ onAddressSelect, isLoading = false }: AddressInpu
           type="button"
           onClick={handleButtonClick}
           disabled={!address || isLoading || isGeocodingAddress}
-          className="md:hidden w-full px-6 py-4 bg-emerald-600 text-white font-semibold rounded-xl
-                     hover:bg-emerald-500 disabled:bg-slate-300 disabled:cursor-not-allowed
+          className="md:hidden w-full px-6 py-4 bg-orange-600 text-white font-semibold rounded-xl
+                     hover:bg-orange-500 disabled:bg-slate-300 disabled:cursor-not-allowed
                      transition-colors duration-200 flex items-center justify-center gap-2 text-lg"
         >
           {isLoading || isGeocodingAddress ? (
@@ -273,7 +273,7 @@ export function AddressInput({ onAddressSelect, isLoading = false }: AddressInpu
               type="button"
               onClick={() => handleSelect(prediction)}
               className={`w-full px-4 py-3 text-left flex items-start gap-3 transition-colors
-                ${index === selectedIndex ? 'bg-emerald-50' : 'hover:bg-slate-50'}
+                ${index === selectedIndex ? 'bg-orange-50' : 'hover:bg-slate-50'}
                 ${index !== 0 ? 'border-t border-slate-100' : ''}`}
             >
               <MapPin className="h-5 w-5 text-slate-400 mt-0.5 flex-shrink-0" />

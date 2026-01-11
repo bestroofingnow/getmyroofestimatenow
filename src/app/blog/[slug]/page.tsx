@@ -112,19 +112,19 @@ function RelatedContentSection({ items }: { items: RelatedContent[] }) {
           <Link
             key={index}
             href={item.url}
-            className="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200 hover:border-emerald-300 hover:shadow-sm transition-all group"
+            className="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200 hover:border-orange-300 hover:shadow-sm transition-all group"
           >
             <span className="text-2xl" aria-hidden="true">{getTypeIcon(item.type)}</span>
             <div className="flex-1 min-w-0">
-              <span className="text-xs font-medium text-emerald-600 uppercase tracking-wide">
+              <span className="text-xs font-medium text-orange-600 uppercase tracking-wide">
                 {getTypeLabel(item.type)}
               </span>
-              <p className="font-semibold text-slate-900 group-hover:text-emerald-600 transition-colors">
+              <p className="font-semibold text-slate-900 group-hover:text-orange-600 transition-colors">
                 {item.title}
               </p>
               <p className="text-sm text-slate-600 truncate">{item.description}</p>
             </div>
-            <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-emerald-500 flex-shrink-0 mt-1" />
+            <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-orange-500 flex-shrink-0 mt-1" />
           </Link>
         ))}
       </div>
@@ -215,14 +215,14 @@ export default async function BlogPostPage({ params }: PageProps) {
           <div className="container mx-auto px-4 py-3">
             <ol className="flex items-center gap-2 text-sm text-slate-600">
               <li>
-                <Link href="/" className="hover:text-emerald-600 flex items-center gap-1">
+                <Link href="/" className="hover:text-orange-600 flex items-center gap-1">
                   <Home className="w-4 h-4" aria-hidden="true" />
                   Home
                 </Link>
               </li>
               <li className="text-slate-400" aria-hidden="true">/</li>
               <li>
-                <Link href="/blog" className="hover:text-emerald-600">
+                <Link href="/blog" className="hover:text-orange-600">
                   Blog
                 </Link>
               </li>
@@ -292,13 +292,13 @@ export default async function BlogPostPage({ params }: PageProps) {
                   className="prose prose-lg prose-slate max-w-none mb-12
                     prose-headings:font-bold prose-headings:text-slate-900
                     prose-p:text-slate-700 prose-p:leading-relaxed
-                    prose-a:text-emerald-600 prose-a:no-underline hover:prose-a:underline
+                    prose-a:text-orange-600 prose-a:no-underline hover:prose-a:underline
                     prose-strong:text-slate-900
                     prose-ul:text-slate-700 prose-ol:text-slate-700
                     prose-li:marker:text-slate-400
-                    prose-blockquote:border-emerald-500 prose-blockquote:bg-emerald-50 prose-blockquote:py-1 prose-blockquote:not-italic
+                    prose-blockquote:border-orange-500 prose-blockquote:bg-orange-50 prose-blockquote:py-1 prose-blockquote:not-italic
                     prose-img:rounded-xl prose-img:shadow-lg
-                    [&_.internal-link]:text-emerald-600 [&_.internal-link]:font-medium"
+                    [&_.internal-link]:text-orange-600 [&_.internal-link]:font-medium"
                   itemProp="articleBody"
                   dangerouslySetInnerHTML={{ __html: processedContent }}
                 />
@@ -318,16 +318,16 @@ export default async function BlogPostPage({ params }: PageProps) {
                 )}
 
                 {/* CTA Box */}
-                <div className="bg-gradient-to-br from-emerald-600 to-teal-800 rounded-2xl p-8 text-white text-center mb-12">
+                <div className="bg-gradient-to-br from-orange-600 to-blue-800 rounded-2xl p-8 text-white text-center mb-12">
                   <h2 className="text-2xl font-bold mb-4">
                     Ready to Get Your Free Roof Estimate?
                   </h2>
-                  <p className="text-emerald-100 mb-6">
+                  <p className="text-orange-100 mb-6">
                     Get an instant price using satellite photos. Takes just 60 seconds. 100% free.
                   </p>
                   <Link
                     href="/"
-                    className="inline-flex items-center gap-2 bg-white text-emerald-600 font-semibold px-6 py-3 rounded-xl hover:bg-emerald-50 transition-colors"
+                    className="inline-flex items-center gap-2 bg-white text-orange-600 font-semibold px-6 py-3 rounded-xl hover:bg-orange-50 transition-colors"
                   >
                     Get Your Free Estimate
                     <ArrowRight className="w-5 h-5" aria-hidden="true" />
@@ -339,14 +339,14 @@ export default async function BlogPostPage({ params }: PageProps) {
                   {prevPost ? (
                     <Link
                       href={`/blog/${prevPost.slug}`}
-                      className="flex-1 group bg-white rounded-xl p-6 border border-slate-200 hover:border-emerald-300 transition-colors"
+                      className="flex-1 group bg-white rounded-xl p-6 border border-slate-200 hover:border-orange-300 transition-colors"
                       rel="prev"
                     >
                       <span className="flex items-center gap-2 text-sm text-slate-500 mb-2">
                         <ArrowLeft className="w-4 h-4" aria-hidden="true" />
                         Previous Article
                       </span>
-                      <span className="font-semibold text-slate-900 group-hover:text-emerald-600 transition-colors line-clamp-2">
+                      <span className="font-semibold text-slate-900 group-hover:text-orange-600 transition-colors line-clamp-2">
                         {prevPost.title}
                       </span>
                     </Link>
@@ -356,14 +356,14 @@ export default async function BlogPostPage({ params }: PageProps) {
                   {nextPost ? (
                     <Link
                       href={`/blog/${nextPost.slug}`}
-                      className="flex-1 group bg-white rounded-xl p-6 border border-slate-200 hover:border-emerald-300 transition-colors text-right"
+                      className="flex-1 group bg-white rounded-xl p-6 border border-slate-200 hover:border-orange-300 transition-colors text-right"
                       rel="next"
                     >
                       <span className="flex items-center justify-end gap-2 text-sm text-slate-500 mb-2">
                         Next Article
                         <ArrowRight className="w-4 h-4" aria-hidden="true" />
                       </span>
-                      <span className="font-semibold text-slate-900 group-hover:text-emerald-600 transition-colors line-clamp-2">
+                      <span className="font-semibold text-slate-900 group-hover:text-orange-600 transition-colors line-clamp-2">
                         {nextPost.title}
                       </span>
                     </Link>

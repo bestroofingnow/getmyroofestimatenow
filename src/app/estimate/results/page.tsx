@@ -32,7 +32,7 @@ export default function ResultsPage() {
     return (
       <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600 mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600 mx-auto mb-4"></div>
           <p className="text-slate-600">Loading your estimate...</p>
         </div>
       </main>
@@ -50,7 +50,7 @@ export default function ResultsPage() {
           </p>
           <button
             onClick={() => router.push('/')}
-            className="inline-flex items-center gap-2 bg-emerald-600 text-white px-6 py-3 rounded-lg hover:bg-emerald-500 transition-colors"
+            className="inline-flex items-center gap-2 bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-500 transition-colors"
           >
             <Home className="w-4 h-4" />
             Get My Estimate
@@ -112,7 +112,7 @@ export default function ResultsPage() {
               ].map((step, i) => (
                 <div key={i} className="flex gap-4 items-start">
                   <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center
-                    ${step.color === 'blue' ? 'bg-emerald-100 text-emerald-600' :
+                    ${step.color === 'blue' ? 'bg-orange-100 text-orange-600' :
                       step.color === 'green' ? 'bg-green-100 text-green-600' :
                       'bg-purple-100 text-purple-600'}`}
                   >

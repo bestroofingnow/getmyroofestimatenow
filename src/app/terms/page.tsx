@@ -29,7 +29,7 @@ export default function TermsPage() {
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-800 mb-8"
+          className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-800 mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to Home
