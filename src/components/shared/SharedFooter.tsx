@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { MapPin, Home } from 'lucide-react';
+import Image from 'next/image';
+import { MapPin } from 'lucide-react';
 
 interface FooterLink {
   label: string;
@@ -58,9 +59,13 @@ export function SharedFooter({ showStateLinks = true, showCityLinks = true }: Sh
           {/* Company Info */}
           <div>
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
-                <Home className="w-4 h-4 text-white" aria-hidden="true" />
-              </div>
+              <Image
+                src="/logo.png"
+                alt="Get My Roof Estimate Now"
+                width={32}
+                height={32}
+                className="w-8 h-8"
+              />
               <span className="font-bold text-white">Get My Roof Estimate Now</span>
             </Link>
             <p className="text-sm mb-4">

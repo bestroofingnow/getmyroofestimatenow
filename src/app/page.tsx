@@ -7,7 +7,7 @@ import { AddressInput } from '@/components/AddressInput';
 import { FAQSection, faqData } from '@/components/FAQSection';
 import { FAQSchema } from '@/components/StructuredData';
 import { SEOContent } from '@/components/SEOContent';
-import { Shield, Clock, DollarSign, CheckCircle, Sparkles, ArrowRight, Home, Zap, Award } from 'lucide-react';
+import { Shield, Clock, DollarSign, CheckCircle, Sparkles, ArrowRight, Zap, Award } from 'lucide-react';
 
 interface PlaceDetails {
   formatted_address: string;
@@ -59,9 +59,14 @@ export default function HomePage() {
         <header role="banner" className="relative z-20 container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-xl flex items-center justify-center">
-                <Home className="w-7 h-7 text-white" />
-              </div>
+              <Image
+                src="/logo.png"
+                alt="Get My Roof Estimate Now"
+                width={48}
+                height={48}
+                className="w-12 h-12"
+                priority
+              />
               <span className="text-xl font-bold text-white hidden sm:inline">GetMyRoofEstimateNow</span>
             </div>
             <a

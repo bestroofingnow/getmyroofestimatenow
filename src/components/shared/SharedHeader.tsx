@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Home } from 'lucide-react';
+import Image from 'next/image';
 
 interface SharedHeaderProps {
   variant?: 'default' | 'transparent';
@@ -29,9 +29,14 @@ export function SharedHeader({ variant = 'default', showCTA = true }: SharedHead
             className="flex items-center gap-2"
             aria-label="Get My Roof Estimate Now - Go to home page"
           >
-            <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
-              <Home className="w-5 h-5 text-white" />
-            </div>
+            <Image
+              src="/logo.png"
+              alt="Get My Roof Estimate Now"
+              width={40}
+              height={40}
+              className="w-10 h-10"
+              priority
+            />
             <span className={`font-bold text-lg ${textClass} hidden sm:inline`}>
               GetMyRoofEstimateNow
             </span>
