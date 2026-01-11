@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const { lat, lng } = await request.json();
+    const { lat, lng, state, city } = await request.json();
 
     // Validate coordinates
     if (!lat || !lng) {
@@ -64,7 +64,7 @@ export async function POST(request: NextRequest) {
       }
 
       const mediumData: SolarData = await mediumResponse.json();
-      const estimate = calculateEstimate(mediumData);
+      const estimate = calculateEstimate(mediumData, { state, city });
       return NextResponse.json(estimate);
     }
 
@@ -78,8 +78,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Calculate the estimate
-    const estimate = calculateEstimate(solarData);
+    // Calculate the estimate with location-based pricing
+    const estimate = calculateEstimate(solarData, { state, city });
 
     return NextResponse.json(estimate);
   } catch (error) {

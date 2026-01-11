@@ -1,4 +1,10 @@
 import { SolarData, RoofEstimate, MaterialEstimate } from '@/types';
+import { getRegionalPricing, RegionalPricingData } from './regional-pricing';
+
+interface LocationData {
+  state?: string;
+  city?: string;
+}
 
 const PITCH_MULTIPLIERS: Record<number, number> = {
   10: 1.00,  // 0-10 degrees
@@ -50,7 +56,7 @@ export function degreesToPitchRatio(degrees: number): string {
   return `${Math.round(rise)}/12`;
 }
 
-export function calculateEstimate(solarData: SolarData): RoofEstimate {
+export function calculateEstimate(solarData: SolarData, location?: LocationData): RoofEstimate {
   const segments = solarData.solarPotential.roofSegmentStats;
 
   // Calculate weighted average pitch
@@ -77,16 +83,31 @@ export function calculateEstimate(solarData: SolarData): RoofEstimate {
   const { year, month, day } = solarData.imageryDate || { year: 2024, month: 1, day: 1 };
   const imageryDate = `${month}/${day}/${year}`;
 
-  // Calculate estimates for each material type
-  const materialEstimates: MaterialEstimate[] = MATERIAL_PRICING.map((material) => ({
-    name: material.name,
-    pricePerSqFt: material.pricePerSqFt,
-    estimate: {
-      low: Math.round(roofSqFt * material.pricePerSqFt.low),
-      mid: Math.round(roofSqFt * material.pricePerSqFt.mid),
-      high: Math.round(roofSqFt * material.pricePerSqFt.high),
-    },
-  }));
+  // Get regional pricing data
+  const regionalPricing = getRegionalPricing(location?.state, location?.city);
+
+  // Calculate estimates for each material type with regional adjustments
+  const materialEstimates: MaterialEstimate[] = MATERIAL_PRICING.map((material) => {
+    // Calculate base prices
+    const baseLow = roofSqFt * material.pricePerSqFt.low;
+    const baseMid = roofSqFt * material.pricePerSqFt.mid;
+    const baseHigh = roofSqFt * material.pricePerSqFt.high;
+
+    // Apply regional multiplier
+    return {
+      name: material.name,
+      pricePerSqFt: {
+        low: Math.round(material.pricePerSqFt.low * regionalPricing.multiplier * 100) / 100,
+        mid: Math.round(material.pricePerSqFt.mid * regionalPricing.multiplier * 100) / 100,
+        high: Math.round(material.pricePerSqFt.high * regionalPricing.multiplier * 100) / 100,
+      },
+      estimate: {
+        low: Math.round(baseLow * regionalPricing.multiplier),
+        mid: Math.round(baseMid * regionalPricing.multiplier),
+        high: Math.round(baseHigh * regionalPricing.multiplier),
+      },
+    };
+  });
 
   // Primary estimate is Architectural Shingles (first material)
   const primaryEstimate = materialEstimates[0].estimate;
@@ -100,6 +121,7 @@ export function calculateEstimate(solarData: SolarData): RoofEstimate {
     imageryDate,
     estimate: primaryEstimate,
     materialEstimates,
+    regionalPricing,
   };
 }
 

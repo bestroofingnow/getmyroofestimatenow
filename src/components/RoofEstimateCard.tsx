@@ -2,7 +2,7 @@
 
 import { RoofEstimate } from '@/types';
 import { formatCurrency, formatNumber } from '@/lib/calculations';
-import { Home, Ruler, TrendingUp } from 'lucide-react';
+import { Home, Ruler, TrendingUp, MapPin, TrendingDown, Minus, Info } from 'lucide-react';
 
 interface RoofEstimateCardProps {
   estimate: RoofEstimate;
@@ -96,13 +96,60 @@ export function RoofEstimateCard({ estimate, address }: RoofEstimateCardProps) {
         </div>
       </div>
 
+      {/* Regional Pricing Info */}
+      {estimate.regionalPricing && (
+        <div className="px-6 py-4 bg-slate-50 border-t border-slate-100">
+          <div className="flex items-start gap-3">
+            <MapPin className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+            <div className="flex-1">
+              <div className="flex items-center gap-2 mb-1">
+                <span className="font-medium text-slate-800">Local Market Pricing</span>
+                {estimate.regionalPricing.multiplier > 1.05 ? (
+                  <span className="inline-flex items-center gap-1 text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full">
+                    <TrendingUp className="w-3 h-3" />
+                    {Math.round((estimate.regionalPricing.multiplier - 1) * 100)}% above avg
+                  </span>
+                ) : estimate.regionalPricing.multiplier < 0.95 ? (
+                  <span className="inline-flex items-center gap-1 text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">
+                    <TrendingDown className="w-3 h-3" />
+                    {Math.round((1 - estimate.regionalPricing.multiplier) * 100)}% below avg
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center gap-1 text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full">
+                    <Minus className="w-3 h-3" />
+                    National avg
+                  </span>
+                )}
+              </div>
+              <p className="text-sm text-slate-600">
+                {estimate.regionalPricing.marketDemand === 'very_high' && (
+                  <>Very high contractor demand in your area. Book early for best rates.</>
+                )}
+                {estimate.regionalPricing.marketDemand === 'high' && (
+                  <>High contractor demand. Multiple quotes recommended.</>
+                )}
+                {estimate.regionalPricing.marketDemand === 'moderate' && (
+                  <>Average market conditions with competitive pricing.</>
+                )}
+                {estimate.regionalPricing.marketDemand === 'low' && (
+                  <>Lower demand market - competitive pricing available.</>
+                )}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Disclaimer */}
       <div className="px-6 py-4 bg-amber-50 border-t border-amber-100">
-        <p className="text-sm text-amber-800">
-          <strong>Note:</strong> This is an automated estimate based on satellite imagery.
-          Final pricing may vary based on material selection, roof complexity, and local factors.
-          A roofing specialist will contact you to provide a detailed quote.
-        </p>
+        <div className="flex items-start gap-2">
+          <Info className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+          <p className="text-sm text-amber-800">
+            This estimate uses satellite imagery and local market data for your area.
+            Final pricing may vary based on roof accessibility, material selection, and specific conditions.
+            A roofing specialist will contact you with a detailed quote.
+          </p>
+        </div>
       </div>
     </div>
   );

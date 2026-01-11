@@ -32,12 +32,18 @@ function CalculatingContent() {
       }
 
       try {
+        // Get location data from session storage for regional pricing
+        const addressDataStr = sessionStorage.getItem('addressData');
+        const addressData = addressDataStr ? JSON.parse(addressDataStr) : {};
+
         const res = await fetch('/api/roof-data', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             lat: parseFloat(lat),
             lng: parseFloat(lng),
+            state: addressData.state || '',
+            city: addressData.city || '',
           }),
         });
 

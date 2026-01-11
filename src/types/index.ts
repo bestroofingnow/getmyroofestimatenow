@@ -58,6 +58,14 @@ export interface MaterialEstimate {
   estimate: PriceRange;
 }
 
+export interface RegionalPricingInfo {
+  multiplier: number;
+  laborCostIndex: number;
+  marketDemand: 'low' | 'moderate' | 'high' | 'very_high';
+  avgPermitCost: number;
+  notes?: string;
+}
+
 export interface RoofEstimate {
   groundSqFt: number;
   roofSqFt: number;
@@ -68,6 +76,7 @@ export interface RoofEstimate {
   materialEstimates: MaterialEstimate[];
   address?: string;
   imageryDate?: string;
+  regionalPricing?: RegionalPricingInfo;
 }
 
 export interface LeadData {
