@@ -39,7 +39,7 @@ export function FactCarousel() {
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 min-h-[180px] flex items-center border border-blue-100">
+    <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl p-6 min-h-[180px] flex items-center border border-emerald-100">
       <AnimatePresence mode="wait">
         <motion.div
           key={index}
@@ -50,8 +50,8 @@ export function FactCarousel() {
           className="text-center w-full"
         >
           <span className="text-5xl mb-4 block">{facts[index].icon}</span>
-          <h4 className="font-semibold text-blue-900 mb-2 text-lg">{facts[index].title}</h4>
-          <p className="text-blue-800 leading-relaxed">{facts[index].content}</p>
+          <h4 className="font-semibold text-emerald-900 mb-2 text-lg">{facts[index].title}</h4>
+          <p className="text-emerald-800 leading-relaxed">{facts[index].content}</p>
         </motion.div>
       </AnimatePresence>
 
@@ -61,7 +61,7 @@ export function FactCarousel() {
           <div
             key={i}
             className={`w-1.5 h-1.5 rounded-full transition-colors duration-300 ${
-              i === index ? 'bg-blue-500' : 'bg-blue-200'
+              i === index ? 'bg-emerald-500' : 'bg-emerald-200'
             }`}
           />
         ))}

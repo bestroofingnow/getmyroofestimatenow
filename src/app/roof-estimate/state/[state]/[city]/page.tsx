@@ -196,17 +196,17 @@ export default async function LocationPage({ params }: PageProps) {
         </header>
 
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16 md:py-24">
+        <section className="bg-gradient-to-br from-emerald-600 to-teal-800 text-white py-16 md:py-24">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="flex items-center gap-2 mb-4">
-                <MapPin className="w-5 h-5 text-blue-200" />
-                <span className="text-blue-200 font-medium">{location.city}, {location.state}</span>
+                <MapPin className="w-5 h-5 text-emerald-200" />
+                <span className="text-emerald-200 font-medium">{location.city}, {location.state}</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                 Free Roof Estimate in {location.city}, {location.stateAbbr}
               </h1>
-              <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-2xl">
+              <p className="text-xl md:text-2xl text-emerald-100 mb-8 max-w-2xl">
                 Get an instant, accurate roof replacement estimate for your {location.city} home.
                 Using satellite imagery, no appointment needed.
               </p>
@@ -243,12 +243,12 @@ export default async function LocationPage({ params }: PageProps) {
                   </div>
                   <div className="text-sm text-slate-600">3-tab shingles, basic materials</div>
                 </div>
-                <div className="bg-blue-600 rounded-2xl p-6 text-center text-white transform scale-105 shadow-xl">
-                  <div className="text-sm font-medium text-blue-200 mb-2">Most Popular</div>
+                <div className="bg-emerald-600 rounded-2xl p-6 text-center text-white transform scale-105 shadow-xl">
+                  <div className="text-sm font-medium text-emerald-200 mb-2">Most Popular</div>
                   <div className="text-3xl font-bold mb-2">
                     {formatCurrency(location.avgRoofCost.mid)}
                   </div>
-                  <div className="text-sm text-blue-100">Architectural shingles, quality materials</div>
+                  <div className="text-sm text-emerald-100">Architectural shingles, quality materials</div>
                 </div>
                 <div className="bg-slate-50 rounded-2xl p-6 text-center border border-slate-200">
                   <div className="text-sm font-medium text-slate-500 mb-2">Premium</div>
@@ -277,8 +277,8 @@ export default async function LocationPage({ params }: PageProps) {
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="bg-white rounded-2xl p-6 shadow-lg">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                      <Sun className="w-6 h-6 text-blue-600" />
+                    <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
+                      <Sun className="w-6 h-6 text-emerald-600" />
                     </div>
                     <h3 className="text-xl font-bold text-slate-900">Local Climate</h3>
                   </div>
@@ -319,8 +319,8 @@ export default async function LocationPage({ params }: PageProps) {
 
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <Clock className="w-8 h-8 text-blue-600" />
+                  <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Clock className="w-8 h-8 text-emerald-600" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-2">60-Second Estimates</h3>
                   <p className="text-slate-600">
@@ -367,7 +367,7 @@ export default async function LocationPage({ params }: PageProps) {
 
         {/* County Link Section */}
         {countyData && (
-          <section className="py-12 bg-blue-50">
+          <section className="py-12 bg-emerald-50">
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto text-center">
                 <p className="text-slate-600 mb-4">
@@ -375,7 +375,7 @@ export default async function LocationPage({ params }: PageProps) {
                 </p>
                 <Link
                   href={`/roof-estimate/county/${countyData.slug}`}
-                  className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium"
+                  className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium"
                 >
                   View all of {countyData.name}
                   <ArrowRight className="w-4 h-4" />
@@ -412,11 +412,11 @@ export default async function LocationPage({ params }: PageProps) {
                     <Link
                       key={neighborhood.slug}
                       href={`/roof-estimate/state/${stateSlug}/${location.slug}/${neighborhood.slug}`}
-                      className="flex items-center gap-2 p-4 bg-slate-50 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition-colors group border border-slate-200 hover:border-blue-300"
+                      className="flex items-center gap-2 p-4 bg-slate-50 rounded-xl hover:bg-emerald-50 hover:text-emerald-600 transition-colors group border border-slate-200 hover:border-emerald-300"
                     >
-                      <MapPin className="w-4 h-4 text-slate-400 group-hover:text-blue-500 flex-shrink-0" />
+                      <MapPin className="w-4 h-4 text-slate-400 group-hover:text-emerald-500 flex-shrink-0" />
                       <span className="font-medium">{neighborhood.name}</span>
-                      <ArrowRight className="w-4 h-4 ml-auto text-slate-300 group-hover:text-blue-500" />
+                      <ArrowRight className="w-4 h-4 ml-auto text-slate-300 group-hover:text-emerald-500" />
                     </Link>
                   ))}
                 </div>
@@ -426,17 +426,17 @@ export default async function LocationPage({ params }: PageProps) {
         )}
 
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+        <section className="py-16 bg-gradient-to-br from-emerald-600 to-teal-800 text-white">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Ready for Your Free Roof Estimate?
             </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
               Join thousands of {location.city} homeowners who have used our instant roof estimate tool.
             </p>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 bg-white text-blue-600 font-semibold px-8 py-4 rounded-xl hover:bg-blue-50 transition-colors text-lg"
+              className="inline-flex items-center gap-2 bg-white text-emerald-600 font-semibold px-8 py-4 rounded-xl hover:bg-emerald-50 transition-colors text-lg"
             >
               Get Your Free Estimate Now
               <ArrowRight className="w-5 h-5" />

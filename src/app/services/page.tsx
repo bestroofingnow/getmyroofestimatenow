@@ -121,7 +121,7 @@ export default function ServicesPage() {
                 <Image src="/logo.png" alt="Get My Roof Estimate Now" width={48} height={48} className="w-12 h-12" />
                 <span className="font-bold text-xl text-slate-900">Get My Roof Estimate Now</span>
               </Link>
-              <Link href="/" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors">
+              <Link href="/" className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors">
                 Get Free Estimate
               </Link>
             </div>
@@ -136,7 +136,7 @@ export default function ServicesPage() {
               <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-2xl mx-auto">
                 Professional roofing services for every need. From emergency repairs to full replacements, we connect you with trusted contractors.
               </p>
-              <Link href="/" className="inline-flex items-center gap-2 bg-blue-600 text-white font-semibold px-8 py-4 rounded-xl hover:bg-blue-700 transition-colors">
+              <Link href="/" className="inline-flex items-center gap-2 bg-emerald-600 text-white font-semibold px-8 py-4 rounded-xl hover:bg-emerald-500 transition-colors">
                 Get Free Estimate <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -150,14 +150,14 @@ export default function ServicesPage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-10 text-center">Our Services</h2>
               <div className="grid md:grid-cols-3 gap-6">
                 {services.map((service) => (
-                  <Link key={service.slug} href={`/services/${service.slug}`} className="group bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all relative">
+                  <Link key={service.slug} href={`/services/${service.slug}`} className="group bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:border-emerald-300 hover:shadow-md transition-all relative">
                     {service.urgent && (
                       <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Urgent</span>
                     )}
-                    <div className="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-4">
-                      <service.icon className="w-7 h-7 text-blue-600" />
+                    <div className="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-4">
+                      <service.icon className="w-7 h-7 text-emerald-600" />
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">{service.name}</h3>
+                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors mb-2">{service.name}</h3>
                     <p className="text-slate-600 mb-4">{service.description}</p>
                     <ul className="space-y-2 mb-4">
                       {service.features.map((feature) => (
@@ -167,7 +167,7 @@ export default function ServicesPage() {
                         </li>
                       ))}
                     </ul>
-                    <div className="text-blue-600 font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+                    <div className="text-emerald-600 font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
                       Learn More <ArrowRight className="w-4 h-4" />
                     </div>
                   </Link>
@@ -185,13 +185,13 @@ export default function ServicesPage() {
         />
 
         {/* CTA */}
-        <section className="py-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+        <section className="py-16 bg-gradient-to-br from-emerald-600 to-teal-800 text-white">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Need Roofing Help?</h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
               Get a free estimate for any roofing service. Instant results, no obligation.
             </p>
-            <Link href="/" className="inline-flex items-center gap-2 bg-white text-blue-600 font-semibold px-8 py-4 rounded-xl hover:bg-blue-50 transition-colors text-lg">
+            <Link href="/" className="inline-flex items-center gap-2 bg-white text-emerald-600 font-semibold px-8 py-4 rounded-xl hover:bg-emerald-50 transition-colors text-lg">
               Get My Free Estimate <ArrowRight className="w-5 h-5" />
             </Link>
           </div>

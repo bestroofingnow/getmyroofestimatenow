@@ -43,7 +43,7 @@ export function SatellitePreview({
           </p>
           <button
             onClick={onConfirm}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors"
+            className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-3 px-6 rounded-xl transition-colors"
           >
             Continue with This Address
           </button>

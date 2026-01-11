@@ -18,9 +18,9 @@ export function LocationFAQSection({ faqs, cityName, stateAbbr }: LocationFAQSec
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-blue-100 rounded-full px-4 py-2 mb-4">
-              <HelpCircle className="w-5 h-5 text-blue-600" />
-              <span className="text-sm font-medium text-blue-800">Frequently Asked Questions</span>
+            <div className="inline-flex items-center gap-2 bg-emerald-100 rounded-full px-4 py-2 mb-4">
+              <HelpCircle className="w-5 h-5 text-emerald-600" />
+              <span className="text-sm font-medium text-emerald-800">Frequently Asked Questions</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               Roofing Questions for {cityName}, {stateAbbr} Homeowners

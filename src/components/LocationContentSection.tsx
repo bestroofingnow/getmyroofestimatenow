@@ -16,7 +16,7 @@ const sectionIcons: Record<string, React.ReactNode> = {
 };
 
 const sectionColors: Record<string, { bg: string; icon: string; border: string }> = {
-  'roofing-guide': { bg: 'bg-blue-50', icon: 'text-blue-600', border: 'border-blue-200' },
+  'roofing-guide': { bg: 'bg-emerald-50', icon: 'text-emerald-600', border: 'border-emerald-200' },
   'climate-impact': { bg: 'bg-cyan-50', icon: 'text-cyan-600', border: 'border-cyan-200' },
   'neighborhoods': { bg: 'bg-green-50', icon: 'text-green-600', border: 'border-green-200' },
   'materials-guide': { bg: 'bg-orange-50', icon: 'text-orange-600', border: 'border-orange-200' },
@@ -57,7 +57,7 @@ function formatContent(content: string): React.ReactNode {
         <ul key={index} className="list-none space-y-2 my-4">
           {items.map((item, itemIndex) => (
             <li key={itemIndex} className="flex items-start gap-2 text-slate-600">
-              <span className="text-blue-500 mt-1">•</span>
+              <span className="text-emerald-500 mt-1">•</span>
               <span className="leading-relaxed">
                 {formatBoldText(item.replace(/^•\s*/, ''))}
               </span>

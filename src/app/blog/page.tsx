@@ -95,23 +95,23 @@ export default async function BlogPage() {
         </header>
 
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16 md:py-24">
+        <section className="bg-gradient-to-br from-emerald-600 to-teal-800 text-white py-16 md:py-24">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <div className="flex items-center justify-center gap-2 mb-4">
                 <BookOpen className="w-6 h-6" />
-                <span className="text-blue-200 font-medium">Roofing Blog</span>
+                <span className="text-emerald-200 font-medium">Roofing Blog</span>
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 Expert Roofing Tips & Guides
               </h1>
-              <p className="text-xl text-blue-100 mb-8">
+              <p className="text-xl text-emerald-100 mb-8">
                 Everything you need to know about roof replacement, repairs, materials, and costs.
                 Make informed decisions for your home.
               </p>
               <Link
                 href="/"
-                className="inline-flex items-center gap-2 bg-white text-blue-600 font-semibold px-6 py-3 rounded-xl hover:bg-blue-50 transition-colors"
+                className="inline-flex items-center gap-2 bg-white text-emerald-600 font-semibold px-6 py-3 rounded-xl hover:bg-emerald-50 transition-colors"
               >
                 Get Your Free Estimate
                 <ArrowRight className="w-5 h-5" />
@@ -127,8 +127,8 @@ export default async function BlogPage() {
               <div className="max-w-4xl mx-auto">
                 {/* Coming Soon Card */}
                 <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 text-center mb-12">
-                  <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <BookOpen className="w-10 h-10 text-blue-600" />
+                  <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <BookOpen className="w-10 h-10 text-emerald-600" />
                   </div>
                   <h2 className="text-3xl font-bold text-slate-900 mb-4">
                     Expert Roofing Content Coming Soon
@@ -140,7 +140,7 @@ export default async function BlogPage() {
                   </p>
                   <Link
                     href="/"
-                    className="inline-flex items-center gap-2 bg-blue-600 text-white font-semibold px-8 py-4 rounded-xl hover:bg-blue-700 transition-colors text-lg"
+                    className="inline-flex items-center gap-2 bg-emerald-600 text-white font-semibold px-8 py-4 rounded-xl hover:bg-emerald-500 transition-colors text-lg"
                   >
                     Get Your Free Roof Estimate
                     <ArrowRight className="w-5 h-5" />
@@ -180,7 +180,7 @@ export default async function BlogPage() {
                   ].map((topic) => (
                     <div
                       key={topic.title}
-                      className="bg-white rounded-xl p-6 border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all"
+                      className="bg-white rounded-xl p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-md transition-all"
                     >
                       <h4 className="font-semibold text-slate-900 mb-2">{topic.title}</h4>
                       <p className="text-slate-600 text-sm">{topic.description}</p>
@@ -219,7 +219,7 @@ export default async function BlogPage() {
                       <h2 className="text-xl font-bold text-slate-900 mb-3 line-clamp-2">
                         <Link
                           href={`/blog/${post.slug}`}
-                          className="hover:text-blue-600 transition-colors"
+                          className="hover:text-emerald-600 transition-colors"
                         >
                           {post.title}
                         </Link>
@@ -229,7 +229,7 @@ export default async function BlogPage() {
                       </p>
                       <Link
                         href={`/blog/${post.slug}`}
-                        className="inline-flex items-center gap-1 text-blue-600 font-medium hover:text-blue-700 transition-colors"
+                        className="inline-flex items-center gap-1 text-emerald-600 font-medium hover:text-emerald-700 transition-colors"
                       >
                         Read More
                         <ArrowRight className="w-4 h-4" />
@@ -254,7 +254,7 @@ export default async function BlogPage() {
             </p>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 bg-blue-600 text-white font-semibold px-8 py-4 rounded-xl hover:bg-blue-700 transition-colors text-lg"
+              className="inline-flex items-center gap-2 bg-emerald-600 text-white font-semibold px-8 py-4 rounded-xl hover:bg-emerald-500 transition-colors text-lg"
             >
               Get Your Free Estimate Now
               <ArrowRight className="w-5 h-5" />

@@ -209,7 +209,7 @@ export default function AsphaltShinglesPage() {
               </Link>
               <Link
                 href="/"
-                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors"
+                className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors"
               >
                 Get Free Estimate
               </Link>
@@ -419,17 +419,17 @@ export default function AsphaltShinglesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+        <section className="py-16 bg-gradient-to-br from-emerald-600 to-teal-800 text-white">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Get Your Free Shingle Roof Estimate
             </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
               See exactly what a new asphalt shingle roof would cost for your home. Instant results using satellite measurements.
             </p>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 bg-white text-blue-600 font-semibold px-8 py-4 rounded-xl hover:bg-blue-50 transition-colors text-lg"
+              className="inline-flex items-center gap-2 bg-white text-emerald-600 font-semibold px-8 py-4 rounded-xl hover:bg-emerald-50 transition-colors text-lg"
             >
               Get My Free Estimate
               <ArrowRight className="w-5 h-5" />

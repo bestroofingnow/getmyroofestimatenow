@@ -144,7 +144,7 @@ function CalculatingContent() {
           <p className="text-slate-600 mb-6">Please try entering your address again.</p>
           <button
             onClick={() => router.push('/')}
-            className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center gap-2 bg-emerald-600 text-white px-6 py-3 rounded-lg hover:bg-emerald-500 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Go Back
@@ -164,7 +164,7 @@ function CalculatingContent() {
           <p className="text-slate-600 mb-6">{apiError}</p>
           <button
             onClick={() => router.push('/')}
-            className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center gap-2 bg-emerald-600 text-white px-6 py-3 rounded-lg hover:bg-emerald-500 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Try Another Address
@@ -212,7 +212,7 @@ function CalculatingContent() {
             Calculating Your Estimate
           </h1>
           <div className="inline-flex items-center gap-2 text-slate-600 bg-white px-4 py-2 rounded-full shadow-sm">
-            <MapPin className="w-4 h-4 text-blue-500" />
+            <MapPin className="w-4 h-4 text-emerald-500" />
             <span className="text-sm md:text-base">{address}</span>
           </div>
         </div>
@@ -248,15 +248,15 @@ function CalculatingContent() {
 
             {/* Mobile: Show mini stats if API complete */}
             {apiComplete && roofData && (
-              <div className="lg:hidden bg-blue-50 rounded-xl p-4 border border-blue-100">
+              <div className="lg:hidden bg-emerald-50 rounded-xl p-4 border border-emerald-100">
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div>
-                    <p className="text-sm text-blue-600">Roof Size</p>
-                    <p className="text-lg font-bold text-blue-900">{roofData.roofSqFt.toLocaleString()} sq ft</p>
+                    <p className="text-sm text-emerald-600">Roof Size</p>
+                    <p className="text-lg font-bold text-emerald-900">{roofData.roofSqFt.toLocaleString()} sq ft</p>
                   </div>
                   <div>
-                    <p className="text-sm text-blue-600">Est. Range</p>
-                    <p className="text-lg font-bold text-blue-900">
+                    <p className="text-sm text-emerald-600">Est. Range</p>
+                    <p className="text-lg font-bold text-emerald-900">
                       ${roofData.estimate.low.toLocaleString()} - ${roofData.estimate.high.toLocaleString()}
                     </p>
                   </div>
@@ -315,7 +315,7 @@ export default function CalculatingPage() {
     <Suspense fallback={
       <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600 mx-auto mb-4"></div>
           <p className="text-slate-600">Loading...</p>
         </div>
       </main>

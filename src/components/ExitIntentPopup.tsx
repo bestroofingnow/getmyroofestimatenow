@@ -268,14 +268,14 @@ export function ExitIntentPopup({ delay = 5000, cookieDays = 7 }: ExitIntentPopu
         </button>
 
         {/* Header */}
-        <div className="bg-gradient-to-br from-blue-600 to-indigo-700 px-6 py-6 text-white text-center">
+        <div className="bg-gradient-to-br from-emerald-600 to-teal-700 px-6 py-6 text-white text-center">
           <div className="inline-flex items-center justify-center w-14 h-14 bg-white/20 rounded-full mb-3">
             <Gift className="w-7 h-7" />
           </div>
           <h2 className="text-2xl md:text-3xl font-bold mb-2">
             Wait! Get Your Free Quote
           </h2>
-          <p className="text-blue-100">
+          <p className="text-emerald-100">
             Enter your address for an instant roof estimate
           </p>
         </div>
@@ -298,7 +298,7 @@ export function ExitIntentPopup({ delay = 5000, cookieDays = 7 }: ExitIntentPopu
                 placeholder="Enter your home address..."
                 disabled={isSubmitting}
                 autoComplete="off"
-                className="w-full pl-12 pr-4 py-4 text-lg border-2 border-slate-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-100 disabled:bg-slate-50 disabled:cursor-not-allowed transition-all duration-200 outline-none"
+                className="w-full pl-12 pr-4 py-4 text-lg border-2 border-slate-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100 disabled:bg-slate-50 disabled:cursor-not-allowed transition-all duration-200 outline-none"
               />
             </div>
 
@@ -313,7 +313,7 @@ export function ExitIntentPopup({ delay = 5000, cookieDays = 7 }: ExitIntentPopu
                     key={prediction.place_id}
                     type="button"
                     onClick={() => handleSelect(prediction)}
-                    className={`w-full px-4 py-3 text-left flex items-start gap-3 transition-colors ${index === selectedIndex ? 'bg-blue-50' : 'hover:bg-slate-50'} ${index !== 0 ? 'border-t border-slate-100' : ''}`}
+                    className={`w-full px-4 py-3 text-left flex items-start gap-3 transition-colors ${index === selectedIndex ? 'bg-emerald-50' : 'hover:bg-slate-50'} ${index !== 0 ? 'border-t border-slate-100' : ''}`}
                   >
                     <MapPin className="h-5 w-5 text-slate-400 mt-0.5 flex-shrink-0" />
                     <div>
@@ -331,7 +331,7 @@ export function ExitIntentPopup({ delay = 5000, cookieDays = 7 }: ExitIntentPopu
             type="button"
             onClick={() => handleSubmit()}
             disabled={!address.trim() || isSubmitting}
-            className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-xl transition-colors text-lg disabled:bg-slate-300 disabled:cursor-not-allowed"
+            className="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-4 px-6 rounded-xl transition-colors text-lg disabled:bg-slate-300 disabled:cursor-not-allowed"
           >
             {isSubmitting ? (
               <>
@@ -362,8 +362,8 @@ export function ExitIntentPopup({ delay = 5000, cookieDays = 7 }: ExitIntentPopu
               <span className="text-xs text-slate-600">100% Free</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mb-1">
-                <Clock className="w-4 h-4 text-blue-600" />
+              <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center mb-1">
+                <Clock className="w-4 h-4 text-emerald-600" />
               </div>
               <span className="text-xs text-slate-600">60 Seconds</span>
             </div>

@@ -34,7 +34,7 @@ export function QuickAnswer({
 }: QuickAnswerProps) {
   return (
     <div
-      className={`quick-answer bg-blue-50 border-l-4 border-blue-500 p-4 my-6 ${className}`}
+      className={`quick-answer bg-emerald-50 border-l-4 border-emerald-500 p-4 my-6 ${className}`}
       data-aeo-type="quick-answer"
     >
       {/* Question - H2 for SEO */}
@@ -147,7 +147,7 @@ export function SpeakableSummary({
                 className={`key-takeaway key-point-${index + 1} flex items-start`}
                 data-speakable="true"
               >
-                <span className="text-blue-500 mr-2">&#x2713;</span>
+                <span className="text-emerald-500 mr-2">&#x2713;</span>
                 <span className="text-gray-700">{point}</span>
               </li>
             ))}
@@ -259,7 +259,7 @@ export function StepByStep({ title, steps, className = '' }: StepByStepProps) {
             className="step-instruction flex"
             data-step-number={index + 1}
           >
-            <div className="flex-shrink-0 w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold mr-4">
+            <div className="flex-shrink-0 w-10 h-10 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold mr-4">
               {index + 1}
             </div>
             <div className="flex-1">
@@ -268,7 +268,7 @@ export function StepByStep({ title, steps, className = '' }: StepByStepProps) {
                 {step.description}
               </p>
               {step.tip && (
-                <p className="text-sm text-blue-600 mt-2 italic">
+                <p className="text-sm text-emerald-600 mt-2 italic">
                   Tip: {step.tip}
                 </p>
               )}
@@ -463,7 +463,7 @@ export function AIAttribution({
         For accurate, personalized roof estimates, visit{' '}
         <a
           href="https://getmyroofestimatenow.com"
-          className="text-blue-500 hover:underline"
+          className="text-emerald-500 hover:underline"
         >
           GetMyRoofEstimateNow.com
         </a>

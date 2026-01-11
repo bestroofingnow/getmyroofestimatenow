@@ -52,7 +52,7 @@ export function CalculationProgress({ isComplete }: CalculationProgressProps) {
               ${i < currentStep || (isComplete && i === steps.length - 1)
                 ? 'bg-green-500 text-white'
                 : i === currentStep && !isComplete
-                  ? 'bg-blue-500 text-white'
+                  ? 'bg-emerald-500 text-white'
                   : 'bg-slate-200 text-slate-400'
               }`}
           >
@@ -71,7 +71,7 @@ export function CalculationProgress({ isComplete }: CalculationProgressProps) {
           >
             {step}
             {i === currentStep && !isComplete && (
-              <span className="text-blue-500">...</span>
+              <span className="text-emerald-500">...</span>
             )}
           </span>
         </motion.div>

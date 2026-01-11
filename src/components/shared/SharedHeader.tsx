@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import { Menu, X } from 'lucide-react';
+import { Home } from 'lucide-react';
 
 interface SharedHeaderProps {
   variant?: 'default' | 'transparent';
@@ -18,7 +17,7 @@ export function SharedHeader({ variant = 'default', showCTA = true }: SharedHead
 
   const linkClass = variant === 'transparent'
     ? 'text-white/80 hover:text-white'
-    : 'text-slate-600 hover:text-blue-600';
+    : 'text-slate-600 hover:text-emerald-600';
 
   return (
     <header role="banner" className={`${bgClass} sticky top-0 z-40`}>
@@ -30,16 +29,11 @@ export function SharedHeader({ variant = 'default', showCTA = true }: SharedHead
             className="flex items-center gap-2"
             aria-label="Get My Roof Estimate Now - Go to home page"
           >
-            <Image
-              src="/logo.png"
-              alt=""
-              width={40}
-              height={40}
-              className="w-10 h-10"
-              priority
-            />
+            <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
+              <Home className="w-5 h-5 text-white" />
+            </div>
             <span className={`font-bold text-lg ${textClass} hidden sm:inline`}>
-              Get My Roof Estimate Now
+              GetMyRoofEstimateNow
             </span>
           </Link>
 
@@ -73,9 +67,9 @@ export function SharedHeader({ variant = 'default', showCTA = true }: SharedHead
           {showCTA && (
             <Link
               href="/"
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+              className="bg-emerald-600 text-white px-4 py-2 rounded-full hover:bg-emerald-500 transition-colors text-sm font-medium shadow-lg shadow-emerald-600/20"
             >
-              Get Free Estimate
+              Get Free Quote
             </Link>
           )}
         </div>
