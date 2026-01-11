@@ -1,5 +1,5 @@
 import { SolarData, RoofEstimate, MaterialEstimate } from '@/types';
-import { getRegionalPricing, RegionalPricingData } from './regional-pricing';
+import { getRegionalPricing } from './regional-pricing';
 
 interface LocationData {
   state?: string;
@@ -18,23 +18,24 @@ const PITCH_MULTIPLIERS: Record<number, number> = {
 const SQ_METERS_TO_SQ_FEET = 10.7639;
 const WASTE_FACTOR = 1.15; // 15% waste
 
-// Material pricing per square foot
-const MATERIAL_PRICING = [
+// Material pricing per square foot (research-based, 2024-2025 market data)
+// Tight range designed to give ~$500 up/down variance on typical roofs
+const DEFAULT_MATERIAL_PRICING = [
   {
     name: 'Architectural Shingles',
-    pricePerSqFt: { low: 4.00, mid: 6.38, high: 8.75 },
+    pricePerSqFt: { low: 6.00, mid: 6.25, high: 6.50 },
   },
   {
     name: 'Metal Roofing',
-    pricePerSqFt: { low: 10.00, mid: 12.00, high: 14.00 },
+    pricePerSqFt: { low: 11.75, mid: 12.00, high: 12.25 },
   },
   {
     name: 'Synthetic Roofing',
-    pricePerSqFt: { low: 8.00, mid: 10.00, high: 12.00 },
+    pricePerSqFt: { low: 9.25, mid: 9.50, high: 9.75 },
   },
   {
     name: 'Roof Coatings',
-    pricePerSqFt: { low: 3.00, mid: 3.88, high: 4.75 },
+    pricePerSqFt: { low: 3.50, mid: 3.75, high: 4.00 },
   },
 ];
 
@@ -56,7 +57,10 @@ export function degreesToPitchRatio(degrees: number): string {
   return `${Math.round(rise)}/12`;
 }
 
-export function calculateEstimate(solarData: SolarData, location?: LocationData): RoofEstimate {
+export function calculateEstimate(
+  solarData: SolarData,
+  location?: LocationData
+): RoofEstimate {
   const segments = solarData.solarPotential.roofSegmentStats;
 
   // Calculate weighted average pitch
@@ -87,7 +91,7 @@ export function calculateEstimate(solarData: SolarData, location?: LocationData)
   const regionalPricing = getRegionalPricing(location?.state, location?.city);
 
   // Calculate estimates for each material type with regional adjustments
-  const materialEstimates: MaterialEstimate[] = MATERIAL_PRICING.map((material) => {
+  const materialEstimates: MaterialEstimate[] = DEFAULT_MATERIAL_PRICING.map((material) => {
     // Calculate base prices
     const baseLow = roofSqFt * material.pricePerSqFt.low;
     const baseMid = roofSqFt * material.pricePerSqFt.mid;

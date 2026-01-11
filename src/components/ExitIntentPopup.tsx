@@ -44,15 +44,22 @@ export function ExitIntentPopup({ delay = 5000 }: ExitIntentPopupProps) {
 
   const handleClose = useCallback(() => {
     setIsVisible(false);
-    // Mark as shown for this session only (user must click X to close)
-    sessionStorage.setItem('exitPopupShown', 'true');
+    // Mark as shown with timestamp - expires after 24 hours
+    const expiryTime = Date.now() + 24 * 60 * 60 * 1000; // 24 hours from now
+    localStorage.setItem('exitPopupShown', expiryTime.toString());
   }, []);
 
   useEffect(() => {
-    // Check if popup was already shown this session
-    const alreadyShown = sessionStorage.getItem('exitPopupShown');
-    if (alreadyShown) {
-      return;
+    // Check if popup was already shown today (within 24 hours)
+    const storedExpiry = localStorage.getItem('exitPopupShown');
+    if (storedExpiry) {
+      const expiryTime = parseInt(storedExpiry, 10);
+      if (Date.now() < expiryTime) {
+        // Still within 24-hour window, don't show popup
+        return;
+      }
+      // Expired, remove the old entry
+      localStorage.removeItem('exitPopupShown');
     }
 
     const enableTimer = setTimeout(() => {
