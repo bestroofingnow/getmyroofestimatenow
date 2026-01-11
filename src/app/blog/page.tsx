@@ -1,9 +1,10 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Calendar, User, ArrowRight, BookOpen } from 'lucide-react';
+import { ArrowRight, BookOpen } from 'lucide-react';
 import { fetchBlogPosts } from '@/lib/blog';
 import { BreadcrumbSchema } from '@/components/StructuredData';
+import { BlogList } from '@/components/BlogList';
 
 export const metadata: Metadata = {
   title: 'Roofing Tips & Guides | Expert Advice for Homeowners',
@@ -25,14 +26,6 @@ export const metadata: Metadata = {
     url: 'https://getmyroofestimatenow.com/blog',
   },
 };
-
-function formatDate(dateString: string): string {
-  return new Date(dateString).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
-}
 
 export default async function BlogPage() {
   const posts = await fetchBlogPosts();
@@ -189,55 +182,7 @@ export default async function BlogPage() {
                 </div>
               </div>
             ) : (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                {posts.map((post) => (
-                  <article
-                    key={post.id}
-                    className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-                  >
-                    {post.featuredImage && (
-                      <div className="relative aspect-video">
-                        <Image
-                          src={post.featuredImage}
-                          alt={post.title}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                    )}
-                    <div className="p-6">
-                      <div className="flex items-center gap-4 text-sm text-slate-500 mb-3">
-                        <span className="flex items-center gap-1">
-                          <Calendar className="w-4 h-4" />
-                          {formatDate(post.publishedAt)}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <User className="w-4 h-4" />
-                          {post.author}
-                        </span>
-                      </div>
-                      <h2 className="text-xl font-bold text-slate-900 mb-3 line-clamp-2">
-                        <Link
-                          href={`/blog/${post.slug}`}
-                          className="hover:text-orange-600 transition-colors"
-                        >
-                          {post.title}
-                        </Link>
-                      </h2>
-                      <p className="text-slate-600 mb-4 line-clamp-3">
-                        {post.excerpt}
-                      </p>
-                      <Link
-                        href={`/blog/${post.slug}`}
-                        className="inline-flex items-center gap-1 text-orange-600 font-medium hover:text-orange-700 transition-colors"
-                      >
-                        Read More
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </div>
-                  </article>
-                ))}
-              </div>
+              <BlogList posts={posts} />
             )}
           </div>
         </main>
