@@ -11,6 +11,10 @@ import {
   SoftwareApplicationSchema,
   ProductSchema,
 } from "@/components/StructuredData";
+import {
+  VoiceActionSchema,
+  ConversationalContentSchema,
+} from "@/components/VoiceSearchSchema";
 import { ExitIntentPopup } from "@/components/ExitIntentPopup";
 import { SkipToContent } from "@/components/shared";
 
@@ -101,6 +105,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Core SEO Schemas */}
         <OrganizationSchema />
         <WebsiteSchema />
         <ServiceSchema />
@@ -108,6 +113,24 @@ export default function RootLayout({
         <HowToSchema />
         <SoftwareApplicationSchema />
         <ProductSchema />
+        {/* Voice Search & AI Optimization Schemas */}
+        <VoiceActionSchema
+          actionType="get_estimate"
+          targetUrl="https://instantroofestimate.ai"
+          description="Get a free instant roof estimate using satellite imagery"
+        />
+        <ConversationalContentSchema
+          headline="Get Your Free Roof Estimate in 60 Seconds"
+          summary="Instant Roof Estimate uses satellite imagery to measure your roof and provide accurate cost estimates. No appointment needed, no one climbs on your roof, and it's completely free."
+          keyPoints={[
+            "Free satellite-based roof measurements in 60 seconds",
+            "Average roof replacement costs $5,000 to $15,000",
+            "Connect with licensed local roofing contractors",
+            "No credit card or obligation required"
+          ]}
+          pageUrl="https://instantroofestimate.ai"
+          topic="Roof Replacement Estimate"
+        />
       </head>
       <body className={`${inter.className} antialiased bg-white`}>
         <SkipToContent />

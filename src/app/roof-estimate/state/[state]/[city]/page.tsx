@@ -11,6 +11,7 @@ import { generateLocationContent } from '@/lib/locationContent';
 import { getCityExtendedData } from '@/lib/cityData';
 import { getCountyByCitySlug } from '@/lib/countyData';
 import { BreadcrumbSchema, LocalBusinessSchema } from '@/components/StructuredData';
+import { LocalVoiceSearchSchema, QuickAnswerSchema } from '@/components/VoiceSearchSchema';
 import { LocationAddressForm } from '@/components/LocationAddressForm';
 import { LocationFAQSection, LocationFAQSchema } from '@/components/LocationFAQSection';
 import { LocationContentDisplay } from '@/components/LocationContentSection';
@@ -153,6 +154,23 @@ export default async function LocationPage({ params }: PageProps) {
       <LocalBusinessSchema />
       <LocationServiceSchema location={location} stateSlug={stateSlug} />
       <LocationFAQSchema faqs={locationFaqs} />
+      {/* Voice Search & AI Optimization Schemas */}
+      <LocalVoiceSearchSchema
+        city={location.city}
+        state={location.state}
+        stateAbbr={location.stateAbbr}
+        serviceName="Roof Estimation Services"
+        description={`Get free instant roof estimates in ${location.city}, ${location.stateAbbr}. Average roof replacement costs ${formatCurrency(location.avgRoofCost.low)} to ${formatCurrency(location.avgRoofCost.high)}.`}
+        priceRange={{ min: location.avgRoofCost.low, max: location.avgRoofCost.high }}
+        url={`https://instantroofestimate.ai/roof-estimate/state/${stateSlug}/${location.slug}`}
+      />
+      <QuickAnswerSchema
+        question={`How much does a roof replacement cost in ${location.city}, ${location.stateAbbr}?`}
+        answer={`A roof replacement in ${location.city}, ${location.stateAbbr} typically costs between ${formatCurrency(location.avgRoofCost.low)} and ${formatCurrency(location.avgRoofCost.high)}, with the most popular option around ${formatCurrency(location.avgRoofCost.mid)}. Costs vary based on roof size, materials, and complexity. Get a free instant estimate at InstantRoofEstimate.ai.`}
+        speakableAnswer={`In ${location.city}, a roof replacement typically costs ${formatCurrency(location.avgRoofCost.low)} to ${formatCurrency(location.avgRoofCost.high)}. The average is around ${formatCurrency(location.avgRoofCost.mid)}.`}
+        sourceUrl={`https://instantroofestimate.ai/roof-estimate/state/${stateSlug}/${location.slug}`}
+        topic="Roof Replacement Cost"
+      />
 
       <div className="min-h-screen bg-slate-50">
         {/* Header */}
