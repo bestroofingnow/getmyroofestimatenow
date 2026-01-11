@@ -116,8 +116,8 @@ export function ConversationalContentSchema({
     // AI citation optimization
     citation: {
       '@type': 'Organization',
-      name: 'Instant Roof Estimate',
-      url: 'https://instantroofestimate.ai',
+      name: 'Get My Roof Estimate Now',
+      url: 'https://getmyroofestimatenow.com',
     },
   };
 
@@ -142,7 +142,7 @@ export function VoiceActionSchema({ actionType, targetUrl, description }: VoiceA
   const actionDetails = {
     get_estimate: {
       name: 'Get Roof Estimate',
-      actionTarget: 'https://instantroofestimate.ai',
+      actionTarget: 'https://getmyroofestimatenow.com',
       queries: [
         'get roof estimate',
         'how much does a new roof cost',
@@ -152,7 +152,7 @@ export function VoiceActionSchema({ actionType, targetUrl, description }: VoiceA
     },
     find_contractor: {
       name: 'Find Roofing Contractor',
-      actionTarget: 'https://instantroofestimate.ai/roof-estimate',
+      actionTarget: 'https://getmyroofestimatenow.com/roof-estimate',
       queries: [
         'find roofing contractor near me',
         'roofing companies near me',
@@ -161,7 +161,7 @@ export function VoiceActionSchema({ actionType, targetUrl, description }: VoiceA
     },
     learn_more: {
       name: 'Learn About Roofing',
-      actionTarget: 'https://instantroofestimate.ai/roofing-materials',
+      actionTarget: 'https://getmyroofestimatenow.com/roofing-materials',
       queries: [
         'what roofing material is best',
         'how long does a roof last',
@@ -175,8 +175,8 @@ export function VoiceActionSchema({ actionType, targetUrl, description }: VoiceA
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Instant Roof Estimate',
-    url: 'https://instantroofestimate.ai',
+    name: 'Get My Roof Estimate Now',
+    url: 'https://getmyroofestimatenow.com',
     potentialAction: {
       '@type': 'SearchAction',
       target: {
@@ -200,7 +200,7 @@ export function VoiceActionSchema({ actionType, targetUrl, description }: VoiceA
       description: description,
     },
     // Sample voice queries for this action
-    sameAs: details.queries.map(q => `https://instantroofestimate.ai?voice_query=${encodeURIComponent(q)}`),
+    sameAs: details.queries.map(q => `https://getmyroofestimatenow.com?voice_query=${encodeURIComponent(q)}`),
   };
 
   return (
@@ -234,7 +234,7 @@ export function AISearchResultSchema({
   supportingFacts,
   datePublished,
   dateModified,
-  author = 'Instant Roof Estimate',
+  author = 'Get My Roof Estimate Now',
 }: AISearchResultSchemaProps) {
   const schema = {
     '@context': 'https://schema.org',
@@ -247,18 +247,18 @@ export function AISearchResultSchema({
     author: {
       '@type': 'Organization',
       name: author,
-      url: 'https://instantroofestimate.ai',
+      url: 'https://getmyroofestimatenow.com',
       // E-E-A-T signals for AI trust
       sameAs: [
-        'https://instantroofestimate.ai/about',
+        'https://getmyroofestimatenow.com/about',
       ],
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Instant Roof Estimate',
+      name: 'Get My Roof Estimate Now',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://instantroofestimate.ai/logo.png',
+        url: 'https://getmyroofestimatenow.com/logo.png',
       },
     },
     mainEntityOfPage: {
@@ -322,7 +322,7 @@ export function LocalVoiceSearchSchema({
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     '@id': `${url}#localbusiness`,
-    name: `Instant Roof Estimate - ${city}, ${stateAbbr}`,
+    name: `Get My Roof Estimate Now - ${city}, ${stateAbbr}`,
     description: description,
     url: url,
     areaServed: {
@@ -437,8 +437,8 @@ export function QuickAnswerSchema({
         dateCreated: new Date().toISOString(),
         author: {
           '@type': 'Organization',
-          name: 'Instant Roof Estimate',
-          url: 'https://instantroofestimate.ai',
+          name: 'Get My Roof Estimate Now',
+          url: 'https://getmyroofestimatenow.com',
         },
         upvoteCount: 0,
       },

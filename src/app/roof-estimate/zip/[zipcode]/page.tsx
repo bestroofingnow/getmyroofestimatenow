@@ -42,10 +42,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title,
       description,
       type: 'website',
-      url: `https://instantroofestimate.ai/roof-estimate/zip/${zipcode}`,
+      url: `https://getmyroofestimatenow.com/roof-estimate/zip/${zipcode}`,
     },
     alternates: {
-      canonical: `https://instantroofestimate.ai/roof-estimate/zip/${zipcode}`,
+      canonical: `https://getmyroofestimatenow.com/roof-estimate/zip/${zipcode}`,
     },
   };
 }
@@ -78,11 +78,11 @@ export default async function ZipCodePage({ params }: PageProps) {
 
   const stateSlug = getStateSlugByAbbr(zipData.stateAbbr);
   const breadcrumbs = [
-    { name: 'Home', url: 'https://instantroofestimate.ai' },
-    { name: 'Roof Estimates', url: 'https://instantroofestimate.ai/roof-estimate' },
-    { name: zipData.stateAbbr === 'NC' ? 'North Carolina' : 'South Carolina', url: `https://instantroofestimate.ai/roof-estimate/state/${stateSlug}` },
-    { name: zipData.cityName, url: `https://instantroofestimate.ai/roof-estimate/state/${stateSlug}/${zipData.citySlug}` },
-    { name: zipcode, url: `https://instantroofestimate.ai/roof-estimate/zip/${zipcode}` },
+    { name: 'Home', url: 'https://getmyroofestimatenow.com' },
+    { name: 'Roof Estimates', url: 'https://getmyroofestimatenow.com/roof-estimate' },
+    { name: zipData.stateAbbr === 'NC' ? 'North Carolina' : 'South Carolina', url: `https://getmyroofestimatenow.com/roof-estimate/state/${stateSlug}` },
+    { name: zipData.cityName, url: `https://getmyroofestimatenow.com/roof-estimate/state/${stateSlug}/${zipData.citySlug}` },
+    { name: zipcode, url: `https://getmyroofestimatenow.com/roof-estimate/zip/${zipcode}` },
   ];
 
   // Service Area Schema
@@ -91,11 +91,11 @@ export default async function ZipCodePage({ params }: PageProps) {
     '@type': 'Service',
     name: `Roof Estimate Service for ${zipcode}`,
     description: `Free instant roof replacement estimates for zip code ${zipcode} in ${zipData.cityName}, ${zipData.stateAbbr}`,
-    url: `https://instantroofestimate.ai/roof-estimate/zip/${zipcode}`,
+    url: `https://getmyroofestimatenow.com/roof-estimate/zip/${zipcode}`,
     provider: {
       '@type': 'Organization',
-      name: 'Instant Roof Estimate',
-      url: 'https://instantroofestimate.ai',
+      name: 'Get My Roof Estimate Now',
+      url: 'https://getmyroofestimatenow.com',
     },
     areaServed: {
       '@type': 'PostalCodeRangeSpecification',

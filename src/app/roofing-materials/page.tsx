@@ -67,10 +67,10 @@ export const metadata: Metadata = {
     title: 'Roofing Materials Guide | Compare All Options',
     description: 'Complete guide to roofing materials. Compare costs, durability, and find the best option for your home.',
     type: 'website',
-    url: 'https://instantroofestimate.ai/roofing-materials',
+    url: 'https://getmyroofestimatenow.com/roofing-materials',
   },
   alternates: {
-    canonical: 'https://instantroofestimate.ai/roofing-materials',
+    canonical: 'https://getmyroofestimatenow.com/roofing-materials',
   },
 };
 
@@ -115,8 +115,8 @@ const materials = [
 
 export default function RoofingMaterialsPage() {
   const breadcrumbs = [
-    { name: 'Home', url: 'https://instantroofestimate.ai' },
-    { name: 'Roofing Materials', url: 'https://instantroofestimate.ai/roofing-materials' },
+    { name: 'Home', url: 'https://getmyroofestimatenow.com' },
+    { name: 'Roofing Materials', url: 'https://getmyroofestimatenow.com/roofing-materials' },
   ];
 
   return (
@@ -130,8 +130,8 @@ export default function RoofingMaterialsPage() {
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
               <Link href="/" className="flex items-center gap-2">
-                <Image src="/logo.png" alt="Instant Roof Estimate" width={48} height={48} className="w-12 h-12" />
-                <span className="font-bold text-xl text-slate-900">Instant Roof Estimate</span>
+                <Image src="/logo.png" alt="Get My Roof Estimate Now" width={48} height={48} className="w-12 h-12" />
+                <span className="font-bold text-xl text-slate-900">Get My Roof Estimate Now</span>
               </Link>
               <Link href="/" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors">
                 Get Free Estimate
@@ -228,7 +228,7 @@ export default function RoofingMaterialsPage() {
         <footer className="bg-slate-900 text-slate-400 py-8">
           <div className="container mx-auto px-4">
             <div className="text-center mb-6">
-              <p>&copy; {new Date().getFullYear()} Instant Roof Estimate. All rights reserved.</p>
+              <p>&copy; {new Date().getFullYear()} Get My Roof Estimate Now. All rights reserved.</p>
             </div>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
               <Link href="/" className="hover:text-white transition-colors">Get Free Estimate</Link>

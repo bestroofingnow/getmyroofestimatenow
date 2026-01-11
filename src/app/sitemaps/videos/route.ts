@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-const BASE_URL = 'https://instantroofestimate.ai';
+const BASE_URL = 'https://getmyroofestimatenow.com';
 
 interface VideoEntry {
   pageUrl: string;
@@ -64,7 +64,7 @@ export async function GET() {
       pageUrl: BASE_URL,
       video: {
         thumbnailLoc: `${BASE_URL}/videos/thumbnails/how-to-get-estimate.jpg`,
-        title: 'How to Get an Instant Roof Estimate',
+        title: 'How to Get an Get My Roof Estimate Now',
         description: 'Learn how to get a free, instant roof estimate using our AI-powered satellite measurement tool. Get accurate pricing in under 60 seconds.',
         playerLoc: 'https://www.youtube.com/embed/YOUR_VIDEO_ID',
         duration: 120,

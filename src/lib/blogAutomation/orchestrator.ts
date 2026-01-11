@@ -211,7 +211,7 @@ async function processJob(jobId: string): Promise<void> {
       slug,
       title: generatedContent.title,
       excerpt: generatedContent.excerpt,
-      author: 'Instant Roof Estimate',
+      author: 'Get My Roof Estimate Now',
       publishedAt: now,
       updatedAt: now,
       featuredImage: featuredImage?.url,

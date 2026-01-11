@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { fetchBlogPosts } from '@/lib/blog';
 
-const BASE_URL = 'https://instantroofestimate.ai';
+const BASE_URL = 'https://getmyroofestimatenow.com';
 
 interface SitemapEntry {
   url: string;

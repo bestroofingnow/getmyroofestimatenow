@@ -23,13 +23,13 @@ const inter = Inter({
   display: "swap",
 });
 
-const siteUrl = "https://instantroofestimate.ai";
+const siteUrl = "https://getmyroofestimatenow.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Instant Roof Estimate | Get Your Free Roofing Quote in 60 Seconds",
-    template: "%s | Instant Roof Estimate",
+    default: "Get My Roof Estimate Now | Get Your Free Roofing Quote in 60 Seconds",
+    template: "%s | Get My Roof Estimate Now",
   },
   description: "Get an instant, accurate roof replacement estimate using satellite imagery. Free, fast, and no obligation. Enter your address to start.",
   keywords: [
@@ -46,9 +46,9 @@ export const metadata: Metadata = {
     "roofing contractor",
     "roof inspection",
   ],
-  authors: [{ name: "Instant Roof Estimate" }],
-  creator: "Instant Roof Estimate",
-  publisher: "Instant Roof Estimate",
+  authors: [{ name: "Get My Roof Estimate Now" }],
+  creator: "Get My Roof Estimate Now",
+  publisher: "Get My Roof Estimate Now",
   robots: {
     index: true,
     follow: true,
@@ -65,24 +65,24 @@ export const metadata: Metadata = {
     apple: "/logo.png",
   },
   openGraph: {
-    title: "Get Your Free Instant Roof Estimate in 60 Seconds",
+    title: "Get Your Free Get My Roof Estimate Now in 60 Seconds",
     description: "Accurate roof replacement estimates in 60 seconds using satellite imagery. No hassle, no obligation. Trusted measurements used by millions through Google Services.",
     type: "website",
     url: siteUrl,
-    siteName: "Instant Roof Estimate",
+    siteName: "Get My Roof Estimate Now",
     locale: "en_US",
     images: [
       {
         url: "/logo.png",
         width: 512,
         height: 512,
-        alt: "Instant Roof Estimate Logo",
+        alt: "Get My Roof Estimate Now Logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Get Your Free Instant Roof Estimate in 60 Seconds",
+    title: "Get Your Free Get My Roof Estimate Now in 60 Seconds",
     description: "Accurate roof replacement estimates using satellite imagery. Free, fast, and no obligation.",
     images: ["/logo.png"],
   },
@@ -116,19 +116,19 @@ export default function RootLayout({
         {/* Voice Search & AI Optimization Schemas */}
         <VoiceActionSchema
           actionType="get_estimate"
-          targetUrl="https://instantroofestimate.ai"
+          targetUrl="https://getmyroofestimatenow.com"
           description="Get a free instant roof estimate using satellite imagery"
         />
         <ConversationalContentSchema
           headline="Get Your Free Roof Estimate in 60 Seconds"
-          summary="Instant Roof Estimate uses satellite imagery to measure your roof and provide accurate cost estimates. No appointment needed, no one climbs on your roof, and it's completely free."
+          summary="Get My Roof Estimate Now uses satellite imagery to measure your roof and provide accurate cost estimates. No appointment needed, no one climbs on your roof, and it's completely free."
           keyPoints={[
             "Free satellite-based roof measurements in 60 seconds",
             "Average roof replacement costs $5,000 to $15,000",
             "Connect with licensed local roofing contractors",
             "No credit card or obligation required"
           ]}
-          pageUrl="https://instantroofestimate.ai"
+          pageUrl="https://getmyroofestimatenow.com"
           topic="Roof Replacement Estimate"
         />
       </head>

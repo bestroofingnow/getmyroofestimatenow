@@ -26,7 +26,7 @@ export async function fetchBlogPostsFromRSS(rssUrl: string): Promise<BlogPost[]>
       const description = getTagContent('description');
       const content = getTagContent('content:encoded') || getTagContent('content') || description;
       const pubDate = getTagContent('pubDate');
-      const creator = getTagContent('dc:creator') || getTagContent('author') || 'Instant Roof Estimate';
+      const creator = getTagContent('dc:creator') || getTagContent('author') || 'Get My Roof Estimate Now';
 
       // Extract featured image from content or media:content
       const imageMatch = itemXml.match(/<media:content[^>]*url="([^"]+)"/i) ||
@@ -97,7 +97,7 @@ export async function fetchBlogPostsFromGHL(): Promise<BlogPost[]> {
       excerpt: String(post.excerpt || post.description || '').slice(0, 200),
       content: String(post.content || post.body || ''),
       featuredImage: String(post.featuredImage || post.image || post.thumbnail || ''),
-      author: String(post.author || 'Instant Roof Estimate'),
+      author: String(post.author || 'Get My Roof Estimate Now'),
       publishedAt: String(post.publishedAt || post.createdAt || new Date().toISOString()),
       updatedAt: post.updatedAt ? String(post.updatedAt) : undefined,
       categories: Array.isArray(post.categories) ? post.categories.map(String) : [],

@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 
-const BASE_URL = 'https://instantroofestimate.ai';
+const BASE_URL = 'https://getmyroofestimatenow.com';
 
 // Sitemap Index - points to all category sitemaps
 export default function sitemap(): MetadataRoute.Sitemap {

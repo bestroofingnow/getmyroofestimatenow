@@ -1,12 +1,12 @@
-# Robots.txt for InstantRoofEstimate.ai
-# https://instantroofestimate.ai
+# Robots.txt for GetMyRoofEstimateNow.com
+# https://getmyroofestimatenow.com
 
 # Default rules for all crawlers
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://instantroofestimate.ai/sitemap.xml
+Sitemap: https://getmyroofestimatenow.com/sitemap.xml
 
 # Disallow internal/API routes
 Disallow: /api/

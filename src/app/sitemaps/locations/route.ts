@@ -3,7 +3,7 @@ import { locations } from '@/lib/locations';
 import { stateData, getStateSlugByAbbr } from '@/lib/stateData';
 import { neighborhoods } from '@/lib/neighborhoods';
 
-const BASE_URL = 'https://instantroofestimate.ai';
+const BASE_URL = 'https://getmyroofestimatenow.com';
 const STATIC_LAST_MOD = '2025-01-04';
 
 interface SitemapEntry {

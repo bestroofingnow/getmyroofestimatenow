@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: 'Roofing Tips & Guides | Expert Advice for Homeowners',
     description: 'Expert roofing tips and guides to help you make informed decisions about your roof.',
     type: 'website',
-    url: 'https://instantroofestimate.ai/blog',
+    url: 'https://getmyroofestimatenow.com/blog',
   },
 };
 
@@ -38,21 +38,21 @@ export default async function BlogPage() {
   const posts = await fetchBlogPosts();
 
   const breadcrumbs = [
-    { name: 'Home', url: 'https://instantroofestimate.ai' },
-    { name: 'Blog', url: 'https://instantroofestimate.ai/blog' },
+    { name: 'Home', url: 'https://getmyroofestimatenow.com' },
+    { name: 'Blog', url: 'https://getmyroofestimatenow.com/blog' },
   ];
 
   // Blog structured data
   const blogSchema = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
-    name: 'Instant Roof Estimate Blog',
+    name: 'Get My Roof Estimate Now Blog',
     description: 'Expert roofing tips, guides, and advice for homeowners',
-    url: 'https://instantroofestimate.ai/blog',
+    url: 'https://getmyroofestimatenow.com/blog',
     publisher: {
       '@type': 'Organization',
-      name: 'Instant Roof Estimate',
-      url: 'https://instantroofestimate.ai',
+      name: 'Get My Roof Estimate Now',
+      url: 'https://getmyroofestimatenow.com',
     },
     blogPost: posts.slice(0, 10).map((post) => ({
       '@type': 'BlogPosting',
@@ -64,7 +64,7 @@ export default async function BlogPage() {
         '@type': 'Person',
         name: post.author,
       },
-      url: `https://instantroofestimate.ai/blog/${post.slug}`,
+      url: `https://getmyroofestimatenow.com/blog/${post.slug}`,
       image: post.featuredImage,
     })),
   };
@@ -84,12 +84,12 @@ export default async function BlogPage() {
             <Link href="/" className="flex items-center gap-2">
               <Image
                 src="/logo.png"
-                alt="Instant Roof Estimate"
+                alt="Get My Roof Estimate Now"
                 width={48}
                 height={48}
                 className="w-12 h-12"
               />
-              <span className="font-bold text-xl text-slate-900">Instant Roof Estimate</span>
+              <span className="font-bold text-xl text-slate-900">Get My Roof Estimate Now</span>
             </Link>
           </div>
         </header>
@@ -265,7 +265,7 @@ export default async function BlogPage() {
         {/* Footer */}
         <footer className="bg-slate-900 text-slate-400 py-8">
           <div className="container mx-auto px-4 text-center">
-            <p>&copy; {new Date().getFullYear()} Instant Roof Estimate. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Get My Roof Estimate Now. All rights reserved.</p>
             <div className="flex justify-center gap-6 mt-4">
               <Link href="/privacy-policy" className="hover:text-white transition-colors">
                 Privacy Policy

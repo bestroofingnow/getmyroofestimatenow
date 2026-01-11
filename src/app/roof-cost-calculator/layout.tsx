@@ -17,10 +17,10 @@ export const metadata: Metadata = {
     title: 'Roof Cost Calculator | Estimate Your Roof Replacement Cost',
     description: 'Free roof cost calculator. Estimate your roof replacement cost based on size, materials, and location.',
     type: 'website',
-    url: 'https://instantroofestimate.ai/roof-cost-calculator',
+    url: 'https://getmyroofestimatenow.com/roof-cost-calculator',
   },
   alternates: {
-    canonical: 'https://instantroofestimate.ai/roof-cost-calculator',
+    canonical: 'https://getmyroofestimatenow.com/roof-cost-calculator',
   },
 };
 

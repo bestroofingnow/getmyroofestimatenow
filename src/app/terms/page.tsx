@@ -5,14 +5,14 @@ import { BreadcrumbSchema } from '@/components/StructuredData';
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
-  description: 'Read the Terms of Service for Instant Roof Estimate. Understand your rights and responsibilities when using our free roof estimation service.',
+  description: 'Read the Terms of Service for Get My Roof Estimate Now. Understand your rights and responsibilities when using our free roof estimation service.',
   alternates: {
-    canonical: 'https://instantroofestimate.ai/terms',
+    canonical: 'https://getmyroofestimatenow.com/terms',
   },
   openGraph: {
-    title: 'Terms of Service | Instant Roof Estimate',
+    title: 'Terms of Service | Get My Roof Estimate Now',
     description: 'Terms and conditions for using our roof estimation service.',
-    url: 'https://instantroofestimate.ai/terms',
+    url: 'https://getmyroofestimatenow.com/terms',
   },
 };
 
@@ -21,8 +21,8 @@ export default function TermsPage() {
     <>
       <BreadcrumbSchema
         items={[
-          { name: 'Home', url: 'https://instantroofestimate.ai' },
-          { name: 'Terms of Service', url: 'https://instantroofestimate.ai/terms' },
+          { name: 'Home', url: 'https://getmyroofestimatenow.com' },
+          { name: 'Terms of Service', url: 'https://getmyroofestimatenow.com/terms' },
         ]}
       />
       <main className="min-h-screen bg-white">
@@ -45,7 +45,7 @@ export default function TermsPage() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-slate-900 mb-4">1. Acceptance of Terms</h2>
             <p className="text-slate-600 mb-4">
-              By accessing and using InstantRoofEstimate.ai, you accept and agree to be bound by
+              By accessing and using GetMyRoofEstimateNow.com, you accept and agree to be bound by
               these Terms of Service. If you do not agree to these terms, please do not use our service.
             </p>
           </section>
@@ -53,7 +53,7 @@ export default function TermsPage() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-slate-900 mb-4">2. Service Description</h2>
             <p className="text-slate-600 mb-4">
-              InstantRoofEstimate.ai provides automated roof measurement and estimation services using
+              GetMyRoofEstimateNow.com provides automated roof measurement and estimation services using
               satellite imagery and publicly available data. Our estimates are for informational purposes
               only and should not be considered as formal quotes or bids.
             </p>
@@ -94,7 +94,7 @@ export default function TermsPage() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-slate-900 mb-4">6. Limitation of Liability</h2>
             <p className="text-slate-600 mb-4">
-              To the maximum extent permitted by law, InstantRoofEstimate.ai shall not be liable for
+              To the maximum extent permitted by law, GetMyRoofEstimateNow.com shall not be liable for
               any indirect, incidental, special, consequential, or punitive damages arising from your
               use of the service.
             </p>
@@ -103,7 +103,7 @@ export default function TermsPage() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-slate-900 mb-4">7. Intellectual Property</h2>
             <p className="text-slate-600 mb-4">
-              All content, features, and functionality of our website are owned by InstantRoofEstimate.ai
+              All content, features, and functionality of our website are owned by GetMyRoofEstimateNow.com
               and are protected by intellectual property laws.
             </p>
           </section>
@@ -130,7 +130,7 @@ export default function TermsPage() {
               If you have questions about these Terms of Service, please contact us at:
             </p>
             <p className="text-slate-600 mt-2">
-              Email: legal@instantroofestimate.ai
+              Email: legal@getmyroofestimatenow.com
             </p>
           </section>
         </div>

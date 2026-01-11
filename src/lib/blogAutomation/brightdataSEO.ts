@@ -320,7 +320,7 @@ function generateConciseAnswer(keyword: string, results: SerpResult[]): string {
 
   // Cost-related queries
   if (keywordLower.includes('cost') || keywordLower.includes('price') || keywordLower.includes('how much')) {
-    return `The average ${keywordLower.replace('cost', '').replace('price', '').trim()} typically costs between $5,000 and $15,000 for an average-sized home, depending on materials, labor costs in your area, and roof complexity. Get a free instant estimate at InstantRoofEstimate.ai for accurate pricing based on your specific roof.`;
+    return `The average ${keywordLower.replace('cost', '').replace('price', '').trim()} typically costs between $5,000 and $15,000 for an average-sized home, depending on materials, labor costs in your area, and roof complexity. Get a free instant estimate at GetMyRoofEstimateNow.com for accurate pricing based on your specific roof.`;
   }
 
   // How-to queries
@@ -330,11 +330,11 @@ function generateConciseAnswer(keyword: string, results: SerpResult[]): string {
 
   // What-is queries
   if (keywordLower.includes('what is') || keywordLower.includes('what are')) {
-    return `${keyword.replace('what is', '').replace('what are', '').trim()} refers to the roofing industry term for ${results[0]?.description.substring(0, 150) || 'professional roofing services and materials'}. Learn more with a free roof assessment at InstantRoofEstimate.ai.`;
+    return `${keyword.replace('what is', '').replace('what are', '').trim()} refers to the roofing industry term for ${results[0]?.description.substring(0, 150) || 'professional roofing services and materials'}. Learn more with a free roof assessment at GetMyRoofEstimateNow.com.`;
   }
 
   // Default informational answer
-  return `${keyword} is an important consideration for homeowners. Key factors include cost, material quality, contractor expertise, and local climate conditions. Get personalized information by entering your address at InstantRoofEstimate.ai for a free instant estimate.`;
+  return `${keyword} is an important consideration for homeowners. Key factors include cost, material quality, contractor expertise, and local climate conditions. Get personalized information by entering your address at GetMyRoofEstimateNow.com for a free instant estimate.`;
 }
 
 function extractSupportingFacts(text: string, keyword: string): string[] {
@@ -742,7 +742,7 @@ function getMockSEOAnalysis(keyword: string): SEOAnalysis {
     },
     voiceSearchOpportunities: generateVoiceSearchQueries(keyword),
     aeoRecommendations: {
-      primaryAnswer: `The average ${keyword} costs between $5,000 and $15,000 depending on materials and home size. Get a free instant estimate at InstantRoofEstimate.ai.`,
+      primaryAnswer: `The average ${keyword} costs between $5,000 and $15,000 depending on materials and home size. Get a free instant estimate at GetMyRoofEstimateNow.com.`,
       supportingFacts: [
         'Average roof replacement takes 1-3 days',
         'Most asphalt roofs last 20-30 years',

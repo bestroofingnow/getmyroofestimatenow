@@ -169,14 +169,14 @@ export default function ResultsPage() {
       {/* Footer */}
       <footer className="bg-slate-900 text-slate-400 py-8 mt-12">
         <div className="container mx-auto px-4 text-center">
-          <div className="text-lg font-bold text-white mb-2">InstantRoofEstimate.ai</div>
+          <div className="text-lg font-bold text-white mb-2">GetMyRoofEstimateNow.com</div>
           <p className="text-sm mb-4">Get accurate roof estimates in seconds.</p>
           <div className="flex justify-center gap-6 text-sm">
             <a href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
           <div className="border-t border-slate-800 mt-6 pt-6 text-sm">
-            <p>&copy; {new Date().getFullYear()} InstantRoofEstimate.ai. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} GetMyRoofEstimateNow.com. All rights reserved.</p>
           </div>
         </div>
       </footer>

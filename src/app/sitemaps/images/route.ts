@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-const BASE_URL = 'https://instantroofestimate.ai';
+const BASE_URL = 'https://getmyroofestimatenow.com';
 
 interface ImageEntry {
   pageUrl: string;
@@ -57,7 +57,7 @@ export async function GET() {
       images: [
         {
           loc: `${BASE_URL}/logo.png`,
-          title: 'Instant Roof Estimate Logo',
+          title: 'Get My Roof Estimate Now Logo',
           caption: 'Get instant AI-powered roof estimates for your home',
         },
         {

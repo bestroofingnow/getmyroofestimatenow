@@ -16,7 +16,7 @@ import { SearchConsoleData, SearchConsoleKeyword } from './types';
 
 const SEARCH_CONSOLE_API = 'https://searchconsole.googleapis.com/webmasters/v3';
 const GOOGLE_TOKEN_URL = 'https://oauth2.googleapis.com/token';
-const SITE_URL = 'https://instantroofestimate.ai';
+const SITE_URL = 'https://getmyroofestimatenow.com';
 
 interface SearchAnalyticsRequest {
   startDate: string;

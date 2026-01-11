@@ -5,14 +5,14 @@ import { BreadcrumbSchema } from '@/components/StructuredData';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Learn how Instant Roof Estimate collects, uses, and protects your personal information. Read our privacy policy for details on data handling and your rights.',
+  description: 'Learn how Get My Roof Estimate Now collects, uses, and protects your personal information. Read our privacy policy for details on data handling and your rights.',
   alternates: {
-    canonical: 'https://instantroofestimate.ai/privacy-policy',
+    canonical: 'https://getmyroofestimatenow.com/privacy-policy',
   },
   openGraph: {
-    title: 'Privacy Policy | Instant Roof Estimate',
+    title: 'Privacy Policy | Get My Roof Estimate Now',
     description: 'Learn how we protect your personal information and handle your data.',
-    url: 'https://instantroofestimate.ai/privacy-policy',
+    url: 'https://getmyroofestimatenow.com/privacy-policy',
   },
 };
 
@@ -21,8 +21,8 @@ export default function PrivacyPolicyPage() {
     <>
       <BreadcrumbSchema
         items={[
-          { name: 'Home', url: 'https://instantroofestimate.ai' },
-          { name: 'Privacy Policy', url: 'https://instantroofestimate.ai/privacy-policy' },
+          { name: 'Home', url: 'https://getmyroofestimatenow.com' },
+          { name: 'Privacy Policy', url: 'https://getmyroofestimatenow.com/privacy-policy' },
         ]}
       />
       <main className="min-h-screen bg-white">
@@ -118,7 +118,7 @@ export default function PrivacyPolicyPage() {
               If you have questions about this Privacy Policy, please contact us at:
             </p>
             <p className="text-slate-600 mt-2">
-              Email: privacy@instantroofestimate.ai
+              Email: privacy@getmyroofestimatenow.com
             </p>
           </section>
         </div>

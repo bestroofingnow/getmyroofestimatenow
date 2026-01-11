@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getAllCountySlugs } from '@/lib/countyData';
 
-const BASE_URL = 'https://instantroofestimate.ai';
+const BASE_URL = 'https://getmyroofestimatenow.com';
 const STATIC_LAST_MOD = '2025-01-09';
 
 interface SitemapEntry {

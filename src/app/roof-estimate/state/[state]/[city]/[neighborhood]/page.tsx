@@ -68,10 +68,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title,
       description,
       type: 'website',
-      url: `https://instantroofestimate.ai/roof-estimate/state/${stateSlug}/${city}/${neighborhoodSlug}`,
+      url: `https://getmyroofestimatenow.com/roof-estimate/state/${stateSlug}/${city}/${neighborhoodSlug}`,
     },
     alternates: {
-      canonical: `https://instantroofestimate.ai/roof-estimate/state/${stateSlug}/${city}/${neighborhoodSlug}`,
+      canonical: `https://getmyroofestimatenow.com/roof-estimate/state/${stateSlug}/${city}/${neighborhoodSlug}`,
     },
   };
 }
@@ -125,11 +125,11 @@ export default async function NeighborhoodPage({ params }: PageProps) {
     .slice(0, 6);
 
   const breadcrumbs = [
-    { name: 'Home', url: 'https://instantroofestimate.ai' },
-    { name: 'Roof Estimates', url: 'https://instantroofestimate.ai/roof-estimate' },
-    { name: neighborhoodData.state, url: `https://instantroofestimate.ai/roof-estimate/state/${stateSlug}` },
-    { name: `${neighborhoodData.city}, ${neighborhoodData.stateAbbr}`, url: `https://instantroofestimate.ai/roof-estimate/state/${stateSlug}/${city}` },
-    { name: neighborhoodData.name, url: `https://instantroofestimate.ai/roof-estimate/state/${stateSlug}/${city}/${neighborhoodSlug}` },
+    { name: 'Home', url: 'https://getmyroofestimatenow.com' },
+    { name: 'Roof Estimates', url: 'https://getmyroofestimatenow.com/roof-estimate' },
+    { name: neighborhoodData.state, url: `https://getmyroofestimatenow.com/roof-estimate/state/${stateSlug}` },
+    { name: `${neighborhoodData.city}, ${neighborhoodData.stateAbbr}`, url: `https://getmyroofestimatenow.com/roof-estimate/state/${stateSlug}/${city}` },
+    { name: neighborhoodData.name, url: `https://getmyroofestimatenow.com/roof-estimate/state/${stateSlug}/${city}/${neighborhoodSlug}` },
   ];
 
   // Generate FAQs
@@ -139,9 +139,9 @@ export default async function NeighborhoodPage({ params }: PageProps) {
   const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: `Instant Roof Estimate - ${neighborhoodData.name}`,
+    name: `Get My Roof Estimate Now - ${neighborhoodData.name}`,
     description: `Free instant roof replacement estimates for ${neighborhoodData.name} homeowners in ${neighborhoodData.city}, ${neighborhoodData.stateAbbr}`,
-    url: `https://instantroofestimate.ai/roof-estimate/state/${stateSlug}/${city}/${neighborhoodSlug}`,
+    url: `https://getmyroofestimatenow.com/roof-estimate/state/${stateSlug}/${city}/${neighborhoodSlug}`,
     areaServed: {
       '@type': 'Place',
       name: `${neighborhoodData.name}, ${neighborhoodData.city}, ${neighborhoodData.stateAbbr}`,
@@ -190,12 +190,12 @@ export default async function NeighborhoodPage({ params }: PageProps) {
               <Link href="/" className="flex items-center gap-2">
                 <Image
                   src="/logo.png"
-                  alt="Instant Roof Estimate"
+                  alt="Get My Roof Estimate Now"
                   width={40}
                   height={40}
                   className="w-10 h-10"
                 />
-                <span className="font-bold text-lg text-slate-900 hidden sm:inline">Instant Roof Estimate</span>
+                <span className="font-bold text-lg text-slate-900 hidden sm:inline">Get My Roof Estimate Now</span>
               </Link>
               <nav className="flex items-center gap-4 text-sm">
                 <Link href={`/roof-estimate/state/${stateSlug}/${city}`} className="text-slate-600 hover:text-blue-600">
@@ -526,7 +526,7 @@ export default async function NeighborhoodPage({ params }: PageProps) {
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="pt-8 border-t border-slate-800 text-center text-sm">
-                <p>&copy; {new Date().getFullYear()} Instant Roof Estimate. All rights reserved.</p>
+                <p>&copy; {new Date().getFullYear()} Get My Roof Estimate Now. All rights reserved.</p>
                 <div className="flex justify-center gap-6 mt-4">
                   <Link href="/privacy-policy" className="hover:text-white transition-colors">
                     Privacy Policy

@@ -40,10 +40,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title,
       description,
       type: 'website',
-      url: `https://instantroofestimate.ai/roof-estimate/state/${stateInfo.slug}`,
+      url: `https://getmyroofestimatenow.com/roof-estimate/state/${stateInfo.slug}`,
     },
     alternates: {
-      canonical: `https://instantroofestimate.ai/roof-estimate/state/${stateInfo.slug}`,
+      canonical: `https://getmyroofestimatenow.com/roof-estimate/state/${stateInfo.slug}`,
     },
   };
 }
@@ -60,8 +60,8 @@ function StateServiceSchema({ state }: { state: StateData }) {
     serviceType: 'Roof Estimation',
     provider: {
       '@type': 'Organization',
-      name: 'Instant Roof Estimate',
-      url: 'https://instantroofestimate.ai',
+      name: 'Get My Roof Estimate Now',
+      url: 'https://getmyroofestimatenow.com',
     },
     areaServed: {
       '@type': 'State',
@@ -100,9 +100,9 @@ export default async function StatePage({ params }: PageProps) {
   const stateFaqs = generateStateFaqs(stateInfo);
 
   const breadcrumbs = [
-    { name: 'Home', url: 'https://instantroofestimate.ai' },
-    { name: 'Roof Estimates', url: 'https://instantroofestimate.ai/roof-estimate' },
-    { name: stateInfo.name, url: `https://instantroofestimate.ai/roof-estimate/state/${stateInfo.slug}` },
+    { name: 'Home', url: 'https://getmyroofestimatenow.com' },
+    { name: 'Roof Estimates', url: 'https://getmyroofestimatenow.com/roof-estimate' },
+    { name: stateInfo.name, url: `https://getmyroofestimatenow.com/roof-estimate/state/${stateInfo.slug}` },
   ];
 
   return (
@@ -119,12 +119,12 @@ export default async function StatePage({ params }: PageProps) {
               <Link href="/" className="flex items-center gap-2">
                 <Image
                   src="/logo.png"
-                  alt="Instant Roof Estimate"
+                  alt="Get My Roof Estimate Now"
                   width={48}
                   height={48}
                   className="w-12 h-12"
                 />
-                <span className="font-bold text-xl text-slate-900">Instant Roof Estimate</span>
+                <span className="font-bold text-xl text-slate-900">Get My Roof Estimate Now</span>
               </Link>
               <div className="flex items-center gap-2 text-slate-600">
                 <MapPin className="w-4 h-4" />
@@ -386,7 +386,7 @@ export default async function StatePage({ params }: PageProps) {
         <footer className="bg-slate-900 text-slate-400 py-8">
           <div className="container mx-auto px-4">
             <div className="text-center mb-6">
-              <p>&copy; {new Date().getFullYear()} Instant Roof Estimate. All rights reserved.</p>
+              <p>&copy; {new Date().getFullYear()} Get My Roof Estimate Now. All rights reserved.</p>
               <p className="mt-2 text-sm">
                 Serving {stateInfo.name} and all 50 states
               </p>

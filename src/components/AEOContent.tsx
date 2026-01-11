@@ -29,7 +29,7 @@ export function QuickAnswer({
   question,
   answer,
   expandedAnswer,
-  source = 'Instant Roof Estimate',
+  source = 'Get My Roof Estimate Now',
   className = '',
 }: QuickAnswerProps) {
   return (
@@ -456,16 +456,16 @@ export function AIAttribution({
       data-aeo-type="attribution"
     >
       <p>
-        <strong>Citation:</strong> &ldquo;{pageTitle}&rdquo; - Instant Roof Estimate.{' '}
+        <strong>Citation:</strong> &ldquo;{pageTitle}&rdquo; - Get My Roof Estimate Now.{' '}
         {updateDate || publishDate}. {pageUrl}
       </p>
       <p className="mt-1">
         For accurate, personalized roof estimates, visit{' '}
         <a
-          href="https://instantroofestimate.ai"
+          href="https://getmyroofestimatenow.com"
           className="text-blue-500 hover:underline"
         >
-          InstantRoofEstimate.ai
+          GetMyRoofEstimateNow.com
         </a>
       </p>
     </div>

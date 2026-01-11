@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle, AlertTriangle, Shield, Phone, Clock, FileText,
 import { BreadcrumbSchema } from '@/components/StructuredData';
 
 export const metadata: Metadata = {
-  title: 'Storm & Hail Damage Roof Repair Charlotte NC | Free Inspection | Instant Roof Estimate',
+  title: 'Storm & Hail Damage Roof Repair Charlotte NC | Free Inspection | Get My Roof Estimate Now',
   description: 'Charlotte NC storm damage roof repair and hail damage assessment. Free inspections in Charlotte, Huntersville, Matthews, Concord & surrounding areas. Insurance claim assistance and 24/7 emergency roof repairs.',
   keywords: [
     'storm damage roof repair Charlotte NC',
@@ -33,10 +33,10 @@ export const metadata: Metadata = {
     title: 'Storm & Hail Damage Roof Repair | Free Inspection',
     description: 'Expert storm damage roof repair. Free inspections and insurance claim assistance available.',
     type: 'website',
-    url: 'https://instantroofestimate.ai/services/storm-damage',
+    url: 'https://getmyroofestimatenow.com/services/storm-damage',
   },
   alternates: {
-    canonical: 'https://instantroofestimate.ai/services/storm-damage',
+    canonical: 'https://getmyroofestimatenow.com/services/storm-damage',
   },
 };
 
@@ -172,7 +172,7 @@ function ServiceSchema() {
     name: 'Storm & Hail Damage Roof Repair',
     provider: {
       '@type': 'Organization',
-      name: 'Instant Roof Estimate',
+      name: 'Get My Roof Estimate Now',
     },
     description: 'Professional storm damage assessment, hail damage repair, and insurance claim assistance for residential roofing.',
     areaServed: 'United States',
@@ -189,9 +189,9 @@ function ServiceSchema() {
 
 export default function StormDamagePage() {
   const breadcrumbs = [
-    { name: 'Home', url: 'https://instantroofestimate.ai' },
-    { name: 'Services', url: 'https://instantroofestimate.ai/services' },
-    { name: 'Storm & Hail Damage', url: 'https://instantroofestimate.ai/services/storm-damage' },
+    { name: 'Home', url: 'https://getmyroofestimatenow.com' },
+    { name: 'Services', url: 'https://getmyroofestimatenow.com/services' },
+    { name: 'Storm & Hail Damage', url: 'https://getmyroofestimatenow.com/services/storm-damage' },
   ];
 
   return (
@@ -208,12 +208,12 @@ export default function StormDamagePage() {
               <Link href="/" className="flex items-center gap-2">
                 <Image
                   src="/logo.png"
-                  alt="Instant Roof Estimate"
+                  alt="Get My Roof Estimate Now"
                   width={48}
                   height={48}
                   className="w-12 h-12"
                 />
-                <span className="font-bold text-xl text-slate-900">Instant Roof Estimate</span>
+                <span className="font-bold text-xl text-slate-900">Get My Roof Estimate Now</span>
               </Link>
               <Link
                 href="/"
@@ -478,7 +478,7 @@ export default function StormDamagePage() {
         <footer className="bg-slate-900 text-slate-400 py-8">
           <div className="container mx-auto px-4">
             <div className="text-center mb-6">
-              <p>&copy; {new Date().getFullYear()} Instant Roof Estimate. All rights reserved.</p>
+              <p>&copy; {new Date().getFullYear()} Get My Roof Estimate Now. All rights reserved.</p>
             </div>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
               <Link href="/" className="hover:text-white transition-colors">Get Free Estimate</Link>

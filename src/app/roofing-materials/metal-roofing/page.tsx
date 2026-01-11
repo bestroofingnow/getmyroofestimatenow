@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle, DollarSign, Clock, Shield, Zap, Thermometer, V
 import { BreadcrumbSchema } from '@/components/StructuredData';
 
 export const metadata: Metadata = {
-  title: 'Metal Roofing Guide 2025 | Costs, Pros & Cons, Types | Instant Roof Estimate',
+  title: 'Metal Roofing Guide 2025 | Costs, Pros & Cons, Types | Get My Roof Estimate Now',
   description: 'Complete metal roofing guide: costs ($8-$16/sq ft), pros and cons, standing seam vs corrugated, lifespan (40-70 years), and whether metal roofing is right for your home.',
   keywords: [
     'metal roofing',
@@ -28,10 +28,10 @@ export const metadata: Metadata = {
     title: 'Metal Roofing Guide 2025 | Complete Cost & Buying Guide',
     description: 'Everything you need to know about metal roofing: costs, types, pros and cons, and whether it\'s right for your home.',
     type: 'article',
-    url: 'https://instantroofestimate.ai/roofing-materials/metal-roofing',
+    url: 'https://getmyroofestimatenow.com/roofing-materials/metal-roofing',
   },
   alternates: {
-    canonical: 'https://instantroofestimate.ai/roofing-materials/metal-roofing',
+    canonical: 'https://getmyroofestimatenow.com/roofing-materials/metal-roofing',
   },
 };
 
@@ -159,12 +159,12 @@ function ArticleSchema() {
     description: 'Complete guide to metal roofing including costs, types, benefits, drawbacks, and whether it\'s right for your home.',
     author: {
       '@type': 'Organization',
-      name: 'Instant Roof Estimate',
+      name: 'Get My Roof Estimate Now',
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Instant Roof Estimate',
-      url: 'https://instantroofestimate.ai',
+      name: 'Get My Roof Estimate Now',
+      url: 'https://getmyroofestimatenow.com',
     },
     datePublished: '2025-01-04',
     dateModified: '2025-01-04',
@@ -180,9 +180,9 @@ function ArticleSchema() {
 
 export default function MetalRoofingPage() {
   const breadcrumbs = [
-    { name: 'Home', url: 'https://instantroofestimate.ai' },
-    { name: 'Roofing Materials', url: 'https://instantroofestimate.ai/roofing-materials' },
-    { name: 'Metal Roofing', url: 'https://instantroofestimate.ai/roofing-materials/metal-roofing' },
+    { name: 'Home', url: 'https://getmyroofestimatenow.com' },
+    { name: 'Roofing Materials', url: 'https://getmyroofestimatenow.com/roofing-materials' },
+    { name: 'Metal Roofing', url: 'https://getmyroofestimatenow.com/roofing-materials/metal-roofing' },
   ];
 
   return (
@@ -199,12 +199,12 @@ export default function MetalRoofingPage() {
               <Link href="/" className="flex items-center gap-2">
                 <Image
                   src="/logo.png"
-                  alt="Instant Roof Estimate"
+                  alt="Get My Roof Estimate Now"
                   width={48}
                   height={48}
                   className="w-12 h-12"
                 />
-                <span className="font-bold text-xl text-slate-900">Instant Roof Estimate</span>
+                <span className="font-bold text-xl text-slate-900">Get My Roof Estimate Now</span>
               </Link>
               <Link
                 href="/"
@@ -482,7 +482,7 @@ export default function MetalRoofingPage() {
         <footer className="bg-slate-900 text-slate-400 py-8">
           <div className="container mx-auto px-4">
             <div className="text-center mb-6">
-              <p>&copy; {new Date().getFullYear()} Instant Roof Estimate. All rights reserved.</p>
+              <p>&copy; {new Date().getFullYear()} Get My Roof Estimate Now. All rights reserved.</p>
             </div>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
               <Link href="/" className="hover:text-white transition-colors">

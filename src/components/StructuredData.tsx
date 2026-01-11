@@ -2,18 +2,18 @@ export function OrganizationSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Instant Roof Estimate',
-    alternateName: 'InstantRoofEstimate.ai',
-    url: 'https://instantroofestimate.ai',
+    name: 'Get My Roof Estimate Now',
+    alternateName: 'GetMyRoofEstimateNow.com',
+    url: 'https://getmyroofestimatenow.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://instantroofestimate.ai/logo.png',
+      url: 'https://getmyroofestimatenow.com/logo.png',
       width: 512,
       height: 512,
     },
-    image: 'https://instantroofestimate.ai/logo.png',
+    image: 'https://getmyroofestimatenow.com/logo.png',
     description: 'Get instant, accurate roof replacement estimates using satellite imagery. Free, fast, and no obligation. Serving homeowners nationwide.',
-    slogan: 'Get Your Free Instant Roof Estimate in 60 Seconds',
+    slogan: 'Get Your Free Get My Roof Estimate Now in 60 Seconds',
     foundingDate: '2024',
     areaServed: {
       '@type': 'Country',
@@ -63,12 +63,12 @@ export function WebsiteSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Instant Roof Estimate',
-    url: 'https://instantroofestimate.ai',
+    name: 'Get My Roof Estimate Now',
+    url: 'https://getmyroofestimatenow.com',
     description: 'Get instant, accurate roof replacement estimates using satellite imagery.',
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://instantroofestimate.ai/?address={search_term_string}',
+      target: 'https://getmyroofestimatenow.com/?address={search_term_string}',
       'query-input': 'required name=search_term_string',
     },
   };
@@ -85,12 +85,12 @@ export function ServiceSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'Instant Roof Estimate',
+    name: 'Get My Roof Estimate Now',
     serviceType: 'Roof Estimation Service',
     provider: {
       '@type': 'Organization',
-      name: 'Instant Roof Estimate',
-      url: 'https://instantroofestimate.ai',
+      name: 'Get My Roof Estimate Now',
+      url: 'https://getmyroofestimatenow.com',
     },
     description: 'Get an instant, accurate roof replacement estimate using satellite imagery. Free, fast, and no obligation. Enter your address to receive your estimate in 60 seconds.',
     areaServed: {
@@ -105,7 +105,7 @@ export function ServiceSchema() {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Free Instant Roof Estimate',
+            name: 'Free Get My Roof Estimate Now',
             description: 'Satellite-based roof measurement and cost estimate',
           },
           price: '0',
@@ -127,9 +127,9 @@ export function LocalBusinessSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    name: 'Instant Roof Estimate',
-    image: 'https://instantroofestimate.ai/logo.png',
-    url: 'https://instantroofestimate.ai',
+    name: 'Get My Roof Estimate Now',
+    image: 'https://getmyroofestimatenow.com/logo.png',
+    url: 'https://getmyroofestimatenow.com',
     description: 'Get instant, accurate roof replacement estimates using satellite imagery. Free estimates in 60 seconds.',
     priceRange: 'Free',
     areaServed: {
@@ -201,7 +201,7 @@ export function HowToSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
-    name: 'How to Get a Free Instant Roof Estimate',
+    name: 'How to Get a Free Get My Roof Estimate Now',
     description: 'Follow these simple steps to get an instant, accurate roof replacement estimate using satellite imagery.',
     totalTime: 'PT1M',
     estimatedCost: {
@@ -215,28 +215,28 @@ export function HowToSchema() {
         position: 1,
         name: 'Enter Your Address',
         text: 'Type your property address into the search box. Our system uses Google Places for accurate address lookup.',
-        url: 'https://instantroofestimate.ai/#step1',
+        url: 'https://getmyroofestimatenow.com/#step1',
       },
       {
         '@type': 'HowToStep',
         position: 2,
         name: 'Confirm Your Property',
         text: 'Review the satellite image of your property to confirm we have the correct location.',
-        url: 'https://instantroofestimate.ai/#step2',
+        url: 'https://getmyroofestimatenow.com/#step2',
       },
       {
         '@type': 'HowToStep',
         position: 3,
         name: 'Get Your Estimate',
         text: 'Our AI analyzes your roof dimensions and provides instant cost estimates for different material options.',
-        url: 'https://instantroofestimate.ai/#step3',
+        url: 'https://getmyroofestimatenow.com/#step3',
       },
       {
         '@type': 'HowToStep',
         position: 4,
         name: 'Connect with a Contractor',
         text: 'Enter your contact information to receive a detailed quote from a licensed local roofing contractor.',
-        url: 'https://instantroofestimate.ai/#step4',
+        url: 'https://getmyroofestimatenow.com/#step4',
       },
     ],
   };
@@ -253,7 +253,7 @@ export function SoftwareApplicationSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    name: 'Instant Roof Estimate',
+    name: 'Get My Roof Estimate Now',
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web Browser',
     offers: {
@@ -269,8 +269,8 @@ export function SoftwareApplicationSchema() {
       'No appointment needed',
       'Connect with local contractors',
     ],
-    screenshot: 'https://instantroofestimate.ai/screenshot.png',
-    url: 'https://instantroofestimate.ai',
+    screenshot: 'https://getmyroofestimatenow.com/screenshot.png',
+    url: 'https://getmyroofestimatenow.com',
   };
 
   return (
@@ -285,19 +285,19 @@ export function ProductSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: 'Free Instant Roof Estimate',
+    name: 'Free Get My Roof Estimate Now',
     description: 'Get an instant, accurate roof replacement estimate using satellite imagery. Free, fast, and no obligation.',
-    image: 'https://instantroofestimate.ai/logo.png',
+    image: 'https://getmyroofestimatenow.com/logo.png',
     brand: {
       '@type': 'Brand',
-      name: 'Instant Roof Estimate',
+      name: 'Get My Roof Estimate Now',
     },
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'USD',
       availability: 'https://schema.org/InStock',
-      url: 'https://instantroofestimate.ai',
+      url: 'https://getmyroofestimatenow.com',
     },
     aggregateRating: {
       '@type': 'AggregateRating',
@@ -344,7 +344,7 @@ export function ArticleSchema({
   image,
   publishedAt,
   updatedAt,
-  author = 'Instant Roof Estimate Team',
+  author = 'Get My Roof Estimate Now Team',
   keywords = [],
 }: BlogArticleSchemaProps) {
   // Extract first 2-3 sentences for speakable content
@@ -356,20 +356,20 @@ export function ArticleSchema({
     '@id': url,
     headline: title,
     description: description,
-    image: image || 'https://instantroofestimate.ai/og-image.png',
+    image: image || 'https://getmyroofestimatenow.com/og-image.png',
     datePublished: publishedAt,
     dateModified: updatedAt || publishedAt,
     author: {
       '@type': 'Person',
       name: author,
-      url: 'https://instantroofestimate.ai/about',
+      url: 'https://getmyroofestimatenow.com/about',
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Instant Roof Estimate',
+      name: 'Get My Roof Estimate Now',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://instantroofestimate.ai/logo.png',
+        url: 'https://getmyroofestimatenow.com/logo.png',
         width: 512,
         height: 512,
       },
@@ -434,7 +434,7 @@ export function QAPageSchema({ questions, pageUrl }: QASchemaProps) {
         dateCreated: new Date().toISOString(),
         author: {
           '@type': 'Organization',
-          name: 'Instant Roof Estimate',
+          name: 'Get My Roof Estimate Now',
         },
       },
     })),
@@ -565,8 +565,8 @@ export function LocalServiceSchema({
     description: `Get free instant roof estimates in ${city}, ${state}. Average roof replacement costs $${avgCost.low.toLocaleString()} to $${avgCost.high.toLocaleString()}.`,
     provider: {
       '@type': 'Organization',
-      name: 'Instant Roof Estimate',
-      url: 'https://instantroofestimate.ai',
+      name: 'Get My Roof Estimate Now',
+      url: 'https://getmyroofestimatenow.com',
     },
     areaServed: {
       '@type': 'City',

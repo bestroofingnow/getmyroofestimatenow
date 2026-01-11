@@ -84,12 +84,12 @@ export default function RoofCostCalculator() {
             <Link href="/" className="flex items-center gap-2">
               <Image
                 src="/logo.png"
-                alt="Instant Roof Estimate"
+                alt="Get My Roof Estimate Now"
                 width={48}
                 height={48}
                 className="w-12 h-12"
               />
-              <span className="font-bold text-xl text-slate-900">Instant Roof Estimate</span>
+              <span className="font-bold text-xl text-slate-900">Get My Roof Estimate Now</span>
             </Link>
             <Link
               href="/"
@@ -391,7 +391,7 @@ export default function RoofCostCalculator() {
       {/* Footer */}
       <footer className="bg-slate-900 text-slate-400 py-8">
         <div className="container mx-auto px-4 text-center">
-          <p>&copy; {new Date().getFullYear()} Instant Roof Estimate. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Get My Roof Estimate Now. All rights reserved.</p>
           <div className="flex justify-center gap-6 mt-4">
             <Link href="/privacy-policy" className="hover:text-white transition-colors">
               Privacy Policy

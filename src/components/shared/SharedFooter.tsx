@@ -66,7 +66,7 @@ export function SharedFooter({ showStateLinks = true, showCityLinks = true }: Sh
                 height={32}
                 className="w-8 h-8"
               />
-              <span className="font-bold text-white">Instant Roof Estimate</span>
+              <span className="font-bold text-white">Get My Roof Estimate Now</span>
             </Link>
             <p className="text-sm mb-4">
               Get a free roof estimate in 60 seconds. We use space photos to measure your roof.
@@ -148,7 +148,7 @@ export function SharedFooter({ showStateLinks = true, showCityLinks = true }: Sh
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm">
-              &copy; {currentYear} Instant Roof Estimate. All rights reserved.
+              &copy; {currentYear} Get My Roof Estimate Now. All rights reserved.
             </p>
             <nav aria-label="Legal links">
               <ul className="flex items-center gap-6">

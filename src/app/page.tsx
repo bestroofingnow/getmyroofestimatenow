@@ -66,7 +66,7 @@ export default function HomePage() {
                 height={56}
                 className="w-14 h-14"
               />
-              <span className="text-xl font-bold text-white hidden sm:inline">InstantRoofEstimate.ai</span>
+              <span className="text-xl font-bold text-white hidden sm:inline">GetMyRoofEstimateNow.com</span>
             </div>
             <a
               href="#get-estimate"
@@ -261,7 +261,7 @@ export default function HomePage() {
                 className="w-14 h-14"
               />
               <div>
-                <div className="text-xl font-bold text-white mb-1">InstantRoofEstimate.ai</div>
+                <div className="text-xl font-bold text-white mb-1">GetMyRoofEstimateNow.com</div>
                 <p className="text-sm">Get roof prices in seconds.</p>
               </div>
             </div>
@@ -326,7 +326,7 @@ export default function HomePage() {
           </div>
 
           <div className="border-t border-slate-800 mt-8 pt-8 text-center text-sm">
-            <p>&copy; {new Date().getFullYear()} InstantRoofEstimate.ai. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} GetMyRoofEstimateNow.com. All rights reserved.</p>
           </div>
         </div>
       </footer>

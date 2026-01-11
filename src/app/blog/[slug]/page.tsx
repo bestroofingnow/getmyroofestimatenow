@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: post.title,
       description: post.excerpt,
       type: 'article',
-      url: `https://instantroofestimate.ai/blog/${post.slug}`,
+      url: `https://getmyroofestimatenow.com/blog/${post.slug}`,
       images: post.featuredImage ? [{ url: post.featuredImage }] : [],
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt || post.publishedAt,
@@ -161,12 +161,12 @@ export default async function BlogPostPage({ params }: PageProps) {
   const nextPost = currentIndex > 0 ? posts[currentIndex - 1] : null;
 
   const breadcrumbs = [
-    { name: 'Home', url: 'https://instantroofestimate.ai' },
-    { name: 'Blog', url: 'https://instantroofestimate.ai/blog' },
-    { name: post.title, url: `https://instantroofestimate.ai/blog/${post.slug}` },
+    { name: 'Home', url: 'https://getmyroofestimatenow.com' },
+    { name: 'Blog', url: 'https://getmyroofestimatenow.com/blog' },
+    { name: post.title, url: `https://getmyroofestimatenow.com/blog/${post.slug}` },
   ];
 
-  const postUrl = `https://instantroofestimate.ai/blog/${post.slug}`;
+  const postUrl = `https://getmyroofestimatenow.com/blog/${post.slug}`;
 
   return (
     <>
@@ -197,7 +197,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                   height={48}
                   className="w-12 h-12"
                 />
-                <span className="font-bold text-xl text-slate-900">Instant Roof Estimate</span>
+                <span className="font-bold text-xl text-slate-900">Get My Roof Estimate Now</span>
               </Link>
               <Link
                 href="/blog"
@@ -379,7 +379,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         {/* Footer */}
         <footer role="contentinfo" className="bg-slate-900 text-slate-400 py-8">
           <div className="container mx-auto px-4 text-center">
-            <p>&copy; {new Date().getFullYear()} Instant Roof Estimate. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Get My Roof Estimate Now. All rights reserved.</p>
             <nav aria-label="Footer navigation" className="flex justify-center gap-6 mt-4">
               <Link href="/privacy-policy" className="hover:text-white transition-colors">
                 Privacy Policy

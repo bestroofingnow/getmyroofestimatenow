@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle, Shield, Clock, DollarSign, Home, Palette, Awar
 import { BreadcrumbSchema } from '@/components/StructuredData';
 
 export const metadata: Metadata = {
-  title: 'Asphalt Shingles Guide 2025 | Costs, Types & Best Brands | Instant Roof Estimate',
+  title: 'Asphalt Shingles Guide 2025 | Costs, Types & Best Brands | Get My Roof Estimate Now',
   description: 'Complete asphalt shingles guide: costs ($3-$7/sq ft), architectural vs 3-tab, top brands (GAF, Owens Corning, CertainTeed), and 20-30 year warranty options.',
   keywords: [
     'asphalt shingles',
@@ -28,10 +28,10 @@ export const metadata: Metadata = {
     title: 'Asphalt Shingles Guide 2025 | Complete Cost & Buying Guide',
     description: 'Everything you need to know about asphalt shingles: costs, types, best brands, and how to choose the right option.',
     type: 'article',
-    url: 'https://instantroofestimate.ai/roofing-materials/asphalt-shingles',
+    url: 'https://getmyroofestimatenow.com/roofing-materials/asphalt-shingles',
   },
   alternates: {
-    canonical: 'https://instantroofestimate.ai/roofing-materials/asphalt-shingles',
+    canonical: 'https://getmyroofestimatenow.com/roofing-materials/asphalt-shingles',
   },
 };
 
@@ -182,9 +182,9 @@ function FAQSchema() {
 
 export default function AsphaltShinglesPage() {
   const breadcrumbs = [
-    { name: 'Home', url: 'https://instantroofestimate.ai' },
-    { name: 'Roofing Materials', url: 'https://instantroofestimate.ai/roofing-materials' },
-    { name: 'Asphalt Shingles', url: 'https://instantroofestimate.ai/roofing-materials/asphalt-shingles' },
+    { name: 'Home', url: 'https://getmyroofestimatenow.com' },
+    { name: 'Roofing Materials', url: 'https://getmyroofestimatenow.com/roofing-materials' },
+    { name: 'Asphalt Shingles', url: 'https://getmyroofestimatenow.com/roofing-materials/asphalt-shingles' },
   ];
 
   return (
@@ -200,12 +200,12 @@ export default function AsphaltShinglesPage() {
               <Link href="/" className="flex items-center gap-2">
                 <Image
                   src="/logo.png"
-                  alt="Instant Roof Estimate"
+                  alt="Get My Roof Estimate Now"
                   width={48}
                   height={48}
                   className="w-12 h-12"
                 />
-                <span className="font-bold text-xl text-slate-900">Instant Roof Estimate</span>
+                <span className="font-bold text-xl text-slate-900">Get My Roof Estimate Now</span>
               </Link>
               <Link
                 href="/"
@@ -466,7 +466,7 @@ export default function AsphaltShinglesPage() {
         <footer className="bg-slate-900 text-slate-400 py-8">
           <div className="container mx-auto px-4">
             <div className="text-center mb-6">
-              <p>&copy; {new Date().getFullYear()} Instant Roof Estimate. All rights reserved.</p>
+              <p>&copy; {new Date().getFullYear()} Get My Roof Estimate Now. All rights reserved.</p>
             </div>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
               <Link href="/" className="hover:text-white transition-colors">Get Free Estimate</Link>

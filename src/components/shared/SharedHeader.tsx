@@ -28,7 +28,7 @@ export function SharedHeader({ variant = 'default', showCTA = true }: SharedHead
           <Link
             href="/"
             className="flex items-center gap-2"
-            aria-label="Instant Roof Estimate - Go to home page"
+            aria-label="Get My Roof Estimate Now - Go to home page"
           >
             <Image
               src="/logo.png"
@@ -39,7 +39,7 @@ export function SharedHeader({ variant = 'default', showCTA = true }: SharedHead
               priority
             />
             <span className={`font-bold text-lg ${textClass} hidden sm:inline`}>
-              Instant Roof Estimate
+              Get My Roof Estimate Now
             </span>
           </Link>
 

@@ -27,10 +27,10 @@ export const metadata: Metadata = {
     title: 'Metal Roofing vs Asphalt Shingles: Complete 2025 Comparison',
     description: 'Detailed comparison of metal roofing and asphalt shingles including costs, lifespan, and which is best for your home.',
     type: 'article',
-    url: 'https://instantroofestimate.ai/compare/metal-vs-shingles',
+    url: 'https://getmyroofestimatenow.com/compare/metal-vs-shingles',
   },
   alternates: {
-    canonical: 'https://instantroofestimate.ai/compare/metal-vs-shingles',
+    canonical: 'https://getmyroofestimatenow.com/compare/metal-vs-shingles',
   },
 };
 
@@ -205,7 +205,7 @@ function ComparisonSchema() {
     description: 'Detailed comparison of metal roofing and asphalt shingles including costs, lifespan, durability, and ROI.',
     author: {
       '@type': 'Organization',
-      name: 'Instant Roof Estimate',
+      name: 'Get My Roof Estimate Now',
     },
     datePublished: '2025-01-04',
     dateModified: '2025-01-04',
@@ -221,9 +221,9 @@ function ComparisonSchema() {
 
 export default function MetalVsShinglesPage() {
   const breadcrumbs = [
-    { name: 'Home', url: 'https://instantroofestimate.ai' },
-    { name: 'Compare', url: 'https://instantroofestimate.ai/compare' },
-    { name: 'Metal vs Shingles', url: 'https://instantroofestimate.ai/compare/metal-vs-shingles' },
+    { name: 'Home', url: 'https://getmyroofestimatenow.com' },
+    { name: 'Compare', url: 'https://getmyroofestimatenow.com/compare' },
+    { name: 'Metal vs Shingles', url: 'https://getmyroofestimatenow.com/compare/metal-vs-shingles' },
   ];
 
   return (
@@ -240,12 +240,12 @@ export default function MetalVsShinglesPage() {
               <Link href="/" className="flex items-center gap-2">
                 <Image
                   src="/logo.png"
-                  alt="Instant Roof Estimate"
+                  alt="Get My Roof Estimate Now"
                   width={48}
                   height={48}
                   className="w-12 h-12"
                 />
-                <span className="font-bold text-xl text-slate-900">Instant Roof Estimate</span>
+                <span className="font-bold text-xl text-slate-900">Get My Roof Estimate Now</span>
               </Link>
               <Link
                 href="/"
@@ -511,7 +511,7 @@ export default function MetalVsShinglesPage() {
         <footer className="bg-slate-900 text-slate-400 py-8">
           <div className="container mx-auto px-4">
             <div className="text-center mb-6">
-              <p>&copy; {new Date().getFullYear()} Instant Roof Estimate. All rights reserved.</p>
+              <p>&copy; {new Date().getFullYear()} Get My Roof Estimate Now. All rights reserved.</p>
             </div>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
               <Link href="/" className="hover:text-white transition-colors">Get Free Estimate</Link>

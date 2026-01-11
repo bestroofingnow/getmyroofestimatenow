@@ -49,7 +49,7 @@ const servicesFaqs: FAQ[] = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Roofing Services | Repair, Replacement & Storm Damage | Instant Roof Estimate',
+  title: 'Roofing Services | Repair, Replacement & Storm Damage | Get My Roof Estimate Now',
   description: 'Professional roofing services: roof repair, replacement, storm damage repair, inspections, and more. Free estimates and insurance claim assistance.',
   keywords: [
     'roofing services',
@@ -67,10 +67,10 @@ export const metadata: Metadata = {
     title: 'Roofing Services | Complete Solutions for Your Home',
     description: 'Professional roofing services including repair, replacement, and storm damage. Free estimates available.',
     type: 'website',
-    url: 'https://instantroofestimate.ai/services',
+    url: 'https://getmyroofestimatenow.com/services',
   },
   alternates: {
-    canonical: 'https://instantroofestimate.ai/services',
+    canonical: 'https://getmyroofestimatenow.com/services',
   },
 };
 
@@ -103,8 +103,8 @@ const services = [
 
 export default function ServicesPage() {
   const breadcrumbs = [
-    { name: 'Home', url: 'https://instantroofestimate.ai' },
-    { name: 'Services', url: 'https://instantroofestimate.ai/services' },
+    { name: 'Home', url: 'https://getmyroofestimatenow.com' },
+    { name: 'Services', url: 'https://getmyroofestimatenow.com/services' },
   ];
 
   return (
@@ -118,8 +118,8 @@ export default function ServicesPage() {
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
               <Link href="/" className="flex items-center gap-2">
-                <Image src="/logo.png" alt="Instant Roof Estimate" width={48} height={48} className="w-12 h-12" />
-                <span className="font-bold text-xl text-slate-900">Instant Roof Estimate</span>
+                <Image src="/logo.png" alt="Get My Roof Estimate Now" width={48} height={48} className="w-12 h-12" />
+                <span className="font-bold text-xl text-slate-900">Get My Roof Estimate Now</span>
               </Link>
               <Link href="/" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors">
                 Get Free Estimate
@@ -201,7 +201,7 @@ export default function ServicesPage() {
         <footer className="bg-slate-900 text-slate-400 py-8">
           <div className="container mx-auto px-4">
             <div className="text-center mb-6">
-              <p>&copy; {new Date().getFullYear()} Instant Roof Estimate. All rights reserved.</p>
+              <p>&copy; {new Date().getFullYear()} Get My Roof Estimate Now. All rights reserved.</p>
             </div>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
               <Link href="/" className="hover:text-white transition-colors">Get Free Estimate</Link>

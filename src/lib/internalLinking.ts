@@ -7,7 +7,7 @@
 
 import { locations } from './locations';
 
-const BASE_URL = 'https://instantroofestimate.ai';
+const BASE_URL = 'https://getmyroofestimatenow.com';
 
 // ============================================================
 // KEYWORD MAPS - Keywords to Internal Pages

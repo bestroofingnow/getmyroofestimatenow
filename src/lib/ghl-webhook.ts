@@ -19,7 +19,7 @@ export function buildGHLPayload(
     city: lead.city || '',
     state: lead.state || '',
     postalCode: lead.postalCode || '',
-    source: 'InstantRoofEstimate.ai',
+    source: 'GetMyRoofEstimateNow.com',
     tags: ['instant-estimate', 'website-lead', 'roof-replacement'],
     customField: {
       roof_square_feet: estimate.roofSqFt,

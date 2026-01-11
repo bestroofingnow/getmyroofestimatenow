@@ -41,10 +41,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title,
       description,
       type: 'website',
-      url: `https://instantroofestimate.ai/roof-estimate/county/${countySlug}`,
+      url: `https://getmyroofestimatenow.com/roof-estimate/county/${countySlug}`,
     },
     alternates: {
-      canonical: `https://instantroofestimate.ai/roof-estimate/county/${countySlug}`,
+      canonical: `https://getmyroofestimatenow.com/roof-estimate/county/${countySlug}`,
     },
   };
 }
@@ -76,10 +76,10 @@ export default async function CountyPage({ params }: PageProps) {
   const faqSchema = generateCountyFaqSchema(faqs);
 
   const breadcrumbs = [
-    { name: 'Home', url: 'https://instantroofestimate.ai' },
-    { name: 'Roof Estimates', url: 'https://instantroofestimate.ai/roof-estimate' },
-    { name: 'North Carolina', url: 'https://instantroofestimate.ai/roof-estimate/state/north-carolina' },
-    { name: countyData.name, url: `https://instantroofestimate.ai/roof-estimate/county/${countySlug}` },
+    { name: 'Home', url: 'https://getmyroofestimatenow.com' },
+    { name: 'Roof Estimates', url: 'https://getmyroofestimatenow.com/roof-estimate' },
+    { name: 'North Carolina', url: 'https://getmyroofestimatenow.com/roof-estimate/state/north-carolina' },
+    { name: countyData.name, url: `https://getmyroofestimatenow.com/roof-estimate/county/${countySlug}` },
   ];
 
   // Service Area Schema
@@ -88,11 +88,11 @@ export default async function CountyPage({ params }: PageProps) {
     '@type': 'Service',
     name: `Roof Estimate Service in ${countyData.name}, NC`,
     description: `Free instant roof replacement estimates for ${countyData.name}, North Carolina homeowners`,
-    url: `https://instantroofestimate.ai/roof-estimate/county/${countySlug}`,
+    url: `https://getmyroofestimatenow.com/roof-estimate/county/${countySlug}`,
     provider: {
       '@type': 'Organization',
-      name: 'Instant Roof Estimate',
-      url: 'https://instantroofestimate.ai',
+      name: 'Get My Roof Estimate Now',
+      url: 'https://getmyroofestimatenow.com',
     },
     areaServed: {
       '@type': 'AdministrativeArea',

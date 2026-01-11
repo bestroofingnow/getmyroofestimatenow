@@ -50,10 +50,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title,
       description,
       type: 'website',
-      url: `https://instantroofestimate.ai/roof-estimate/state/${stateSlug}/${location.slug}`,
+      url: `https://getmyroofestimatenow.com/roof-estimate/state/${stateSlug}/${location.slug}`,
     },
     alternates: {
-      canonical: `https://instantroofestimate.ai/roof-estimate/state/${stateSlug}/${location.slug}`,
+      canonical: `https://getmyroofestimatenow.com/roof-estimate/state/${stateSlug}/${location.slug}`,
     },
   };
 }
@@ -82,8 +82,8 @@ function LocationServiceSchema({ location, stateSlug }: { location: LocationData
     serviceType: 'Roof Estimation',
     provider: {
       '@type': 'Organization',
-      name: 'Instant Roof Estimate',
-      url: 'https://instantroofestimate.ai',
+      name: 'Get My Roof Estimate Now',
+      url: 'https://getmyroofestimatenow.com',
     },
     areaServed: {
       '@type': 'City',
@@ -94,7 +94,7 @@ function LocationServiceSchema({ location, stateSlug }: { location: LocationData
       },
     },
     description: `Free instant roof estimates in ${location.city}, ${location.stateAbbr}. Get accurate roof replacement costs using satellite imagery.`,
-    url: `https://instantroofestimate.ai/roof-estimate/state/${stateSlug}/${location.slug}`,
+    url: `https://getmyroofestimatenow.com/roof-estimate/state/${stateSlug}/${location.slug}`,
     offers: {
       '@type': 'Offer',
       price: '0',
@@ -129,10 +129,10 @@ export default async function LocationPage({ params }: PageProps) {
   const countyData = getCountyByCitySlug(location.slug);
 
   const breadcrumbs = [
-    { name: 'Home', url: 'https://instantroofestimate.ai' },
-    { name: 'Roof Estimates', url: 'https://instantroofestimate.ai/roof-estimate' },
-    { name: location.state, url: `https://instantroofestimate.ai/roof-estimate/state/${stateSlug}` },
-    { name: `${location.city}, ${location.stateAbbr}`, url: `https://instantroofestimate.ai/roof-estimate/state/${stateSlug}/${location.slug}` },
+    { name: 'Home', url: 'https://getmyroofestimatenow.com' },
+    { name: 'Roof Estimates', url: 'https://getmyroofestimatenow.com/roof-estimate' },
+    { name: location.state, url: `https://getmyroofestimatenow.com/roof-estimate/state/${stateSlug}` },
+    { name: `${location.city}, ${location.stateAbbr}`, url: `https://getmyroofestimatenow.com/roof-estimate/state/${stateSlug}/${location.slug}` },
   ];
 
   // Generate location-specific FAQs
@@ -162,13 +162,13 @@ export default async function LocationPage({ params }: PageProps) {
         serviceName="Roof Estimation Services"
         description={`Get free instant roof estimates in ${location.city}, ${location.stateAbbr}. Average roof replacement costs ${formatCurrency(location.avgRoofCost.low)} to ${formatCurrency(location.avgRoofCost.high)}.`}
         priceRange={{ min: location.avgRoofCost.low, max: location.avgRoofCost.high }}
-        url={`https://instantroofestimate.ai/roof-estimate/state/${stateSlug}/${location.slug}`}
+        url={`https://getmyroofestimatenow.com/roof-estimate/state/${stateSlug}/${location.slug}`}
       />
       <QuickAnswerSchema
         question={`How much does a roof replacement cost in ${location.city}, ${location.stateAbbr}?`}
-        answer={`A roof replacement in ${location.city}, ${location.stateAbbr} typically costs between ${formatCurrency(location.avgRoofCost.low)} and ${formatCurrency(location.avgRoofCost.high)}, with the most popular option around ${formatCurrency(location.avgRoofCost.mid)}. Costs vary based on roof size, materials, and complexity. Get a free instant estimate at InstantRoofEstimate.ai.`}
+        answer={`A roof replacement in ${location.city}, ${location.stateAbbr} typically costs between ${formatCurrency(location.avgRoofCost.low)} and ${formatCurrency(location.avgRoofCost.high)}, with the most popular option around ${formatCurrency(location.avgRoofCost.mid)}. Costs vary based on roof size, materials, and complexity. Get a free instant estimate at GetMyRoofEstimateNow.com.`}
         speakableAnswer={`In ${location.city}, a roof replacement typically costs ${formatCurrency(location.avgRoofCost.low)} to ${formatCurrency(location.avgRoofCost.high)}. The average is around ${formatCurrency(location.avgRoofCost.mid)}.`}
-        sourceUrl={`https://instantroofestimate.ai/roof-estimate/state/${stateSlug}/${location.slug}`}
+        sourceUrl={`https://getmyroofestimatenow.com/roof-estimate/state/${stateSlug}/${location.slug}`}
         topic="Roof Replacement Cost"
       />
 
@@ -180,12 +180,12 @@ export default async function LocationPage({ params }: PageProps) {
               <Link href="/" className="flex items-center gap-2">
                 <Image
                   src="/logo.png"
-                  alt="Instant Roof Estimate"
+                  alt="Get My Roof Estimate Now"
                   width={48}
                   height={48}
                   className="w-12 h-12"
                 />
-                <span className="font-bold text-xl text-slate-900">Instant Roof Estimate</span>
+                <span className="font-bold text-xl text-slate-900">Get My Roof Estimate Now</span>
               </Link>
               <div className="flex items-center gap-2 text-slate-600">
                 <MapPin className="w-4 h-4" />
@@ -448,7 +448,7 @@ export default async function LocationPage({ params }: PageProps) {
         <footer className="bg-slate-900 text-slate-400 py-8">
           <div className="container mx-auto px-4">
             <div className="text-center mb-6">
-              <p>&copy; {new Date().getFullYear()} Instant Roof Estimate. All rights reserved.</p>
+              <p>&copy; {new Date().getFullYear()} Get My Roof Estimate Now. All rights reserved.</p>
               <p className="mt-2 text-sm">
                 Serving {location.city}, {location.stateAbbr} and the {location.region} region
               </p>
