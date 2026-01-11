@@ -6,7 +6,6 @@ import { X, Gift, Clock, MapPin, Search, Loader2 } from 'lucide-react';
 
 interface ExitIntentPopupProps {
   delay?: number;
-  cookieDays?: number;
 }
 
 interface Prediction {
@@ -25,7 +24,7 @@ interface PlaceDetails {
   postalCode: string;
 }
 
-export function ExitIntentPopup({ delay = 5000, cookieDays = 7 }: ExitIntentPopupProps) {
+export function ExitIntentPopup({ delay = 5000 }: ExitIntentPopupProps) {
   const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
   const [isEnabled, setIsEnabled] = useState(false);
@@ -45,13 +44,14 @@ export function ExitIntentPopup({ delay = 5000, cookieDays = 7 }: ExitIntentPopu
 
   const handleClose = useCallback(() => {
     setIsVisible(false);
-    const dismissedUntil = Date.now() + cookieDays * 24 * 60 * 60 * 1000;
-    localStorage.setItem('exitPopupDismissed', dismissedUntil.toString());
-  }, [cookieDays]);
+    // Mark as shown for this session only (user must click X to close)
+    sessionStorage.setItem('exitPopupShown', 'true');
+  }, []);
 
   useEffect(() => {
-    const dismissedUntil = localStorage.getItem('exitPopupDismissed');
-    if (dismissedUntil && Date.now() < parseInt(dismissedUntil)) {
+    // Check if popup was already shown this session
+    const alreadyShown = sessionStorage.getItem('exitPopupShown');
+    if (alreadyShown) {
       return;
     }
 
@@ -75,16 +75,7 @@ export function ExitIntentPopup({ delay = 5000, cookieDays = 7 }: ExitIntentPopu
     return () => document.removeEventListener('mouseleave', handleMouseLeave);
   }, [isEnabled, isVisible]);
 
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isVisible) {
-        handleClose();
-      }
-    };
-
-    document.addEventListener('keydown', handleEscape);
-    return () => document.removeEventListener('keydown', handleEscape);
-  }, [isVisible, handleClose]);
+  // Escape key disabled - user must click X to close
 
   // Focus input when popup opens
   useEffect(() => {
@@ -250,10 +241,9 @@ export function ExitIntentPopup({ delay = 5000, cookieDays = 7 }: ExitIntentPopu
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      {/* Backdrop */}
+      {/* Backdrop - no click to close, user must use X button */}
       <div
         className="absolute inset-0 bg-black/60 backdrop-blur-sm animate-fade-in"
-        onClick={handleClose}
       />
 
       {/* Modal */}

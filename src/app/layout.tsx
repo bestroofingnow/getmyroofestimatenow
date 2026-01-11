@@ -71,6 +71,7 @@ export const metadata: Metadata = {
       { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
+  manifest: "/manifest.json",
   openGraph: {
     title: "Get Your Free Get My Roof Estimate Now in 60 Seconds",
     description: "Accurate roof replacement estimates in 60 seconds using satellite imagery. No hassle, no obligation. Trusted measurements used by millions through Google Services.",
@@ -156,7 +157,7 @@ export default function RootLayout({
         </Script>
         {children}
         {/* Exit Intent Popup - shows when user tries to leave */}
-        <ExitIntentPopup delay={10000} cookieDays={3} />
+        <ExitIntentPopup delay={10000} />
       </body>
     </html>
   );
