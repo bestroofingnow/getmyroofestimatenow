@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useEstimatePopup } from '@/components/EstimatePopup';
 
 interface SharedHeaderProps {
   variant?: 'default' | 'transparent';
@@ -7,6 +10,7 @@ interface SharedHeaderProps {
 }
 
 export function SharedHeader({ variant = 'default', showCTA = true }: SharedHeaderProps) {
+  const { openPopup } = useEstimatePopup();
   const bgClass = variant === 'transparent'
     ? 'bg-transparent'
     : 'bg-white border-b border-slate-200';
@@ -70,12 +74,12 @@ export function SharedHeader({ variant = 'default', showCTA = true }: SharedHead
 
           {/* CTA Button */}
           {showCTA && (
-            <Link
-              href="/"
+            <button
+              onClick={openPopup}
               className="bg-orange-500 text-white px-4 py-2 rounded-full hover:bg-orange-400 transition-colors text-sm font-medium shadow-lg shadow-orange-500/20"
             >
               Get Free Quote
-            </Link>
+            </button>
           )}
         </div>
       </div>

@@ -16,6 +16,7 @@ import {
   ConversationalContentSchema,
 } from "@/components/VoiceSearchSchema";
 import { ExitIntentPopup } from "@/components/ExitIntentPopup";
+import { EstimatePopupProvider } from "@/components/EstimatePopup";
 import { SkipToContent } from "@/components/shared";
 
 const inter = Inter({
@@ -155,7 +156,9 @@ export default function RootLayout({
             gtag('config', 'G-Y5ZVZYVLRE');
           `}
         </Script>
-        {children}
+        <EstimatePopupProvider>
+          {children}
+        </EstimatePopupProvider>
         {/* Exit Intent Popup - shows when user tries to leave */}
         <ExitIntentPopup delay={10000} />
       </body>

@@ -5,6 +5,7 @@ import { ArrowRight, BookOpen } from 'lucide-react';
 import { fetchBlogPosts } from '@/lib/blog';
 import { BreadcrumbSchema } from '@/components/StructuredData';
 import { BlogList } from '@/components/BlogList';
+import { CTAButton } from '@/components/CTAButton';
 
 export const metadata: Metadata = {
   title: 'Roofing Tips & Guides | Expert Advice for Homeowners',
@@ -102,13 +103,9 @@ export default async function BlogPage() {
                 Everything you need to know about roof replacement, repairs, materials, and costs.
                 Make informed decisions for your home.
               </p>
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2 bg-white text-orange-600 font-semibold px-6 py-3 rounded-xl hover:bg-orange-50 transition-colors"
-              >
+              <CTAButton className="inline-flex items-center gap-2 bg-white text-orange-600 font-semibold px-6 py-3 rounded-xl hover:bg-orange-50 transition-colors">
                 Get Your Free Estimate
-                <ArrowRight className="w-5 h-5" />
-              </Link>
+              </CTAButton>
             </div>
           </div>
         </section>
@@ -131,13 +128,9 @@ export default async function BlogPage() {
                     homeowners make informed roofing decisions. In the meantime, get your free
                     instant roof estimate.
                   </p>
-                  <Link
-                    href="/"
-                    className="inline-flex items-center gap-2 bg-orange-600 text-white font-semibold px-8 py-4 rounded-xl hover:bg-orange-500 transition-colors text-lg"
-                  >
+                  <CTAButton className="inline-flex items-center gap-2 bg-orange-600 text-white font-semibold px-8 py-4 rounded-xl hover:bg-orange-500 transition-colors text-lg">
                     Get Your Free Roof Estimate
-                    <ArrowRight className="w-5 h-5" />
-                  </Link>
+                  </CTAButton>
                 </div>
 
                 {/* Topics Preview */}
@@ -197,13 +190,9 @@ export default async function BlogPage() {
               Get an instant, accurate roof replacement estimate using satellite imagery.
               No obligation, takes just 60 seconds.
             </p>
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 bg-orange-600 text-white font-semibold px-8 py-4 rounded-xl hover:bg-orange-500 transition-colors text-lg"
-            >
+            <CTAButton className="inline-flex items-center gap-2 bg-orange-600 text-white font-semibold px-8 py-4 rounded-xl hover:bg-orange-500 transition-colors text-lg">
               Get Your Free Estimate Now
-              <ArrowRight className="w-5 h-5" />
-            </Link>
+            </CTAButton>
           </div>
         </section>
 

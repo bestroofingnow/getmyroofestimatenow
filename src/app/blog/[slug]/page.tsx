@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { Calendar, User, ArrowLeft, ArrowRight, Home, ExternalLink } from 'lucide-react';
 import { fetchBlogPosts } from '@/lib/blog';
 import { BreadcrumbSchema, ArticleSchema } from '@/components/StructuredData';
+import { CTAButton } from '@/components/CTAButton';
 import {
   processContentWithLinks,
   getRelatedContent,
@@ -325,13 +326,9 @@ export default async function BlogPostPage({ params }: PageProps) {
                   <p className="text-orange-100 mb-6">
                     Get an instant price using satellite photos. Takes just 60 seconds. 100% free.
                   </p>
-                  <Link
-                    href="/"
-                    className="inline-flex items-center gap-2 bg-white text-orange-600 font-semibold px-6 py-3 rounded-xl hover:bg-orange-50 transition-colors"
-                  >
+                  <CTAButton className="inline-flex items-center gap-2 bg-white text-orange-600 font-semibold px-6 py-3 rounded-xl hover:bg-orange-50 transition-colors">
                     Get Your Free Estimate
-                    <ArrowRight className="w-5 h-5" aria-hidden="true" />
-                  </Link>
+                  </CTAButton>
                 </div>
 
                 {/* Post Navigation */}
