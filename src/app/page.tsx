@@ -7,7 +7,7 @@ import { AddressInput } from '@/components/AddressInput';
 import { FAQSection, faqData } from '@/components/FAQSection';
 import { FAQSchema } from '@/components/StructuredData';
 import { SEOContent } from '@/components/SEOContent';
-import { Shield, Clock, DollarSign, CheckCircle, Sparkles, ArrowRight, Zap, Award } from 'lucide-react';
+import { Shield, Clock, DollarSign, CheckCircle, Sparkles, ArrowRight, Zap, Award, TrendingUp, MapPin, Ruler, Layers } from 'lucide-react';
 
 interface PlaceDetails {
   formatted_address: string;
@@ -186,6 +186,160 @@ export default function HomePage() {
               <p className="text-slate-600">
                 Get detailed pricing for multiple materials. Connect with vetted local contractors.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Average Roof Costs Section */}
+      <section aria-labelledby="pricing-heading" className="py-20 bg-gradient-to-b from-slate-50 to-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <span className="text-orange-600 font-semibold text-sm uppercase tracking-wide">Transparent Pricing</span>
+              <h2 id="pricing-heading" className="text-3xl md:text-4xl font-bold text-slate-900 mt-2 mb-4">
+                Average Roof Costs in 2025
+              </h2>
+              <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+                Most homeowners pay <strong className="text-slate-900">$8,000 - $25,000</strong> for a full roof replacement. Here&apos;s what drives that price.
+              </p>
+            </div>
+
+            {/* Material Pricing Cards */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+              {[
+                { name: 'Architectural Shingles', range: '$6.00 - $6.50', total: '$12,000 - $13,000', tag: 'Most Popular', tagColor: 'bg-orange-100 text-orange-700', highlight: true },
+                { name: 'Metal Roofing', range: '$11.75 - $12.25', total: '$23,500 - $24,500', tag: 'Longest Lasting', tagColor: 'bg-blue-100 text-blue-700', highlight: false },
+                { name: 'Synthetic Roofing', range: '$9.25 - $9.75', total: '$18,500 - $19,500', tag: 'Premium Look', tagColor: 'bg-purple-100 text-purple-700', highlight: false },
+                { name: 'Roof Coatings', range: '$3.50 - $4.00', total: '$7,000 - $8,000', tag: 'Budget Friendly', tagColor: 'bg-green-100 text-green-700', highlight: false },
+              ].map((material, i) => (
+                <div
+                  key={i}
+                  className={`relative rounded-2xl p-5 border transition-shadow hover:shadow-md ${
+                    material.highlight
+                      ? 'bg-white border-orange-300 shadow-md ring-1 ring-orange-200'
+                      : 'bg-white border-slate-200 shadow-sm'
+                  }`}
+                >
+                  <span className={`inline-block text-xs font-semibold px-2.5 py-1 rounded-full mb-3 ${material.tagColor}`}>
+                    {material.tag}
+                  </span>
+                  <h3 className="font-bold text-slate-900 mb-3">{material.name}</h3>
+                  <div className="text-sm text-slate-500 mb-1">Per sq ft</div>
+                  <div className="text-lg font-bold text-slate-900 mb-3">{material.range}</div>
+                  <div className="border-t border-slate-100 pt-3">
+                    <div className="text-xs text-slate-500">Avg home (2,000 sq ft roof)</div>
+                    <div className="text-base font-semibold text-orange-600">{material.total}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Regional Pricing Snapshot */}
+            <div className="bg-slate-900 rounded-2xl p-6 md:p-8 text-white mb-8">
+              <div className="flex flex-col md:flex-row md:items-center gap-6">
+                <div className="md:w-1/3">
+                  <div className="flex items-center gap-2 mb-2">
+                    <MapPin className="w-5 h-5 text-orange-400" aria-hidden="true" />
+                    <span className="text-orange-400 font-semibold text-sm uppercase tracking-wide">Your Location Matters</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">Regional Price Differences</h3>
+                  <p className="text-slate-400 text-sm">
+                    Labor rates and material costs vary across the country. Here&apos;s how regions compare to the national average.
+                  </p>
+                </div>
+                <div className="md:w-2/3 grid grid-cols-2 md:grid-cols-4 gap-3">
+                  {[
+                    { region: 'West Coast', diff: '+25-35%', color: 'text-red-400' },
+                    { region: 'Northeast', diff: '+15-30%', color: 'text-orange-400' },
+                    { region: 'Southeast', diff: 'Average', color: 'text-green-400' },
+                    { region: 'Midwest', diff: '-5%', color: 'text-blue-400' },
+                  ].map((r, i) => (
+                    <div key={i} className="bg-white/10 rounded-xl p-3 text-center">
+                      <div className="text-sm text-slate-300 mb-1">{r.region}</div>
+                      <div className={`text-lg font-bold ${r.color}`}>{r.diff}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Pricing CTA */}
+            <div className="text-center">
+              <p className="text-sm text-slate-500 mb-4">
+                Prices shown are national averages. Your actual cost depends on your roof size, pitch, and location.
+              </p>
+              <a
+                href="#get-estimate"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('address-input')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold px-8 py-4 rounded-full transition-colors shadow-lg shadow-orange-500/20"
+              >
+                Get Your Exact Price
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What Affects Your Roof Cost Section */}
+      <section aria-labelledby="cost-factors-heading" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <span className="text-orange-600 font-semibold text-sm uppercase tracking-wide">Know Before You Buy</span>
+              <h2 id="cost-factors-heading" className="text-3xl md:text-4xl font-bold text-slate-900 mt-2 mb-4">
+                What Affects Your Roof Cost?
+              </h2>
+              <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+                Four key factors determine your final price. Our satellite tool accounts for all of them.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  icon: Ruler,
+                  title: 'Roof Size',
+                  desc: 'Measured in "squares" (100 sq ft each). The average home has 15-25 squares. Bigger roof means more materials and labor.',
+                  color: 'blue',
+                },
+                {
+                  icon: Layers,
+                  title: 'Material Choice',
+                  desc: 'The biggest price factor. Basic shingles start around $6/sqft. Metal and premium materials can be double or more.',
+                  color: 'orange',
+                },
+                {
+                  icon: TrendingUp,
+                  title: 'Roof Pitch',
+                  desc: 'Steeper roofs are harder and more dangerous to work on. A steep pitch can add 20-50% to labor costs.',
+                  color: 'amber',
+                },
+                {
+                  icon: MapPin,
+                  title: 'Your Location',
+                  desc: 'Labor rates, material availability, and local demand all vary. Coastal and urban areas typically cost more.',
+                  color: 'blue',
+                },
+              ].map((factor, i) => (
+                <div key={i} className="text-center group">
+                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-transform group-hover:scale-105 ${
+                    factor.color === 'orange' ? 'bg-orange-100' :
+                    factor.color === 'amber' ? 'bg-amber-100' : 'bg-blue-100'
+                  }`}>
+                    <factor.icon className={`w-7 h-7 ${
+                      factor.color === 'orange' ? 'text-orange-600' :
+                      factor.color === 'amber' ? 'text-amber-600' : 'text-blue-600'
+                    }`} aria-hidden="true" />
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{factor.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{factor.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
